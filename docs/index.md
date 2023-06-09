@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Vitepress demo"
-  text: "Vitepress demo"
-  tagline: My great project tagline
+  name: "Memphis Vitepress"
+  text: "Some more text"
+  tagline: Even more text goes here
   actions:
     - theme: brand
       text: Get Started
