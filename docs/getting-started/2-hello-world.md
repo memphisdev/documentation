@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/LinkedIn personal (3).png
+cover: /assets/LinkedIn personal (3).png
 coverY: 0
 ---
 

@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/AZURE and Memphis.jpeg
+cover: /assets/AZURE and Memphis.jpeg
 coverY: 0
 ---
 

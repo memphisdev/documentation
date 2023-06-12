@@ -22,7 +22,7 @@ The uniqueness of Memphis implementation is&#x20;
 4. The next message will be consumed
 5. After crossing the requested `delayInMilliseconds` the broker will stop the main stream of messages and push the delayed message again
 
-<figure><img src="../../.gitbook/assets/delayed queues.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/delayed queues.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Code example
 

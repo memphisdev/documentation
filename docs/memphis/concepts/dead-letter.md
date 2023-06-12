@@ -2,7 +2,7 @@
 description: >-
   This section describes the implementation of the Dead-letter station in
   Memphis.
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis concepts (2).jpeg
 coverY: 0
 ---
 
@@ -39,7 +39,7 @@ A message will be flagged as "Poison" and sent to the dead-letter station **when
 
 `maxAckDeliveries` is the parameter that defines how many times the broker will try to redeliver the same message to the same CG until receiving an "Ack."
 
-<figure><img src="../../.gitbook/assets/dls.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/dls.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Types of messages
 
@@ -48,9 +48,9 @@ The DLS will automatically (based on user decision) catch messages of the follow
 * **Unacknowledged**. Messages that passed the `maxAckDeliveries` parameter.
 * **Schema violation.** Messages that did not pass the attached schema validation. As Memphis mission is to narrow data loss, and increase observability, messages that did not pass schema validation can be important and indicate some producer issues. Therefore, Memphis supports storing such messages.
 
-<img src="../../.gitbook/assets/Screen Shot 2023-01-07 at 21.10.04.png" alt="" data-size="original">
+<img src="/assets/Screen Shot 2023-01-07 at 21.10.04.png" alt="" data-size="original">
 
-<figure><img src="../../.gitbook/assets/schemaverse.jpeg" alt=""><figcaption><p>How "Schema violation" messages reach DLS</p></figcaption></figure>
+<figure><img src="/assets/schemaverse.jpeg" alt=""><figcaption><p>How "Schema violation" messages reach DLS</p></figcaption></figure>
 
 ### How to recover (=resend) a DLS message
 
@@ -63,7 +63,7 @@ Every type of stored DLS message has a unique recovery strategy.
 
 ### Message Journey
 
-![Message Journey](../../.gitbook/assets/3.jpg)
+![Message Journey](/assets/3.jpg)
 
 After clicking on "Message Journey," the user will be redirected to this screen which is in the context of a single message.
 

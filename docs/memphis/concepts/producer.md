@@ -1,6 +1,6 @@
 ---
 description: This section describes Memphis producer API
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis concepts (2).jpeg
 coverY: 0
 ---
 
@@ -16,7 +16,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 * Producer - A producer entity must be declared to write data/messages into Memphis.
 * (And/Or) Consumer - A consumer entity must be declared to read data/messages from Memphis.
 
-<figure><img src="../../.gitbook/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Broker's Data Format
 
@@ -32,7 +32,7 @@ await producer.produce({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/produce 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/produce 1.jpeg" alt=""><figcaption></figcaption></figure>
 
 <!-- {% hint style="warning" %} -->
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.

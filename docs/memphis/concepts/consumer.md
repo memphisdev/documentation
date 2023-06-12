@@ -1,6 +1,6 @@
 ---
 description: This section describes Memphis consumer API
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis concepts (2).jpeg
 coverY: 0
 ---
 
@@ -20,7 +20,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 * Consumer - A consumer entity must be declared to read data/messages from Memphis.
 * (And/or) Producer - A producer entity must be declared to write data/messages into Memphis.
 
-<figure><img src="../../.gitbook/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
 Memphis consumers are “long-polling” by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
 
@@ -39,7 +39,7 @@ consumer.on('message', (message) => {
 });
 ```
 
-<figure><img src="../../.gitbook/assets/consume 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/consume 1.jpeg" alt=""><figcaption></figcaption></figure>
 
 <!-- {% hint style="warning" %} -->
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.

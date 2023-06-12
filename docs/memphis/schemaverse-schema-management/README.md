@@ -1,6 +1,6 @@
 ---
 description: Released on v0.4.0
-cover: ../../.gitbook/assets/schema - overview.jpeg
+cover: /assets/schema - overview.jpeg
 coverY: 0
 ---
 
@@ -15,7 +15,7 @@ In a federated data platform, in which responsibilities are distributed between 
 
  They also provide crucial information on what data is being consumed, by whom, and for what purpose. Bottom line: data contracts are essential for robust data management!
 
-<figure><img src="../../.gitbook/assets/schema 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/schema 1.jpeg" alt=""><figcaption></figcaption></figure>
 
 The very basic building block to control and ensure the quality of data that flows through your organization between the different owners is by defining well-written schemas and data models.
 
@@ -32,11 +32,11 @@ By defining a well-struct schema and enforcing it over your different data produ
 * Runtime updates.
 * Transparent serialization.
 
-<figure><img src="../../.gitbook/assets/Schema Management Overview (2).jpg" alt=""><figcaption><p>Overview</p></figcaption></figure>
+<figure><img src="/assets/Schema Management Overview (2).jpg" alt=""><figcaption><p>Overview</p></figcaption></figure>
 
 ### Behind the stage
 
-<figure><img src="../../.gitbook/assets/schemaverse.jpeg" alt=""><figcaption><p>Sequence diagram</p></figcaption></figure>
+<figure><img src="/assets/schemaverse.jpeg" alt=""><figcaption><p>Sequence diagram</p></figcaption></figure>
 
 Memphis Schemaverse provides a robust schema store and schema management layer on top of memphis broker without a standalone compute or dedicated resources.&#x20;
 

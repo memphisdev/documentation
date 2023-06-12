@@ -1,6 +1,6 @@
 ---
 description: What is it? And how to avoid it.
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis concepts (2).jpeg
 coverY: 0
 ---
 
@@ -24,7 +24,7 @@ On the producer side, this can happen as illustrated below.
 4. The producer will treat the lack of acknowledgment as a temporary network issue and retry sending the message (since it can’t know it was received).
 5. In that case, the broker will end up having the same message twice.
 
-<figure><img src="../../.gitbook/assets/idempotence 1 (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/idempotence 1 (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 On the consumer side, this can happen as illustrated below.
 
@@ -34,7 +34,7 @@ On the consumer side, this can happen as illustrated below.
 4. Based on `maxAckTimeMs` parameter Memphis broker decides to retransmit the same message
 5. The consumer will process the same message again
 
-<figure><img src="../../.gitbook/assets/idempotence 2.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/idempotence 2.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Producer side - How to avoid?
 
@@ -42,7 +42,7 @@ On the consumer side, this can happen as illustrated below.
 
 With an idempotency producer, the process will take place as illustrated below.
 
-<figure><img src="../../.gitbook/assets/idempotence producer.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/idempotence producer.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### **How does it work internally?**
 
@@ -56,7 +56,7 @@ With an idempotency producer, the process will take place as illustrated below.
 
 Via the GUI during station creation.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-11-30 at 12.18.38.png" alt=""><figcaption><p>GUI example</p></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-11-30 at 12.18.38.png" alt=""><figcaption><p>GUI example</p></figcaption></figure>
 
 Or via the different SDKs.
 

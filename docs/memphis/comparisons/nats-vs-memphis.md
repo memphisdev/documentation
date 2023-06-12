@@ -1,6 +1,6 @@
 ---
 description: This section describes the differences between NATS Jetstream and Memphis
-cover: ../../.gitbook/assets/Jetstream vs Memphis.jpeg
+cover: /assets/Jetstream vs Memphis.jpeg
 coverY: 0
 ---
 
@@ -90,7 +90,7 @@ The [NATS Surveyor](https://github.com/nats-io/nats-surveyor) system has initial
 
 Memphis has a built-in notification center that can push real-time alerts based on defined triggers like client disconnections, resource depletion, schema violation, and more.
 
-<figure><img src="../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Message tracing (aka Stream lineage)
 
@@ -100,7 +100,7 @@ NATS Jetstream does not provide a native ability for stream lineage, but it can 
 
 Memphis provides stream lineage per message with out-of-the-box visualization for each stamped message using a generated header by the Memphis SDK.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Availability and Messaging
 
@@ -127,7 +127,7 @@ JetStream is compatible with NATS 2.0 Multi-Tenancy using Accounts. A JetStream-
 
 As Memphis pushes to enable the next generation of applications and especially SaaS-type architectures, Memphis supports Multi-tenancy across all the layers from stations (=queues) to security, consumers, and producers, all the way to node selection for complete hardware isolation in case of need. It is enabled using namespaces and can be managed in a unified console.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Storage tiering
 
@@ -186,7 +186,7 @@ A GUI for NATS and NATS Jetstream can be achieved via Synadia cloud offering.
 
 Memphis provides a native state-of-the-art GUI, hosted inside the broker, built to act as a management layer of all Memphis aspects, including cluster config, resources, data observability, notifications, processing, and more.
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption><p>Memphis GUI</p></figcaption></figure>
+<figure><img src="/assets/image (3) (2).png" alt=""><figcaption><p>Memphis GUI</p></figcaption></figure>
 
 ### Schema Management
 
@@ -196,7 +196,7 @@ NATS or NATS Jetstream does not offer schema management.
 
 As part of its open-source version, Memphis presents Schemaverse, which is also embedded within the broker. Schemaverse provides a robust schema store and schema management layer on top of memphis broker without a standalone compute or dedicated resources. With a unique and modern UI and programmatic approach, technical and non-technical users can create and define different schemas, attach the schema to multiple stations and choose if the schema should be enforced or not. In counter to Schema Registry, the client does not need to implement serialization functions, and every schema update takes place during producers' runtime.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-24 at 22.32.36.png" alt=""><figcaption><p>Memphis Schemaverse</p></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-24 at 22.32.36.png" alt=""><figcaption><p>Memphis Schemaverse</p></figcaption></figure>
 
 ### Stream Enrichment
 
@@ -226,7 +226,7 @@ NATS Jetstream does not offer stream lineage, but it can be achieved using OpenT
 
 Memphis provides stream lineage per message with out-of-the-box visualization for each stamped message using a generated header by the Memphis SDK.
 
-<figure><img src="../../.gitbook/assets/image (5) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (5) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Data-Level Observability
 
@@ -234,7 +234,7 @@ The ability to view ingested messages' payload and metadata.
 
 Memphis offers that ability within the GUI.
 
-![](<../../.gitbook/assets/Screen Shot 2022-12-27 at 23.53.03.png>)
+![](</assets/Screen Shot 2022-12-27 at 23.53.03.png>)
 
 ### Dead-letter queue
 
@@ -244,7 +244,7 @@ In NATS Jetstream, whenever a message reaches its maximum number of delivery att
 
 One of Memphis' core building blocks is avoiding unexpected data loss, enabling rapid development, and shortening troubleshooting cycles. Therefore, memphis provides a native solution for a dead-letter queue that acts as the station recycle bin for various failures such as unacknowledged messages, schema violations, and custom exceptions. the DLQ also supports in resend messages directly to the consumer who didn't ack the message or back to the station for reuse.
 
-![](<../../.gitbook/assets/Screen Shot 2022-12-27 at 23.58.52.png>)
+![](</assets/Screen Shot 2022-12-27 at 23.58.52.png>)
 
 ### REST Gateway
 

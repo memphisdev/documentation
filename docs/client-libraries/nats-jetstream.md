@@ -1,6 +1,6 @@
 ---
 description: Memphis compatability with NATS Jetstream
-cover: ../../.gitbook/assets/NATS + Memphis.jpeg
+cover: /assets/NATS + Memphis.jpeg
 coverY: -43.05148658448151
 ---
 

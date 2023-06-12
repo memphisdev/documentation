@@ -1,6 +1,6 @@
 ---
 description: Use Datadog as an external monitoring tool to monitor Memphis
-cover: ../../.gitbook/assets/Datadog and Memphis.jpeg
+cover: /assets/Datadog and Memphis.jpeg
 coverY: 0
 ---
 
@@ -105,7 +105,7 @@ EOF
 
 Reach your Datadog account -> Metrics -> Summary, and check if "memphis" metrics arrives.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-01-24 at 12.14.53.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot 2023-01-24 at 12.14.53.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 4: Import the Memphis dashboard
 

@@ -1,6 +1,6 @@
 ---
 description: This section describes the differences between RabbitMQ and Memphis
-cover: ../../.gitbook/assets/RabbitMQ vs Memphis.jpeg
+cover: /assets/RabbitMQ vs Memphis.jpeg
 coverY: 0
 ---
 
@@ -20,7 +20,7 @@ Memphis.dev enables building next-generation applications that require large vol
 
 
 
-<figure><img src="../../.gitbook/assets/memphis vs legacy.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/memphis vs legacy.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## General
 
@@ -128,17 +128,17 @@ The highest availability capability in RabbitMQ is cluster and quorum queues, wh
 
 Besides mirroring and striping stations across multiple brokers, that can ultimately span across AZs. Partners and Memphis cloud users can establish a memphis super-cluster across regions in an active/passive topology.
 
-<figure><img src="../../.gitbook/assets/multi-region (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/multi-region (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Multi-tenancy
 
 **RabbitMQ** is a multi-tenant system: connections, exchanges, queues, bindings, user permissions, policies, and some other things belong to virtual hosts, and logical groups of entities.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-22 at 14.10.16.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-22 at 14.10.16.png" alt=""><figcaption></figcaption></figure>
 
 **Memphis** supports multi-tenancy using namespaces which offers a complete separation from connections, producers, consumers, security, dedicated dashboard, including node selection.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-22 at 14.10.43.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-22 at 14.10.43.png" alt=""><figcaption></figcaption></figure>
 
 ### Queue striping
 
@@ -171,11 +171,11 @@ Memphis replicates data across brokers based on defined policy (Replicas). Memph
 
 RabbitMQ offers a native GUI that can act as a management layer as well
 
-![](<../../.gitbook/assets/image (8).png>)
+![](</assets/image (8).png>)
 
 Memphis provides a native state-of-the-art GUI, hosted inside the broker, built to act as a management layer of all Memphis aspects, including cluster config, resources, data observability, notifications, processing, and more.
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Schema Management
 
@@ -184,7 +184,7 @@ The benefit of schema management is for allowing compatibility between decoupled
 
 As part of its open-source version, Memphis presents Schemaverse, which is also embedded within the broker. Schemaverse provides a robust schema store and schema management layer on top of memphis broker without a standalone compute or dedicated resources. With a unique and modern UI and programmatic approach, technical and non-technical users can create and define different schemas, attach the schema to multiple stations and choose if the schema should be enforced or not. In counter to Schema Registry, the client does not need to implement serialization functions, and every schema update takes place during producers' runtime.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-24 at 22.32.36.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-24 at 22.32.36.png" alt=""><figcaption></figcaption></figure>
 
 ### Wildcard consume
 
@@ -216,7 +216,7 @@ RabbitMQ does not offer stream lineage, but it can be achieved using OpenTelemet
 
 Memphis provides stream lineage per message with out-of-the-box visualization for each stamped message using a generated header by the Memphis SDK.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Self-healing
 
@@ -250,7 +250,7 @@ RabbitMQ does not support it.
 
 Memphis offers a multi-tier storage strategy in its open-source version. Memphis will write messages that reached their end of 1st retention policy to a 2nd retention policy on object storage like S3 for longer retention time, potentially infinite, and post-streaming analysis. This feature can significantly help with cost reduction and stream auditing.
 
-![](<../../.gitbook/assets/Screen Shot 2022-12-28 at 15.18.45.png>)
+![](</assets/Screen Shot 2022-12-28 at 15.18.45.png>)
 
 RabbitMQ does not support it.
 
@@ -260,5 +260,5 @@ In RabbitMQ, notifications are made possible using AlertManager and Cluster oper
 
 Memphis has a built-in notification center that can push real-time alerts based on defined triggers like client disconnections, resource depletion, schema violation, and more.
 
-<figure><img src="../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
 

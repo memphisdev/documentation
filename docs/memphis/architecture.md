@@ -15,11 +15,11 @@ Memphis platform is comprised of three main components:
 3. REST Gateway.\
    Responsible for exposing Memphis management and data ingestion through REST requests.
 
-<figure><img src="../.gitbook/assets/memphis key components.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/memphis key components.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Connectivity Diagram
 
-<figure><img src="../.gitbook/assets/connectivity.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/connectivity.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Ports list
 
@@ -38,13 +38,13 @@ Memphis platform is comprised of three main components:
 
 The diagram below depicts a full Kubernetes-based deployment.
 
-<figure><img src="../.gitbook/assets/network diagram.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/network diagram.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Ordering
 
 Currently, ordering is guaranteed only while working with a single consumer group.
 
-![](../.gitbook/assets/ordering.jpeg)
+![](/assets/ordering.jpeg)
 
 ## Mirroring
 
@@ -52,7 +52,7 @@ Memphis is designed to run as a distributed cluster for a highly available and s
 
 Memphis brokers should run on different nodes to ensure data consistency and zero loss within complete broker’s reboots. To comply with RAFT requirements which are ½ cluster size + 1 an odd number of Memphis brokers shall be deployed. The minimum number of brokers is one, and the next scale would be 3, 5, and so forth.
 
-![](../.gitbook/assets/replications.jpeg)
+![](/assets/replications.jpeg)
 
 ## Supported Protocols
 
@@ -65,7 +65,7 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 
 ## Deployment sequence
 
-<figure><img src="../.gitbook/assets/deployment.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/deployment.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Requirements
 

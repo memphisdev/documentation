@@ -221,6 +221,6 @@ global.cluster.enabled="true"
 
 ## Deployment diagram
 
-<figure><img src="../../.gitbook/assets/Memphis Architecture.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Memphis Architecture.jpg" alt=""><figcaption></figcaption></figure>
 
 Search terms: SSL

@@ -1,6 +1,6 @@
 ---
 description: This section describes the differences between Apache Kafka and Memphis
-cover: ../../.gitbook/assets/Kafka vs Memphis.dev.jpeg
+cover: /assets/Kafka vs Memphis.dev.jpeg
 coverY: 0
 ---
 
@@ -84,7 +84,7 @@ One of Memphis' core features is to remove frictions of management and autonomou
 
 Memphis has a built-in notification center that can push real-time alerts based on defined triggers like client disconnections, resource depletion, schema violation, and more.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-22 at 14.26.36.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-22 at 14.26.36.png" alt=""><figcaption></figcaption></figure>
 
 Apache Kafka does not offer an embedded solution for notifications. Can be achieved via commercial offerings.
 
@@ -96,7 +96,7 @@ Apache Kafka does not provide a native ability for stream lineage, but it can be
 
 Memphis provides stream lineage per message with out-of-the-box visualization for each stamped message using a generated header by the Memphis SDK.
 
-<figure><img src="../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Availability and Messaging
 
@@ -125,7 +125,7 @@ Apache Kafka does not natively support multi-tenancy. It can be achieved via com
 
 As Memphis pushes to enable the next generation of applications and especially SaaS-type architectures, Memphis supports multi-tenancy across all the layers from stations (=topics) to security, consumers, and producers, all the way to node selection for complete hardware isolation in case of need. It is enabled using namespaces and can be managed in a unified console.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-22 at 14.10.43.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-22 at 14.10.43.png" alt=""><figcaption></figcaption></figure>
 
 ### Storage tiering
 
@@ -174,7 +174,7 @@ Multiple open-source GUIs have been developed for Kafka over the years, for exam
 
 Memphis provides a native state-of-the-art GUI, hosted inside the broker, built to act as a management layer of all Memphis aspects, including cluster config, resources, data observability, notifications, processing, and more.
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Dead-letter Queue
 
@@ -192,7 +192,7 @@ Confluent offers "Schema Registry" which is a standalone component and provides 
 
 As part of its open-source version, Memphis presents Schemaverse, which is also embedded within the broker. Schemaverse provides a robust schema store and schema management layer on top of memphis broker without a standalone compute or dedicated resources. With a unique and modern UI and programmatic approach, technical and non-technical users can create and define different schemas, attach the schema to multiple stations and choose if the schema should be enforced or not. In counter to Schema Registry, the client does not need to implement serialization functions, and every schema update takes place during producers' runtime.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-12-24 at 22.32.36.png" alt=""><figcaption><p>Schemaverse</p></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-12-24 at 22.32.36.png" alt=""><figcaption><p>Schemaverse</p></figcaption></figure>
 
 ### Message routing
 
