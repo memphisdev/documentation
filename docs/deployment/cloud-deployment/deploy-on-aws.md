@@ -22,7 +22,7 @@ Terraform codifies cloud APIs into declarative configuration files.
 
 IAM Policy to use -
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```json
 {
     "Version": "2012-10-17",
@@ -42,7 +42,7 @@ IAM Policy to use -
     ]
 }
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 How to configure AWS CLI -
 
@@ -85,9 +85,9 @@ cd memphis-terraform/AWS/EKS
 make infra
 ```
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 Instead of running three terraform commands
-{% endhint %}
+<!-- {% endhint %} -->
 
 ### Step 2: Deploy Memphis
 
@@ -115,9 +115,9 @@ Destroy Memphis App -&#x20;
 make destroymemphis
 ```
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 **It might take a few minutes for the ELB to be deleted.**
-{% endhint %}
+<!-- {% endhint %} -->
 
 Destroy Memphis EKS Cluster -&#x20;
 

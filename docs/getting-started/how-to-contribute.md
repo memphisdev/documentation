@@ -6,9 +6,9 @@ Memphis is and always will be open-source and community-driven. Our community is
 
 ## Why should you become a contributor?
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 "Working on Memphis helped me earn many of the skills I later used for my studies in university and my actual job. I think working on open source projects helps me as much as it helps the project!"
-{% endhint %}
+<!-- {% endhint %} -->
 
 Contributing to open source can be a rewarding way to learn, teach, and build experience in just about any skill you can imagine.
 

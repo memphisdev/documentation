@@ -34,9 +34,9 @@ await producer.produce({
 
 <figure><img src="../../.gitbook/assets/produce 1.jpeg" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
-{% endhint %}
+<!-- {% endhint %} -->
 
 ### Parameters
 
@@ -63,9 +63,9 @@ await producer.produce({
 * `stationName`: The name of the station to be connected&#x20;
 * `producerName`: In a station resolution, each connected producer must have a unique identity
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 For more information about how to connect a producer to Memphis, please head [here](broken-reference)
-{% endhint %}
+<!-- {% endhint %} -->
 
 ## Scale considerations
 

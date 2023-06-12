@@ -55,9 +55,9 @@ Memphis has two types of credentials:
 * **Management**.\
   A dedicated user can be created for management purposes only, and to allow control over the UI and CLI, not data.
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 **Production environments** should not use the default user and create new user accounts with generated credentials instead.
-{% endhint %}
+<!-- {% endhint %} -->
 
 ## Adding a new user
 

@@ -7,8 +7,8 @@ coverY: 0
 
 Create your first station, producer, and consumer in your preferred language as shown in the tabs below:
 
-{% tabs %}
-{% tab title="Node.js" %}
+<!-- {% tabs %}
+{% tab title="Node.js" %} -->
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the Node.js project
@@ -32,7 +32,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .js file called `producer.js`
 
-{% code title="producer.js" lineNumbers="true" %}
+<!-- {% code title="producer.js" lineNumbers="true" %} -->
 
 ```javascript
 const { memphis } = require("memphis-dev");
@@ -67,7 +67,7 @@ const { memphis } = require("memphis-dev");
 })();
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 5:** Run `producer.js`
 
@@ -77,7 +77,7 @@ node producer.js
 
 **Step 6:** Create a new .js file called `consumer.js`
 
-{% code title="consumer.js" lineNumbers="true" %}
+<!-- {% code title="consumer.js" lineNumbers="true" %} -->
 
 ```javascript
 const { memphis } = require("memphis-dev");
@@ -113,7 +113,7 @@ const { memphis } = require("memphis-dev");
 })();
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 7:** Run `consumer.js`
 
@@ -121,9 +121,9 @@ const { memphis } = require("memphis-dev");
 node consumer.js
 ```
 
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="TypeScript" %}
+<!-- {% tab title="TypeScript" %} -->
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the TypeScript project
@@ -147,7 +147,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.ts`
 
-{% code title="producer.ts" lineNumbers="true" %}
+<!-- {% code title="producer.ts" lineNumbers="true" %} -->
 
 ```typescript
 import { memphis, Memphis } from "memphis-dev";
@@ -182,7 +182,7 @@ import { memphis, Memphis } from "memphis-dev";
 })();
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 5:** Run `producer.ts`
 
@@ -192,7 +192,7 @@ node producer.ts
 
 **Step 6:** Create a new .ts file called `consumer.ts`
 
-{% code title="consumer.ts" lineNumbers="true" %}
+<!-- {% code title="consumer.ts" lineNumbers="true" %} -->
 
 ```typescript
 import { memphis, Memphis } from "memphis-dev";
@@ -230,7 +230,7 @@ import { memphis, Memphis } from "memphis-dev";
 })();
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 7:** Run `consumer.ts`
 
@@ -238,9 +238,9 @@ import { memphis, Memphis } from "memphis-dev";
 node consumer.ts
 ```
 
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="NestJS" %}
+<!-- {% tab title="NestJS" %} -->
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the NestJS project
@@ -264,7 +264,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.module.ts`
 
-{% code title="producer.module.ts" lineNumbers="true" %}
+<!-- {% code title="producer.module.ts" lineNumbers="true" %} -->
 
 ```typescript
 import { Module } from "@nestjs/common";
@@ -310,11 +310,11 @@ export class ProducerModule {
 }
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 5:** Create a new .ts file called `consumer.controller.ts`
 
-{% code title="consumer.controller.ts" lineNumbers="true" %}
+<!-- {% code title="consumer.controller.ts" lineNumbers="true" %} -->
 
 ```typescript
 import { Module } from '@nestjs/common';
@@ -334,10 +334,10 @@ export class ExampleController {
 }
 ```
 
-{% endcode %}
-{% endtab %}
+<!-- {% endcode %}
+{% endtab %} -->
 
-{% tab title="Go" %}
+<!-- {% tab title="Go" %} -->
 **Step 1:** Create an empty dir for the Go project
 
 ```bash
@@ -359,7 +359,7 @@ go get github.com/memphisdev/memphis.go
 
 **Step 4:** Create a new Go file called `producer.go`
 
-{% code title="producer.go" lineNumbers="true" %}
+<!-- {% code title="producer.go" lineNumbers="true" %} -->
 
 ```go
 package main
@@ -397,7 +397,7 @@ func main() {
 }
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 4:** Run `producer.go`
 
@@ -407,7 +407,7 @@ go run producer.go
 
 **Step 5:** Create a new Go file called `consumer.go`
 
-{% code title="consumer.go" lineNumbers="true" %}
+<!-- {% code title="consumer.go" lineNumbers="true" %} -->
 
 ```go
 package main
@@ -463,7 +463,7 @@ func main() {
 }
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 6:** Run `consumer.go`
 
@@ -471,9 +471,9 @@ func main() {
 go run consumer.go
 ```
 
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="Python" %}
+<!-- {% tab title="Python" %} -->
 **Step 1:** Create an empty dir for the Python project
 
 ```bash
@@ -489,7 +489,7 @@ pip3 install --upgrade memphis-py
 
 **Step 3:** Create a new Python file called `producer.py`
 
-{% code title="producer.py" lineNumbers="true" %}
+<!-- {% code title="producer.py" lineNumbers="true" %} -->
 
 ```python
 from memphis import Memphis, Headers
@@ -516,7 +516,7 @@ if __name__ == '__main__':
     asyncio.run(main())
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 4:** Run `producer.py`
 
@@ -526,7 +526,7 @@ python3 producer.py
 
 **Step 5:** Create a new Python file called `consumer.py`
 
-{% code title="consumer.py" lineNumbers="true" %}
+<!-- {% code title="consumer.py" lineNumbers="true" %} -->
 
 ```python
 from memphis import Memphis, Headers
@@ -565,7 +565,7 @@ if __name__ == '__main__':
     asyncio.run(main())
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 6:** Run `consumer.py`
 
@@ -573,9 +573,9 @@ if __name__ == '__main__':
 python3 consumer.py
 ```
 
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="REST" %}
+<!-- {% tab title="REST" %} -->
 Producing messages to Memphis via REST API can be implemented using any REST-supported language like Go, Python, Java, Node.js, .NET, etc...
 
 For the following tutorial, we will use Node.js .
@@ -595,7 +595,7 @@ npm init -y
 
 **Step 3:** Generate a new JWT token `generate.js`
 
-{% code title="generate.js" lineNumbers="true" %}
+<!-- {% code title="generate.js" lineNumbers="true" %} -->
 
 ```javascript
 var axios = require("axios");
@@ -624,7 +624,7 @@ axios(config)
   });
 ```
 
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Step 4:** Run `generate.js` and copy the returned JWT
 
@@ -660,5 +660,5 @@ axios(config)
 ```
 
 **Consume** messages via REST will soon be released.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->

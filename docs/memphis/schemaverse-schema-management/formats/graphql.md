@@ -7,48 +7,48 @@
 ### Attach a schema
 
 #### Step 1: Create a new schema
-
+<!-- 
 {% tabs %}
-{% tab title="GUI" %}
+{% tab title="GUI" %} -->
 Head to the "Schemaverse" page
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
 
 Create a new schema by clicking on "Create from blank"
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>    
+ <!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %}  -->
 Soon.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 #### Step 2: Attach
 
-{% tabs %}
-{% tab title="GUI" %}
+<!-- {% tabs %}
+{% tab title="GUI" %} -->
 Head to your station, and on the top-left corner, click on "+ Attach schema"
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %} -->
 It can be found through the different [SDKs](broken-reference) docs.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 ### Produce a message (Serialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+<!-- {% tabs %}
+{% tab title="Node.js" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```graphql
 type Query {
             greeting:String
@@ -61,7 +61,7 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Code (Uint8Arrays):**
 
@@ -156,14 +156,14 @@ const memphis = require("memphis-dev");
     }
 })();
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```graphql
 type Query {
             greeting:String
@@ -176,7 +176,7 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Code (string):**
 
@@ -255,14 +255,14 @@ func main() {
 }
 
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```graphql
 type Query {
             greeting:String
@@ -275,7 +275,7 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Code (bytearray):**
 
@@ -374,14 +374,14 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="TypeScript" %}
+{% tab title="TypeScript" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```graphql
 type Query {
             greeting:String
@@ -394,7 +394,7 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Code (Uint8Arrays):**
 
@@ -506,18 +506,18 @@ import {parse} from 'graphql'
     }
 })();
 ```
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 ### Consume a message (Deserialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+<!-- {% tabs %}
+{% tab title="Node.js" %} -->
 In coming versions, Memphis will abstract the need for external deserialization functions and embeds them within the SDK.
 
 **Example received schema:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```graphql
 type Query {
             greeting:String
@@ -530,7 +530,7 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Code:**
 
@@ -569,9 +569,9 @@ const graphql = require('graphql');
     }
 })();
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go" %} -->
 ```go
 package main
 
@@ -619,9 +619,9 @@ func main() {
     time.Sleep(30 * time.Second)
 }
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python" %} -->
 ```python
 import asyncio
 from memphis import Memphis, MemphisError, MemphisConnectError, MemphisHeaderError
@@ -662,9 +662,9 @@ async def main():
 if __name__ == '__main__':
   asyncio.run(main())
 ```
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="TypeScript" %}
+<!-- {% tab title="TypeScript" %} -->
 ```typescript
 import memphis from 'memphis-dev';
 import {Memphis, Message} from 'memphis-dev/types';
@@ -707,5 +707,5 @@ import {parse} from 'graphql'
     }
 })();
 ```
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->

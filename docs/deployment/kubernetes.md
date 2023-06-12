@@ -4,11 +4,11 @@ description: Deploy Memphis over Kubernetes using helm
 
 # Kubernetes
 
-{% embed url="https://youtu.be/OmUJXqvFK4M" %}
+<!-- {% embed url="https://youtu.be/OmUJXqvFK4M" %} -->
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 If you prefer using **Terraform**, head [here](cloud-deployment/)
-{% endhint %}
+<!-- {% endhint %} -->
 
 Helm is a k8s package manager that allows users to deploy apps in a single, configurable command.
 
@@ -18,8 +18,8 @@ Memphis is cloud-native and agnostic to any Kubernetes on **any cloud**.
 
 ### Requirements
 
-{% tabs %}
-{% tab title="Kubernetes" %}
+<!-- {% tabs %} -->
+<!-- {% tab title="Kubernetes" %} -->
 **Minimum Requirements (No HA)**
 
 <table><thead><tr><th>Resource</th><th>Quantity</th><th data-hidden></th></tr></thead><tbody><tr><td>K8S Nodes</td><td>1</td><td></td></tr><tr><td>CPU</td><td>2 CPU</td><td></td></tr><tr><td>Memory</td><td>4GB RAM</td><td></td></tr><tr><td>Storage</td><td>12GB PVC</td><td></td></tr></tbody></table>
@@ -36,7 +36,7 @@ Memphis is cloud-native and agnostic to any Kubernetes on **any cloud**.
 | Storage   | 12GB PVC Per node |
 {% endtab %}
 
-{% tab title="Docker" %}
+<!-- {% tab title="Docker" %} -->
 **Requirements (No HA)**
 
 | Resource | Quantity              |
@@ -152,8 +152,8 @@ helm get notes memphis -n memphis
 
 ### Step 2: Access via UI / CLI / SDK
 
-{% tabs %}
-{% tab title="UI" %}
+<!-- {% tabs %} -->
+<!-- {% tab title="UI" %} -->
 Expose the UI in a **localhost** environment using "port-forward":
 
 ```
@@ -169,9 +169,9 @@ UI/CLI root Password - kubectl get secret memphis-creds -n memphis -o jsonpath="
 
 [http://localhost:9000](http://localhost:9000)
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 If a simpler localhost connection is needed for more services, use [Kubefwd](https://kubefwd.com/).
-{% endhint %}
+<!-- {% endhint %} -->
 
 Expose the UI in a **production** environment:
 
@@ -185,12 +185,12 @@ As WebSockets requires secure communication, it is required to configure SSL cer
 
 1. Install [mkcert](https://github.com/FiloSottile/mkcert) and generate a certificate
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```
 mkcert -install
 mkcert -cert-file memphis.pem -key-file memphis-key.pem "*.memphis.dev"
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 2\. Create a secret with the new cert and private key
 
@@ -235,12 +235,12 @@ Volumes:
 
 7\. Restart Memphis
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```
 kubectl patch sts memphis-broker  -p '{"spec":{"replicas":0}}' -n  memphis
 kubectl patch sts memphis-broker  -p '{"spec":{"replicas":3}}' -n  memphis
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 8\. Create the LB
 
@@ -250,14 +250,14 @@ kubectl -n memphis patch svc external-service -p '{"spec":{"ports": [{"port": 44
 ```
 
 9\. Add the certificate to the LB as well
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="CLI" %}
+<!-- {% tab title="CLI" %} -->
 **For the entire CLI reference and how to install it, please head to the following page:**
 
-{% content-ref url="broken-reference/" %}
+<!-- {% content-ref url="broken-reference/" %} -->
 [broken-reference](broken-reference/)
-{% endcontent-ref %}
+<!-- {% endcontent-ref %} -->
 
 The CLI client connects to Memphis via the UI.
 
@@ -285,14 +285,14 @@ Options:
 $# mem connect -u root -p memphis -s http://localhost:9000
 Connected successfully to Memphis control plane.
 ```
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %} -->
 For more detailed information, please head to the SDKs section below.
 
-{% content-ref url="broken-reference/" %}
+<!-- {% content-ref url="broken-reference/" %} -->
 [broken-reference](broken-reference/)
-{% endcontent-ref %}
+<!-- {% endcontent-ref %} -->
 
 
 
@@ -318,9 +318,9 @@ await memphis.connect({
 ```
 kubectl get secret memphis-creds -n <namespace> -o jsonpath="{.data.CONNECTION_TOKEN}" | base64 --decode
 ```
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %} -->
+<!-- {% endtabs %} -->
 
-{% content-ref url="../getting-started/2-hello-world.md" %}
+<!-- {% content-ref url="../getting-started/2-hello-world.md" %} -->
 [2-hello-world.md](../getting-started/2-hello-world.md)
-{% endcontent-ref %}
+<!-- {% endcontent-ref %} -->

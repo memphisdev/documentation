@@ -25,9 +25,9 @@ export ROOT_PASSWORD=$(kubectl get secret --namespace "memphis" memphis-creds -o
 helm uninstall memphis -n memphis
 ```
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 **Data will not be lost!** PVCs are not removed and will be re-attached to the new installation
-{% endhint %}
+<!-- {% endhint %} -->
 
 ### Step 3: Upgrade Memphis helm repo
 
@@ -86,9 +86,9 @@ export ADMIN_PASSWORD=$(kubectl get secret --namespace "memphis" memphis-metadat
 helm uninstall memphis --namespace memphis
 ```
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 **Data will not be lost!** PVCs are not removed and will be re-attached to the new installation
-{% endhint %}
+<!-- {% endhint %} -->
 
 ### Step 3: Upgrade Memphis helm repo
 

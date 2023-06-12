@@ -4,9 +4,9 @@ description: Deploy Memphis over Kubernetes
 
 # 1 - Installation
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 If you prefer using **Terraform**, head [here](../cloud-deployment/)
-{% endhint %}
+<!-- {% endhint %} -->
 
 Helm is a k8s package manager that allows users to deploy apps in a single, configurable command. More information about Helm can be found [here](https://helm.sh/docs/topics/charts/).
 
@@ -38,19 +38,19 @@ Production-ready Memphis deployment with initial three memphis brokers configure
 
 **Stable release**
 
-{% code overflow="wrap" %}
+<!-- {% code overflow="wrap" %} -->
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install memphis memphis/memphis --set global.cluster.enabled="true" --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Latest release**
 
-{% code overflow="wrap" %}
+<!-- {% code overflow="wrap" %} -->
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install --set memphis.image="memphisos/memphis:latest",global.cluster.enabled="true" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 </details>
 
@@ -62,19 +62,19 @@ Minimal deployment of Memphis with a single broker
 
 **Stable release**
 
-{% code overflow="wrap" %}
+<!-- {% code overflow="wrap" %} -->
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 **Latest release**
 
-{% code overflow="wrap" %}
+<!-- {% code overflow="wrap" %} -->
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install --set memphis.image="memphisos/memphis:latest" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 </details>
 
@@ -132,16 +132,16 @@ kubectl create namespace memphis
 
 b) Create a k8s secret with the required certs
 
-{% code overflow="wrap" lineNumbers="true" %}
+<!-- {% code overflow="wrap" lineNumbers="true" %} -->
 ```bash
 kubectl create secret generic memphis-client-tls-secret \
 --from-file=memphis_client.pem \
 --from-file=memphis-key_client.pem \
 --from-file=rootCA.pem -n memphis
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
-{% code title="memphis-client-tls-secret" lineNumbers="true" %}
+<!-- {% code title="memphis-client-tls-secret" lineNumbers="true" %} -->
 ```yaml
 tls:
   secret:
@@ -150,11 +150,11 @@ tls:
   cert: "memphis_client.pem"
   key: "memphis-key_client.pem"
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 ### 2. Deploy Memphis with the generated certificate
 
-{% code overflow="wrap" lineNumbers="true" %}
+<!-- {% code overflow="wrap" lineNumbers="true" %} -->
 ```bash
 helm install memphis memphis \
 --create-namespace --namespace memphis --wait \
@@ -166,7 +166,7 @@ memphis.tls.key="memphis-key_client.pem",\
 memphis.tls.secret.name="memphis-client-tls-secret",\
 memphis.tls.ca="rootCA.pem"
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 ## Upgrade existing deployment
 

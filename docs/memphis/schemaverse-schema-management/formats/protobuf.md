@@ -22,8 +22,8 @@
 
 #### Step 1: Create a new schema
 
-{% tabs %}
-{% tab title="GUI" %}
+<!-- {% tabs %}
+{% tab title="GUI" %} -->
 Head to the "Schemaverse" page
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
@@ -31,33 +31,33 @@ Head to the "Schemaverse" page
 Create a new schema by clicking on "Create from blank"
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %} -->
 Soon.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 #### Step 2: Attach
 
-{% tabs %}
-{% tab title="GUI" %}
+<!-- {% tabs %}
+{% tab title="GUI" %} -->
 Head to your station, and on the top-left corner, click on "+ Attach schema"
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %} -->
 It can be found through the different [SDKs](broken-reference) docs.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 ### Produce a message (Serialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+<!-- {% tabs %}
+{% tab title="Node.js" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 In node.js, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
@@ -75,7 +75,7 @@ message Test {
 
 **Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```javascript
 const memphis = require("memphis-dev");
 
@@ -108,10 +108,10 @@ const memphis = require("memphis-dev");
     }
 })();
 ```
-{% endcode %}
-{% endtab %}
+<!-- {% endcode %}
+{% endtab %} -->
 
-{% tab title="Go" %}
+<!-- {% tab title="Go" %} -->
 Memphis abstracts the need for external serialization functions and embeds it within the SDK.
 
 **Example schema:**
@@ -211,9 +211,9 @@ func main() {
 }
         
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -262,9 +262,9 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="TypeScript" %}
+{% tab title="TypeScript" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -317,9 +317,9 @@ import type { Memphis } from 'memphis-dev/types';
     }
 })();
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="HTTP (REST)" %}
+{% tab title="HTTP (REST)" %} --> 
 In HTTP, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
 
 **Example schema:**
@@ -335,7 +335,7 @@ message Test {
 
 **Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```javascript
 var axios = require('axios');
 var data = JSON.stringify({
@@ -362,15 +362,15 @@ axios(config)
   console.log(error);
 });
 ```
-{% endcode %}
+<!-- {% endcode %}
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
 
 ### Consume a message (Deserialization)
 
-{% tabs %}
+<!-- {% tabs %}
 {% tab title="Node.js" %}
-{% code lineNumbers="true" %}
+{% code lineNumbers="true" %} -->
 ```javascript
 const memphis = require("memphis-dev");
 var protobuf = require("protobufjs");
@@ -410,10 +410,10 @@ var protobuf = require("protobufjs");
     }
 })();
 ```
-{% endcode %}
+<!-- {% endcode %}
 {% endtab %}
 
-{% tab title="Go" %}
+{% tab title="Go" %} -->
 ```go
 package main
 
@@ -468,9 +468,9 @@ func main() {
 	time.Sleep(3000 * time.Second)
 }
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python" %} -->
 ```python
 import asyncio
 from memphis import Memphis
@@ -504,9 +504,9 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="TypeScript" %}
+{% tab title="TypeScript" %} -->
 ```typescript
 import memphis from 'memphis-dev';
 import type { Memphis } from 'memphis-dev/types';
@@ -548,5 +548,5 @@ var protobuf = require("protobufjs");
     }
 })();type
 ```
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->

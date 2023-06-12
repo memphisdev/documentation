@@ -29,12 +29,12 @@ Head to [http://localhost:9000](http://localhost:9000)
 
 1. Install [mkcert](https://github.com/FiloSottile/mkcert) and generate a certificate
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```
 mkcert -install
 mkcert -cert-file memphis.pem -key-file memphis-key.pem "*.memphis.dev"
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 2\. Create a secret with the new cert and private key
 
@@ -52,12 +52,12 @@ helm install my-memphis memphis --set analytics="false",global.cluster.enabled="
 
 1. Run the following
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```
 kubectl expose service memphis-cluster --port=9000,7770  --name=external-service --type=LoadBalancer -n memphis
 kubectl expose service memphis-http-proxy --port=4444  --name=http-external-service --type=LoadBalancer -n memphis
 kubectl -n memphis-sandbox patch svc external-service -p '{"spec":{"ports": [{"port": 443,"name":"https","targetPort": 9000}]}}'
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 2\. Add the certificate to the LB as well

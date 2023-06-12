@@ -94,7 +94,7 @@ kubectl apply -f memphis_eventsource.yaml
 
 ### Step 4: Create sensor resource YAML file
 
-{% code title="memphis_sensor.yaml" lineNumbers="true" %}
+<!-- {% code title="memphis_sensor.yaml" lineNumbers="true" %} -->
 ```yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
@@ -138,7 +138,7 @@ spec:
                 dependencyName: test-dep
               dest: spec.arguments.parameters.0.value
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 ### Step 5: Create sensor resource
 

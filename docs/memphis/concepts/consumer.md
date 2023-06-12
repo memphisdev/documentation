@@ -41,9 +41,9 @@ consumer.on('message', (message) => {
 
 <figure><img src="../../.gitbook/assets/consume 1.jpeg" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
-{% endhint %}
+<!-- {% endhint %} -->
 
 ### Parameters
 
@@ -77,11 +77,11 @@ consumer.on('message', (message) => {
 * `keyFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<key-client.pem>'.
 * `prefetch = true`: will prefetch the next batch of messages and store it in memory for future Fetch() requests.
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 For more information about how to create and connect a consumer to Memphis,&#x20;
 
 please head [here](broken-reference)
-{% endhint %}
+<!-- {% endhint %} -->
 
 ### Sequence (Offsets)
 

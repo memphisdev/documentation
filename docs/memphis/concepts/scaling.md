@@ -38,9 +38,9 @@ As long as it is implemented correctly, using Kubernetes for the production-leve
 
 ### Scaling out / Horizontal Scaling
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 Relevant for Memphis [cluster-mode](https://docs.memphis.dev/memphis/deployment/kubernetes#step-1-installation)
-{% endhint %}
+<!-- {% endhint %} -->
 
 Scale-out is a concept that exists in distributed applications only.
 

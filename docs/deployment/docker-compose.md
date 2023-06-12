@@ -20,19 +20,19 @@ description: Deploy Memphis over Docker using Docker compose
 
 Stable -&#x20;
 
-{% code overflow="wrap" %}
+<!-- {% code overflow="wrap" %} -->
 ```bash
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && docker compose -f docker-compose.yml -p memphis up
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 Latest -
 
-{% code overflow="wrap" %}
+<!-- {% code overflow="wrap" %} -->
 ```bash
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
 ```
-{% endcode %}
+<!-- {% endcode %} -->
 
 Output:
 
@@ -51,8 +51,8 @@ Output:
 
 ### Step 2: Access via UI / CLI / SDK
 
-{% tabs %}
-{% tab title="UI" %}
+<!-- {% tabs %} -->
+<!-- {% tab title="UI" %} -->
 The default port of the UI is 9000:
 
 ```
@@ -62,14 +62,14 @@ http://localhost:9000
 **Default Username:** root
 
 **Default Password**: memphis
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %} -->
 For more detailed information, head to the SDKs section below.
 
-{% content-ref url="broken-reference" %}
+<!-- {% content-ref url="broken-reference" %} -->
 [Broken link](broken-reference)
-{% endcontent-ref %}
+<!-- {% endcontent-ref %} -->
 
 ####
 
@@ -87,8 +87,8 @@ await memphis.connect({
 * **host:** Usually the control plane or through the UI URL. For example "https://memphis-ui.test.com/api".
 * **username:** Usually "root". Head to the users' section via the UI or CLI to add more.
 * **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <mark style="color:green;">**The default value is "memphis".**</mark>
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %} -->
+<!-- {% endtabs %} -->
 
 ## How to upgrade?
 

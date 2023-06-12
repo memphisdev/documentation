@@ -17,8 +17,8 @@ It provides clear human- and machine-readable documentation and offers data vali
 
 #### Step 1: Create a new schema
 
-{% tabs %}
-{% tab title="GUI" %}
+<!-- {% tabs %}
+{% tab title="GUI" %} -->
 Head to the "Schemaverse" page
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
@@ -26,33 +26,33 @@ Head to the "Schemaverse" page
 Create a new schema by clicking on "Create from blank"
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2023-01-08 at 23.21.55.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %} -->
 Soon.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 #### Step 2: Attach
 
-{% tabs %}
-{% tab title="GUI" %}
+<!-- {% tabs %}
+{% tab title="GUI" %} -->
 Head to your station, and on the top-left corner, click on "+ Attach schema"
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<!-- {% endtab %} -->
 
-{% tab title="SDK" %}
+<!-- {% tab title="SDK" %}  -->
 It can be found through the different [SDKs](broken-reference) docs.
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->
 
 ### Produce a message (Serialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+<!-- {% tabs %}
+{% tab title="Node.js" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 In node.js, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
@@ -77,7 +77,7 @@ In node.js, we can simply produce an object. Behind the scenes, the object will 
 
 **Code:**
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
 ```javascript
 const memphis = require("memphis-dev");
 
@@ -109,10 +109,10 @@ const memphis = require("memphis-dev");
     }
 })();
 ```
-{% endcode %}
-{% endtab %}
+<!-- {% endcode %}
+{% endtab %} -->
 
-{% tab title="Go" %}
+<!-- {% tab title="Go" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -173,9 +173,9 @@ func main() {
 }
 
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="Python" %}
+{% tab title="Python" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -228,9 +228,9 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
+<!-- {% endtab %}
 
-{% tab title="TypeScript" %}
+{% tab title="TypeScript" %} -->
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -289,5 +289,5 @@ import type { Memphis } from 'memphis-dev/types';
     }
 })();
 ```
-{% endtab %}
-{% endtabs %}
+<!-- {% endtab %}
+{% endtabs %} -->

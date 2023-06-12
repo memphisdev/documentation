@@ -10,9 +10,9 @@ coverY: 0
 
 As Datadog is one of the popular tools for centralized monitoring, Memphis provides a Prometheus exporter to enable Datadog users to monitor Memphis in K8S deployment only.
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
 Please make sure you have the [Datadog K8S agent](https://docs.datadoghq.com/containers/kubernetes/installation/?tab=operator) installed.
-{% endhint %}
+<!-- {% endhint %} -->
 
 ## Getting started
 
@@ -113,4 +113,4 @@ A Datadog [tutorial](https://docs.datadoghq.com/dashboards/#copy-import-or-expor
 
 Memphis dashboard .json file to download -
 
-{% embed url="https://raw.githubusercontent.com/memphisdev/gitbook-backup/master/dashboard-gui/integrations/monitoring/MemphisDashboard.json" %}
+<!-- {% embed url="https://raw.githubusercontent.com/memphisdev/gitbook-backup/master/dashboard-gui/integrations/monitoring/MemphisDashboard.json" %} -->
