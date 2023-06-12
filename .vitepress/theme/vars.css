@@ -1,0 +1,20 @@
+:root {
+  --vp-c-brand: #6557FF ;
+  --vp-c-brand-light: #6557FF ;
+  --vp-c-brand-dark: #61DFC6  ;
+  --vp-c-alt: #FFC633;
+  --vp-c-alt-light: #FFC633;
+  --vp-c-muted: #FFC633;
+}
+
+div[class="item"] > h2{
+    color: var(--vp-c-brand) !important;
+}
+
+.is-active > div > a > .text{
+  color: var(--vp-c-alt) !important;
+}
+
+.level-1 :hover{
+ color: var(--vp-c-brand-dark) !important;
+}
