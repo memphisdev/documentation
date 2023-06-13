@@ -13,6 +13,8 @@ export default defineConfig({
       { text: 'Docs', link: '/getting-started/1-installation' }
     ],
 
+    icon: '/assets/memphis-logo.png',
+
     sidebar: [
       {
         text: 'Getting Started',
