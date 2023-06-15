@@ -32,7 +32,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .js file called `producer.js`
 
-```javascript:line-numbers {1}
+```javascript:line-numbers 
 const { memphis } = require("memphis-dev");
 
 (async function () {
@@ -73,7 +73,7 @@ node producer.js
 
 **Step 6:** Create a new .js file called `consumer.js`
 
-```javascript:line-numbers {1}
+```javascript:line-numbers 
 const { memphis } = require("memphis-dev");
 
 (async function () {
@@ -136,7 +136,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.ts`
 
-```typescript:line-numbers {1}
+```typescript:line-numbers 
 import { memphis, Memphis } from "memphis-dev";
 
 (async function () {
@@ -177,7 +177,7 @@ node producer.ts
 
 **Step 6:** Create a new .ts file called `consumer.ts`
 
-```typescript:line-numbers {1}
+```typescript:line-numbers 
 import { memphis, Memphis } from "memphis-dev";
 
 (async function () {
@@ -243,7 +243,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.module.ts`
 
-```typescript:line-numbers {1}
+```typescript:line-numbers 
 import { Module } from "@nestjs/common";
 import { Memphis, MemphisModule, MemphisService } from "memphis-dev";
 
@@ -289,7 +289,7 @@ export class ProducerModule {
 
 **Step 5:** Create a new .ts file called `consumer.controller.ts`
 
-```typescript:line-numbers {1}
+```typescript:line-numbers 
 import { Module } from '@nestjs/common';
 import { Memphis, MemphisModule, MemphisService, MemphisConsume, Message } from 'memphis-dev';
 
@@ -329,7 +329,7 @@ go get github.com/memphisdev/memphis.go
 
 **Step 4:** Create a new Go file called `producer.go`
 
-```go:line-numbers {1}
+```go:line-numbers 
 package main
 
 import (
@@ -373,7 +373,7 @@ go run producer.go
 
 **Step 5:** Create a new Go file called `consumer.go`
 
-```go:line-numbers {1}
+```go:line-numbers 
 package main
 
 import (
@@ -449,7 +449,7 @@ pip3 install --upgrade memphis-py
 
 **Step 3:** Create a new Python file called `producer.py`
 
-```python:line-numbers {1}
+```python:line-numbers 
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
 
@@ -482,7 +482,7 @@ python3 producer.py
 
 **Step 5:** Create a new Python file called `consumer.py`
 
-```python:line-numbers {1}
+```python:line-numbers 
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
 
@@ -544,7 +544,7 @@ npm init -y
 
 **Step 3:** Generate a new JWT token `generate.js`
 
-```javascript:line-numbers {1}
+```javascript:line-numbers 
 var axios = require("axios");
 var data = JSON.stringify({
   username: "APPLICATION_TYPE_USERNAME",

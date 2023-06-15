@@ -119,6 +119,3 @@ kubectl get svc
 
 <figure><img src="/assets/Screen Shot 2022-09-04 at 23.40.09.png" alt=""><figcaption></figcaption></figure>
 
-<!-- {% content-ref url="broken-reference" %} -->
-[Broken link](broken-reference)
-<!-- {% endcontent-ref %} -->

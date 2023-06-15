@@ -11,8 +11,8 @@
   --vp-c-alt-light: #FFC633;
   --vp-c-muted: #FFC633;
 
-  --vp-custom-block-tip-border: var(--vp-c-alt);
-  --vp-custom-block-tip-text: var(--vp-c-alt);
+  --vp-custom-block-tip-border: var(--vp-c-brand-dark);
+  --vp-custom-block-tip-text: var(--vp-c-brand-dark);
   --vp-custom-block-tip-bg: var(--vp-c-bg-soft-up);
   --vp-custom-block-tip-code-bg: var(--vp-c-bg-soft);
 

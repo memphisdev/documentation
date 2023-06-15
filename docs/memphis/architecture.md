@@ -69,8 +69,8 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 
 ## Requirements
 
-<!-- {% tabs %} -->
-<!-- {% tab title="Kubernetes" %} -->
+::: tabs
+=== Kubernetes
 **Minimum Requirements (Without high availability)**
 
 <table><thead><tr><th>Resource</th><th>Quantity</th><th data-hidden></th></tr></thead><tbody><tr><td>K8S Nodes</td><td>1</td><td></td></tr><tr><td>CPU</td><td>2 CPU</td><td></td></tr><tr><td>Memory</td><td>4GB RAM</td><td></td></tr><tr><td>Storage</td><td>12GB PVC</td><td></td></tr></tbody></table>
@@ -83,9 +83,8 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 | CPU       | 4 CPU             |
 | Memory    | 8GB RAM           |
 | Storage   | 12GB PVC Per node |
-<!-- {% endtab %} -->
 
-<!-- {% tab title="Docker" %} -->
+=== Docker
 **Requirements (No HA)**
 
 | Resource | Quantity              |
@@ -94,8 +93,7 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 | CPU      | 1 CPU                 |
 | Memory   | 4GB                   |
 | Storage  | 6GB                   |
-<!-- {% endtab %}
-{% endtabs %} -->
+:::
 
 ## Delivery Guarantee
 

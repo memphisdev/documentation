@@ -25,9 +25,9 @@ export ROOT_PASSWORD=$(kubectl get secret --namespace "memphis" memphis-creds -o
 helm uninstall memphis -n memphis
 ```
 
-<!-- {% hint style="warning" %} -->
+::: warning
 **Data will not be lost!** PVCs are not removed and will be re-attached to the new installation
-<!-- {% endhint %} -->
+:::
 
 ### Step 3: Upgrade Memphis helm repo
 
@@ -85,10 +85,9 @@ export ADMIN_PASSWORD=$(kubectl get secret --namespace "memphis" memphis-metadat
 ```
 helm uninstall memphis --namespace memphis
 ```
-
-<!-- {% hint style="warning" %} -->
+::: warning
 **Data will not be lost!** PVCs are not removed and will be re-attached to the new installation
-<!-- {% endhint %} -->
+:::
 
 ### Step 3: Upgrade Memphis helm repo
 
@@ -98,9 +97,9 @@ helm repo update
 
 ### Step 4: Reinstall Memphis
 
-<details>
 
-<summary>Production</summary>
+
+::: details Production
 
 Production-grade Memphis with a minimum of three memphis brokers configured in cluster-mode. Add user-supplied values if necessary.
 
@@ -108,12 +107,9 @@ Production-grade Memphis with a minimum of three memphis brokers configured in c
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && 
 helm install memphis --set global.cluster.enabled="true",metadata.postgresql.password=$PASSWORD,metadata.postgresql.repmgrPassword=$REPMGR_PASSWORD,metadata.pgpool.adminPassword=$ADMIN_PASSWORD,connectionToken=$CT,rootPwd=$ROOT_PASSWORD  memphis/memphis --create-namespace --namespace memphis --wait
 ```
+:::
 
-</details>
-
-<details>
-
-<summary>Dev</summary>
+::: details Dev
 
 Standalone installation of Memphis with a single broker. Add user-supplied values if necessary.
 
@@ -121,5 +117,4 @@ Standalone installation of Memphis with a single broker. Add user-supplied value
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && 
 helm install memphis --set metadata.postgresql.password=$PASSWORD,metadata.postgresql.repmgrPassword=$REPMGR_PASSWORD,metadata.pgpool.adminPassword=$ADMIN_PASSWORD,connectionToken=$CT,rootPwd=$ROOT_PASSWORD  memphis/memphis --create-namespace --namespace memphis --wait
 ```
-
-</details>
+:::

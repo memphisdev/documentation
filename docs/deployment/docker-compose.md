@@ -20,19 +20,16 @@ description: Deploy Memphis over Docker using Docker compose
 
 Stable -&#x20;
 
-<!-- {% code overflow="wrap" %} -->
+
 ```bash
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && docker compose -f docker-compose.yml -p memphis up
 ```
-<!-- {% endcode %} -->
 
 Latest -
 
-<!-- {% code overflow="wrap" %} -->
 ```bash
-curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
+curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml  -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
 ```
-<!-- {% endcode %} -->
 
 Output:
 
@@ -51,8 +48,9 @@ Output:
 
 ### Step 2: Access via UI / CLI / SDK
 
-<!-- {% tabs %} -->
-<!-- {% tab title="UI" %} -->
+
+::: tabs
+=== UI
 The default port of the UI is 9000:
 
 ```
@@ -62,16 +60,13 @@ http://localhost:9000
 **Default Username:** root
 
 **Default Password**: memphis
-<!-- {% endtab %} -->
 
-<!-- {% tab title="SDK" %} -->
+=== SDK
 For more detailed information, head to the SDKs section below.
 
-<!-- {% content-ref url="broken-reference" %} -->
-[Broken link](broken-reference)
-<!-- {% endcontent-ref %} -->
+<BigLink url="/client-libraries/nats-jetstream" title="Client Libraries" />
+<br>
 
-####
 
 #### Memphis Node.JS SDK can be used to demonstrate the required parameters.
 
@@ -86,9 +81,9 @@ await memphis.connect({
 
 * **host:** Usually the control plane or through the UI URL. For example "https://memphis-ui.test.com/api".
 * **username:** Usually "root". Head to the users' section via the UI or CLI to add more.
-* **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <mark style="color:green;">**The default value is "memphis".**</mark>
-<!-- {% endtab %} -->
-<!-- {% endtabs %} -->
+* **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <span style="color:green;">The default value is "memphis".</span>
+:::
+
 
 ## How to upgrade?
 
@@ -109,3 +104,7 @@ docker image rm -f $(docker image ls | grep -i memphis)
 ```bash
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && docker compose -f docker-compose.yml -p memphis up
 ```
+
+<script setup>
+import BigLink from '../../components/BigLink.vue'
+</script>

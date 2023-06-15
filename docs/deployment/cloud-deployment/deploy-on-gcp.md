@@ -53,17 +53,17 @@ cd memphis-terraform/GCP/GKE
 
 ### Step 1: Deploy GKE Cluster using Terraform
 
-<!-- {% hint style="info" %} -->
+::: info
 **In this step, you will need your `projectID`.**
-<!-- {% endhint %} -->
+:::
 
 ```bash
 make infra
 ```
 
-<!-- {% hint style="info" %} -->
+::: info
 Memphis uses "`makefile`" instead of running three terraform commands
-<!-- {% endhint %} -->
+:::
 
 ### Step 2: Deploy Memphis
 
@@ -91,9 +91,9 @@ Destroy Memphis App -
 make destroymemphis
 ```
 
-<!-- {% hint style="info" %} -->
+::: info
 **It might take a few minutes for the ALB to be deleted.**
-<!-- {% endhint %} -->
+:::
 
 Destroy Memphis GKE Cluster -
 

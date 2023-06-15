@@ -16,8 +16,7 @@ await producer.produce({
 
 ### Release v0.4.0 - For protobuf, consumers are required to self-decode consumed messages with a self-hosted .proto file
 
-<!-- {% code lineNumbers="true" %} -->
-```javascript
+```javascript:line-numbers
 const memphis = require("memphis-dev");
 var protobuf = require("protobufjs");
 
@@ -56,4 +55,3 @@ var protobuf = require("protobufjs");
     }
 })();
 ```
-<!-- {% endcode %} -->

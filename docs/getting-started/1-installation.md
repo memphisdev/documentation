@@ -26,7 +26,7 @@ Low footprint, highly resilient, cloud-native, and run on any Kubernetes, on any
 
 Stable -
 
-```bash:line-numbers {1}
+```bash:line-numbers
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && 
 helm install memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```

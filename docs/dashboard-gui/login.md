@@ -16,6 +16,6 @@
  kubectl get secret memphis-creds -n memphis -o jsonpath="{.data.ROOT_PASSWORD}" | base64 --decode
 ```
 
-<!-- {% hint style="info" %}
+::: tip
 Additional new users can be added through the [Users page](users.md).
-{% endhint %} -->
+:::
