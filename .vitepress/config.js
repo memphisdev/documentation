@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,6 +7,11 @@ export default defineConfig({
   description: "Memphis Documentation",
   srcDir: 'docs',
   icon: '../assets/memphis-logo.png',
+  markdown: {
+    config(md){
+      md.use(tabsMarkdownPlugin)
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

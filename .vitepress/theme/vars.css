@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "memphis";
+  src: url("../fonts/Helvetica_Now_Display/Monotype-Helvetica_Now_Display_Medium.otf");
+}
+
 :root {
   --vp-c-brand: #6557FF ;
   --vp-c-brand-light: #6557FF ;
@@ -5,6 +10,13 @@
   --vp-c-alt: #FFC633;
   --vp-c-alt-light: #FFC633;
   --vp-c-muted: #FFC633;
+
+  --vp-custom-block-tip-border: var(--vp-c-alt);
+  --vp-custom-block-tip-text: var(--vp-c-alt);
+  --vp-custom-block-tip-bg: var(--vp-c-bg-soft-up);
+  --vp-custom-block-tip-code-bg: var(--vp-c-bg-soft);
+
+  --vp-font-family-base: "memphis"; /* normal text font */
 }
 
 div[class="item"] > h2{

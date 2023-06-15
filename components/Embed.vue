@@ -1,3 +1,13 @@
+<template>
+  <div class="container">
+    <img class="img" :src="icon"/>
+    <div>
+      <h3 class="pageTitle">{{ title }}</h3>
+      <p class="pageDomain">{{ domain }}</p>
+    </div>
+  </div>
+</template>
+
 <script setup>
 import { ref, onMounted } from 'vue'
 const title = ref('')
@@ -66,13 +76,5 @@ onMounted( async () =>{
 }
 </style>
 
-<template>
-    <div class="container">
-      <img class="img" :src="icon"/>
-      <div>
-        <h3 class="pageTitle">{{ title }}</h3>
-        <p class="pageDomain">{{ domain }}</p>
-      </div>
-    </div>
-</template>
+
 
