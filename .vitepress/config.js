@@ -6,6 +6,9 @@ export default defineConfig({
   title: "Memphis",
   description: "Memphis Documentation",
   srcDir: 'docs',
+  head: [
+    ['link', { rel: 'icon', href: '../assets/favicon.ico' }],
+  ],
   markdown: {
     config(md){
       md.use(tabsMarkdownPlugin)
@@ -18,7 +21,10 @@ export default defineConfig({
       { text: 'Docs', link: '/getting-started/1-installation' }
     ],
 
-    logo: '../assets/color_logo.svg',
+    logo: {
+      light: '../assets/color_logo.svg',
+      dark: '../assets/color_logo_dark_theme.svg'
+    },
 
     siteTitle: false,
 
