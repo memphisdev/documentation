@@ -34,7 +34,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Getting Started',
+        text: '👉 Getting Started',
         items: [
           { text: 'Step 1 - Installation', link: '/getting-started/1-installation' },
           { text: 'Step 2 - Hello World', link: '/getting-started/2-hello-world' },
@@ -46,7 +46,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Memphis',
+        text: '⭐ Memphis',
         items: [
           { text: 'Overview', link: '/memphis/overview' },
           { text: 'Architecture', link: '/memphis/architecture' },
@@ -71,7 +71,7 @@ export default defineConfig({
           { text: 'Schemaverse', 
             collapsed: true,
             items:[
-              { text: 'Getting Started', 
+              { text: '⭐ Getting Started', 
                 collapsed: false,
                 items:[
                 { text: 'Protobuf', link: '/memphis/schemaverse-schema-management/formats/protobuf' },
@@ -98,13 +98,13 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Memphis Cloud',
+        text: '☁ Memphis Cloud',
         items: [
           { text: 'Private Beta', link: 'https://memphis.dev/cloud/' }
         ]
       },
       {
-        text: 'Deployment',
+        text: '📦 Deployment',
         items: [
           { text: 'Terraform', 
             collapsed: true,
@@ -153,7 +153,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Integrations',
+        text: '🔌 Integrations',
         items: [
           { text: 'Monitoring', 
             collapsed: true,
@@ -181,7 +181,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Release Notes',
+        text: '🗒 Release Notes',
         items: [
           { text: 'KB', link: '/release-notes/kb' },
           { text: 'Releases', 

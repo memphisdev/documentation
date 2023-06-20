@@ -1,10 +1,14 @@
 <template>
-  <div class="container">
-    <img class="img" :src="icon"/>
-    <div>
-      <h3 class="pageTitle">{{ title }}</h3>
-      <p class="pageDomain">{{ domain }}</p>
-    </div>
+  <div data-v-29ec59c0="" ref="playDiv" >
+        <a data-v-29ec59c0="" class="pager-link prev container" target="_blank" :href="link">
+          <div class="image-wrapper">
+            <img class="img" :src="icon"/>
+          </div>
+          <div>
+            <h3 class="pageTitle">{{ title }}</h3>
+            <p class="pageDomain">{{ domain }}</p>
+          </div>
+        </a>
   </div>
 </template>
 
@@ -14,50 +18,32 @@ const title = ref('')
 const domain = ref('')
 const icon = ref('')
 const props = defineProps(['url'])
+const link = ref(props.url)
 
 onMounted( async () =>{    
-    try {
-        const page_response = await fetch(props.url, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'text/html',
-          },
-        });
-        const page_text = await page_response.text();
-        const parser = new DOMParser(); 
-        const doc = parser.parseFromString(page_text, 'text/html');
-        title.value = doc.title;
-        const split_title = doc.title.split("-");
-        for (const part of split_title){
-          const part_split = part.trim().split(" ");
-          if (part_split.length == 1){
-            domain.value = part;
-          }
-        }
+  const response = await fetch('/meta_data.json');
+  const data = await response.json();
+  const my_data = data[props.url];
 
-        const icon_link = doc.querySelector("link[rel*='icon']");
-        if (icon_link){
-          icon.value = icon_link.href;
-        }
-      } catch (error) {
-        console.log(error);
-      }
+  title.value = my_data.title;
+  domain.value = my_data.site_name;
+  icon.value = my_data.favicon;
 }) 
 </script>
 
 <style scoped>
 .container{
-    border: solid;
-    width: 800px;
     padding: 5px;
     display: flex;
     border-width: 1px;
     border-radius: 5px;
     margin-bottom: 15px;
+    color: var(--vp-c-text-1);
+    text-decoration: none !important;
 }
 
 .pageTitle{
-  width: 730px;
+  max-width: 600px;
   margin-bottom: 3px;
   margin-top: 0px;
   white-space: nowrap;
@@ -66,13 +52,30 @@ onMounted( async () =>{
 }
 
 .pageDomain{
+  margin-top: 0px;
   margin-bottom: 5px;
 }
 
 .img{
-  width:50px;
-  height:50px;
+  width:35px;
+  height:35px;
   margin-right: 10px;
+}
+
+.image-wrapper{
+  display: grid;
+  place-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.container:hover{
+  .pageTitle{
+    color: var(--vp-c-brand);
+    text-decoration: underline;
+    text-decoration-color: var(--vp-c-brand);
+  } 
 }
 </style>
 

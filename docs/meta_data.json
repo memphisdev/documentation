@@ -1,0 +1,47 @@
+{
+  "https://memphis.dev/blog/connect-memphis-as-an-argo-event-source/": {
+    "title": "Memphis.dev - Connect Memphis as an Argo event source",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://memphis.dev/blog/supabase-cdc-webhooks-to-memphis-rest-gateway/": {
+    "title": "Memphis.dev - Supabase CDC Webhooks to Memphis REST Gateway",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://dev.to/obumnwabude/how-to-build-a-real-time-app-with-nestjs-and-memphis-broker-27fm": {
+    "title": "How to build a real-time app with NestJS and Memphis broker",
+    "favicon": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png",
+    "site_name": "DEV Community"
+  },
+  "https://memphis.dev/blog/how-to-integrate-posthog-with-memphis-dev/": {
+    "title": "Memphis.dev - How to integrate PostHog with Memphis.dev",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://memphis.dev/blog/part-1-integrating-debezium-server-and-memphis-dev-for-streaming-change-data-capture-cdc-events/": {
+    "title": "Memphis.dev - Part 1: Integrating Debezium Server and Memphis.dev for Streaming Change Data Capture (CDC) Events",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://memphis.dev/blog/part-2-change-data-capture-cdc-for-mongodb-with-debezium-and-memphis-dev/": {
+    "title": "Memphis.dev - Part 2: Change Data Capture (CDC) for MongoDB with Debezium and Memphis.dev",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://memphis.dev/blog/part-3-transforming-mongodb-cdc-event-messages/": {
+    "title": "Memphis.dev - Part 3: Transforming MongoDB CDC Event Messages",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://github.com/memphisdev/memphis-broker/issues/290": {
+    "title": "Scala SDK · Issue #290 · memphisdev/memphis",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+    "site_name": "GitHub"
+  },
+  "https://github.com/memphisdev/memphis-broker/issues/291": {
+    "title": "Rust SDK · Issue #291 · memphisdev/memphis",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+    "site_name": "GitHub"
+  }
+}
