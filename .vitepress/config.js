@@ -10,13 +10,13 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '../assets/favicon.ico' }],
     [
       'script', {
-      async: true,
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX',
+      async: '',
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-DDDELH98SH',
     }],
     [
       'script',
       {},
-      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-XXXXXXXXXX');",
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-DDDELH98SH');",
     ],
   ],
   markdown: {

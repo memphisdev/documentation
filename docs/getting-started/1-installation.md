@@ -58,8 +58,6 @@ More information can be found in the [Memphis Docker deployment](deployment/dock
 
 <iframe src="https://app.storylane.io/share/upo0paxdvynz" allow="fullscreen" style="border: none;"></iframe>
 
-https://app.storylane.io/share/upo0paxdvynz
-
 ## High-level diagram
 
 <figure><img src="/assets/overview (1).jpeg" alt=""><figcaption></figcaption></figure>

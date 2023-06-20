@@ -112,7 +112,7 @@ const { memphis } = require("memphis-dev");
 ```bash
 node consumer.js
 ```
-=== TypeScrip
+=== TypeScript
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the TypeScript project
