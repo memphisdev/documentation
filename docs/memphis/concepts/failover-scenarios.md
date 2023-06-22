@@ -1,3 +1,8 @@
+---
+title: Failover Scenarios
+description: This section describes how memphis behaves when there is a failure in reading, writing, or when there is potential data loss.
+---
+
 # Failover Scenarios
 
 ## Introduction
@@ -14,7 +19,7 @@ This section also aims to educate and explain Memphis's cluster mode's internals
 
 The test environment is based on a station with **three replicas** (mirrors) over **three memphis brokers** in cluster mode.
 
-(\*) The small circle within the brokers emphasizes if they are a ["Leader" or "Follower."](station.md#leaders-and-followers)
+(\*) The small circle within the brokers emphasizes if they are a ["Leader" or "Follower."](station#leaders-and-followers)
 
 <figure><img src="/assets/initial state.jpeg" alt=""><figcaption></figcaption></figure>
 

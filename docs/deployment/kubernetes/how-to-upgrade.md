@@ -1,5 +1,6 @@
 ---
 description: Procedure for upgrading memphis
+title: Upgrade Memphis
 ---
 
 # 3 - Upgrade

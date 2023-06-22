@@ -34,6 +34,16 @@
     "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
     "site_name": "Memphis.dev"
   },
+  "https://medium.com/gastromatic/synchronizing-data-using-memphis-dev-a-case-study-2e6e9a7b5512": {
+    "title": "Synchronizing data using Memphis.dev: A case study.",
+    "favicon": "https://miro.medium.com/v2/resize:fill:152:152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png",
+    "site_name": "Medium"
+  },
+  "https://memphis.dev/blog/how-kela-is-using-memphis-dev-for-real-time-cyber-threats-identification/": {
+    "title": "How KELA is using memphis.dev for real-time cyber threats identification",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
   "https://github.com/memphisdev/memphis-broker/issues/290": {
     "title": "Scala SDK · Issue #290 · memphisdev/memphis",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg",

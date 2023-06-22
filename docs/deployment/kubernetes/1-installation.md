@@ -1,5 +1,6 @@
 ---
 description: Deploy Memphis over Kubernetes
+title: Kubernetes
 ---
 
 # 1 - Installation
@@ -87,7 +88,7 @@ helm install memphis --set cluster.replicas=3,rootPwd="rootpassword" memphis/mem
 * **memphis-rest-gateway.** Memphis REST Gateway.
 * **memphis-metadata.** Metadata store.
 
-For more information on each component, please head to the [architecture section](../../memphis/architecture.md#key-components).
+For more information on each component, please head to the [architecture section](../../memphis/architecture#key-components).
 
 ## Deploy Memphis with TLS (encrypted communication via SSL)
 

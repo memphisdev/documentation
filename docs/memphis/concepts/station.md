@@ -1,6 +1,7 @@
 ---
 cover: /assets/Memphis concepts (2).jpeg
-coverY: 0
+title: Station
+description: This section describes stations
 ---
 
 # Station

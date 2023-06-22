@@ -1,7 +1,7 @@
 ---
 description: Argo and Memphis using NATS Event source
 cover: /assets/Argo + Memphis.jpeg
-coverY: 0
+title: Argo
 ---
 
 # Argo

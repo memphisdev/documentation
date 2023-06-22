@@ -1,5 +1,6 @@
 ---
 description: 'Release date: 21 February 2023'
+title: v0.4.5 - beta
 ---
 
 # v0.4.5 - beta
@@ -17,11 +18,11 @@ Please make sure your **SDKs** are **updated** to the latest version to enjoy ne
 * [Tiered storage](broken-reference) - second storage class for out-of-retention messages to enable a better cost-efficient and longer message retention.
 * Station name length increased to 128 characters.
 * Throughput visualization has improved.
-* [Datadog integration](../../integrations/monitoring/datadog.md) has been added to enable external monitoring over Memphis.
-* [Grafana integration](../../integrations/monitoring/grafana.md) has been added to enable external monitoring over Memphis.
+* [Datadog integration](../../integrations/monitoring/datadog) has been added to enable external monitoring over Memphis.
+* [Grafana integration](../../integrations/monitoring/grafana) has been added to enable external monitoring over Memphis.
 * `http proxy` Renamed to `rest gateway` to make the comoponent more understandable for new users.
 * Ability to produce message without creating an explicit producer object (Available in Go/Python/Node.js SDKs)
-* [Memphis configuration](../../memphis/memphis-configuration.md) - ability to configure host names for display purposes
+* [Memphis configuration](../../memphis/memphis-configuration) - ability to configure host names for display purposes
 * Broker performance improvements.&#x20;
 * Node.js SDK (0.5.1) Go SDK (0.2.1) Python SDK (0.3.2)
 

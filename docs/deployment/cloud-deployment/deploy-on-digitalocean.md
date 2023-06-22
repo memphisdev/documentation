@@ -1,6 +1,7 @@
 ---
 cover: /assets/DigitalOcean and Memphis.jpeg
-coverY: 0
+description: Deploying on DigitalOcean
+title: DigitalOcean
 ---
 
 # Deploy on DigitalOcean
@@ -11,7 +12,7 @@ coverY: 0
 
 [DigitalOcean](https://cloud.digitalocean.com/) offers easy-to-use and configure cloud services like servers, kubernetes, object storage, serverless functions, a marketplace of applications, and much more.
 
-[Memphis](../../memphis/overview.md) chose DigitalOcean Kubernetes Marketplace to offer both DO and Memphis users a \
+[Memphis](/memphis/overview) chose DigitalOcean Kubernetes Marketplace to offer both DO and Memphis users a \
 1-click installation of memphis cluster in a production kubernetes environment.
 
 ### Prerequisites

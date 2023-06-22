@@ -1,5 +1,6 @@
 ---
 description: This section is under construction
+title: Troubleshooting
 ---
 
 # Troubleshooting process

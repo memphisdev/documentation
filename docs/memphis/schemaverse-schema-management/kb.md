@@ -1,3 +1,7 @@
+---
+title: KB
+description: This section describes using Memphis without attaching a schema
+---
 # KB
 
 ### "Schema validation has failed: Invalid message format, expecting protobuf"

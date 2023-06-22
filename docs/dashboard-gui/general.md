@@ -1,3 +1,7 @@
+---
+title: General
+description: General information about the Memphis UI with K8S or Docker in dev
+---
 # General
 
 ::: tip

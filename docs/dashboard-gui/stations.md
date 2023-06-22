@@ -1,7 +1,6 @@
 ---
-description: >-
-  On this page, you can see all factory stations with their corresponding
-  details
+title: Stations
+description: On this page, you can see all factory stations with their corresponding details
 ---
 
 # Stations
@@ -14,7 +13,7 @@ Its true power lies in offloading the business logic from the producers and cons
 
 Instead of endless amounts of producers, consumers, orchestrations, manual scaling, and scattered monitoring - just create a station.
 
-<div align="center">
+<div>
 
 <figure><img src="/assets/Screenshot 2022-12-11 at 14.57.04.png" alt=""><figcaption></figcaption></figure>
 
@@ -31,7 +30,7 @@ A modal will appear with customization options.
 
 * **Retention** - The default value is seven days. You can choose a custom retention value by time, message size, and message amount.
 * [**Storage type**](broken-reference) - Choose whether to store your messages in a file or memory.
-* [**Replicas**](../memphis/architecture.md#replicas) - Choose how many replicas to create behind your station.
+* [**Replicas**](../memphis/architecture#replicas) - Choose how many replicas to create behind your station.
 
 ### Station overview
 
@@ -45,7 +44,7 @@ Press the SDK button to display the station's connection details.
 
 <figure><img src="/assets/Screen Shot 2022-09-19 at 12.14.38.png" alt=""><figcaption></figcaption></figure>
 
-<div align="left">
+<div>
 
 <figure><img src="/assets/Screenshot 2022-12-11 at 15.17.27.png" alt=""><figcaption></figcaption></figure>
 

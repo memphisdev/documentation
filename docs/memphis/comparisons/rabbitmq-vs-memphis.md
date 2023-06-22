@@ -1,7 +1,7 @@
 ---
 description: This section describes the differences between RabbitMQ and Memphis
 cover: /assets/RabbitMQ vs Memphis.jpeg
-coverY: 0
+title: RabbitMQ vs Memphis
 ---
 
 # RabbitMQ vs Memphis

@@ -1,8 +1,7 @@
 ---
-description: This section describes the implementation of the Dead-letter station in
-  Memphis.
+description: This section describes the implementation of the Dead-letter station in Memphis.
 cover: /assets/Memphis concepts (2).jpeg
-title: Dead-Letter Station
+title: Dead Letter Station
 ---
 
 # Dead-letter Station (DLS)

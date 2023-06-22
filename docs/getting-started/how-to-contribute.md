@@ -1,3 +1,7 @@
+---
+description: Contribution Instructions
+title: Contribution Instructions
+---
 # How to contribute?
 
 That's amazing that you reached this page!
@@ -46,10 +50,10 @@ DEV_ENV="true" DOCKER_ENV="true" ANALYTICS="false" go run main.go
 
 ### 2. You are
 
-* [Frontend Developer](how-to-contribute.md#frontend-contributions)
-* [Backend Developer](how-to-contribute.md#backend-contributions)
-* [Data Engineer](how-to-contribute.md#data-engineer)
-* [DevOps](how-to-contribute.md#devops)
+* [Frontend Developer](how-to-contribute#frontend-contributions)
+* [Backend Developer](how-to-contribute#backend-contributions)
+* [Data Engineer](how-to-contribute#data-engineer)
+* [DevOps](how-to-contribute#devops)
 
 #### Frontend Contributions
 
@@ -67,7 +71,7 @@ DEV_ENV="true" DOCKER_ENV="true" ANALYTICS="false" go run main.go
 
 #### Backend Contributions
 
-Once you have established[ memphis dev environment](how-to-contribute.md#1.-establish-memphis-dev-environment), you can start coding.
+Once you have established[ memphis dev environment](how-to-contribute#1.-establish-memphis-dev-environment), you can start coding.
 
 Memphis backend opportunities are -&nbsp;&nbsp;
 

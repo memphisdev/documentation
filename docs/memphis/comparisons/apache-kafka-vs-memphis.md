@@ -1,7 +1,7 @@
 ---
 description: This section describes the differences between Apache Kafka and Memphis
 cover: /assets/Kafka vs Memphis.dev.jpeg
-coverY: 0
+title: Kafka vs Memphis
 ---
 
 # Apache Kafka vs Memphis

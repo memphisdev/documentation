@@ -1,6 +1,7 @@
 ---
 cover: /assets/Memphis concepts (2).jpeg
-coverY: 0
+title: Consumer Group
+description: This section descibes what is a consumer group
 ---
 
 # Consumer Group
@@ -17,4 +18,4 @@ Each message will be delivered in parallel to all consumer groups.
 
 <figure><img src="/assets/consumer group 2.jpeg" alt=""><figcaption><p>Inside the consumer group, a message will be delivered to only one consumer</p></figcaption></figure>
 
-There is no [consumer](consumer.md) without a consumer group.
+There is no [consumer](./consumer) without a consumer group.

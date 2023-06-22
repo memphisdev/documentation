@@ -1,7 +1,7 @@
 ---
 description: What is it? And how to avoid it.
 cover: /assets/Memphis concepts (2).jpeg
-coverY: 0
+title: Idempotency
 ---
 
 # Idempotency (Duplicate processing)
@@ -64,7 +64,7 @@ Or via the different SDKs.
 idempotencyWindowMs: 0, // defaults to 120000
 ```
 
-As explained in "[How does it work internally?](idempotency.md#how-does-it-work-internally)", the timer is responsible for the retention of the messages IDs table. For example, if 3 hours are chosen, the table will be emptied every three hours.
+As explained in "[How does it work internally?](idempotency#how-does-it-work-internally)", the timer is responsible for the retention of the messages IDs table. For example, if 3 hours are chosen, the table will be emptied every three hours.
 
 ### Step 2: Set up messages IDs
 
@@ -86,6 +86,6 @@ await producer.produce({
 
 To avoid the situation, it is recommended to use idempotence producers and set `maxMsgDeliveries` to 1 on the consumer side.
 
-By configuring `maxMsgDeliveries` to 1, in a sudden failure of the consumer in a CG, the entire CG will not receive the same message again, and it will be stored automatically in the [DLS](../../dashboard-ui/troubleshooting/dead-letter.md) for supervised retries.
+By configuring `maxMsgDeliveries` to 1, in a sudden failure of the consumer in a CG, the entire CG will not receive the same message again, and it will be stored automatically in the [DLS](../../dashboard-ui/troubleshooting/dead-letter) for supervised retries.
 
 Search terms: Consumed multiple times, duplicate message

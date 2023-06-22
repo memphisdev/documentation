@@ -1,6 +1,7 @@
 ---
 cover: /assets/AZURE and Memphis.jpeg
-coverY: 0
+description: Deploying on Azure
+title: Azure
 ---
 
 # Deploy on Azure

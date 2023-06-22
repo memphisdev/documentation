@@ -1,7 +1,7 @@
 ---
-description: Using Terraform
+description: Using Terraform with Google Cloud Platform
 cover: /assets/GCP and Memphis.jpeg
-coverY: 0
+title: Google Cloud Platform
 ---
 
 # Deploy on GCP

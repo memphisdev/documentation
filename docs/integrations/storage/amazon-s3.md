@@ -1,7 +1,7 @@
 ---
 description: Offload stored messages to Amazon S3
 cover: /assets/Amazon S3 + Memphis.jpeg
-coverY: 0
+title: Amazon S3
 ---
 
 # Amazon S3

@@ -1,5 +1,6 @@
 ---
 description: Latest Memphis.dev benchmark reports
+title: Benchmarks
 ---
 
 # Benchmark

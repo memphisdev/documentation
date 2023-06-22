@@ -1,3 +1,7 @@
+---
+title: Memphis 
+description: Memphis.Dev Rusk SDK github issue
+---
 # Login
 
 ## Initial users
@@ -17,5 +21,9 @@
 ```
 
 ::: tip
-Additional new users can be added through the [Users page](users.md).
+Additional new users can be added through the <ContainerLink url='./users'>Users page</ContainerLink>.
 :::
+
+<script setup>
+import ContainerLink from '/../components/ContainerLink.Vue'
+</script>

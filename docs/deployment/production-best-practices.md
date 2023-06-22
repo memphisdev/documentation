@@ -1,7 +1,6 @@
 ---
-description: >-
-  This section describes the best practices to run Memphis in Production
-  environment and to maximize
+description: This section describes the best practices to run Memphis in Production environment and to maximize
+title: Production Best Practices
 ---
 
 # Production Best Practices

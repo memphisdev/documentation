@@ -1,7 +1,7 @@
 ---
 description: v1.0.0 - LTS
 cover: /assets/Overview..jpg
-coverY: 0
+title: Overview
 ---
 
 # Overview

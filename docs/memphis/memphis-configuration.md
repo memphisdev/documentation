@@ -1,5 +1,6 @@
 ---
 description: How and where to configure Memphis internals
+title: Configureation
 ---
 
 # Memphis configuration

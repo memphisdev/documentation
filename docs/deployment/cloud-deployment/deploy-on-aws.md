@@ -1,7 +1,7 @@
 ---
-description: Using Terraform
+description: Using Terraform with AWS
+title: AWS
 cover: /assets/AWS and Memphis (1).jpeg
-coverY: 0
 ---
 
 # Deploy on AWS
@@ -113,7 +113,7 @@ Destroy Memphis App -&#x20;
 make destroymemphis
 ```
 
-::: info
+::: tip
 **It might take a few minutes for the ELB to be deleted.**
 :::
 

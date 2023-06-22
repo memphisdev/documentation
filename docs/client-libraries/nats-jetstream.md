@@ -1,7 +1,7 @@
 ---
+title: NATS Jetstream
 description: Memphis compatability with NATS Jetstream
 cover: /assets/NATS + Memphis.jpeg
-coverY: -43.05148658448151
 ---
 
 # NATS Jetstream

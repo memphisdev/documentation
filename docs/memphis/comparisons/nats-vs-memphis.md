@@ -1,7 +1,7 @@
 ---
 description: This section describes the differences between NATS Jetstream and Memphis
 cover: /assets/Jetstream vs Memphis.jpeg
-coverY: 0
+title: NATS Jetstream vs Memphis
 ---
 
 # NATS Jetstream vs Memphis

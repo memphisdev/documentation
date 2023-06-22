@@ -1,5 +1,6 @@
 ---
 description: This section describes what are delayed messages and how to create it.
+title: Delayed Messages
 ---
 
 # Delayed messages

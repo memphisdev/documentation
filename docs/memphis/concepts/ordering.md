@@ -1,6 +1,7 @@
 ---
 cover: /assets/Memphis concepts (2).jpeg
-coverY: 0
+title: Odering
+description: Ordering gaurantees
 ---
 
 # Ordering

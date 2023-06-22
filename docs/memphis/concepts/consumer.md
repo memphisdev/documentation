@@ -1,14 +1,10 @@
 ---
 description: This section describes Memphis consumer API
 cover: /assets/Memphis concepts (2).jpeg
-coverY: 0
+title: Consumer API
 ---
 
 # Consumer API
-
-##
-
-##
 
 ## What is a consumer?
 

@@ -1,5 +1,6 @@
 ---
-description: User management
+title: User management
+description: User management overview
 ---
 
 # Users

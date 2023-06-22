@@ -1,3 +1,7 @@
+---
+title: JSON Schema
+description: This section describes integrating JSON Schema with Memphis
+---
 # JSON Schema
 
 [JSON Schema](https://json-schema.org/) is a vocabulary that allows you to annotate and validate JSON documents.\

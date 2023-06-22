@@ -1,4 +1,5 @@
 ---
+title: Profile
 description: For managing personal profile perferences
 ---
 

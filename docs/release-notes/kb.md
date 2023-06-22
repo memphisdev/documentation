@@ -1,5 +1,6 @@
 ---
 description: A centralized place for returned errors and FAQs
+title: KB
 ---
 
 # KB

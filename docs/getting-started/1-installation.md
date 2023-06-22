@@ -1,5 +1,7 @@
 ---
 cover: /assets/LinkedIn personal (3).png
+title: Installation
+description: Getting started with installing Memphis.dev
 ---
 
 # Step 1 - Installation
@@ -36,7 +38,7 @@ helm repo add memphis https://k8s.memphis.dev/charts/ --force-update
 helm install --set memphis.image="memphisos/memphis:latest" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
 
-More information can be found in the [Memphis k8s deployment](deployment/kubernetes/) documentation.
+More information can be found in the [Memphis k8s deployment](/deployment/kubernetes/) documentation.
 
 ### **Docker compose (Syntax for v2)**
 
@@ -51,7 +53,7 @@ Latest -
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
 ```
 
-More information can be found in the [Memphis Docker deployment](deployment/docker-compose.md) documentation.
+More information can be found in the [Memphis Docker deployment](/deployment/docker-compose) documentation.
 
 ## Walkthrough
 

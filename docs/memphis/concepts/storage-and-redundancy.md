@@ -1,14 +1,14 @@
 ---
 description: This section describes the different storage and redundancy options
 cover: /assets/Memphis concepts (2).jpeg
-coverY: 0
+title: Storage and Redundancy
 ---
 
 # Storage and Redundancy
 
 ## Introduction
 
-Data redundancy in the field of streaming can be a bit misleading. As written on the [station](station.md) page, in message brokers, data is not preserved for an infinite time but for a defined period based on certain conditions like ingested time, size, and the number of messages within a station.
+Data redundancy in the field of streaming can be a bit misleading. As written on the [station](./station) page, in message brokers, data is not preserved for an infinite time but for a defined period based on certain conditions like ingested time, size, and the number of messages within a station.
 
 When data resides in the broker, it will be redundant and removed only when crossing the defined retention policy.
 
@@ -69,7 +69,7 @@ Possible integrations [here](../../integrations/storage/).
 
 #### A growing list of options:
 
-* [**S3 (Object storage)**](../../integrations/storage/amazon-s3.md)\
+* [**S3 (Object storage)**](../../integrations/storage/amazon-s3)\
   Built to store and retrieve any amount of data from anywhere using S3 protocol.\
   Object storage offers different storage classes with different costs and performance requirements.\
   Popular S3-based storage providers are: AWS S3, MinIO, IBM Cloud Object Storage, and more.

@@ -1,3 +1,7 @@
+---
+title: Signup
+description: Overview of signup page
+---
 # Signup
 
 <figure><img src="/assets/Screen Shot 2022-09-19 at 12.00.10.png" alt=""><figcaption></figcaption></figure>

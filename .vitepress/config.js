@@ -80,6 +80,7 @@ export default defineConfig({
           ] },
           { text: 'Schemaverse', 
             collapsed: true,
+            link: '/memphis/schemaverse-schema-management/index',
             items:[
               { text: '⭐ Getting Started', 
                 collapsed: false,

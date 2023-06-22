@@ -1,5 +1,6 @@
 ---
 description: Deploy Memphis over Docker using Docker compose
+title: Docker Compose
 ---
 
 # Docker

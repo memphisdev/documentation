@@ -73,7 +73,7 @@ async function manual_fetch(mdfiles){
         if (embeds.length > 0) {
             for (const embed of embeds){
                 const url = embed.getAttribute('url');
-                console.log(url);
+                console.log("Fetching metadata for", url);
                 try {
                     const data = await axios.get(url);
                     const dom = new JSDOM(data.data, { virtualConsole });
@@ -100,6 +100,5 @@ async function manual_fetch(mdfiles){
 }
 
 const meta_data = await manual_fetch(mdfiles);
-console.log(meta_data);
 
 fs.writeFileSync('../../docs/meta_data.json', JSON.stringify(meta_data, null, 2), "utf-8");

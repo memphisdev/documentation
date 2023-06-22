@@ -23,7 +23,6 @@
     })
 
     watch (page, () => {
-        console.log((frontmatter._value.cover));
         if (frontmatter._value.cover != undefined) {
             has_cover.value = true
             source.value = frontmatter._value.cover

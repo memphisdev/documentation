@@ -1,5 +1,6 @@
 ---
-description: tutorials
+description: Links to various tutorials
+title: Tutorials
 ---
 # Tutorials
 

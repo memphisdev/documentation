@@ -1,6 +1,7 @@
 ---
 cover: /assets/LinkedIn personal (3).png
-coverY: 0
+title: Hello World Project
+description: Creation of a station, producer and consumer
 ---
 
 # Step 2 - Hello World

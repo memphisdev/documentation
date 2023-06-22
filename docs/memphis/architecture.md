@@ -1,5 +1,6 @@
 ---
 description: This section describes Memphis' architecture
+title: Architecture
 ---
 
 # Architecture
@@ -56,7 +57,7 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 
 ## Supported Protocols
 
-* [TCP-based SDKs](../client-libraries/nats-jetstream.md)
+* [TCP-based SDKs](/client-libraries/nats-jetstream)
 * [HTTP](https://github.com/memphisdev/memphis-http-proxy)
 * [WebSockets](https://github.com/orgs/memphisdev/projects/2/views/1?pane=issue\&itemId=14008452) \* Soon \*
 * gRPC \* Soon \*
@@ -101,6 +102,6 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 
 This is achieved by the combination of published messages being persisted to the station as well as the consumer tracking delivery and acknowledgment of each message as clients receive and process them.
 
-* [Exactly once (Idempotence)](concepts/idempotency.md)
+* [Exactly once (Idempotence)](./concepts/idempotency)
 
 Searched terms: connectivity, cluster, ordering, mirror, mirroring, deployment, protocols, requirements, delivery guarantee
