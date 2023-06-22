@@ -6,6 +6,7 @@ export default defineConfig({
   title: "Memphis",
   description: "Memphis Documentation",
   srcDir: 'docs',
+  base: '/docs/',
   head: [
     ['link', { rel: 'icon', href: '../assets/favicon.ico' }],
     [
