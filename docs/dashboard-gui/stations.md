@@ -23,7 +23,7 @@ Instead of endless amounts of producers, consumers, orchestrations, manual scali
 ### Create a station
 
 To create a new station, click "Create new station".\
-![](<assets/Screenshot 2022-12-11 at 15.12.31 (1) (1) (1).png>)
+<figure><img src="/assets/Screenshot 2022-12-11 at 15.12.31 (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 A modal will appear with customization options.
 
@@ -43,7 +43,7 @@ All the required information for a specific station is presented here.
 
 Press the SDK button to display the station's connection details.
 
-![](<assets/Screen Shot 2022-09-19 at 12.14.38.png>)
+<figure><img src="/assets/Screen Shot 2022-09-19 at 12.14.38.png" alt=""><figcaption></figcaption></figure>
 
 <div align="left">
 

@@ -1,6 +1,5 @@
 ---
-cover: .gitbook/assets/LinkedIn personal (3).png
-coverY: 0
+cover: /assets/LinkedIn personal (3).png
 ---
 
 # Step 1 - Installation
