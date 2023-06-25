@@ -1,14 +1,15 @@
 ---
-cover: ../.gitbook/assets/LinkedIn personal (3).png
-coverY: 0
+cover: /assets/LinkedIn personal (3).png
+title: Hello World Project
+description: Creation of a station, producer and consumer
 ---
 
 # Step 2 - Hello World
 
 Create your first station, producer, and consumer in your preferred language as shown in the tabs below:
 
-{% tabs %}
-{% tab title="Node.js" %}
+::: tabs
+=== Node.js
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the Node.js project
@@ -32,9 +33,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .js file called `producer.js`
 
-{% code title="producer.js" lineNumbers="true" %}
-
-```javascript
+```javascript:line-numbers 
 const { memphis } = require("memphis-dev");
 
 (async function () {
@@ -67,8 +66,6 @@ const { memphis } = require("memphis-dev");
 })();
 ```
 
-{% endcode %}
-
 **Step 5:** Run `producer.js`
 
 ```bash
@@ -77,9 +74,7 @@ node producer.js
 
 **Step 6:** Create a new .js file called `consumer.js`
 
-{% code title="consumer.js" lineNumbers="true" %}
-
-```javascript
+```javascript:line-numbers 
 const { memphis } = require("memphis-dev");
 
 (async function () {
@@ -113,17 +108,12 @@ const { memphis } = require("memphis-dev");
 })();
 ```
 
-{% endcode %}
-
 **Step 7:** Run `consumer.js`
 
 ```bash
 node consumer.js
 ```
-
-{% endtab %}
-
-{% tab title="TypeScript" %}
+=== TypeScript
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the TypeScript project
@@ -147,9 +137,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.ts`
 
-{% code title="producer.ts" lineNumbers="true" %}
-
-```typescript
+```typescript:line-numbers 
 import { memphis, Memphis } from "memphis-dev";
 
 (async function () {
@@ -182,8 +170,6 @@ import { memphis, Memphis } from "memphis-dev";
 })();
 ```
 
-{% endcode %}
-
 **Step 5:** Run `producer.ts`
 
 ```bash
@@ -192,9 +178,7 @@ node producer.ts
 
 **Step 6:** Create a new .ts file called `consumer.ts`
 
-{% code title="consumer.ts" lineNumbers="true" %}
-
-```typescript
+```typescript:line-numbers 
 import { memphis, Memphis } from "memphis-dev";
 
 (async function () {
@@ -230,17 +214,13 @@ import { memphis, Memphis } from "memphis-dev";
 })();
 ```
 
-{% endcode %}
-
 **Step 7:** Run `consumer.ts`
 
 ```bash
 node consumer.ts
 ```
 
-{% endtab %}
-
-{% tab title="NestJS" %}
+=== NestJS
 Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
 **Step 1:** Create an empty dir for the NestJS project
@@ -264,9 +244,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.module.ts`
 
-{% code title="producer.module.ts" lineNumbers="true" %}
-
-```typescript
+```typescript:line-numbers 
 import { Module } from "@nestjs/common";
 import { Memphis, MemphisModule, MemphisService } from "memphis-dev";
 
@@ -310,13 +288,9 @@ export class ProducerModule {
 }
 ```
 
-{% endcode %}
-
 **Step 5:** Create a new .ts file called `consumer.controller.ts`
 
-{% code title="consumer.controller.ts" lineNumbers="true" %}
-
-```typescript
+```typescript:line-numbers 
 import { Module } from '@nestjs/common';
 import { Memphis, MemphisModule, MemphisService, MemphisConsume, Message } from 'memphis-dev';
 
@@ -334,10 +308,7 @@ export class ExampleController {
 }
 ```
 
-{% endcode %}
-{% endtab %}
-
-{% tab title="Go" %}
+=== Go
 **Step 1:** Create an empty dir for the Go project
 
 ```bash
@@ -359,9 +330,7 @@ go get github.com/memphisdev/memphis.go
 
 **Step 4:** Create a new Go file called `producer.go`
 
-{% code title="producer.go" lineNumbers="true" %}
-
-```go
+```go:line-numbers 
 package main
 
 import (
@@ -397,8 +366,6 @@ func main() {
 }
 ```
 
-{% endcode %}
-
 **Step 4:** Run `producer.go`
 
 ```bash
@@ -407,9 +374,7 @@ go run producer.go
 
 **Step 5:** Create a new Go file called `consumer.go`
 
-{% code title="consumer.go" lineNumbers="true" %}
-
-```go
+```go:line-numbers 
 package main
 
 import (
@@ -463,17 +428,13 @@ func main() {
 }
 ```
 
-{% endcode %}
-
 **Step 6:** Run `consumer.go`
 
 ```bash
 go run consumer.go
 ```
 
-{% endtab %}
-
-{% tab title="Python" %}
+=== Python
 **Step 1:** Create an empty dir for the Python project
 
 ```bash
@@ -489,9 +450,7 @@ pip3 install --upgrade memphis-py
 
 **Step 3:** Create a new Python file called `producer.py`
 
-{% code title="producer.py" lineNumbers="true" %}
-
-```python
+```python:line-numbers 
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
 
@@ -516,8 +475,6 @@ if __name__ == '__main__':
     asyncio.run(main())
 ```
 
-{% endcode %}
-
 **Step 4:** Run `producer.py`
 
 ```bash
@@ -526,9 +483,7 @@ python3 producer.py
 
 **Step 5:** Create a new Python file called `consumer.py`
 
-{% code title="consumer.py" lineNumbers="true" %}
-
-```python
+```python:line-numbers 
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
 
@@ -565,17 +520,12 @@ if __name__ == '__main__':
     asyncio.run(main())
 ```
 
-{% endcode %}
-
 **Step 6:** Run `consumer.py`
 
 ```bash
 python3 consumer.py
 ```
-
-{% endtab %}
-
-{% tab title="REST" %}
+=== Rest
 Producing messages to Memphis via REST API can be implemented using any REST-supported language like Go, Python, Java, Node.js, .NET, etc...
 
 For the following tutorial, we will use Node.js .
@@ -595,9 +545,7 @@ npm init -y
 
 **Step 3:** Generate a new JWT token `generate.js`
 
-{% code title="generate.js" lineNumbers="true" %}
-
-```javascript
+```javascript:line-numbers 
 var axios = require("axios");
 var data = JSON.stringify({
   username: "APPLICATION_TYPE_USERNAME",
@@ -623,8 +571,6 @@ axios(config)
     console.log(error);
   });
 ```
-
-{% endcode %}
 
 **Step 4:** Run `generate.js` and copy the returned JWT
 
@@ -660,5 +606,4 @@ axios(config)
 ```
 
 **Consume** messages via REST will soon be released.
-{% endtab %}
-{% endtabs %}
+:::

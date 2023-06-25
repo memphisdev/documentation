@@ -1,6 +1,7 @@
 ---
-cover: ../../.gitbook/assets/DigitalOcean and Memphis.jpeg
-coverY: 0
+cover: /assets/DigitalOcean and Memphis.jpeg
+description: Deploying on DigitalOcean
+title: DigitalOcean
 ---
 
 # Deploy on DigitalOcean
@@ -11,7 +12,7 @@ coverY: 0
 
 [DigitalOcean](https://cloud.digitalocean.com/) offers easy-to-use and configure cloud services like servers, kubernetes, object storage, serverless functions, a marketplace of applications, and much more.
 
-[Memphis](../../memphis/overview.md) chose DigitalOcean Kubernetes Marketplace to offer both DO and Memphis users a \
+[Memphis](/memphis/overview) chose DigitalOcean Kubernetes Marketplace to offer both DO and Memphis users a \
 1-click installation of memphis cluster in a production kubernetes environment.
 
 ### Prerequisites
@@ -20,29 +21,29 @@ coverY: 0
 
 ### Step 1: Create DigitalOcean Kubernetes Cluster
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-29 at 23.07.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-29 at 23.07.31.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-29 at 23.07.45.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-29 at 23.07.45.png" alt=""><figcaption></figcaption></figure>
 
 Nodes are the servers that provide the Kubernetes compute and storage resources
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-29 at 23.08.07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-29 at 23.08.07.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-29 at 23.08.38.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-29 at 23.08.38.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Connect to the Kubernetes cluster
 
 Follow the below instructions to communicate with the newly created cluster
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-29 at 23.11.50.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-29 at 23.11.50.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Install Memphis
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-31 at 12.40.59.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-31 at 12.40.59.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-31 at 12.41.04 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-31 at 12.41.04 (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-08-31 at 12.41.24.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-08-31 at 12.41.24.png" alt=""><figcaption></figcaption></figure>
 
 We need to create two different load balancers, one for <mark style="color:blue;">**data**</mark> (the broker itself) and one for the <mark style="color:green;">**UI**</mark>.
 
@@ -117,8 +118,5 @@ To get the public IPs of the load balancers we created before, run
 kubectl get svc
 ```
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-09-04 at 23.40.09.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-09-04 at 23.40.09.png" alt=""><figcaption></figcaption></figure>
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}

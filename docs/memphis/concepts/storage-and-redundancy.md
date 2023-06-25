@@ -1,14 +1,14 @@
 ---
 description: This section describes the different storage and redundancy options
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Storage and Redundancy
 ---
 
 # Storage and Redundancy
 
 ## Introduction
 
-Data redundancy in the field of streaming can be a bit misleading. As written on the [station](station.md) page, in message brokers, data is not preserved for an infinite time but for a defined period based on certain conditions like ingested time, size, and the number of messages within a station.
+Data redundancy in the field of streaming can be a bit misleading. As written on the [station](./station) page, in message brokers, data is not preserved for an infinite time but for a defined period based on certain conditions like ingested time, size, and the number of messages within a station.
 
 When data resides in the broker, it will be redundant and removed only when crossing the defined retention policy.
 
@@ -17,7 +17,7 @@ When data resides in the broker, it will be redundant and removed only when cros
 Each station implements a stream object that contains the messages stored in the station.\
 It is up to the user to define which type of storage will this stream object be saved.
 
-<figure><img src="../../.gitbook/assets/stream.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/stream.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Replicas (Mirroring)
 
@@ -44,17 +44,17 @@ The options are Memory or Disk. Each with its strengths and weaknesses.
   For faster performance.\
   Due to its nature as a volatile type of storage, the risk of losing data in case of failure is higher because it resides in the broker's memory, and in the case of a station without configured replicas, data can be lost.
 
-<figure><img src="../../.gitbook/assets/storage type memory.jpeg" alt=""><figcaption><p>Stream object as it construct and stored</p></figcaption></figure>
+<figure><img src="/assets/storage type memory.jpeg" alt=""><figcaption><p>Stream object as it construct and stored</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/mem ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
+<figure><img src="/assets/mem ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
 
 * **Disk.**\
   For higher availability.\
   Disk storage might be slower than memory, but it offers greater availability and resiliency to broker failures.
 
-<figure><img src="../../.gitbook/assets/disk.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/disk.jpeg" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/disk ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
+<figure><img src="/assets/disk ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
 
 ### Tier 2 (Remote storage) \* Optional \*
 
@@ -65,11 +65,11 @@ Possible integrations [here](../../integrations/storage/).
 
 #### Behind the scenes
 
-<figure><img src="../../.gitbook/assets/storage tier arch (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/storage tier arch (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 #### A growing list of options:
 
-* [**S3 (Object storage)**](../../integrations/storage/amazon-s3.md)\
+* [**S3 (Object storage)**](../../integrations/storage/amazon-s3)\
   Built to store and retrieve any amount of data from anywhere using S3 protocol.\
   Object storage offers different storage classes with different costs and performance requirements.\
   Popular S3-based storage providers are: AWS S3, MinIO, IBM Cloud Object Storage, and more.

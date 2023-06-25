@@ -1,12 +1,14 @@
 ---
 description: Deploy Memphis over Kubernetes
+title: Kubernetes
 ---
 
 # 1 - Installation
 
-{% hint style="info" %}
-If you prefer using **Terraform**, head [here](../cloud-deployment/)
-{% endhint %}
+::: tip
+If you prefer using **Terraform**, head <ContainerLink url="/deployment/Terraform/">here</ContainerLink>
+:::
+<!-- TODO: Make landing pages... -->
 
 Helm is a k8s package manager that allows users to deploy apps in a single, configurable command. More information about Helm can be found [here](https://helm.sh/docs/topics/charts/).
 
@@ -38,19 +40,15 @@ Production-ready Memphis deployment with initial three memphis brokers configure
 
 **Stable release**
 
-{% code overflow="wrap" %}
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install memphis memphis/memphis --set global.cluster.enabled="true" --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
 
 **Latest release**
 
-{% code overflow="wrap" %}
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install --set memphis.image="memphisos/memphis:latest",global.cluster.enabled="true" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
 
 </details>
 
@@ -62,19 +60,15 @@ Minimal deployment of Memphis with a single broker
 
 **Stable release**
 
-{% code overflow="wrap" %}
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
 
 **Latest release**
 
-{% code overflow="wrap" %}
 ```bash
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install --set memphis.image="memphisos/memphis:latest" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
-{% endcode %}
 
 </details>
 
@@ -94,7 +88,7 @@ helm install memphis --set cluster.replicas=3,rootPwd="rootpassword" memphis/mem
 * **memphis-rest-gateway.** Memphis REST Gateway.
 * **memphis-metadata.** Metadata store.
 
-For more information on each component, please head to the [architecture section](../../memphis/architecture.md#key-components).
+For more information on each component, please head to the [architecture section](../../memphis/architecture#key-components).
 
 ## Deploy Memphis with TLS (encrypted communication via SSL)
 
@@ -132,17 +126,14 @@ kubectl create namespace memphis
 
 b) Create a k8s secret with the required certs
 
-{% code overflow="wrap" lineNumbers="true" %}
-```bash
+```bash:line-numbers
 kubectl create secret generic memphis-client-tls-secret \
 --from-file=memphis_client.pem \
 --from-file=memphis-key_client.pem \
 --from-file=rootCA.pem -n memphis
 ```
-{% endcode %}
 
-{% code title="memphis-client-tls-secret" lineNumbers="true" %}
-```yaml
+```yaml:line-numbers
 tls:
   secret:
     name: memphis-client-tls-secret
@@ -150,12 +141,10 @@ tls:
   cert: "memphis_client.pem"
   key: "memphis-key_client.pem"
 ```
-{% endcode %}
 
 ### 2. Deploy Memphis with the generated certificate
 
-{% code overflow="wrap" lineNumbers="true" %}
-```bash
+```bash:line-numbers
 helm install memphis memphis \
 --create-namespace --namespace memphis --wait \
 --set \
@@ -166,7 +155,6 @@ memphis.tls.key="memphis-key_client.pem",\
 memphis.tls.secret.name="memphis-client-tls-secret",\
 memphis.tls.ca="rootCA.pem"
 ```
-{% endcode %}
 
 ## Upgrade existing deployment
 
@@ -221,6 +209,10 @@ global.cluster.enabled="true"
 
 ## Deployment diagram
 
-<figure><img src="../../.gitbook/assets/Memphis Architecture.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Memphis Architecture.jpg" alt=""><figcaption></figcaption></figure>
 
 Search terms: SSL
+
+<script setup>
+import ContainerLink from '/../components/ContainerLink.vue'
+</script>

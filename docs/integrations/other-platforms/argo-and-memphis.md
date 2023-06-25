@@ -1,7 +1,7 @@
 ---
 description: Argo and Memphis using NATS Event source
-cover: ../../.gitbook/assets/Argo + Memphis.jpeg
-coverY: 0
+cover: /assets/Argo + Memphis.jpeg
+title: Argo
 ---
 
 # Argo
@@ -41,7 +41,7 @@ Memphis can trigger Argo workflows via Argo Event Source.
 
 An Event Source defines the configurations required to consume events from external sources like Memphis, NATS, AWS SNS, SQS, GCP PubSub, Webhooks, etc.
 
-<figure><img src="../../.gitbook/assets/argo and memphis.jpeg" alt=""><figcaption><p>Integrating Memphis as a NATS Event Source of Argo</p></figcaption></figure>
+<figure><img src="/assets/argo and memphis.jpeg" alt=""><figcaption><p>Integrating Memphis as a NATS Event Source of Argo</p></figcaption></figure>
 
 ## Getting started
 
@@ -94,8 +94,7 @@ kubectl apply -f memphis_eventsource.yaml
 
 ### Step 4: Create sensor resource YAML file
 
-{% code title="memphis_sensor.yaml" lineNumbers="true" %}
-```yaml
+```yaml:line-numbers
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
@@ -138,7 +137,6 @@ spec:
                 dependencyName: test-dep
               dest: spec.arguments.parameters.0.value
 ```
-{% endcode %}
 
 ### Step 5: Create sensor resource
 

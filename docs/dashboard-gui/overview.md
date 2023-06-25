@@ -1,3 +1,7 @@
+---
+title: Overview
+description: An overview of Memphis Dashboard
+---
 # Overview
 
 ## Purpose
@@ -6,7 +10,7 @@ Memphis dashboard is designed to provide a quick snapshot of the cluster's healt
 
 In one glimpse, the user or operator can check if there are any unhealthy stations, determine the stability of the system components, and monitor system resources.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## System components panel
 
@@ -16,7 +20,7 @@ The "System components" panel had made for the infrastructure administrators to 
 
 In Kubernetes deployments only. If the following warning is shown -
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-01-30 at 14.22.29 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2023-01-30 at 14.22.29 (1).png" alt=""><figcaption></figcaption></figure>
 
 Memphis "System components" panel uses k8s "[metric-server](https://kubernetes-sigs.github.io/metrics-server/)" to read the cluster resources.
 

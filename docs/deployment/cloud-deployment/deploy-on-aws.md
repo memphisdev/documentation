@@ -1,7 +1,7 @@
 ---
-description: Using Terraform
-cover: ../../.gitbook/assets/AWS and Memphis (1).jpeg
-coverY: 0
+description: Using Terraform with AWS
+title: AWS
+cover: /assets/AWS and Memphis (1).jpeg
 ---
 
 # Deploy on AWS
@@ -22,8 +22,7 @@ Terraform codifies cloud APIs into declarative configuration files.
 
 IAM Policy to use -
 
-{% code lineNumbers="true" %}
-```json
+```json:line-numbers
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -42,7 +41,6 @@ IAM Policy to use -
     ]
 }
 ```
-{% endcode %}
 
 How to configure AWS CLI -
 
@@ -61,7 +59,7 @@ $ aws configure
 
 ### Terraform Installation Flow
 
-<figure><img src="../../.gitbook/assets/aws memphis terraform (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/aws memphis terraform (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 0: Clone Memphis-Terraform repo
 
@@ -85,9 +83,9 @@ cd memphis-terraform/AWS/EKS
 make infra
 ```
 
-{% hint style="warning" %}
+::: warning
 Instead of running three terraform commands
-{% endhint %}
+:::
 
 ### Step 2: Deploy Memphis
 
@@ -115,9 +113,9 @@ Destroy Memphis App -&#x20;
 make destroymemphis
 ```
 
-{% hint style="info" %}
+::: tip
 **It might take a few minutes for the ELB to be deleted.**
-{% endhint %}
+:::
 
 Destroy Memphis EKS Cluster -&#x20;
 

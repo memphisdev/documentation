@@ -1,7 +1,6 @@
 ---
-description: >-
-  A comparison article between Schemaverse, Confluent Schema Registry, and AWS
-  Glue
+description: A comparison article between Schemaverse, Confluent Schema Registry, and AWS Glue
+title: AWS Glue
 ---
 
 # Comparison

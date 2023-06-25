@@ -1,6 +1,7 @@
 ---
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Consumer Group
+description: This section descibes what is a consumer group
 ---
 
 # Consumer Group
@@ -13,8 +14,8 @@ The added layer of a consumer group enables ordering control and avoids duplicat
 
 Each message will be delivered in parallel to all consumer groups.
 
-<figure><img src="../../.gitbook/assets/consumer group.jpeg" alt=""><figcaption><p>Each consumer group gets the same messages</p></figcaption></figure>
+<figure><img src="/assets/consumer group.jpeg" alt=""><figcaption><p>Each consumer group gets the same messages</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/consumer group 2.jpeg" alt=""><figcaption><p>Inside the consumer group, a message will be delivered to only one consumer</p></figcaption></figure>
+<figure><img src="/assets/consumer group 2.jpeg" alt=""><figcaption><p>Inside the consumer group, a message will be delivered to only one consumer</p></figcaption></figure>
 
-There is no [consumer](consumer.md) without a consumer group.
+There is no [consumer](./consumer) without a consumer group.

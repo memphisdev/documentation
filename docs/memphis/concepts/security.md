@@ -1,9 +1,7 @@
 ---
-description: >-
-  This section describes authentication and authorization features in Memphis.
-  Both methods enable the operator to control access to Memphis.
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+description: This section describes authentication and authorization features in Memphis. Both methods enable the operator to control access to Memphis.
+cover: /assets/Memphis concepts (2).jpeg
+title: Security/Authentication
 ---
 
 # Security/Authentication
@@ -55,9 +53,9 @@ Memphis has two types of credentials:
 * **Management**.\
   A dedicated user can be created for management purposes only, and to allow control over the UI and CLI, not data.
 
-{% hint style="warning" %}
+::: warning
 **Production environments** should not use the default user and create new user accounts with generated credentials instead.
-{% endhint %}
+:::
 
 ## Adding a new user
 

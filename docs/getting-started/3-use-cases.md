@@ -1,5 +1,6 @@
 ---
 description: Memphis is great for the following use cases
+title: Use Cases
 ---
 
 # Use cases

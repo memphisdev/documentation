@@ -1,3 +1,7 @@
+---
+title: Protobuf
+description: This section describes integrating protobufs with Memphis
+---
 # Protobuf
 
 [Protocol Buffers (Protobuf)](https://developers.google.com/protocol-buffers) is a free and open-source cross-platform data format used to serialize structured data, Initially released on July 7, 2008. It is useful in developing programs to communicate with each other over a network or for storing data. The method involves an interface description language that describes the structure of some data and a program that generates source code from that description for generating or parsing a stream of bytes that represents the structured data.
@@ -22,42 +26,38 @@
 
 #### Step 1: Create a new schema
 
-{% tabs %}
-{% tab title="GUI" %}
+::: tabs
+=== GUI
 Head to the "Schemaverse" page
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
 
 Create a new schema by clicking on "Create from blank"
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<figure><img src="/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>
 
-{% tab title="SDK" %}
+=== SDK
 Soon.
-{% endtab %}
-{% endtabs %}
+:::
 
 #### Step 2: Attach
 
-{% tabs %}
-{% tab title="GUI" %}
+::: tabs
+=== GUI
 Head to your station, and on the top-left corner, click on "+ Attach schema"
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<figure><img src="/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
 
-{% tab title="SDK" %}
+=== SDK
 It can be found through the different [SDKs](broken-reference) docs.
-{% endtab %}
-{% endtabs %}
+:::
 
 ### Produce a message (Serialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+::: tabs
+=== Node.js
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 In node.js, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
@@ -75,8 +75,7 @@ message Test {
 
 **Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
 
-{% code lineNumbers="true" %}
-```javascript
+```javascript:line-numbers
 const memphis = require("memphis-dev");
 
 (async function () {
@@ -108,10 +107,8 @@ const memphis = require("memphis-dev");
     }
 })();
 ```
-{% endcode %}
-{% endtab %}
 
-{% tab title="Go" %}
+=== go
 Memphis abstracts the need for external serialization functions and embeds it within the SDK.
 
 **Example schema:**
@@ -211,9 +208,7 @@ func main() {
 }
         
 ```
-{% endtab %}
-
-{% tab title="Python" %}
+=== python
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -262,9 +257,8 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
 
-{% tab title="TypeScript" %}
+=== TypeScript
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -317,9 +311,8 @@ import type { Memphis } from 'memphis-dev/types';
     }
 })();
 ```
-{% endtab %}
 
-{% tab title="HTTP (REST)" %}
+=== HTTP (REST)
 In HTTP, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
 
 **Example schema:**
@@ -335,8 +328,7 @@ message Test {
 
 **Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
 
-{% code lineNumbers="true" %}
-```javascript
+```javascript:line-numbers
 var axios = require('axios');
 var data = JSON.stringify({
   "field1": "foo",
@@ -362,16 +354,13 @@ axios(config)
   console.log(error);
 });
 ```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+:::
 
 ### Consume a message (Deserialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
-{% code lineNumbers="true" %}
-```javascript
+::: tabs
+=== Node.js
+```javascript:line-numbers
 const memphis = require("memphis-dev");
 var protobuf = require("protobufjs");
 
@@ -410,10 +399,7 @@ var protobuf = require("protobufjs");
     }
 })();
 ```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Go" %}
+=== go
 ```go
 package main
 
@@ -468,9 +454,7 @@ func main() {
 	time.Sleep(3000 * time.Second)
 }
 ```
-{% endtab %}
-
-{% tab title="Python" %}
+=== python
 ```python
 import asyncio
 from memphis import Memphis
@@ -504,9 +488,7 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
-
-{% tab title="TypeScript" %}
+=== TypeScript
 ```typescript
 import memphis from 'memphis-dev';
 import type { Memphis } from 'memphis-dev/types';
@@ -548,5 +530,4 @@ var protobuf = require("protobufjs");
     }
 })();type
 ```
-{% endtab %}
-{% endtabs %}
+:::

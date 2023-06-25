@@ -1,14 +1,10 @@
 ---
 description: This section describes Memphis consumer API
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Consumer API
 ---
 
 # Consumer API
-
-##
-
-##
 
 ## What is a consumer?
 
@@ -20,7 +16,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 * Consumer - A consumer entity must be declared to read data/messages from Memphis.
 * (And/or) Producer - A producer entity must be declared to write data/messages into Memphis.
 
-<figure><img src="../../.gitbook/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
 Memphis consumers are “long-polling” by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
 
@@ -39,11 +35,11 @@ consumer.on('message', (message) => {
 });
 ```
 
-<figure><img src="../../.gitbook/assets/consume 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/consume 1.jpeg" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
+::: warning
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
-{% endhint %}
+:::
 
 ### Parameters
 
@@ -77,11 +73,11 @@ consumer.on('message', (message) => {
 * `keyFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<key-client.pem>'.
 * `prefetch = true`: will prefetch the next batch of messages and store it in memory for future Fetch() requests.
 
-{% hint style="info" %}
+::: info
 For more information about how to create and connect a consumer to Memphis,&#x20;
 
-please head [here](broken-reference)
-{% endhint %}
+please head <ContainerLink url="/client-libraries/nats-jetstream">here</ContainerLink>
+:::
 
 ### Sequence (Offsets)
 
@@ -130,3 +126,7 @@ msgs, err := consumer.Fetch(<batch-size> int, <prefetch> bool)
 * AMQP \* Soon \*
 
 Search terms: max message deliveries, batch, batches
+
+<script setup>
+import ContainerLink from '/../components/ContainerLink.vue'
+</script>

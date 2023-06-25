@@ -1,7 +1,7 @@
 ---
 description: This section describes Memphis producer API
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Producer API
 ---
 
 # Producer API
@@ -16,7 +16,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 * Producer - A producer entity must be declared to write data/messages into Memphis.
 * (And/Or) Consumer - A consumer entity must be declared to read data/messages from Memphis.
 
-<figure><img src="../../.gitbook/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Broker's Data Format
 
@@ -32,11 +32,11 @@ await producer.produce({
 });
 ```
 
-<figure><img src="../../.gitbook/assets/produce 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/produce 1.jpeg" alt=""><figcaption></figcaption></figure>
 
-{% hint style="warning" %}
+::: warning
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
-{% endhint %}
+:::
 
 ### Parameters
 
@@ -63,9 +63,9 @@ await producer.produce({
 * `stationName`: The name of the station to be connected&#x20;
 * `producerName`: In a station resolution, each connected producer must have a unique identity
 
-{% hint style="info" %}
-For more information about how to connect a producer to Memphis, please head [here](broken-reference)
-{% endhint %}
+::: tip
+For more information about how to connect a producer to Memphis, please head <ContainerLink url="/client-libraries/nats-jetstream">here</ContainerLink>.
+:::
 
 ## Scale considerations
 
@@ -82,3 +82,6 @@ By adding more producers, the throughput will be increased accordingly due to th
 * AMQP \* Soon \*
 * Kafka \* Soon \*
 
+<script setup>
+import ContainerLink from '/../components/ContainerLink.vue'
+</script>

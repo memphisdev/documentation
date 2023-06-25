@@ -1,3 +1,7 @@
+---
+title: Memphis 
+description: Memphis.Dev Rusk SDK github issue
+---
 # Login
 
 ## Initial users
@@ -16,6 +20,10 @@
  kubectl get secret memphis-creds -n memphis -o jsonpath="{.data.ROOT_PASSWORD}" | base64 --decode
 ```
 
-{% hint style="info" %}
-Additional new users can be added through the [Users page](users.md).
-{% endhint %}
+::: tip
+Additional new users can be added through the <ContainerLink url='./users'>Users page</ContainerLink>.
+:::
+
+<script setup>
+import ContainerLink from '/../components/ContainerLink.Vue'
+</script>

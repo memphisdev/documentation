@@ -1,7 +1,7 @@
 ---
-description: Using Terraform
-cover: ../../.gitbook/assets/GCP and Memphis.jpeg
-coverY: 0
+description: Using Terraform with Google Cloud Platform
+cover: /assets/GCP and Memphis.jpeg
+title: Google Cloud Platform
 ---
 
 # Deploy on GCP
@@ -42,7 +42,7 @@ gcloud services enable compute.googleapis.com container.googleapis.com
 
 ### Terraform Installation Flow
 
-<figure><img src="../../.gitbook/assets/gcp memphis terraform.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/gcp memphis terraform.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 0: Clone Memphis-Terraform repo
 
@@ -53,17 +53,17 @@ cd memphis-terraform/GCP/GKE
 
 ### Step 1: Deploy GKE Cluster using Terraform
 
-{% hint style="info" %}
+::: info
 **In this step, you will need your `projectID`.**
-{% endhint %}
+:::
 
 ```bash
 make infra
 ```
 
-{% hint style="info" %}
+::: info
 Memphis uses "`makefile`" instead of running three terraform commands
-{% endhint %}
+:::
 
 ### Step 2: Deploy Memphis
 
@@ -91,9 +91,9 @@ Destroy Memphis App -
 make destroymemphis
 ```
 
-{% hint style="info" %}
+::: info
 **It might take a few minutes for the ALB to be deleted.**
-{% endhint %}
+:::
 
 Destroy Memphis GKE Cluster -
 

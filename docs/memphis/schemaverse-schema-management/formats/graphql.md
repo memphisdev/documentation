@@ -1,3 +1,7 @@
+---
+title: GraphQL
+description: This section describes integrating GraphQL with Memphis
+---
 # GraphQL
 
 [GraphQL](https://graphql.org/) is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data. GraphQL was developed internally by Facebook in 2012 before being publicly released in 2015. On 7 November 2018, the GraphQL project was moved from Facebook to the newly established GraphQL Foundation, hosted by the non-profit Linux Foundation.
@@ -8,48 +12,42 @@
 
 #### Step 1: Create a new schema
 
-{% tabs %}
-{% tab title="GUI" %}
+::: tabs
+=== GUI
 Head to the "Schemaverse" page
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
 
 Create a new schema by clicking on "Create from blank"
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<figure><img src="/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>    
 
-{% tab title="SDK" %}
+=== SDK
 Soon.
-{% endtab %}
-{% endtabs %}
-
+:::
 #### Step 2: Attach
 
-{% tabs %}
-{% tab title="GUI" %}
+::: tabs
+=== GUI
 Head to your station, and on the top-left corner, click on "+ Attach schema"
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<figure><img src="/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
 
-{% tab title="SDK" %}
+=== SDK
 It can be found through the different [SDKs](broken-reference) docs.
-{% endtab %}
-{% endtabs %}
+:::
 
 ### Produce a message (Serialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+::: tabs
+=== Node.js
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
-```graphql
+```graphql:line-numbers
 type Query {
             greeting:String
             students:[Student]
@@ -61,7 +59,6 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
 
 **Code (Uint8Arrays):**
 
@@ -95,7 +92,7 @@ const memphis = require("memphis-dev");
 ```
 
 **Code (string):**
-
+```javascript
 <pre class="language-javascript"><code class="lang-javascript"><strong>const memphis = require("memphis-dev");
 </strong>
 (async function () {
@@ -123,6 +120,7 @@ const memphis = require("memphis-dev");
     }
 })();
 </code></pre>
+```
 
 **Code (DocumentNode):**
 
@@ -156,15 +154,13 @@ const memphis = require("memphis-dev");
     }
 })();
 ```
-{% endtab %}
 
-{% tab title="Go" %}
+=== Go
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
-```graphql
+```graphql:line-numbers
 type Query {
             greeting:String
             students:[Student]
@@ -176,7 +172,6 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
 
 **Code (string):**
 
@@ -255,15 +250,12 @@ func main() {
 }
 
 ```
-{% endtab %}
-
-{% tab title="Python" %}
+=== python
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
-```graphql
+```graphql:line-numbers
 type Query {
             greeting:String
             students:[Student]
@@ -275,7 +267,6 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
 
 **Code (bytearray):**
 
@@ -374,15 +365,12 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-{% endtab %}
-
-{% tab title="TypeScript" %}
+=== TypeScript
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
 
-{% code lineNumbers="true" %}
-```graphql
+```graphql:line-numbers
 type Query {
             greeting:String
             students:[Student]
@@ -394,7 +382,6 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
 
 **Code (Uint8Arrays):**
 
@@ -506,19 +493,17 @@ import {parse} from 'graphql'
     }
 })();
 ```
-{% endtab %}
-{% endtabs %}
+:::
 
 ### Consume a message (Deserialization)
 
-{% tabs %}
-{% tab title="Node.js" %}
+::: tabs
+=== Node.js
 In coming versions, Memphis will abstract the need for external deserialization functions and embeds them within the SDK.
 
 **Example received schema:**
 
-{% code lineNumbers="true" %}
-```graphql
+```graphql:line-numbers
 type Query {
             greeting:String
             students:[Student]
@@ -530,7 +515,6 @@ type Query {
             lastName:String
          }
 ```
-{% endcode %}
 
 **Code:**
 
@@ -569,9 +553,7 @@ const graphql = require('graphql');
     }
 })();
 ```
-{% endtab %}
-
-{% tab title="Go" %}
+=== go
 ```go
 package main
 
@@ -619,9 +601,7 @@ func main() {
     time.Sleep(30 * time.Second)
 }
 ```
-{% endtab %}
-
-{% tab title="Python" %}
+=== python
 ```python
 import asyncio
 from memphis import Memphis, MemphisError, MemphisConnectError, MemphisHeaderError
@@ -662,9 +642,8 @@ async def main():
 if __name__ == '__main__':
   asyncio.run(main())
 ```
-{% endtab %}
 
-{% tab title="TypeScript" %}
+=== TypeScript
 ```typescript
 import memphis from 'memphis-dev';
 import {Memphis, Message} from 'memphis-dev/types';
@@ -707,5 +686,4 @@ import {parse} from 'graphql'
     }
 })();
 ```
-{% endtab %}
-{% endtabs %}
+:::

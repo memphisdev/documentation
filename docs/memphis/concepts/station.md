@@ -1,6 +1,7 @@
 ---
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Station
+description: This section describes stations
 ---
 
 # Station
@@ -11,9 +12,9 @@ A station is a distributed unit that stores messages. Similar to Kafka's topics 
 
 Each station is distributed across one or more Memphis brokers, depending on the number of configured station replicas. Data will be poured in a RAID-1 manner.
 
-<figure><img src="../../.gitbook/assets/station.jpeg" alt=""><figcaption><p>How replicas work</p></figcaption></figure>
+<figure><img src="/assets/station.jpeg" alt=""><figcaption><p>How replicas work</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/station_2.jpeg" alt=""><figcaption><p>Produce/Consume data</p></figcaption></figure>
+<figure><img src="/assets/station_2.jpeg" alt=""><figcaption><p>Produce/Consume data</p></figcaption></figure>
 
 A station is a virtual entity that resides on a type of file called "stream" which stores the data. Stream files are stored on the broker's memory or non-volatile storage, based on the user's configuration per station.&#x20;
 
@@ -30,7 +31,7 @@ Each station stores a stream component with a single leader on the most availabl
 
 Naturally, choosing memory persistency will improve performance, while disk-based persistency will provide higher availability.
 
-<figure><img src="../../.gitbook/assets/stream.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/stream.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Replicas (Mirroring)
 
@@ -50,7 +51,7 @@ To avoid filling out the station, we must choose a retention policy per station 
 
 The station will only retain the last X produced messages.&#x20;
 
-<figure><img src="../../.gitbook/assets/retention.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/retention.jpeg" alt=""><figcaption></figcaption></figure>
 
 * Station size
 
@@ -66,7 +67,7 @@ Ordering is guaranteed only while working with a single consumer group.
 
 As seen in the illustration below, each **consumer group** will receive **all** the messages stored within the station.
 
-<figure><img src="../../.gitbook/assets/ordering.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/ordering.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Parameters
 

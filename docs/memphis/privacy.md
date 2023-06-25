@@ -1,3 +1,7 @@
+---
+description: This section describes what data memphis collects
+title: Privacy
+---
 # Privacy
 
 For our engineering team to track and resolve bugs in real-time and our product team to understand which feature is more required or did not build right, Memphis collects **anonymous** metadata **only.**

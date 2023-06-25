@@ -1,5 +1,6 @@
 ---
 description: Coming up on v0.5
+title: Avro
 ---
 
 # Avro

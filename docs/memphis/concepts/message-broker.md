@@ -1,6 +1,7 @@
 ---
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Message broker
+description: This section describes message brokers
 ---
 
 # Message broker

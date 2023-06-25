@@ -1,6 +1,7 @@
 ---
-cover: ../../.gitbook/assets/AZURE and Memphis.jpeg
-coverY: 0
+cover: /assets/AZURE and Memphis.jpeg
+description: Deploying on Azure
+title: Azure
 ---
 
 # Deploy on Azure

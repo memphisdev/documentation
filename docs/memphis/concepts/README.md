@@ -1,6 +1,6 @@
 ---
-cover: ../../.gitbook/assets/Memphis concepts (2).jpeg
-coverY: 0
+cover: /assets/Memphis concepts (2).jpeg
+title: Key Concepts
 ---
 
 # Key concepts

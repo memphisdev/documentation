@@ -1,8 +1,13 @@
+---
+title: General
+description: General information about the Memphis UI with K8S or Docker in dev
+---
 # General
 
-{% hint style="info" %}
-You can access the UI just after the installation of Memphis via K8S / Docker on your dev environment [here](../deployment/kubernetes/).
-{% endhint %}
+::: tip
+You can access the UI just after the installation of Memphis via K8S / Docker on your dev environment <ContainerLink url="/deployment/kubernetes/1-installation">here</ContainerLink>.
+:::
+<!-- TODO: make landing pages -->
 
 The UI is designed to simplify your work with Memphis and give you a graphical user interface for controlling your stations and observing your data. A few simple clicks can create a messaging queue ready to work, add a function to enrich your data, or monitor/manage your activity.
 
@@ -75,18 +80,21 @@ The UI is designed to simplify your work with Memphis and give you a graphical u
                   number: 80
     ```
 
-{% hint style="info" %}
-More on publishing k8s services [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types).
-{% endhint %}
+::: info
+More on publishing k8s services <ContainerLink url="https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types">here</ContainerLink>.
+:::
 
 ### **Docker**
 
-{% hint style="info" %}
-For the full docker installation tutorial, please head [here](../deployment/docker-compose.md).
-{% endhint %}
+::: info
+For the full docker installation tutorial, please head <ContainerLink url="/deployment/docker-compose">here</ContainerLink>.
+:::
 
 The default port of the UI is 9000:
 
 ```
 http://localhost:9000
 ```
+<script setup>
+import ContainerLink from '/../components/ContainerLink.Vue'
+</script>

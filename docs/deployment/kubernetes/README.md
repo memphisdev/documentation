@@ -1,2 +1,5 @@
+---
+title: Placeholder text
+---    
 # Kubernetes
 

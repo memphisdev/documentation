@@ -1,5 +1,6 @@
 ---
-description: User management
+title: User management
+description: User management overview
 ---
 
 # Users
@@ -8,14 +9,16 @@ description: User management
 
 This list shows all users and their corresponding types.
 
-![Users list](<../.gitbook/assets/Screenshot 2022-12-11 at 16.44.28.png>)
+<figure><img src="/assets/Screenshot 2022-12-11 at 16.44.28.png" alt="Users List"><figcaption></figcaption></figure>
 
 ### Create a new user
 
-To create a new user, click "Add new user".\
-![](<../.gitbook/assets/add new user button>)
+To create a new user, click "Add new user".
+<figure><img src="/assets/add new user button.png" alt="" style="width:300px;"><figcaption></figcaption></figure>
 
-![User details](<../.gitbook/assets/user details>)
+<br/>
+
+<figure><img src="/assets/user details.png" alt="User Details"><figcaption></figcaption></figure>
 
 * Choose the type of user (the default is "Management").
 * Add a custom password or auto-generate one.
