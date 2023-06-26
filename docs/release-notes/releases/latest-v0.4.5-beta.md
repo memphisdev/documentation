@@ -2,7 +2,9 @@
 description: 'Release date: 21 February 2023'
 title: v0.4.5 - beta
 ---
-
+<script setup>
+import BigLink from './../../components/BigLink.vue'
+</script>
 # v0.4.5 - beta
 
 Upgrade procedure for production users (Kubernetes deployments)
@@ -33,6 +35,3 @@ Please make sure your **SDKs** are **updated** to the latest version to enjoy ne
 * When storage capacity reaches 100%, Memphis GUI becomes unresponsive till cleaned up by at least 10%.
 * Resending/dropping a great amount of dead-letter messages can significantly take time.
 
-<script setup>
-import BigLink from './../../components/BigLink.vue'
-</script>

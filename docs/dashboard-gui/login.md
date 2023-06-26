@@ -2,6 +2,9 @@
 title: Memphis 
 description: Memphis.Dev Rusk SDK github issue
 ---
+<script setup>
+import ContainerLink from './../components/ContainerLink.Vue'
+</script>
 # Login
 
 ## Initial users
@@ -23,7 +26,3 @@ description: Memphis.Dev Rusk SDK github issue
 ::: tip
 Additional new users can be added through the <ContainerLink url='./users'>Users page</ContainerLink>.
 :::
-
-<script setup>
-import ContainerLink from './../components/ContainerLink.Vue'
-</script>

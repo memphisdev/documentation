@@ -3,6 +3,9 @@ description: This section describes Memphis consumer API
 cover: /assets/Memphis_concepts_(2).jpeg
 title: Consumer API
 ---
+<script setup>
+import ContainerLink from './../../components/ContainerLink.vue'
+</script>
 
 # Consumer API
 
@@ -126,7 +129,3 @@ msgs, err := consumer.Fetch(<batch-size> int, <prefetch> bool)
 * AMQP \* Soon \*
 
 Search terms: max message deliveries, batch, batches
-
-<script setup>
-import ContainerLink from './../../components/ContainerLink.vue'
-</script>
