@@ -15,10 +15,13 @@ export default defineConfig({
         '/components/ContainerLink.vue',
         '/components/BigLink.vue',
         '/components/Embed.vue',
-        '/components/HeaderImage.vue',
-        'meta_data.json'
+        '/components/HeaderImage.vue'
       ]
-    }
+    },
+    assetsInclude: [
+      'meta_data.json',
+      /^\/assets\/.*$/
+    ]
   },
   head: [
     ['link', { rel: 'icon', href: '../assets/favicon.ico' }],

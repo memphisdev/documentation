@@ -21,7 +21,7 @@ const props = defineProps(['url'])
 const link = ref(props.url)
 
 onMounted( async () =>{    
-  const response = await fetch('/documentation/assets/meta_data.json');
+  const response = await fetch('/meta_data.json');
   if (!response.ok) {
     console.log("Error loading meta_data.json from /assets/meta_data.json");
   }else{

@@ -8,35 +8,6 @@ const auth = "am9obkBtZW1waGlzLmRldjpSRE55YzlpaDF5VmdwQ3pWWU5lbQ=="
 const docs_path = '../../docs/**/*.md';
 const mdfiles = await glob(docs_path, { ignore: 'assets/**' });
 
-function urlmeta_fetch(mdfiles) {
-    const meta_data = {}
-    mdfiles.forEach(file => {
-        const file_content = fs.readFileSync(file, 'utf8').toString();
-        const dom = new JSDOM(file_content);
-        const embeds = dom.window.document.querySelectorAll('Embed');
-        if (embeds.length > 0) {
-            console.log(file);
-            embeds.forEach(embed => {
-                const url = embed.getAttribute('url');
-                axios.get(`https://api.urlmeta.org/meta?url=${encodeURIComponent(url)}`, {
-                    headers: {
-                    Authorization: `Basic ${auth}`,
-                    },
-                }).then((response) => {
-                    const data = response.data
-                    if (data.result.status == "OK") {
-                    meta_data[url] = data
-                    console.log(data)
-                    } else {
-                    console.log("URL Meta error:", data.result.reason)
-                    }
-                }).catch((err) => console.log(err))
-            });
-        }
-    });
-    return meta_data;
-}
-
 function select_highest_res_favicon(favicon_options, first_favicon){
     let favicon;
     let biggest_favicon;
