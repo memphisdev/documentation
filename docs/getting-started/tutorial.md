@@ -2,6 +2,9 @@
 description: Links to various tutorials
 title: Tutorials
 ---
+<script setup>
+import Embed from 'docs/components/Embed.vue'
+</script>
 # Tutorials
 
 <Embed url="https://memphis.dev/blog/connect-memphis-as-an-argo-event-source/"/>
@@ -17,7 +20,3 @@ title: Tutorials
 <Embed url="https://memphis.dev/blog/part-2-change-data-capture-cdc-for-mongodb-with-debezium-and-memphis-dev/"/>
 
 <Embed url="https://memphis.dev/blog/part-3-transforming-mongodb-cdc-event-messages/"/>
-
-<script setup>
-import Embed from './../components/Embed.vue'
-</script>

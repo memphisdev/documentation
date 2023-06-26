@@ -3,7 +3,9 @@ description: This section describes Memphis producer API
 cover: /assets/Memphis_concepts_(2).jpeg
 title: Producer API
 ---
-
+<script setup>
+import ContainerLink from 'docs/components/ContainerLink.vue'
+</script>
 # Producer API
 
 ## What is a producer?
@@ -82,6 +84,3 @@ By adding more producers, the throughput will be increased accordingly due to th
 * AMQP \* Soon \*
 * Kafka \* Soon \*
 
-<script setup>
-import ContainerLink from './../../components/ContainerLink.vue'
-</script>

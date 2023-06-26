@@ -3,7 +3,7 @@ title: Memphis
 description: Memphis.Dev Rusk SDK github issue
 ---
 <script setup>
-import ContainerLink from './../components/ContainerLink.Vue'
+import ContainerLink from 'docs/components/ContainerLink.Vue'
 </script>
 # Login
 

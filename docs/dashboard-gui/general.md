@@ -2,6 +2,9 @@
 title: General
 description: General information about the Memphis UI with K8S or Docker in dev
 ---
+<script setup>
+import ContainerLink from 'docs/components/ContainerLink.Vue'
+</script>
 # General
 
 ::: tip
@@ -95,6 +98,3 @@ The default port of the UI is 9000:
 ```
 http://localhost:9000
 ```
-<script setup>
-import ContainerLink from './../components/ContainerLink.Vue'
-</script>
