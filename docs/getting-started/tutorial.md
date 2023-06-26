@@ -3,7 +3,7 @@ description: Links to various tutorials
 title: Tutorials
 ---
 <script setup>
-import Embed from 'docs/components/Embed.vue'
+import Embed from '/components/Embed.vue'
 </script>
 # Tutorials
 

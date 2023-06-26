@@ -4,7 +4,7 @@ cover: /assets/Memphis_concepts_(2).jpeg
 title: Producer API
 ---
 <script setup>
-import ContainerLink from 'docs/components/ContainerLink.vue'
+import ContainerLink from '/components/ContainerLink.vue'
 </script>
 # Producer API
 

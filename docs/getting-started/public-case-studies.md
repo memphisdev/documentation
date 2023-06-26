@@ -3,7 +3,7 @@ title: Public Case Studies
 description: Links to articles detailing memphis usage
 ---
 <script setup>
-import Embed from 'docs/components/Embed.vue'
+import Embed from '/components/Embed.vue'
 </script>
 # Public Case Studies
 

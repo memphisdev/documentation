@@ -3,7 +3,7 @@ title: General
 description: General information about the Memphis UI with K8S or Docker in dev
 ---
 <script setup>
-import ContainerLink from 'docs/components/ContainerLink.Vue'
+import ContainerLink from '/components/ContainerLink.Vue'
 </script>
 # General
 
