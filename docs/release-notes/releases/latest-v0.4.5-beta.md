@@ -29,10 +29,10 @@ Please make sure your **SDKs** are **updated** to the latest version to enjoy ne
 ## ![:pensive:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f614.png) Known issues
 
 * Authentication - Application-type users connect with Memphis (via the SDKs) using a connection token. For now, this token is constant and randomly generated per Memphis deployment.
-* While using an older SDK version, an error message appears on the station overview page saying, “Error while getting notified about a poison message: Missing mandatory message headers.”
+* While using an older SDK version, an error message appears on the station overview page saying, ï¿½Error while getting notified about a poison message: Missing mandatory message headers.ï¿½
 * When storage capacity reaches 100%, Memphis GUI becomes unresponsive till cleaned up by at least 10%.
 * Resending/dropping a great amount of dead-letter messages can significantly take time.
 
 <script setup>
-import BigLink from '../../../components/BigLink.vue'
+import BigLink from '/components/BigLink.vue'
 </script>

@@ -11,5 +11,5 @@ Made by Gastromatic.de
 Search terms: Gastromatic, gastromatic
 
 <script setup>
-import Embed from '../../components/Embed.vue'
+import Embed from '/components/Embed.vue'
 </script>

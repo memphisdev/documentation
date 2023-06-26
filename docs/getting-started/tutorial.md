@@ -19,5 +19,5 @@ title: Tutorials
 <Embed url="https://memphis.dev/blog/part-3-transforming-mongodb-cdc-event-messages/"/>
 
 <script setup>
-import Embed from '../../components/Embed.vue'
+import Embed from '/components/Embed.vue'
 </script>

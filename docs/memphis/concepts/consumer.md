@@ -18,7 +18,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 
 <figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
-Memphis consumers are “long-polling” by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
+Memphis consumers are ï¿½long-pollingï¿½ by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
 
 ### Broker Data Format
 
@@ -128,5 +128,5 @@ msgs, err := consumer.Fetch(<batch-size> int, <prefetch> bool)
 Search terms: max message deliveries, batch, batches
 
 <script setup>
-import ContainerLink from '../../../components/ContainerLink.vue'
+import ContainerLink from '/components/ContainerLink.vue'
 </script>
