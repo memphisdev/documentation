@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Scaling
 description: The following section outlines the Memphis scaling process and provides instructions on how to implement it.
 ---
@@ -20,7 +20,7 @@ Both approaches can be used to increase the capacity of an application to handle
 
 Below, you'll find examples, instructions and best practices on how to scale up/scale up your Memphis cluster.
 
-<figure><img src="/assets/scale up vs out.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/scale_up_vs_out.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Scaling up / Vertical Scaling
 
@@ -62,7 +62,7 @@ kubectl get cm memphis-broker-config -o yaml > memphis-broker-config.yaml
 vi memphis-broker-config.yaml
 ```
 
-<figure><img src="/assets/Screen Shot 2022-11-13 at 17.08.25.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-11-13_at_17.08.25.png" alt=""><figcaption></figcaption></figure>
 
 Add the new StatefulSet in the marked line with the following pattern -
 

@@ -1,6 +1,6 @@
 ---
 description: This section describes the different storage and redundancy options
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Storage and Redundancy
 ---
 
@@ -44,9 +44,9 @@ The options are Memory or Disk. Each with its strengths and weaknesses.
   For faster performance.\
   Due to its nature as a volatile type of storage, the risk of losing data in case of failure is higher because it resides in the broker's memory, and in the case of a station without configured replicas, data can be lost.
 
-<figure><img src="/assets/storage type memory.jpeg" alt=""><figcaption><p>Stream object as it construct and stored</p></figcaption></figure>
+<figure><img src="/assets/storage_type_memory.jpeg" alt=""><figcaption><p>Stream object as it construct and stored</p></figcaption></figure>
 
-<figure><img src="/assets/mem ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
+<figure><img src="/assets/mem_ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
 
 * **Disk.**\
   For higher availability.\
@@ -54,7 +54,7 @@ The options are Memory or Disk. Each with its strengths and weaknesses.
 
 <figure><img src="/assets/disk.jpeg" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/disk ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
+<figure><img src="/assets/disk_ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
 
 ### Tier 2 (Remote storage) \* Optional \*
 
@@ -65,7 +65,7 @@ Possible integrations [here](../../integrations/storage/).
 
 #### Behind the scenes
 
-<figure><img src="/assets/storage tier arch (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/storage_tier_arch_(1).jpeg" alt=""><figcaption></figcaption></figure>
 
 #### A growing list of options:
 

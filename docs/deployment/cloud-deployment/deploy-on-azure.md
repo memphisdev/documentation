@@ -1,5 +1,5 @@
 ---
-cover: /assets/AZURE and Memphis.jpeg
+cover: /assets/AZURE_and_Memphis.jpeg
 description: Deploying on Azure
 title: Azure
 ---

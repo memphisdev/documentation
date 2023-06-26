@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Station
 description: This section describes stations
 ---
@@ -8,7 +8,7 @@ description: This section describes stations
 
 ## What is a station?
 
-A station is a distributed unit that stores messages. Similar to Kafka's topics and RabbitMQ's queues. Each station has a retention policy, which defines when and how messages will be removed from the stationâ€”for example, by the number of stored messages, store time, or total size of stored messages.
+A station is a distributed unit that stores messages. Similar to Kafka's topics and RabbitMQ's queues. Each station has a retention policy, which defines when and how messages will be removed from the station—for example, by the number of stored messages, store time, or total size of stored messages.
 
 Each station is distributed across one or more Memphis brokers, depending on the number of configured station replicas. Data will be poured in a RAID-1 manner.
 

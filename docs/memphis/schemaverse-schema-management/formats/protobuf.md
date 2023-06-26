@@ -30,11 +30,11 @@ description: This section describes integrating protobufs with Memphis
 === GUI
 Head to the "Schemaverse" page
 
-<figure><img src="/assets/Screen Shot 2022-11-10 at 15.22.17 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-11-10_at_15.22.17_(1).png" alt=""><figcaption></figcaption></figure>
 
 Create a new schema by clicking on "Create from blank"
 
-<figure><img src="/assets/Screen Shot 2022-11-10 at 15.22.25 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-11-10_at_15.22.25_(1).png" alt=""><figcaption></figcaption></figure>
 
 === SDK
 Soon.
@@ -46,9 +46,9 @@ Soon.
 === GUI
 Head to your station, and on the top-left corner, click on "+ Attach schema"
 
-<figure><img src="/assets/Screen Shot 2022-11-10 at 16.02.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-11-10_at_16.02.31.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/Screen Shot 2022-11-10 at 16.02.38.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-11-10_at_16.02.38.png" alt=""><figcaption></figcaption></figure>
 
 === SDK
 It can be found through the different [SDKs](broken-reference) docs.

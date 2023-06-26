@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Message broker
 description: This section describes message brokers
 ---
@@ -26,7 +26,7 @@ A message broker is an intermediary between two applications or services. It acc
 
 **Queues**
 
-A queue is a data structure used for storing messages/events in order of arrival until they can be processed by an application/service. Queues are useful for decoupling components in distributed systems because they allow asynchronous processing of messages through multiple nodes in the system â€” hence allowing us to scale our applications easily.
+A queue is a data structure used for storing messages/events in order of arrival until they can be processed by an application/service. Queues are useful for decoupling components in distributed systems because they allow asynchronous processing of messages through multiple nodes in the system — hence allowing us to scale our applications easily.
 
 **Publish-Subscribe System**
 

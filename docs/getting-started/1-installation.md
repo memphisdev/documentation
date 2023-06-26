@@ -1,5 +1,5 @@
 ---
-cover: /assets/LinkedIn personal (3).png
+cover: /assets/LinkedIn_personal_(3).png
 title: Installation
 description: Getting started with installing Memphis.dev
 ---
@@ -61,5 +61,5 @@ More information can be found in the [Memphis Docker deployment](/deployment/doc
 
 ## High-level diagram
 
-<figure><img src="/assets/overview (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/overview_(1).jpeg" alt=""><figcaption></figcaption></figure>
 

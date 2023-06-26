@@ -29,7 +29,7 @@ title: Benchmarks
 ### Notes
 
 1. In each iteration, the counter starts with the first sent message, stops at the last one, waits until the end of the second, and repeats.
-2. Each test runs 1000 times to produce ‚Äúnormalized‚Äù results.
+2. Each test runs 1000 times to produce ìnormalizedî results.
 
 ## Produce (Write)
 

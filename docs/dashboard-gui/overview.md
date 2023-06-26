@@ -20,7 +20,7 @@ The "System components" panel had made for the infrastructure administrators to 
 
 In Kubernetes deployments only. If the following warning is shown -
 
-<figure><img src="/assets/Screen Shot 2023-01-30 at 14.22.29 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2023-01-30_at_14.22.29_(1).png" alt=""><figcaption></figcaption></figure>
 
 Memphis "System components" panel uses k8s "[metric-server](https://kubernetes-sigs.github.io/metrics-server/)" to read the cluster resources.
 

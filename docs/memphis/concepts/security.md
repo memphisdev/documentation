@@ -1,6 +1,6 @@
 ---
 description: This section describes authentication and authorization features in Memphis. Both methods enable the operator to control access to Memphis.
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Security/Authentication
 ---
 

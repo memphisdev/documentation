@@ -15,18 +15,18 @@ Instead of endless amounts of producers, consumers, orchestrations, manual scali
 
 <div>
 
-<figure><img src="/assets/Screenshot 2022-12-11 at 14.57.04.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot_2022-12-11_at_14.57.04.png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
 ### Create a station
 
 To create a new station, click "Create new station".\
-<figure><img src="/assets/Screenshot 2022-12-11 at 15.12.31 (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot_2022-12-11_at_15.12.31_(1)_(1)_(1).png" alt=""><figcaption></figcaption></figure>
 
 A modal will appear with customization options.
 
-<figure><img src="/assets/Screenshot 2022-12-11 at 15.14.03.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot_2022-12-11_at_15.14.03.png" alt=""><figcaption></figcaption></figure>
 
 * **Retention** - The default value is seven days. You can choose a custom retention value by time, message size, and message amount.
 * [**Storage type**](broken-reference) - Choose whether to store your messages in a file or memory.
@@ -36,17 +36,17 @@ A modal will appear with customization options.
 
 All the required information for a specific station is presented here.
 
-<figure><img src="/assets/Screenshot 2022-12-11 at 15.03.54.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot_2022-12-11_at_15.03.54.png" alt=""><figcaption></figcaption></figure>
 
 ### Code Example - How to connect an app
 
 Press the SDK button to display the station's connection details.
 
-<figure><img src="/assets/Screen Shot 2022-09-19 at 12.14.38.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-09-19_at_12.14.38.png" alt=""><figcaption></figcaption></figure>
 
 <div>
 
-<figure><img src="/assets/Screenshot 2022-12-11 at 15.17.27.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot_2022-12-11_at_15.17.27.png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -56,7 +56,7 @@ Press the SDK button to display the station's connection details.
 
 ### Producers & Consumers
 
-<figure><img src="/assets/Screenshot 2022-12-11 at 15.05.57.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screenshot_2022-12-11_at_15.05.57.png" alt=""><figcaption></figcaption></figure>
 
 * In this section, Memphis provides data-level observability to the messages within a station
 * The right and left panels show lists of producers and consumers.

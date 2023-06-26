@@ -1,7 +1,7 @@
 ---
 description: Using Terraform with AWS
 title: AWS
-cover: /assets/AWS and Memphis (1).jpeg
+cover: /assets/AWS_and_Memphis_(1).jpeg
 ---
 
 # Deploy on AWS
@@ -59,7 +59,7 @@ $ aws configure
 
 ### Terraform Installation Flow
 
-<figure><img src="/assets/aws memphis terraform (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/aws_memphis_terraform_(1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 0: Clone Memphis-Terraform repo
 

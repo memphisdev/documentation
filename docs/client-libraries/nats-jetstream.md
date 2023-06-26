@@ -1,7 +1,7 @@
 ---
 title: NATS Jetstream
 description: Memphis compatability with NATS Jetstream
-cover: /assets/NATS + Memphis.jpeg
+cover: /assets/NATS_+_Memphis.jpeg
 ---
 
 # NATS Jetstream
