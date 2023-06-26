@@ -6,12 +6,13 @@ export default defineConfig({
   title: "Memphis",
   description: "Memphis Documentation",
   srcDir: 'docs',
-  base: '/',
+  base: '/documentation/',
   ignoreDeadLinks: true,
   build: {
     rollupOptions: {
       external: [
         /^\/assets\/.*$/,
+        /^\/components\/.*$/,
       ]
     }
   },
