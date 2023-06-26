@@ -113,4 +113,3 @@ A Datadog [tutorial](https://docs.datadoghq.com/dashboards/#copy-import-or-expor
 
 Memphis dashboard .json file to download -
 
-<!-- {% embed url="https://raw.githubusercontent.com/memphisdev/gitbook-backup/master/dashboard-gui/integrations/monitoring/MemphisDashboard.json" %} -->
