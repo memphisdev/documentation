@@ -12,6 +12,10 @@ export default defineConfig({
     rollupOptions: {
       external: [
         /^\/assets\/.*$/,
+        '/components/ContainerLink.Vue',
+        '/components/BigLink.vue',
+        '/components/Embed.vue',
+        '/components/HeaderImage.vue',
       ]
     }
   },
