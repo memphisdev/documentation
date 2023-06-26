@@ -19,8 +19,10 @@ export default defineConfig({
       ]
     },
     assetsInclude: [
-      'meta_data.json',
-      /^\/assets\/.*$/
+      '/assets/meta_data.json',
+      '/assets/color_logo_dark_theme.svg',
+      '/assets/color_logo.svg',
+      '/assets/LinkedIn_personal_(3).png'
     ]
   },
   head: [
