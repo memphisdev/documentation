@@ -16,6 +16,7 @@ export default defineConfig({
         '/components/BigLink.vue',
         '/components/Embed.vue',
         '/components/HeaderImage.vue',
+        'meta_data.json'
       ]
     }
   },
