@@ -128,5 +128,5 @@ msgs, err := consumer.Fetch(<batch-size> int, <prefetch> bool)
 Search terms: max message deliveries, batch, batches
 
 <script setup>
-import ContainerLink from '/../components/ContainerLink.vue'
+import ContainerLink from '../../../components/ContainerLink.vue'
 </script>

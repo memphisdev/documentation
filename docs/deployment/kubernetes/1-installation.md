@@ -214,5 +214,5 @@ global.cluster.enabled="true"
 Search terms: SSL
 
 <script setup>
-import ContainerLink from '/../components/ContainerLink.vue'
+import ContainerLink from '../../../components/ContainerLink.vue'
 </script>

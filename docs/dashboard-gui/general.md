@@ -96,5 +96,5 @@ The default port of the UI is 9000:
 http://localhost:9000
 ```
 <script setup>
-import ContainerLink from '/../components/ContainerLink.Vue'
+import ContainerLink from '../../components/ContainerLink.Vue'
 </script>
