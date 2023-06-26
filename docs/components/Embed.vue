@@ -22,12 +22,17 @@ const link = ref(props.url)
 
 onMounted( async () =>{    
   const response = await fetch('/assets/meta_data.json');
-  const data = await response.json();
-  const my_data = data[props.url];
+  if (!response.ok) {
+    console.log("Error loading meta_data.json from /assets/meta_data.json");
+  }else{
+    const data = await response.json();
+    const my_data = data[props.url];
 
-  title.value = my_data.title;
-  domain.value = my_data.site_name;
-  icon.value = my_data.favicon;
+    title.value = my_data.title;
+    domain.value = my_data.site_name;
+    icon.value = my_data.favicon;
+  }
+  
 }) 
 </script>
 
