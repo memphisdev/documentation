@@ -1,8 +1,11 @@
 ---
 description: This section describes Memphis consumer API
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Consumer API
 ---
+<script setup>
+import ContainerLink from '/components/ContainerLink.vue'
+</script>
 
 # Consumer API
 
@@ -18,7 +21,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 
 <figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
-Memphis consumers are “long-polling” by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
+Memphis consumers are �long-polling� by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
 
 ### Broker Data Format
 
@@ -35,7 +38,7 @@ consumer.on('message', (message) => {
 });
 ```
 
-<figure><img src="/assets/consume 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/consume_1.jpeg" alt=""><figcaption></figcaption></figure>
 
 ::: warning
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
@@ -126,7 +129,3 @@ msgs, err := consumer.Fetch(<batch-size> int, <prefetch> bool)
 * AMQP \* Soon \*
 
 Search terms: max message deliveries, batch, batches
-
-<script setup>
-import ContainerLink from '/../components/ContainerLink.vue'
-</script>

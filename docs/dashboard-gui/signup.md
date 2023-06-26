@@ -4,7 +4,7 @@ description: Overview of signup page
 ---
 # Signup
 
-<figure><img src="/assets/Screen Shot 2022-09-19 at 12.00.10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-09-19_at_12.00.10.png" alt=""><figcaption></figcaption></figure>
 
 The reason behind the signup page is to allow the creation of the **first management user** for less technical users that want to quickly login into the system.
 

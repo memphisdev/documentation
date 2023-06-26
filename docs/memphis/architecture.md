@@ -16,7 +16,7 @@ Memphis platform is comprised of three main components:
 3. REST Gateway.\
    Responsible for exposing Memphis management and data ingestion through REST requests.
 
-<figure><img src="/assets/memphis key components.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/memphis_key_components.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Connectivity Diagram
 
@@ -39,7 +39,7 @@ Memphis platform is comprised of three main components:
 
 The diagram below depicts a full Kubernetes-based deployment.
 
-<figure><img src="/assets/network diagram.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/network_diagram.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## Ordering
 
@@ -51,7 +51,7 @@ Currently, ordering is guaranteed only while working with a single consumer grou
 
 Memphis is designed to run as a distributed cluster for a highly available and scalable system. The consensus algorithm responsible for atomicity within Memphis is called RAFT and does not require a witness or a standalom Qorum, unlike others such as Apache ZooKeeper which is widely used by projects like Kafka. RAFT is also equivalent to [Paxos](https://en.wikipedia.org/wiki/Paxos\_\(computer\_science\)) in fault tolerance and performance.
 
-Memphis brokers should run on different nodes to ensure data consistency and zero loss within complete brokerâ€™s reboots. To comply with RAFT requirements which are Â½ cluster size + 1 an odd number of Memphis brokers shall be deployed. The minimum number of brokers is one, and the next scale would be 3, 5, and so forth.
+Memphis brokers should run on different nodes to ensure data consistency and zero loss within complete broker’s reboots. To comply with RAFT requirements which are ½ cluster size + 1 an odd number of Memphis brokers shall be deployed. The minimum number of brokers is one, and the next scale would be 3, 5, and so forth.
 
 ![](/assets/replications.jpeg)
 

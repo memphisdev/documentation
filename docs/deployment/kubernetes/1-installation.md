@@ -2,7 +2,9 @@
 description: Deploy Memphis over Kubernetes
 title: Kubernetes
 ---
-
+<script setup>
+import ContainerLink from '/components/ContainerLink.vue'
+</script>
 # 1 - Installation
 
 ::: tip
@@ -209,10 +211,7 @@ global.cluster.enabled="true"
 
 ## Deployment diagram
 
-<figure><img src="/assets/Memphis Architecture.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Memphis_Architecture.jpg" alt=""><figcaption></figcaption></figure>
 
 Search terms: SSL
 
-<script setup>
-import ContainerLink from '/../components/ContainerLink.vue'
-</script>

@@ -1,6 +1,6 @@
 ---
 description: How to configure a Grafana dashboard to visualize Memphis metrics
-cover: /assets/Grafana + Memphis.jpeg
+cover: /assets/Grafana_+_Memphis.jpeg
 title: Graphana
 ---
 
@@ -71,4 +71,4 @@ helm upgrade memphis memphis/memphis -n memphis --set exporter.enabled=true,meta
 Import Memphis dashboard using Memphis dashboard ID: **18050**\
 [https://grafana.com/grafana/dashboards/18050-memphis/](https://grafana.com/grafana/dashboards/18050-memphis/)
 
-<figure><img src="/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image_(1).png" alt=""><figcaption></figcaption></figure>

@@ -1,6 +1,6 @@
 ---
 description: This section describes the implementation of the Dead-letter station in Memphis.
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Dead Letter Station
 ---
 
@@ -25,7 +25,7 @@ Once the user has debugged the consumer application or the consumer application 
 
 **Poison messages** = Messages that cause a consumer group to repeatedly require a delivery (possibly due to a consumer failure) such that the message is never processed completely and acknowledged so that it can be stopped being sent again to the same consumer.
 
-**Example**: Some message on an arbitrary station pulled by a consumer of a certain consumer group. That consumer, for some reason, doesn't succeed in handling it. It can be due to a bug, an unknown schema, a resource issue, etcâ€¦
+**Example**: Some message on an arbitrary station pulled by a consumer of a certain consumer group. That consumer, for some reason, doesn't succeed in handling it. It can be due to a bug, an unknown schema, a resource issue, etc…
 
 ## How do dead-letter stations work?
 
@@ -46,7 +46,7 @@ The DLS will automatically (based on user decision) catch messages of the follow
 * **Unacknowledged**. Messages that passed the `maxAckDeliveries` parameter.
 * **Schema violation.** Messages that did not pass the attached schema validation. As Memphis mission is to narrow data loss, and increase observability, messages that did not pass schema validation can be important and indicate some producer issues. Therefore, Memphis supports storing such messages.
 
-<img src="/assets/Screen Shot 2023-01-07 at 21.10.04.png" alt="" data-size="original">
+<img src="/assets/Screen_Shot_2023-01-07_at_21.10.04.png" alt="" data-size="original">
 
 <figure><img src="/assets/schemaverse.jpeg" alt=""><figcaption><p>How "Schema violation" messages reach DLS</p></figcaption></figure>
 

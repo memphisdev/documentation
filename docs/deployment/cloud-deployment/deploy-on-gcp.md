@@ -1,6 +1,6 @@
 ---
 description: Using Terraform with Google Cloud Platform
-cover: /assets/GCP and Memphis.jpeg
+cover: /assets/GCP_and_Memphis.jpeg
 title: Google Cloud Platform
 ---
 
@@ -42,7 +42,7 @@ gcloud services enable compute.googleapis.com container.googleapis.com
 
 ### Terraform Installation Flow
 
-<figure><img src="/assets/gcp memphis terraform.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/gcp_memphis_terraform.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 0: Clone Memphis-Terraform repo
 

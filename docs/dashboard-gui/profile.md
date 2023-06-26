@@ -7,6 +7,6 @@ description: For managing personal profile perferences
 
 "Profile" settings can be found at the bottom of the sidebar.
 
-<figure><img src="/assets/Screen Shot 2023-02-21 at 11.17.29.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2023-02-21_at_11.17.29.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/Screen Shot 2023-02-21 at 11.22.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2023-02-21_at_11.22.31.png" alt=""><figcaption></figcaption></figure>

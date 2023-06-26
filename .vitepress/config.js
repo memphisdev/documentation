@@ -6,7 +6,15 @@ export default defineConfig({
   title: "Memphis",
   description: "Memphis Documentation",
   srcDir: 'docs',
-  base: '/docs/',
+  base: '/documentation/',
+  ignoreDeadLinks: true,
+  build: {
+    rollupOptions: {
+      external: [
+        /^\/assets\/.*$/,
+      ]
+    }
+  },
   head: [
     ['link', { rel: 'icon', href: '../assets/favicon.ico' }],
     [

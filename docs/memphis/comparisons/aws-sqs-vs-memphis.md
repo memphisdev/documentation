@@ -1,6 +1,6 @@
 ---
 description: This section describes the differences between AWS SQS and Memphis
-cover: /assets/AWS SQS vs Memphis.jpeg
+cover: /assets/AWS_SQS_vs_Memphis.jpeg
 title: AWS SQS vs Memphis
 ---
 
@@ -18,7 +18,7 @@ A simple, robust, and durable cloud-native message broker wrapped with an entire
 
 Memphis.dev enables building next-generation applications that require large volumes of streamed and enriched data, modern protocols, zero ops, rapid development, extreme cost reduction, and a significantly lower amount of dev time for data-oriented developers and data engineers.
 
-<figure><img src="/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/image_(6)_(1).png" alt=""><figcaption></figcaption></figure>
 
 ## Messaging
 
@@ -67,30 +67,30 @@ Memphis is a log. It uses continuous messages, which stay in the station (queue)
 
 **AWS SQS** doesn't support multi-tenancy but through a lambda function, required to be code and managed by the user that acts as a router.
 
-<figure><img src="/assets/Screen Shot 2022-12-22 at 14.36.37.png" alt=""><figcaption><p>AWS SQS</p></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-12-22_at_14.36.37.png" alt=""><figcaption><p>AWS SQS</p></figcaption></figure>
 
 **Memphis** supports multi-tenancy using namespaces which offers a complete separation from connections, producers, consumers, security, dedicated dashboard, including node selection.
 
-<figure><img src="/assets/Screen Shot 2022-12-22 at 14.10.43.png" alt=""><figcaption><p>Memphis namespaces</p></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-12-22_at_14.10.43.png" alt=""><figcaption><p>Memphis namespaces</p></figcaption></figure>
 
 ### **Observability**&#x20;
 
 Some level of observability can be received by using 3rd party apps like Cloudwatch/Datadog/New Relic. To understand the full path of a message, it is required to use AWS X-Ray and add some headers to each client. Notifications can be achieved by building a dedicated event queue with lambda triggers. Some alarms and triggers must be defined over 3rd party apps to enable lag identifications and latency in real-time.
 
-<figure><img src="/assets/Screen Shot 2022-12-22 at 14.38.55.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-12-22_at_14.38.55.png" alt=""><figcaption></figcaption></figure>
 
 Memphis offers full Infra-to-cluster-to-data GUI-based observability, monitoring, real-time message tracing, and notifications embedded inside the management layer, including self-healing policies based on the defined events.\
 
 
-<figure><img src="/assets/Screen Shot 2022-12-22 at 14.26.04.png" alt=""><figcaption><p>Memphis GUI</p></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-12-22_at_14.26.04.png" alt=""><figcaption><p>Memphis GUI</p></figcaption></figure>
 
 <div>
 
-<figure><img src="/assets/Screen Shot 2022-12-22 at 14.26.51.png" alt=""><figcaption><p>Troubleshooting process</p></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-12-22_at_14.26.51.png" alt=""><figcaption><p>Troubleshooting process</p></figcaption></figure>
 
  
 
-<figure><img src="/assets/Screen Shot 2022-12-22 at 14.26.36.png" alt=""><figcaption><p>Notification Center</p></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-12-22_at_14.26.36.png" alt=""><figcaption><p>Notification Center</p></figcaption></figure>
 
 </div>
 
@@ -149,7 +149,7 @@ For the infrastructure cost comparison, we ran benchmarks to compare the perform
 Oftentimes, there is a misconception that cloud services are a turnkey solution. \
 Here are some of the missing components that will need to be constructed when using AWS SQS -&#x20;
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Performance heavily relies on the clientâ€™s threads</td><td></td></tr><tr><td></td><td>What if you required to run on GCP for specific customer?</td><td></td></tr><tr><td></td><td><p>Not built for SaaS.</p><p>No multi-tenancy</p></td><td></td></tr><tr><td></td><td>Consumer-side delay queues</td><td></td></tr><tr><td></td><td>Monitoring and notification</td><td></td></tr><tr><td></td><td>Consumption from DLQ</td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Performance heavily relies on the client’s threads</td><td></td></tr><tr><td></td><td>What if you required to run on GCP for specific customer?</td><td></td></tr><tr><td></td><td><p>Not built for SaaS.</p><p>No multi-tenancy</p></td><td></td></tr><tr><td></td><td>Consumer-side delay queues</td><td></td></tr><tr><td></td><td>Monitoring and notification</td><td></td></tr><tr><td></td><td>Consumption from DLQ</td><td></td></tr></tbody></table>
 
 ### Implementation costs
 
@@ -173,7 +173,7 @@ Here are some of the missing components that will need to be constructed when us
 | Client nodes              | <p>1 X M4.2xlarge.</p><p><mark style="color:purple;"><strong>$324.12</strong></mark></p>                                                       | <p>12 X M4.2xlarge</p><p><mark style="color:orange;"><strong>$3,889.44</strong></mark></p>                                                                   |
 | Retention (Storage)       | <p>3 days X 10 kb message X 77,760M = 6Tb. </p><p><mark style="color:purple;"><strong>$1,737.52</strong></mark></p>                            | 3 days                                                                                                                                                       |
 | Data Transfer between AZs | <mark style="color:purple;">**$2,866**</mark>                                                                                                  | <mark style="color:orange;">**$1,433.60**</mark>                                                                                                             |
-| Licensing                 | <p>Memphis Self-hosted enterprise licensing for partners. Flat. </p><p><mark style="color:purple;"><strong>$1,100 â€“ $2,000</strong></mark></p> | Included.                                                                                                                                                    |
+| Licensing                 | <p>Memphis Self-hosted enterprise licensing for partners. Flat. </p><p><mark style="color:purple;"><strong>$1,100 – $2,000</strong></mark></p> | Included.                                                                                                                                                    |
 | Cost                      | <mark style="color:purple;">**$6,574**</mark>                                                                                                  | Based on average dev hourly rate of $70 <mark style="color:orange;">**$56,655.60 ($50,081 difference)**</mark>                                               |
 
 ### Summary
@@ -190,4 +190,4 @@ Here are some of the missing components that will need to be constructed when us
 | <p>Summary.<br>Infrastructure</p>                                                        |    x8.2 |    x8.6 |      x10 |
 | <p>Summary.<br>TCO</p>                                                                   |    x9.1 |    x9.1 |    x10.4 |
 
-<figure><img src="/assets/Screen Shot 2023-04-07 at 13.21.14.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2023-04-07_at_13.21.14.png" alt=""><figcaption></figcaption></figure>

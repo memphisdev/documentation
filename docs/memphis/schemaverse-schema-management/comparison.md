@@ -40,11 +40,11 @@ Main components of AWS Glue are the Data Catalog which stores metadata, and an E
 
 Confluent Schema Registry provides a serving layer for your metadata.&#x20;
 
-It provides a RESTful interface for storing and retrieving your AvroÂ®, JSON Schema, and [Protobuf](https://developers.google.com/protocol-buffers/) [schemas](https://docs.confluent.io/platform/current/schema-registry/schema\_registry\_onprem\_tutorial.html#schema-registry-tutorial-definition).&#x20;
+It provides a RESTful interface for storing and retrieving your Avro®, JSON Schema, and [Protobuf](https://developers.google.com/protocol-buffers/) [schemas](https://docs.confluent.io/platform/current/schema-registry/schema\_registry\_onprem\_tutorial.html#schema-registry-tutorial-definition).&#x20;
 
 It stores a versioned history of all schemas based on a specified subject name strategy, provides multiple compatibility settings and allows evolution of schemas according to the configured compatibility settings and expanded support for these schema types.
 
-It provides serializers that plug into Apache KafkaÂ® clients that handle schema storage and retrieval for Kafka messages that are sent in any of the supported formats.
+It provides serializers that plug into Apache Kafka® clients that handle schema storage and retrieval for Kafka messages that are sent in any of the supported formats.
 
 <figure><img src="https://lh4.googleusercontent.com/TsEE5GMwkbMLRKzv51BG6KoL9GY_Eh_ZceRacC5XOgMP_pgQY6GNKIil4-G1tXECXW8SYzlsqjQwU6i1Q6aeZygDmgCNzeeN1YlmjjiuXggpBIsdOX57XrMLedg3xsZYL8ARI9ftTaf3Mr7BkB5UplE" alt=""><figcaption><p>Credit: https://docs.confluent.io/platform/current/schema-registry/index.html#schemas-subjects-and-topics</p></figcaption></figure>
 
@@ -69,7 +69,7 @@ Schemaverse's main purpose is to act as an automatic gatekeeper and ensure the f
 
 * Schema enforcement between microservices
 * Data contracts
-* Convert eventsâ€™ format
+* Convert events’ format
 * Create an organisational standard around the different consumers and producers
 
 ## Comparison

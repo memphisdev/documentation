@@ -1,9 +1,11 @@
 ---
 description: This section describes Memphis producer API
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Producer API
 ---
-
+<script setup>
+import ContainerLink from '/components/ContainerLink.vue'
+</script>
 # Producer API
 
 ## What is a producer?
@@ -32,7 +34,7 @@ await producer.produce({
 });
 ```
 
-<figure><img src="/assets/produce 1.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/produce_1.jpeg" alt=""><figcaption></figcaption></figure>
 
 ::: warning
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
@@ -82,6 +84,3 @@ By adding more producers, the throughput will be increased accordingly due to th
 * AMQP \* Soon \*
 * Kafka \* Soon \*
 
-<script setup>
-import ContainerLink from '/../components/ContainerLink.vue'
-</script>

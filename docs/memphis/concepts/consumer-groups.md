@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis concepts (2).jpeg
+cover: /assets/Memphis_concepts_(2).jpeg
 title: Consumer Group
 description: This section descibes what is a consumer group
 ---
@@ -14,8 +14,8 @@ The added layer of a consumer group enables ordering control and avoids duplicat
 
 Each message will be delivered in parallel to all consumer groups.
 
-<figure><img src="/assets/consumer group.jpeg" alt=""><figcaption><p>Each consumer group gets the same messages</p></figcaption></figure>
+<figure><img src="/assets/consumer_group.jpeg" alt=""><figcaption><p>Each consumer group gets the same messages</p></figcaption></figure>
 
-<figure><img src="/assets/consumer group 2.jpeg" alt=""><figcaption><p>Inside the consumer group, a message will be delivered to only one consumer</p></figcaption></figure>
+<figure><img src="/assets/consumer_group_2.jpeg" alt=""><figcaption><p>Inside the consumer group, a message will be delivered to only one consumer</p></figcaption></figure>
 
 There is no [consumer](./consumer) without a consumer group.
