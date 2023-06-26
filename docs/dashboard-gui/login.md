@@ -25,5 +25,5 @@ Additional new users can be added through the <ContainerLink url='./users'>Users
 :::
 
 <script setup>
-import ContainerLink from '/components/ContainerLink.Vue'
+import ContainerLink from './../components/ContainerLink.Vue'
 </script>

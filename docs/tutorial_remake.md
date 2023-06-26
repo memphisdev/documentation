@@ -3,7 +3,7 @@ title: Documentation Example
 ---
 
 <script setup>
-import Embed from '/components/Embed.vue'
+import Embed from './components/Embed.vue'
 </script>
 
 # Tutorials

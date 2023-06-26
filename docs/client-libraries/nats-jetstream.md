@@ -75,5 +75,5 @@ Stream argo_event_source was created
 <BigLink url="/integrations/other-platforms/argo-and-memphis" title="Argo"/>
 
 <script setup>
-import BigLink from '/components/BigLink.vue'
+import BigLink from './../components/BigLink.vue'
 </script>

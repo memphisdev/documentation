@@ -83,5 +83,5 @@ By adding more producers, the throughput will be increased accordingly due to th
 * Kafka \* Soon \*
 
 <script setup>
-import ContainerLink from '/components/ContainerLink.vue'
+import ContainerLink from './../../components/ContainerLink.vue'
 </script>
