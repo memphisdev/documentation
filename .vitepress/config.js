@@ -8,6 +8,15 @@ export default defineConfig({
   srcDir: 'docs',
   base: '/documentation/',
   ignoreDeadLinks: true,
+  assetsInclude: [
+    '**/meta_data.json',
+    'meta_data.json',
+    '**/*.json',
+    '*.json',
+    '/assets/color_logo_dark_theme.svg',
+    '/assets/color_logo.svg',
+    '/assets/LinkedIn_personal_(3).png'
+  ],
   build: {
     rollupOptions: {
       external: [
@@ -17,13 +26,7 @@ export default defineConfig({
         '/components/Embed.vue',
         '/components/HeaderImage.vue'
       ]
-    },
-    assetsInclude: [
-      '/assets/meta_data.json',
-      '/assets/color_logo_dark_theme.svg',
-      '/assets/color_logo.svg',
-      '/assets/LinkedIn_personal_(3).png'
-    ]
+    }
   },
   head: [
     ['link', { rel: 'icon', href: '../assets/favicon.ico' }],

@@ -13,7 +13,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'  
+import config from '/meta_data.json'
 const title = ref('')
 const domain = ref('')
 const icon = ref('')
@@ -21,17 +22,17 @@ const props = defineProps(['url'])
 const link = ref(props.url)
 
 onMounted( async () =>{    
-  const response = await fetch('/meta_data.json');
-  if (!response.ok) {
-    console.log("Error loading meta_data.json from /meta_data.json");
-  }else{
-    const data = await response.json();
-    const my_data = data[props.url];
+  // const response = await fetch('/meta_data.json');
+  // if (!response.ok) {
+  //   console.log("Error loading meta_data.json from /meta_data.json");
+  // }else{
+    // const data = await response.json();
+    const my_data = config[props.url];
 
     title.value = my_data.title;
     domain.value = my_data.site_name;
     icon.value = my_data.favicon;
-  }
+  // }
   
 }) 
 </script>
