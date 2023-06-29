@@ -1,6 +1,6 @@
 ---
 description: Released on v0.4.0
-cover: /assets/schema_-_overview.jpeg
+cover: /schema_-_overview.jpeg
 title: Schemaverse
 ---
 

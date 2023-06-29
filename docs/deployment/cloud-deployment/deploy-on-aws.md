@@ -1,7 +1,7 @@
 ---
 description: Using Terraform with AWS
 title: AWS
-cover: /assets/AWS_and_Memphis_(1).jpeg
+cover: /AWS_and_Memphis_(1).jpeg
 ---
 
 # Deploy on AWS

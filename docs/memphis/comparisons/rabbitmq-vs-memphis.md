@@ -1,6 +1,6 @@
 ---
 description: This section describes the differences between RabbitMQ and Memphis
-cover: /assets/RabbitMQ_vs_Memphis.jpeg
+cover: /RabbitMQ_vs_Memphis.jpeg
 title: RabbitMQ vs Memphis
 ---
 

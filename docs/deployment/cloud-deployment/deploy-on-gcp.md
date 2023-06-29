@@ -1,6 +1,6 @@
 ---
 description: Using Terraform with Google Cloud Platform
-cover: /assets/GCP_and_Memphis.jpeg
+cover: /GCP_and_Memphis.jpeg
 title: Google Cloud Platform
 ---
 

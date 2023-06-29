@@ -1,6 +1,6 @@
 ---
 description: Argo and Memphis using NATS Event source
-cover: /assets/Argo_+_Memphis.jpeg
+cover: /Argo_+_Memphis.jpeg
 title: Argo
 ---
 

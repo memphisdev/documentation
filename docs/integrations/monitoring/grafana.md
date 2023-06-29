@@ -1,6 +1,6 @@
 ---
 description: How to configure a Grafana dashboard to visualize Memphis metrics
-cover: /assets/Grafana_+_Memphis.jpeg
+cover: /Grafana_+_Memphis.jpeg
 title: Graphana
 ---
 

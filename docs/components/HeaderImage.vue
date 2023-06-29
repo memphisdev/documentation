@@ -9,7 +9,7 @@
 
 <script setup>
     import { ref, onMounted, watch } from 'vue'
-    import { useData } from 'vitepress';
+    import { useData, withBase } from 'vitepress';
     const source = ref('')
     const { frontmatter } = useData();
     const { page } = useData();
@@ -18,14 +18,14 @@
     onMounted(() => {
         if (frontmatter._value.cover != undefined) {
             has_cover.value = true
-            source.value = frontmatter._value.cover
+            source.value = withBase(frontmatter._value.cover)
         }
     })
 
     watch (page, () => {
         if (frontmatter._value.cover != undefined) {
             has_cover.value = true
-            source.value = frontmatter._value.cover
+            source.value = withBase(frontmatter._value.cover)
         } else {
             has_cover.value = false
         }

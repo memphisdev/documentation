@@ -1,6 +1,6 @@
 ---
 description: This section describes Memphis producer API
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Producer API
 ---
 <script setup>

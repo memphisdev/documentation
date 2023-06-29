@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Scaling
 description: The following section outlines the Memphis scaling process and provides instructions on how to implement it.
 ---

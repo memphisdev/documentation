@@ -1,6 +1,6 @@
 ---
 description: This section describes the different storage and redundancy options
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Storage and Redundancy
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: v1.0.0 - LTS
-cover: /assets/Overview..jpg
+cover: /Overview..jpg
 title: Overview
 ---
 

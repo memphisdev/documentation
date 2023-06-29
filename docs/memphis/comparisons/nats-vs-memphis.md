@@ -1,6 +1,6 @@
 ---
 description: This section describes the differences between NATS Jetstream and Memphis
-cover: /assets/Jetstream_vs_Memphis.jpeg
+cover: /Jetstream_vs_Memphis.jpeg
 title: NATS Jetstream
 ---
 

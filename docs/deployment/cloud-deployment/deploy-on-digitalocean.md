@@ -1,5 +1,5 @@
 ---
-cover: /assets/DigitalOcean_and_Memphis.jpeg
+cover: /DigitalOcean_and_Memphis.jpeg
 description: Deploying on DigitalOcean
 title: DigitalOcean
 ---

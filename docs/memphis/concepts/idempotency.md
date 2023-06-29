@@ -1,6 +1,6 @@
 ---
 description: What is it? And how to avoid it.
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Idempotency
 ---
 

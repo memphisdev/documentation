@@ -1,7 +1,7 @@
 ---
 description: This section describes the implementation of the Dead-letter station in
   Memphis.
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Dead-Letter Station
 ---
 
