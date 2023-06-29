@@ -8,14 +8,9 @@ export default defineConfig({
   srcDir: 'docs',
   base: '/documentation/',
   ignoreDeadLinks: true,
-  assetsInclude: [
-    'assets/**',
-    '**/assets/Datadog_and_Memphis.jpeg'
-  ],
   build: {
     rollupOptions: {
       external: [
-        /^\/assets\/.*$/,
         '/components/ContainerLink.vue',
         '/components/BigLink.vue',
         '/components/Embed.vue',
@@ -24,7 +19,7 @@ export default defineConfig({
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/assets/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
       'script', {
       async: '',
@@ -49,10 +44,10 @@ export default defineConfig({
     ],
 
     logo: {
-      light: '/assets/color_logo.svg',
-      dark: '/assets/color_logo_dark_theme.svg'
+      light: '/color_logo.svg',
+      dark: '/color_logo_dark_theme.svg'
     },
-
+    
     siteTitle: false,
 
     search: {

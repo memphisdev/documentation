@@ -97,7 +97,7 @@ Once deployment is complete, the Application Load Balancer URL will be revealed.
 
 ### Step 3: Login to Memphis
 
-Display memphis load balancer public IP by running the following -
+Display memphis load balancer assets IP by running the following -
 
 ```
 kubectl get svc -n memphis

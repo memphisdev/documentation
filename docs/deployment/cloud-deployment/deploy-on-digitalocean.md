@@ -99,7 +99,7 @@ spec:
   type: LoadBalancer
 ```
 
-The above will create a digitalocean load balancer with a public ip.
+The above will create a digitalocean load balancer with a assets ip.
 
 ### Step 5: Expose Memphis <mark style="color:green;">UI</mark> using a load balancer
 
@@ -112,7 +112,7 @@ Run the following YAML
 
 ### Step 6: Connect your 1st app
 
-To get the public IPs of the load balancers we created before, run
+To get the assets IPs of the load balancers we created before, run
 
 ```
 kubectl get svc

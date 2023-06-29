@@ -149,7 +149,7 @@ For the infrastructure cost comparison, we ran benchmarks to compare the perform
 Oftentimes, there is a misconception that cloud services are a turnkey solution. \
 Here are some of the missing components that will need to be constructed when using AWS SQS -&#x20;
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Performance heavily relies on the client’s threads</td><td></td></tr><tr><td></td><td>What if you required to run on GCP for specific customer?</td><td></td></tr><tr><td></td><td><p>Not built for SaaS.</p><p>No multi-tenancy</p></td><td></td></tr><tr><td></td><td>Consumer-side delay queues</td><td></td></tr><tr><td></td><td>Monitoring and notification</td><td></td></tr><tr><td></td><td>Consumption from DLQ</td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Performance heavily relies on the clientï¿½s threads</td><td></td></tr><tr><td></td><td>What if you required to run on GCP for specific customer?</td><td></td></tr><tr><td></td><td><p>Not built for SaaS.</p><p>No multi-tenancy</p></td><td></td></tr><tr><td></td><td>Consumer-side delay queues</td><td></td></tr><tr><td></td><td>Monitoring and notification</td><td></td></tr><tr><td></td><td>Consumption from DLQ</td><td></td></tr></tbody></table>
 
 ### Implementation costs
 
@@ -173,7 +173,7 @@ Here are some of the missing components that will need to be constructed when us
 | Client nodes              | <p>1 X M4.2xlarge.</p><p><mark style="color:purple;"><strong>$324.12</strong></mark></p>                                                       | <p>12 X M4.2xlarge</p><p><mark style="color:orange;"><strong>$3,889.44</strong></mark></p>                                                                   |
 | Retention (Storage)       | <p>3 days X 10 kb message X 77,760M = 6Tb. </p><p><mark style="color:purple;"><strong>$1,737.52</strong></mark></p>                            | 3 days                                                                                                                                                       |
 | Data Transfer between AZs | <mark style="color:purple;">**$2,866**</mark>                                                                                                  | <mark style="color:orange;">**$1,433.60**</mark>                                                                                                             |
-| Licensing                 | <p>Memphis Self-hosted enterprise licensing for partners. Flat. </p><p><mark style="color:purple;"><strong>$1,100 – $2,000</strong></mark></p> | Included.                                                                                                                                                    |
+| Licensing                 | <p>Memphis Self-hosted enterprise licensing for partners. Flat. </p><p><mark style="color:purple;"><strong>$1,100 ï¿½ $2,000</strong></mark></p> | Included.                                                                                                                                                    |
 | Cost                      | <mark style="color:purple;">**$6,574**</mark>                                                                                                  | Based on average dev hourly rate of $70 <mark style="color:orange;">**$56,655.60 ($50,081 difference)**</mark>                                               |
 
 ### Summary
