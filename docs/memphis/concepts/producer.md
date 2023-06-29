@@ -36,7 +36,7 @@ await producer.produce({
 
 <figure><img src="/assets/produce_1.jpeg" alt=""><figcaption></figcaption></figure>
 
-::: warning
+::: info
 **Unexist stations** will be created **automatically** through the SDK on the first producer/consumer connection.
 :::
 
@@ -65,7 +65,7 @@ await producer.produce({
 * `stationName`: The name of the station to be connected&#x20;
 * `producerName`: In a station resolution, each connected producer must have a unique identity
 
-::: tip
+::: info
 For more information about how to connect a producer to Memphis, please head <ContainerLink url="/client-libraries/nats-jetstream">here</ContainerLink>.
 :::
 

@@ -21,7 +21,7 @@ As the user configures a client connection to Memphis, it comprises several obje
 
 <figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
-Memphis consumers are �long-polling� by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
+Memphis consumers are “long-polling” by design and will wait for infinite time till a new message gets ingested into the Memphis station, including out-of-the-box retry connection and polling mechanisms to make sure consumers retry to connect in case of disconnection and repoll unack message.
 
 ### Broker Data Format
 

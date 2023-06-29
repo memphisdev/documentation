@@ -9,13 +9,8 @@ export default defineConfig({
   base: '/documentation/',
   ignoreDeadLinks: true,
   assetsInclude: [
-    '**/meta_data.json',
-    'meta_data.json',
-    '**/*.json',
-    '*.json',
-    '/assets/color_logo_dark_theme.svg',
-    '/assets/color_logo.svg',
-    '/assets/LinkedIn_personal_(3).png'
+    'assets/**',
+    '**/assets/Datadog_and_Memphis.jpeg'
   ],
   build: {
     rollupOptions: {
@@ -29,7 +24,7 @@ export default defineConfig({
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '../assets/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/assets/favicon.ico' }],
     [
       'script', {
       async: '',
@@ -54,8 +49,8 @@ export default defineConfig({
     ],
 
     logo: {
-      light: '../assets/color_logo.svg',
-      dark: '../assets/color_logo_dark_theme.svg'
+      light: '/assets/color_logo.svg',
+      dark: '/assets/color_logo_dark_theme.svg'
     },
 
     siteTitle: false,

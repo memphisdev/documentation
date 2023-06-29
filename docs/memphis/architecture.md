@@ -1,6 +1,5 @@
 ---
 description: This section describes Memphis' architecture
-title: Architecture
 ---
 
 # Architecture
@@ -41,23 +40,33 @@ The diagram below depicts a full Kubernetes-based deployment.
 
 <figure><img src="/assets/network_diagram.jpeg" alt=""><figcaption></figcaption></figure>
 
-## Ordering
+## Topology and ordering
 
-Currently, ordering is guaranteed only while working with a single consumer group.
+Producers and consumers are the main entities in Memphis.\
+The role of the producers is to produce data into a Memphis station, and the consumers to consume the ingested data or messages.
 
-![](/assets/ordering.jpeg)
+A single client or application can run multiple producers and consumers, and connect them to various stations. \
+Within the context of a single station, consumer groups encapsulate multiple consumers.\
+Each **consumer group** will consume all of the stored and unconsumed messages within the station and split the consumed messages within its internal members, similar to thread pool behavior. \
+That means that a single produced message will be consumed by all of the consumer groups, but within the consumer group itself, it will only be read by a single consumer.
 
-## Mirroring
+Each consumer is bound to a unique consumer group, and cannot be shared across multiple CGs.
+
+The stored messages within the stations are ordered based on First-In-First-Out (Fifo) manner and will be consumed in the same order as they are produced.
+
+<figure><img src="/assets/Architecture_2_(2).png" alt=""><figcaption></figcaption></figure>
+
+## Mirroring and Replications
 
 Memphis is designed to run as a distributed cluster for a highly available and scalable system. The consensus algorithm responsible for atomicity within Memphis is called RAFT and does not require a witness or a standalom Qorum, unlike others such as Apache ZooKeeper which is widely used by projects like Kafka. RAFT is also equivalent to [Paxos](https://en.wikipedia.org/wiki/Paxos\_\(computer\_science\)) in fault tolerance and performance.
 
-Memphis brokers should run on different nodes to ensure data consistency and zero loss within complete broker’s reboots. To comply with RAFT requirements which are ½ cluster size + 1 an odd number of Memphis brokers shall be deployed. The minimum number of brokers is one, and the next scale would be 3, 5, and so forth.
+Memphis brokers should run on different nodes to ensure data consistency and zero loss within complete brokerâ€™s reboots. To comply with RAFT requirements which are Â½ cluster size + 1 an odd number of Memphis brokers shall be deployed. The minimum number of brokers is one, and the next scale would be 3, 5, and so forth.
 
 ![](/assets/replications.jpeg)
 
 ## Supported Protocols
 
-* [TCP-based SDKs](/client-libraries/nats-jetstream)
+* [TCP-based SDKs](../client-libraries/nats-jetstream.md)
 * [HTTP](https://github.com/memphisdev/memphis-http-proxy)
 * [WebSockets](https://github.com/orgs/memphisdev/projects/2/views/1?pane=issue\&itemId=14008452) \* Soon \*
 * gRPC \* Soon \*
@@ -74,7 +83,7 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 === Kubernetes
 **Minimum Requirements (Without high availability)**
 
-<table><thead><tr><th>Resource</th><th>Quantity</th><th data-hidden></th></tr></thead><tbody><tr><td>K8S Nodes</td><td>1</td><td></td></tr><tr><td>CPU</td><td>2 CPU</td><td></td></tr><tr><td>Memory</td><td>4GB RAM</td><td></td></tr><tr><td>Storage</td><td>12GB PVC</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Resource</th><th>Quantity</th></tr></thead><tbody><tr><td>K8S Nodes</td><td>1</td></tr><tr><td>CPU</td><td>2 CPU</td></tr><tr><td>Memory</td><td>4GB RAM</td></tr><tr><td>Storage</td><td>12GB PVC</td></tr></tbody></table>
 
 **Recommended Requirements for production (With high availability)**
 
@@ -84,6 +93,7 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 | CPU       | 4 CPU             |
 | Memory    | 8GB RAM           |
 | Storage   | 12GB PVC Per node |
+
 
 === Docker
 **Requirements (No HA)**
@@ -102,6 +112,6 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 
 This is achieved by the combination of published messages being persisted to the station as well as the consumer tracking delivery and acknowledgment of each message as clients receive and process them.
 
-* [Exactly once (Idempotence)](./concepts/idempotency)
+* [Exactly once (Idempotence)](concepts/idempotency.md)
 
 Searched terms: connectivity, cluster, ordering, mirror, mirroring, deployment, protocols, requirements, delivery guarantee

@@ -73,7 +73,7 @@ message Test {
 }
 ```
 
-**Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
+**Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
 ```javascript:line-numbers
 const memphis = require("memphis-dev");

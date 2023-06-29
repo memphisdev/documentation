@@ -5,6 +5,8 @@ title: Use Cases
 
 # Use cases
 
+Memphis is great for the following use cases
+
 #### A growing list of use cases based on our users' usage
 
 * Async task management
