@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
-import { sidebar_export  } from './sidebar'
+import { sidebar_export  } from '/../.vitepress/sidebar.js'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
