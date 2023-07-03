@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
-import { sidebar_export } from './sidebar.js'
+import { sidebar_export } from './sidebar'
 
+console.log(__dirname)
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Memphis",
