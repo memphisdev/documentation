@@ -9,7 +9,7 @@
     // import { ref, onMounted, watch } from 'vue'
     import { useData } from 'vitepress';
     import { onMounted, ref } from 'vue'
-    import { sidebar_export } from '../../.vitepress/sidebar.js'
+    import { sidebar_export } from '/sidebar.js'
     import BigLink from './BigLink.vue'
 
     const { page } = useData()
