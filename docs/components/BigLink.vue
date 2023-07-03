@@ -80,7 +80,7 @@ const url = ref(props.url)
   line-height: 20px;
   font-size: 14px;
   font-weight: 500;
-  /* color: var(--vp-c-brand); */
+  color: var(--vp-c-brand);
   transition: color 0.25s;
 }
 </style>
