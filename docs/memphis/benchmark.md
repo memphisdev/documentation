@@ -5,6 +5,8 @@ title: Benchmarks
 
 # Benchmark
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 ### Benchmark Version Control
@@ -88,7 +90,7 @@ title: Benchmarks
 ### Notes
 
 1. In each iteration, the counter starts with the first sent message, stops at the last one, waits until the end of the second, and repeats.
-2. Each test runs 1000 times to produce �normalized� results.
+2. Each test runs 1000 times to produce “normalized” results.
 
 ## Produce (Write)
 

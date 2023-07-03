@@ -4,6 +4,8 @@ title: Kubernetes
 ---
 # 1 - Installation
 
+<Subtitle></Subtitle>
+
 ::: tip
 If you prefer using **Terraform**, head <ContainerLink url="/deployment/Terraform/">here</ContainerLink>
 :::

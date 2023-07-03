@@ -8,6 +8,7 @@ export default defineConfig({
   srcDir: 'docs',
   base: '/documentation/',
   ignoreDeadLinks: true,
+  lastUpdated: true,
   build: {
     rollupOptions: {
       external: [
@@ -55,6 +56,10 @@ export default defineConfig({
     },
 
     sidebar: docs(),
+
+    editLink: {
+      pattern: 'https://github.com/memphisdev/documentation/edit/master/:path'
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }

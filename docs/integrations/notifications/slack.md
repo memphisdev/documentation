@@ -6,6 +6,8 @@ title: Slack integration
 
 # Slack
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 Receive alerts and notifications directly to your chosen slack channel for faster response and better real-time observability.

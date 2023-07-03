@@ -6,6 +6,8 @@ title: RabbitMQ vs Memphis
 
 # RabbitMQ vs Memphis
 
+<Subtitle></Subtitle>
+
 ## **What is RabbitMQ?**
 
 RabbitMQ is a lightweight and easy-to-deploy messaging queue for on-premises and cloud environments. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
@@ -91,13 +93,13 @@ RabbitMQ pushes messages to consumers. These messages are removed from the queue
 
 ### **Topology**&#x20;
 
-RabbitMQ uses the exchange queue topology � sending messages to an exchange where they are, in turn, routed to various queue bindings for the consumer�s use. Memphis employs the publish/subscribe topology, sending messages across the streams to the correct stations, and then consumed by users in the different authorized groups.
+RabbitMQ uses the exchange queue topology — sending messages to an exchange where they are, in turn, routed to various queue bindings for the consumer’s use. Memphis employs the publish/subscribe topology, sending messages across the streams to the correct stations, and then consumed by users in the different authorized groups.
 
 ### **Architecture Differences**
 
 When choosing between Memphis and RabbitMQ, the internal operations and fundamental design can be essential considerations.&#x20;
 
-The components of RabbitMQ�s Architecture consist of the following:
+The components of RabbitMQ’s Architecture consist of the following:
 
 * Queue: It is in charge of keeping track of messages that have been received and may have configuration data that specifies what it can do with a message.
 * Exchange: An exchange receives messages sent to RabbitMQ and determines where they should be forwarded. Exchanges define the routing strategies used for messages, most frequently by examining the data characteristics transmitted with the message or included inside its attributes.

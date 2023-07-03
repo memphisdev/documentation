@@ -6,6 +6,8 @@ title: Argo
 
 # Argo
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 [Argo](https://argoproj.github.io/) is a collection of open-source tools for Kubernetes to run workflows,manage clusters, and do GitOps easily.&#x20;

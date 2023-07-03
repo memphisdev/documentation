@@ -6,7 +6,7 @@ title: Contribution Instructions
 
 That's amazing that you reached this page!
 
-Memphis is and always will be open-source and community-driven. Our community is our power.
+Memphis is and always will be open-source and community-driven. Our community is our power. :blue_heart:
 
 ## Why should you become a contributor?
 

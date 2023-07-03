@@ -6,6 +6,8 @@ title: Amazon S3
 
 # Amazon S3
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 The common pattern of message brokers is to delete messages after passing the defined retention policy, like time/size/number of messages.\

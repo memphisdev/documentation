@@ -4,6 +4,8 @@ description: This section describes Memphis' architecture
 
 # Architecture
 
+<Subtitle></Subtitle>
+
 ## Key components
 
 Memphis platform is comprised of three main components:

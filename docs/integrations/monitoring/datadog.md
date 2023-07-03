@@ -6,6 +6,8 @@ title: Datadog
 
 # Datadog
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 As Datadog is one of the popular tools for centralized monitoring, Memphis provides a Prometheus exporter to enable Datadog users to monitor Memphis in K8S deployment only.

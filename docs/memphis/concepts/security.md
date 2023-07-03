@@ -6,6 +6,8 @@ title: Security/Authentication
 
 # Security/Authentication
 
+<Subtitle></Subtitle>
+
 ## Methods
 
 When deploying Memphis, there is an option to choose the authentication method. The method should be chosen based on the app and the organization's security requirements.

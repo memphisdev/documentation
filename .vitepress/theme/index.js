@@ -8,6 +8,7 @@ import ContainerLink from '../../docs/components/ContainerLink.vue'
 import BigLink from '../../docs/components/BigLink.vue'
 import Embed from '../../docs/components/Embed.vue'
 import Index from '../../docs/components/Index.vue'
+import Subtitle from '../../docs/components/Subtitle.vue'
 
 export default {
   ...DefaultTheme,
@@ -23,6 +24,7 @@ export default {
     app.component('ContainerLink', ContainerLink),
     app.component('BigLink', BigLink),
     app.component('Embed', Embed),
-    app.component('Index', Index)
+    app.component('Index', Index),
+    app.component('Subtitle',  Subtitle)
   }
 }

@@ -6,6 +6,8 @@ title: Apache Kafka
 
 # Apache Kafka vs Memphis
 
+<Subtitle></Subtitle>
+
 ## What is Apache Kafka?
 
 Apache Kafka is an open-source distributed event streaming platform. Based on the abstraction of a distributed commit log, Kafka can handle a great number of events with functionality comprising pub/sub.

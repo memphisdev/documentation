@@ -5,6 +5,8 @@ description: On this page, you can see all factory stations with their correspon
 
 # Stations
 
+<Subtitle></Subtitle>
+
 RabbitMQ has queues, Kafka has topics, and Memphis has stations.
 
 In its simplest form, a station provides a powerful yet easy-to-use messaging queue for apps.

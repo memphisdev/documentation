@@ -6,6 +6,8 @@ title: NATS Jetstream
 
 # NATS Jetstream vs Memphis
 
+<Subtitle></Subtitle>
+
 ## **What is NATS?**
 
 ​​NATS is an open-source, message bus technology that powers modern distributed systems. Accordingly, it is responsible for addressing, discovering, and exchanging messages that drive the common patterns in distributed systems, asking and answering questions, aka services/microservices, and making and processing statements, or stream processing.

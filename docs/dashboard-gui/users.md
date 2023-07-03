@@ -5,6 +5,8 @@ description: User management overview
 
 # Users
 
+<Subtitle></Subtitle>
+
 ### Users list
 
 This list shows all users and their corresponding types.

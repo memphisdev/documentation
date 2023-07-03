@@ -5,6 +5,8 @@ title: Consumer API
 ---
 # Consumer API
 
+<Subtitle></Subtitle>
+
 ## What is a consumer?
 
 A consumer is a client that reads data or messages from the broker or, more specifically, from the station.&#x20;

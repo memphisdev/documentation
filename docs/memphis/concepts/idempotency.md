@@ -6,6 +6,8 @@ title: Idempotency
 
 # Idempotency (Duplicate processing)
 
+<Subtitle></Subtitle>
+
 How to avoid duplicate producing and consuming the same message more than once.
 
 ## What is Idempotency?
@@ -21,7 +23,7 @@ On the producer side, this can happen as illustrated below.
 1. The producer sends a message to Memphis
 2. The message was successfully written and stored
 3. Network issues prevented the broker acknowledgment from reaching the producer
-4. The producer will treat the lack of acknowledgment as a temporary network issue and retry sending the message (since it can�t know it was received).
+4. The producer will treat the lack of acknowledgment as a temporary network issue and retry sending the message (since it can’t know it was received).
 5. In that case, the broker will end up having the same message twice.
 
 <figure><img src="/assets/idempotence_1_(1).jpeg" alt=""><figcaption></figcaption></figure>

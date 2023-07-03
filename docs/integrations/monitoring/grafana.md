@@ -6,6 +6,8 @@ title: Graphana
 
 # Grafana
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 As Grafana is one of the most popular tools for centralized monitoring, Memphis provides a Prometheus exporter to enable Grafana users to monitor Memphis.

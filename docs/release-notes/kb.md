@@ -5,6 +5,8 @@ title: KB
 
 # KB
 
+<Subtitle></Subtitle>
+
 ### Error: authorization\_violation
 
 `authorization_violation` means the connection entity used bad login information.\
