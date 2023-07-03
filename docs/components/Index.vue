@@ -7,22 +7,24 @@
 
 <script setup>
     // import { ref, onMounted, watch } from 'vue'
-    import { useData } from 'vitepress';
+    import { useData, withBase } from 'vitepress';
     import { onMounted, ref } from 'vue'
     import { useSidebar } from 'vitepress/theme'
     import BigLink from './BigLink.vue'
     const sidebar = useSidebar().sidebar.value
 
-    console.log(sidebar);
     const { page } = useData()
     const pagePath = `/${page.value.relativePath.split('.')[0]}`
     const page_title_inner = ""
     const page_title = ref(page_title_inner)
 
     function parseSidebar(sidebar) {
-        let child_pages;
+        let child_pages = [];
         for(const item of sidebar){
             if (item.link !== undefined && item.link === pagePath) {
+                for (const child of item.items) {
+                    child_pages.push(withBase(child))
+                }
                 child_pages = item.items
                 page_title.value = item.text
             } else if (item.items !== undefined){
