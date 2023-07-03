@@ -9,9 +9,11 @@
     // import { ref, onMounted, watch } from 'vue'
     import { useData } from 'vitepress';
     import { onMounted, ref } from 'vue'
-    import { sidebar_export } from '/../.vitepress/sidebar.js'
+    import { useSidebar } from 'vitepress/theme'
     import BigLink from './BigLink.vue'
+    const sidebar = useSidebar().sidebar.value
 
+    console.log(sidebar);
     const { page } = useData()
     const pagePath = `/${page.value.relativePath.split('.')[0]}`
     const page_title_inner = ""
@@ -34,7 +36,7 @@
         return child_pages
     }
 
-    const child_pages = ref(parseSidebar(sidebar_export));
+    const child_pages = ref(parseSidebar(sidebar));
 </script>
 
 <style scoped>  

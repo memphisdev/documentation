@@ -17,6 +17,7 @@
   --vp-c-alt: #FFC633;
   --vp-c-alt-light: #FFC633;
   --vp-c-muted: #FFC633;
+  --vp-c-subtitle: rgba(162,169,185,1.00);
 
   --vp-custom-block-tip-border: var(--vp-c-brand-dark);
   --vp-custom-block-tip-text: var(--vp-c-brand-dark);
@@ -45,7 +46,7 @@ iframe{
 
 figcaption{
   text-align: center;
-  color: rgba(162,169,185,1.00);;
+  color: var(--vp-c-subtitle);
 }
 
 figcaption > p {

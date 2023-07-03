@@ -8,8 +8,5 @@
     "vitepress": "^1.0.0-beta.1",
     "vitepress-plugin-tabs": "^0.3.0"
   },
-  "type": "module",
-  "dependencies": {
-    "sidebar": "^1.0.2"
-  }
+  "type": "module"
 }
