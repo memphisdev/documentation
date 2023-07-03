@@ -1,6 +1,6 @@
 <template>
-  <div data-v-29ec59c0="" ref="playDiv" >
-        <a data-v-29ec59c0="" class="pager-link prev container" target="_blank" :href="link">
+  <div ref="playDiv" >
+        <a class="pager-link prev container" target="_blank" :href="link">
           <div class="image-wrapper">
             <img class="img" :src="icon"/>
           </div>
@@ -82,6 +82,41 @@ onMounted( async () =>{
     text-decoration: underline;
     text-decoration-color: var(--vp-c-brand);
   } 
+}
+
+.pager-link {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 11px 16px 13px;
+  width: 100%;
+  height: 100%;
+  transition: border-color 0.25s;
+}
+
+.pager-link:hover {
+  border-color: var(--vp-c-brand);
+}
+
+.pager-link.next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.desc {
+  display: block;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
+
+.title {
+  display: block;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-brand);
+  transition: color 0.25s;
 }
 </style>
 

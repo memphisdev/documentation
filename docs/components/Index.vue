@@ -1,7 +1,7 @@
 <template>
     <h1>{{ page_title }}</h1>
     <h2>In this section:</h2>
-    <BigLink class="spacer" v-for="page in child_pages" :url="page.link" :title="page.text"> 
+    <BigLink class="spacer" v-for="page in pages" :url="page.link" :title="page.text"> 
     </BigLink>
 </template>
 
@@ -19,13 +19,16 @@
     const page_title = ref(page_title_inner)
 
     function parseSidebar(sidebar) {
-        let child_pages = [];
+        let child_pages;
         for(const item of sidebar){
             if (item.link !== undefined && item.link === pagePath) {
+                child_pages = []
                 for (const child of item.items) {
-                    child_pages.push(withBase(child))
+                    child_pages.push({
+                        text: child.text,
+                        link: withBase(child.link)
+                    })
                 }
-                child_pages = item.items
                 page_title.value = item.text
             } else if (item.items !== undefined){
                 child_pages = parseSidebar(item.items);
@@ -38,7 +41,7 @@
         return child_pages
     }
 
-    const child_pages = ref(parseSidebar(sidebar));
+    const pages = ref(parseSidebar(sidebar));
 </script>
 
 <style scoped>  
