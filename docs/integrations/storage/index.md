@@ -1,5 +1,4 @@
 ---
-title: Terraform Index
+title: Storage Index
 ---    
 <Index></Index>
-

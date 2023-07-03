@@ -2,9 +2,6 @@
 description: Deploy Memphis over Kubernetes
 title: Kubernetes
 ---
-<script setup>
-import ContainerLink from '/components/ContainerLink.vue'
-</script>
 # 1 - Installation
 
 ::: tip

@@ -3,9 +3,6 @@ description: This section describes Memphis producer API
 cover: /Memphis_concepts_(2).jpeg
 title: Producer API
 ---
-<script setup>
-import ContainerLink from '/components/ContainerLink.vue'
-</script>
 # Producer API
 
 ## What is a producer?

@@ -9,11 +9,70 @@ title: Benchmarks
 
 ### Benchmark Version Control
 
-<table><thead><tr><th>Version</th><th>Date</th><th>Memphis Version</th><th>Comments</th><th data-hidden></th></tr></thead><tbody><tr><td>1.0</td><td>November 27th, 2022</td><td>0.4.1-beta</td><td>First release</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Date</th>
+      <th>Memphis Version</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.0</td>
+      <td>November 27th, 2022</td>
+      <td>0.4.1-beta</td>
+      <td>First release</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Lab environment
 
-<table><thead><tr><th>Parameter</th><th>Value</th><th data-hidden></th></tr></thead><tbody><tr><td>Cloud</td><td>AWS</td><td></td></tr><tr><td>Managed Kubernetes</td><td>EKS 1.23</td><td></td></tr><tr><td>K8S Workers</td><td>3</td><td></td></tr><tr><td>K8S Worker type</td><td><a href="https://aws.amazon.com/ec2/instance-types/">i3en.large</a></td><td></td></tr><tr><td>Memphis brokers</td><td>3</td><td></td></tr><tr><td>Memphis version</td><td>0.4.1 Cluster mode</td><td></td></tr><tr><td>Benchmark app node</td><td>m5n.8xlarge</td><td></td></tr><tr><td>Benchmark app</td><td><a href="https://github.com/memphisdev/memphis-benchmark">https://github.com/memphisdev/memphis-benchmark</a></td><td></td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cloud</td>
+      <td>AWS</td>
+    </tr>
+    <tr>
+      <td>Managed Kubernetes</td>
+      <td>EKS 1.23</td>
+    </tr>
+    <tr>
+      <td>K8S Workers</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>K8S Worker type</td>
+      <td><a href="https://aws.amazon.com/ec2/instance-types/">i3en.large</a></td>
+    </tr>
+    <tr>
+      <td>Memphis brokers</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Memphis version</td>
+      <td>0.4.1 Cluster mode</td>
+    </tr>
+    <tr>
+      <td>Benchmark app node</td>
+      <td>m5n.8xlarge</td>
+    </tr>
+    <tr>
+      <td>Benchmark app</td>
+      <td><a href="https://github.com/memphisdev/memphis-benchmark">https://github.com/memphisdev/memphis-benchmark</a></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Test cases
 
@@ -29,7 +88,7 @@ title: Benchmarks
 ### Notes
 
 1. In each iteration, the counter starts with the first sent message, stops at the last one, waits until the end of the second, and repeats.
-2. Each test runs 1000 times to produce “normalized” results.
+2. Each test runs 1000 times to produce ï¿½normalizedï¿½ results.
 
 ## Produce (Write)
 

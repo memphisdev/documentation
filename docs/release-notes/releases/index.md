@@ -1,5 +1,4 @@
 ---
-title: Releases
----
-# Releases
-
+title: Releases Index
+---    
+<Index></Index>

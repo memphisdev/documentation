@@ -2,9 +2,6 @@
 title: Memphis 
 description: Memphis.Dev Rusk SDK github issue
 ---
-<script setup>
-import ContainerLink from '/components/ContainerLink.vue'
-</script>
 # Login
 
 ## Initial users

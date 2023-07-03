@@ -2,9 +2,6 @@
 description: 'Release date: 21 February 2023'
 title: v0.4.5 - beta
 ---
-<script setup>
-import BigLink from '/components/BigLink.vue'
-</script>
 # v0.4.5 - beta
 
 Upgrade procedure for production users (Kubernetes deployments)

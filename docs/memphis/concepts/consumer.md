@@ -3,10 +3,6 @@ description: This section describes Memphis consumer API
 cover: /Memphis_concepts_(2).jpeg
 title: Consumer API
 ---
-<script setup>
-import ContainerLink from '/components/ContainerLink.vue'
-</script>
-
 # Consumer API
 
 ## What is a consumer?

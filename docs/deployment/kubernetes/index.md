@@ -1,5 +1,5 @@
 ---
-title: Terraform Index
+title: Kubernetes Index
 ---    
 <Index></Index>
 
