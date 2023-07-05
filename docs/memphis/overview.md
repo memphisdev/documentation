@@ -1,6 +1,6 @@
 ---
 description: v1.0.0 - LTS
-cover: /assets/Overview..jpg
+cover: /Overview..jpg
 title: Overview
 ---
 
@@ -102,4 +102,4 @@ Built out of Apache 2.0, the main difference between the licenses is:
 
 Additional Use Grant: You may make use of the Licensed Work (i) only as part of your own product or service, provided it is not a message broker or a message queue product or service; (ii) provided that you do not use, provide, distribute, or make available the Licensed Work as a Service;
 
-A ìServiceî is a commercial offering, product, hosted, or managed service, that allows third parties (other than your own employees and contractors acting on your behalf) to access and/or use the Licensed Work or a substantial set of the features or functionality of the Licensed Work to third parties as a software-as-a-service, platform-as-a-service, infrastructure-as-a-service or other similar services that compete with Licensor products or services.
+A ‚ÄúService‚Äù is a commercial offering, product, hosted, or managed service, that allows third parties (other than your own employees and contractors acting on your behalf) to access and/or use the Licensed Work or a substantial set of the features or functionality of the Licensed Work to third parties as a software-as-a-service, platform-as-a-service, infrastructure-as-a-service or other similar services that compete with Licensor products or services.

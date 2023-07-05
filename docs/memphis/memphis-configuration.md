@@ -5,6 +5,8 @@ title: Configureation
 
 # Memphis configuration
 
+<Subtitle></Subtitle>
+
 ## Through the GUI
 
 <figure><img src="/assets/Screen_Shot_2023-02-21_at_11.24.03.png" alt=""><figcaption></figcaption></figure>

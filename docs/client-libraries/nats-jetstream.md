@@ -1,12 +1,11 @@
 ---
 title: NATS Jetstream
 description: Memphis compatability with NATS Jetstream
-cover: /assets/NATS_+_Memphis.jpeg
+cover: /NATS_+_Memphis.jpeg
 ---
-<script setup>
-import BigLink from './../components/BigLink.vue'
-</script>
 # NATS Jetstream
+
+<Subtitle></Subtitle>
 
 ## Introduction
 

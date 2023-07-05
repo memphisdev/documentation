@@ -2,9 +2,6 @@
 description: Links to various tutorials
 title: Tutorials
 ---
-<script setup>
-import Embed from '/components/Embed.vue'
-</script>
 # Tutorials
 
 <Embed url="https://memphis.dev/blog/connect-memphis-as-an-argo-event-source/"/>

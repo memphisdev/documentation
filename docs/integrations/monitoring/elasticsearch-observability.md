@@ -5,3 +5,5 @@ title: ElasticSearch
 
 # Elasticsearch Observability
 
+<Subtitle></Subtitle>
+

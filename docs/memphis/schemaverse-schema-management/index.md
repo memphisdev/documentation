@@ -1,6 +1,6 @@
 ---
 description: Released on v0.4.0
-cover: /assets/schema_-_overview.jpeg
+cover: /schema_-_overview.jpeg
 title: Schemaverse
 ---
 
@@ -8,7 +8,7 @@ title: Schemaverse
 
 ## Introduction
 
-In a federated data platform, in which responsibilities are distributed between stakeholders, teams, and sources, it’s harder to control and establish a single standard. This is where the data contracts concept comes into play. Why do data contracts matter? Because they:
+In a federated data platform, in which responsibilities are distributed between stakeholders, teams, and sources, itâ€™s harder to control and establish a single standard. This is where the data contracts concept comes into play. Why do data contracts matter? Because they:
   
 * Provide insights into who owns what data products
 * Support setting standards and managing your data pipelines with confidence
@@ -68,9 +68,9 @@ Also includes -&#x20;
 A quick overview of the most popular formats supported by Schemaverse.
 
 * Protobuf. \
-  The modern. Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler.&#x20;
+  The modern. Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data â€“ think XML, but smaller, faster, and simpler.&#x20;
 * Avro. \
-  The popular. Apache Avro™ is the leading serialization format for record data and the first choice for streaming data pipelines. It offers excellent schema evolution.&#x20;
+  The popular. Apache Avroâ„¢ is the leading serialization format for record data and the first choice for streaming data pipelines. It offers excellent schema evolution.&#x20;
 * JSON \
   The simplest. JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
 * GraphQL\
@@ -94,13 +94,13 @@ Only valid messages that fit the attached schema will be able to enter the schem
 
 #### 3. Serialization process (No code needed)
 
-Serialization is a process of converting a data object—a combination of code and data—into a series of bytes that saves the object's state in an easily transmittable form. The opposite process is called deserialization.&#x20;
+Serialization is a process of converting a data objectâ€”a combination of code and dataâ€”into a series of bytes that saves the object's state in an easily transmittable form. The opposite process is called deserialization.&#x20;
 
 Serialization is basically represented as a function, each data format with its own implementation, and in case the structure and content of a given data do not match the defined schema in the .proto/.avro/.json struct, the serialization process fails, and therefore, the message will not be sent to the broker.&#x20;
 
 That process establishes the message's initial validation before it reaches the broker itself, using the client cache to store the schema locally.
 
-<figure><img src="https://lh5.googleusercontent.com/9ifhev7freLnIYyD_Y3zmrgZAp9-2Bf8eYsSAps0N_77PblO4eG0LGodJY6C6bBmhCxYDRMocztYK3Sge8WMezMMrZFyODEBOw5YZ2xmB7xqqrkhJcds-f67XqHSXNTydr3PpcI2e09yze32L4h0_kg3CcZAxPepTFtJJ_oStF-myZdomFjy2t7XVxZf" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh5.googleusercontent.com/9ifhev7freLnIYyD_Y3zmrgZAp9-2Bf8eYsSAps0N_77PblO4eG0LGodJY6C6bBmhCxYDRMocztYK3Sge8WMezMMrZFyODEBOw5YZ2xmB7xqqrkhJcds-f67XqHSXNTydr3PpcI2e09yze32L4h0_kg3CcZAxPepTFtJJ_oStF-myZdomFjy2t7XVxZf" alt=""/><figcaption></figcaption></figure>
 
 ## Getting Started
 

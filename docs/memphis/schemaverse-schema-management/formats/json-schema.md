@@ -5,7 +5,7 @@ description: This section describes integrating JSON Schema with Memphis
 # JSON Schema
 
 [JSON Schema](https://json-schema.org/) is a vocabulary that allows you to annotate and validate JSON documents.\
-It provides clear human- and machine-readable documentation and offers data validation which is useful for Automated testing—ensuring the quality of client-submitted data.
+It provides clear human- and machine-readable documentation and offers data validation which is useful for Automated testing â€” ensuring the quality of client-submitted data.
 
 ### Supported Features
 

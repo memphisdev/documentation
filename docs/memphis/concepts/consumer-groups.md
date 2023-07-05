@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Consumer Group
 description: This section descibes what is a consumer group
 ---

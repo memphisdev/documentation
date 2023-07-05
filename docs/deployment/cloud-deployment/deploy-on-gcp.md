@@ -1,10 +1,12 @@
 ---
 description: Using Terraform with Google Cloud Platform
-cover: /assets/GCP_and_Memphis.jpeg
+cover: /GCP_and_Memphis.jpeg
 title: Google Cloud Platform
 ---
 
 # Deploy on GCP
+
+<Subtitle></Subtitle>
 
 ### Introduction
 
@@ -75,7 +77,7 @@ Once deployment is complete, the Memphis Load Balancer URL will be revealed.
 
 ### Step 3: Login to Memphis
 
-Display memphis load balancer public IP by running the following -
+Display memphis load balancer assets IP by running the following -
 
 ```
 kubectl get svc -n memphis

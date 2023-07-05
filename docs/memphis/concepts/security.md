@@ -1,10 +1,12 @@
 ---
 description: This section describes authentication and authorization features in Memphis. Both methods enable the operator to control access to Memphis.
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Security/Authentication
 ---
 
 # Security/Authentication
+
+<Subtitle></Subtitle>
 
 ## Methods
 
@@ -27,7 +29,7 @@ curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker
 ```
 
 * **Username + connection token**\
-  Each new application-type user gets created with a dedicated username but the <mark style="color:red;">same connection token</mark> as the other app-type users.
+  Each new application-type user gets created with a dedicated username but the <span style="color:red;">same connection token</span> as the other app-type users.
 
 Kubernetes deployment command:
 
@@ -59,9 +61,7 @@ Memphis has two types of credentials:
 
 ## Adding a new user
 
-<details>
-
-<summary>CLI</summary>
+::: details CLI
 
 1. Install the CLI
 2.  Address the CLI to the cluster&#x20;
@@ -83,15 +83,13 @@ Memphis has two types of credentials:
     These credentials CAN'T be restored, save them in a safe place
     ```
 
-</details>
+:::
 
-<details>
-
-<summary>GUI</summary>
+::: details GUI
 
 1. Head to the "Users" page
 2. At the right-top corner, click on "Add a new user"
 3. Fill in the required details
 
-</details>
+:::
 

@@ -1,10 +1,12 @@
 ---
 description: Use Datadog as an external monitoring tool to monitor Memphis
-cover: /assets/Datadog_and_Memphis.jpeg
+cover: /Datadog_and_Memphis.jpeg
 title: Datadog
 ---
 
 # Datadog
+
+<Subtitle></Subtitle>
 
 ## Introduction
 

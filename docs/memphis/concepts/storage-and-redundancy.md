@@ -1,10 +1,12 @@
 ---
 description: This section describes the different storage and redundancy options
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Storage and Redundancy
 ---
 
 # Storage and Redundancy
+
+<Subtitle></Subtitle>
 
 ## Introduction
 
@@ -54,7 +56,7 @@ The options are Memory or Disk. Each with its strengths and weaknesses.
 
 <figure><img src="/assets/disk.jpeg" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/disk_ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
+<figure><img src="/assets/disk_ack.jpeg" alt=""><figcaption>Ack process</figcaption></figure>
 
 ### Tier 2 (Remote storage) \* Optional \*
 

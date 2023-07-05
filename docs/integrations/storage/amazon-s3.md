@@ -1,10 +1,12 @@
 ---
 description: Offload stored messages to Amazon S3
-cover: /assets/Amazon_S3_+_Memphis.jpeg
+cover: /Amazon_S3_+_Memphis.jpeg
 title: Amazon S3
 ---
 
 # Amazon S3
+
+<Subtitle></Subtitle>
 
 ## Introduction
 

@@ -1,5 +1,4 @@
 ---
-title: Comparisons
+title: Comparisons Index
 ---
-# Comparisons
-
+<Index></Index>

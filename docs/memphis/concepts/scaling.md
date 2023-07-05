@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Scaling
 description: The following section outlines the Memphis scaling process and provides instructions on how to implement it.
 ---
@@ -66,4 +66,4 @@ vi memphis-broker-config.yaml
 
 Add the new StatefulSet in the marked line with the following pattern -
 
-`, nats://memphis-broker-`<mark style="color:red;">**`X`**</mark>`.memphis-cluster.memphis.svc.cluster.local:6222`
+`, nats://memphis-broker-`<code><span style="color:red;">**X**</span></code>`.memphis-cluster.memphis.svc.cluster.local:6222`

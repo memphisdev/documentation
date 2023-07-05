@@ -5,6 +5,8 @@ title: Delayed Messages
 
 # Delayed messages
 
+<Subtitle></Subtitle>
+
 ## Introduction
 
 Delayed messages let you "return" a received message to the broker for a period when your consumer application needs additional time to process messages.

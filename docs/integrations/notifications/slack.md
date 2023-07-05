@@ -1,10 +1,12 @@
 ---
 description: Deliver Memphis notifications to a slack channel
-cover: /assets/Slack_+_Memphis.jpeg
+cover: /Slack_+_Memphis.jpeg
 title: Slack integration
 ---
 
 # Slack
+
+<Subtitle></Subtitle>
 
 ## Introduction
 

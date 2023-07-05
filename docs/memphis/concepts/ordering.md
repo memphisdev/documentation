@@ -1,5 +1,5 @@
 ---
-cover: /assets/Memphis_concepts_(2).jpeg
+cover: /Memphis_concepts_(2).jpeg
 title: Odering
 description: Ordering gaurantees
 ---

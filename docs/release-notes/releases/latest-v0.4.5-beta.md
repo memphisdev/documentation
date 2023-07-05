@@ -2,10 +2,10 @@
 description: 'Release date: 21 February 2023'
 title: v0.4.5 - beta
 ---
-<script setup>
-import BigLink from '/components/BigLink.vue'
-</script>
+
 # v0.4.5 - beta
+
+<Subtitle></Subtitle>
 
 Upgrade procedure for production users (Kubernetes deployments)
 
@@ -31,7 +31,6 @@ Please make sure your **SDKs** are **updated** to the latest version to enjoy ne
 ## ![:pensive:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f614.png) Known issues
 
 * Authentication - Application-type users connect with Memphis (via the SDKs) using a connection token. For now, this token is constant and randomly generated per Memphis deployment.
-* While using an older SDK version, an error message appears on the station overview page saying, �Error while getting notified about a poison message: Missing mandatory message headers.�
+* While using an older SDK version, an error message appears on the station overview page saying, “Error while getting notified about a poison message: Missing mandatory message headers.”
 * When storage capacity reaches 100%, Memphis GUI becomes unresponsive till cleaned up by at least 10%.
 * Resending/dropping a great amount of dead-letter messages can significantly take time.
-

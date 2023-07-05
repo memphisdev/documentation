@@ -1,6 +1,13 @@
 @font-face {
   font-family: "memphis";
   src: url("../fonts/Helvetica_Now_Display/Monotype-Helvetica_Now_Display_Light.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "memphis";
+  src: url("../fonts/Helvetica_Now_Display/Monotype-Helvetica_Now_Display_Medium.otf");
+  font-weight: bold;
 }
 
 :root {
@@ -10,6 +17,7 @@
   --vp-c-alt: #FFC633;
   --vp-c-alt-light: #FFC633;
   --vp-c-muted: #FFC633;
+  --vp-c-subtitle: rgba(162,169,185,1.00);
 
   --vp-custom-block-tip-border: var(--vp-c-brand-dark);
   --vp-custom-block-tip-text: var(--vp-c-brand-dark);
@@ -35,6 +43,25 @@ iframe{
   width: 100%;
   height: 390px;
 }
+
+figcaption{
+  text-align: center;
+  color: var(--vp-c-subtitle);
+}
+
+figcaption > p {
+  margin-top: 0px !important;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */

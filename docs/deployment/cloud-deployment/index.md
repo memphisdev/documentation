@@ -1,5 +1,5 @@
 ---
-title: Placeholder text
----
-# Terraform
+title: Terraform Index
+---    
+<Index></Index>
 
