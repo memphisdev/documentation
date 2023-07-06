@@ -18,9 +18,7 @@ export default {
     })
   },
   enhanceApp({ app }) {
-    enhanceAppWithTabs(app)
-  },
-  enhanceApp({ app }) {
+    enhanceAppWithTabs(app),
     app.component('ContainerLink', ContainerLink),
     app.component('BigLink', BigLink),
     app.component('Embed', Embed),

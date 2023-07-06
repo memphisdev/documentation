@@ -1,11 +1,15 @@
 ---
 title: NATS Jetstream
-description: Memphis compatability with NATS Jetstream
+description: NATS API Compatibility
 cover: /NATS_+_Memphis.jpeg
 ---
-# NATS Jetstream
+
+# NATS
 
 <Subtitle></Subtitle>
+
+<br>
+<BigLink url="/docs/getting-started/1-installation" title="Step 1 - Installation"/>
 
 ## Introduction
 
@@ -17,58 +21,36 @@ The motivation -
 ## Limitations
 
 * NATS SDKs version - Compatibility with NATS Jetstream 2.9 and above.
-* Without Memphis SDK, the following Memphis features will be disabled:
-  * Producers/Consumers observability
+* Without Memphis SDK, the following Memphis features will not be supported:
+  * Producers/Consumers' observability
   * Schemaverse
 
-## Requirements
+## For NATS Jetstream users
+
+Simply change NATS `hostname` to Memphis `hostname`
+
+## For NATS Core users
+
+All of NATS core features will be supported when communicating with Memphis, but without performing the below procedure, Memphis platform will not be able to control those NATS `subjects`.
 
 Memphis operates at the stream level. For a NATS "subject" to be seen and managed by Memphis, it must first be wrapped by a stream.
 
-For example:
+### Using Memphis Connection token-based authentication:
 
-#### Connection token based aut:
-
-```markup
+```bash:line-numbers
 nats stream add  -s <MEMPHIS_BROKER_URL>:6666 --user=<MEMPHIS_APPLICATION_USER>::<MEMPHIS_CONNECTION_TOKEN> 
-? Stream Name argo_event_source
-? Subjects foo
-? Storage file
-? Replication 3
-? Retention Policy Limits
-? Discard Policy Old
-? Stream Messages Limit -1
-? Per Subject Messages Limit -1
-? Total Stream Size -1
-? Message TTL -1
-? Max Message Size -1
-? Duplicate tracking time window 2m0s
-? Allow message Roll-ups No
-? Allow message deletion Yes
-? Allow purging subjects or the entire stream Yes
-Stream argo_event_source was created
 ```
 
-#### User password based auth:
+### Using Memphis password-based authentication:
 
-```
+```bash:line-numbers
 nats stream add  -s <MEMPHIS_BROKER_URL>:6666 --user=<MEMPHIS_APPLICATION_USER> --password=<MEMPHIS_APPLICATION_USER_PASSWORD>
-? Stream Name argo_event_source
-? Subjects foo
-? Storage file
-? Replication 3
-? Retention Policy Limits
-? Discard Policy Old
-? Stream Messages Limit -1
-? Per Subject Messages Limit -1
-? Total Stream Size -1
-? Message TTL -1
-? Max Message Size -1
-? Duplicate tracking time window 2m0s
-? Allow message Roll-ups No
-? Allow message deletion Yes
-? Allow purging subjects or the entire stream Yes
-Stream argo_event_source was created
+```
+
+### (Cloud) Using Memphis password-based authentication:
+
+```bash:line-numbers
+nats stream add  -s <MEMPHIS_BROKER_URL>:6666 --user=<MEMPHIS_APPLICATION_USER>$<ACCOUNT_ID> --password=<MEMPHIS_APPLICATION_USER_PASSWORD>
 ```
 
 ## Instructions for specific integrations

@@ -90,7 +90,7 @@ export function sdk(){
           },
           {
             text: 'Usage',
-            link: '/sdk/docs/usage',
+            link: '/sdk/docs/components/usage',
           }
         ]
      },
@@ -101,60 +101,90 @@ export function sdk(){
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/rest/overview'},
+          {text: 'Quick Start', link: '/sdk/rest/quick-start'},
+          {text: 'API Reference', link: '/sdk/rest/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis-rest-gateway'}
         ]
       },
       { text: 'Node.js / TypeScript / NestJS', 
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/node/overview'},
+          {text: 'Quick Start', link: '/sdk/node/quick-start'},
+          {text: 'API Reference', link: '/sdk/node/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis.js'}
         ]
       },
       { text: 'Go', 
         link: '/',
         collapsed: true,
-        items: [
+        items: [  
+          {text: 'Overview', link: '/sdk/go/overview'},
+          {text: 'Quick Start', link: '/sdk/go/quick-start'},
+          {text: 'API Reference', link: '/sdk/go/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis.go'}
         ]
       },
       { text: 'Python',
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/python/overview'},
+          {text: 'Quick Start', link: '/sdk/python/quick-start'},
+          {text: 'API Reference', link: '/sdk/python/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis.py'}
         ]
       },
       { text: 'Kotlin',
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/kotlin/overview'},
+          {text: 'Quick Start', link: '/sdk/kotlin/quick-start'},
+          {text: 'API Reference', link: '/sdk/kotlin/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis.kt'}
         ]
       },
       { text: '.NET',
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/net/overview'},
+          {text: 'Quick Start', link: '/sdk/net/quick-start'},
+          {text: 'API Reference', link: '/sdk/net/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis.net'}
         ]
       },
       { text: 'Java',
         link: '/',
         collapsed: true,
         items: [
-        ]
-      },
-      { text: 'NATS Jetstream', 
-        link: '/',
-        collapsed: true,
-        items: [
+          {text: 'Overview', link: '/sdk/java/overview'},
+          {text: 'Quick Start', link: '/sdk/java/quick-start'},
+          {text: 'API Reference', link: '/sdk/java/api-reference'},
+          {text: 'GitHub', link: 'https://github.com/memphisdev/memphis.java'}
         ]
       },
       { text: 'Rust', 
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/rust/overview'},
+          {text: 'Quick Start', link: '/sdk/rust/quick-start'},
+          {text: 'API Reference', link: '/sdk/rust/api-reference'},
+          {text: 'GitHub', link: ''}
         ]
       },
       { text: 'Scala', 
         link: '/',
         collapsed: true,
         items: [
+          {text: 'Overview', link: '/sdk/scala/overview'},
+          {text: 'Quick Start', link: '/sdk/scala/quick-start'},
+          {text: 'API Reference', link: '/sdk/scala/api-reference'},
+          {text: 'GitHub', link: ''}
         ]
       }
       ]
