@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /getting-started/1-installation
+      link: /docs/getting-started/1-installation
     - theme: alt
       text: API Reference
-      link: /api-examples
+      link: /sdk/welcome
 
 features:
   - title: Feature A
