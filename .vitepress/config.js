@@ -41,7 +41,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/getting-started/1-installation' }
+      { text: 'Docs', link: '/docs/getting-started/1-installation' },
+      { text: 'SDK', link: '/sdk/welcome' },
     ],
 
     logo: {
@@ -55,7 +56,10 @@ export default defineConfig({
       provider: 'local'
     },
 
-    sidebar: docs(),
+    sidebar: {
+      '/docs/': docs(),
+      '/sdk/': sdk()
+    },
 
     editLink: {
       pattern: 'https://github.com/memphisdev/documentation/edit/master/:path'
@@ -67,74 +71,165 @@ export default defineConfig({
   }
 })
 
+export function sdk(){
+  return [
+    {
+        text: 'Documentation How-To',
+        items: [
+          { text: 'Components',
+            link: '/sdk/docs/components/index',
+            collapsed: true,
+            items: [
+              { text: 'BigLink', link: '/sdk/docs/components/biglink' },
+              { text: 'ContainerLink', link: '/sdk/docs/components/containerlink' },
+              { text: 'Embed', link: '/sdk/docs/components/embed' },
+              { text: 'HeaderImage', link: '/sdk/docs/components/headerimage' },
+              { text: 'Index', link: '/sdk/docs/components/index-component' },
+              { text: 'Subtitle', link: '/sdk/docs/components/subtitle' }
+            ]
+          },
+          {
+            text: 'Usage',
+            link: '/sdk/docs/usage',
+          }
+        ]
+     },
+     {
+      text: `Client Library SDK's`,
+      items: [
+      { text: 'REST (Webhook)', 
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Node.js / TypeScript / NestJS', 
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Go', 
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Python',
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Kotlin',
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: '.NET',
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Java',
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'NATS Jetstream', 
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Rust', 
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      },
+      { text: 'Scala', 
+        link: '/',
+        collapsed: true,
+        items: [
+        ]
+      }
+      ]
+   }
+  ]
+}
+
 export function docs(){
   return [
     {
         text: '👉 Getting Started',
         items: [
-        { text: 'Step 1 - Installation', link: '/getting-started/1-installation' },
-        { text: 'Step 2 - Hello World', link: '/getting-started/2-hello-world' },
-        { text: 'Tutorials', link: '/getting-started/tutorial' },
-        { text: 'Use Cases', link: '/getting-started/3-use-cases' },
-        { text: 'Public Case Studies', link: '/getting-started/public-case-studies' },
-        { text: 'How to Contribute?', link: '/getting-started/how-to-contribute' },
+        { text: 'Step 1 - Installation', link: '/docs/getting-started/1-installation' },
+        { text: 'Step 2 - Hello World', link: '/docs/getting-started/2-hello-world' },
+        { text: 'Tutorials', link: '/docs/getting-started/tutorial' },
+        { text: 'Use Cases', link: '/docs/getting-started/3-use-cases' },
+        { text: 'Public Case Studies', link: '/docs/getting-started/public-case-studies' },
+        { text: 'How to Contribute?', link: '/docs/getting-started/how-to-contribute' },
         { text: 'Roadmap', link: 'https://github.com/orgs/memphisdev/projects/2' }
         ]
     },
     {
         text: '⭐ Memphis',
         items: [
-        { text: 'Overview', link: '/memphis/overview' },
-        { text: 'Architecture', link: '/memphis/architecture' },
+        { text: 'Overview', link: '/docs/memphis/overview' },
+        { text: 'Architecture', link: '/docs/memphis/architecture' },
         { text: 'Key Concepts',
             collapsed: true,
-            link: '/memphis/concepts/index',
+            link: '/docs/memphis/concepts/index',
             items:[
-            { text: 'Message broker', link: '/memphis/concepts/message-broker' },
-            { text: 'Station', link: '/memphis/concepts/station' },
-            { text: 'Producer API', link: '/memphis/concepts/producer' },
-            { text: 'Consumer API', link: '/memphis/concepts/consumer' },
-            { text: 'Consumer Group', link: '/memphis/concepts/consumer-groups' },
-            { text: 'Storage and Redundancy', link: '/memphis/concepts/storage-and-redundancy' },
-            { text: 'Security/Authentication', link: '/memphis/concepts/security' },
-            { text: 'Scaling', link: '/memphis/concepts/scaling' },
-            { text: 'Ordering', link: '/memphis/concepts/ordering' },
-            { text: 'Dead-letter Station (DLS)', link: '/memphis/concepts/dead-letter' },
-            { text: 'Delayed Messages', link: '/memphis/concepts/delayed-messages' },
-            { text: 'Idempotency (Duplicate processing)', link: '/memphis/concepts/idempotency' },
-            { text: 'Failover Scenarios', link: '/memphis/concepts/failover-scenarios' },
-            { text: 'Troubleshooting process', link: '/memphis/concepts/troubleshooting-process' }
+            { text: 'Message broker', link: '/docs/memphis/concepts/message-broker' },
+            { text: 'Station', link: '/docs/memphis/concepts/station' },
+            { text: 'Producer API', link: '/docs/memphis/concepts/producer' },
+            { text: 'Consumer API', link: '/docs/memphis/concepts/consumer' },
+            { text: 'Consumer Group', link: '/docs/memphis/concepts/consumer-groups' },
+            { text: 'Storage and Redundancy', link: '/docs/memphis/concepts/storage-and-redundancy' },
+            { text: 'Security/Authentication', link: '/docs/memphis/concepts/security' },
+            { text: 'Scaling', link: '/docs/memphis/concepts/scaling' },
+            { text: 'Ordering', link: '/docs/memphis/concepts/ordering' },
+            { text: 'Dead-letter Station (DLS)', link: '/docs/memphis/concepts/dead-letter' },
+            { text: 'Delayed Messages', link: '/docs/memphis/concepts/delayed-messages' },
+            { text: 'Idempotency (Duplicate processing)', link: '/docs/memphis/concepts/idempotency' },
+            { text: 'Failover Scenarios', link: '/docs/memphis/concepts/failover-scenarios' },
+            { text: 'Troubleshooting process', link: '/docs/memphis/concepts/troubleshooting-process' }
         ] },
         { text: 'Schemaverse', 
             collapsed: true,
-            link: '/memphis/schemaverse-schema-management/index',
+            link: '/docs/memphis/schemaverse-schema-management/index',
             items:[
             { text: '⭐ Getting Started', 
                 collapsed: false,
-                link: '/memphis/schemaverse-schema-management/formats/index',
+                link: '/docs/memphis/schemaverse-schema-management/formats/index',
                 items:[
-                { text: 'Protobuf', link: '/memphis/schemaverse-schema-management/formats/protobuf' },
-                { text: 'JSON Schema', link: '/memphis/schemaverse-schema-management/formats/json-schema' },
-                { text: 'GraphQL', link: '/memphis/schemaverse-schema-management/formats/graphql' },
-                { text: 'AVRO', link: '/memphis/schemaverse-schema-management/formats/avro' },
+                { text: 'Protobuf', link: '/docs/memphis/schemaverse-schema-management/formats/protobuf' },
+                { text: 'JSON Schema', link: '/docs/memphis/schemaverse-schema-management/formats/json-schema' },
+                { text: 'GraphQL', link: '/docs/memphis/schemaverse-schema-management/formats/graphql' },
+                { text: 'AVRO', link: '/docs/memphis/schemaverse-schema-management/formats/avro' },
             ] },
-            { text: 'Comparison', link: '/memphis/schemaverse-schema-management/comparison' },
-            { text: 'KB', link: '/memphis/schemaverse-schema-management/kb' },
+            { text: 'Comparison', link: '/docs/memphis/schemaverse-schema-management/comparison' },
+            { text: 'KB', link: '/docs/memphis/schemaverse-schema-management/kb' },
         ] },
-        { text: 'Memphis Configuration', link: '/memphis/memphis-configuration' },
-        { text: 'Benchmark', link: '/memphis/benchmark' },
+        { text: 'Memphis Configuration', link: '/docs/memphis/memphis-configuration' },
+        { text: 'Benchmark', link: '/docs/memphis/benchmark' },
         { text: 'Comparisons', 
             collapsed: true,
-            link: '/memphis/comparisons/index',
+            link: '/docs/memphis/comparisons/index',
             items:[
-            { text: 'NATS Jetstream vs Memphis', link: '/memphis/comparisons/nats-vs-memphis' },
-            { text: 'RabbitMQ vs Memphis', link: '/memphis/comparisons/rabbitmq-vs-memphis' },
-            { text: 'AWS SQS vs Memphis', link: '/memphis/comparisons/aws-sqs-vs-memphis' },
-            { text: 'Apache Kafka vs Memphis', link: '/memphis/comparisons/apache-kafka-vs-memphis' },
+            { text: 'NATS Jetstream vs Memphis', link: '/docs/memphis/comparisons/nats-vs-memphis' },
+            { text: 'RabbitMQ vs Memphis', link: '/docs/memphis/comparisons/rabbitmq-vs-memphis' },
+            { text: 'AWS SQS vs Memphis', link: '/docs/memphis/comparisons/aws-sqs-vs-memphis' },
+            { text: 'Apache Kafka vs Memphis', link: '/docs/memphis/comparisons/apache-kafka-vs-memphis' },
             { text: 'Apache Pulsar vs Memphis', link: 'memphis/comparisons/apache-pulsar-vs-memphis' },
-            { text: 'ZeroMQ vs Memphis', link: '/memphis/comparisons/zeromq-vs-memphis' }
+            { text: 'ZeroMQ vs Memphis', link: '/docs/memphis/comparisons/zeromq-vs-memphis' }
         ] },
-        { text: 'Privacy', link: '/memphis/privacy' }
+        { text: 'Privacy', link: '/docs/memphis/privacy' }
         ]
     },
     {
@@ -148,23 +243,23 @@ export function docs(){
         items: [
         { text: 'Terraform', 
             collapsed: true,
-            link: '/deployment/cloud-deployment/index',
+            link: '/docs/deployment/cloud-deployment/index',
             items:[
-            { text: 'Deploy on AWS', link: '/deployment/cloud-deployment/deploy-on-aws' },
-            { text: 'Deploy on GCP', link: '/deployment/cloud-deployment/deploy-on-gcp' },
-            { text: 'Deploy on DigitalOcean', link: '/deployment/cloud-deployment/deploy-on-digitalocean' },
-            { text: 'Deploy on Azure', link: '/deployment/cloud-deployment/deploy-on-azure' },
+            { text: 'Deploy on AWS', link: '/docs/deployment/cloud-deployment/deploy-on-aws' },
+            { text: 'Deploy on GCP', link: '/docs/deployment/cloud-deployment/deploy-on-gcp' },
+            { text: 'Deploy on DigitalOcean', link: '/docs/deployment/cloud-deployment/deploy-on-digitalocean' },
+            { text: 'Deploy on Azure', link: '/docs/deployment/cloud-deployment/deploy-on-azure' },
         ] },
         { text: 'Kubernetes', 
             collapsed: true,
-            link: '/deployment/kubernetes/index',
+            link: '/docs/deployment/kubernetes/index',
             items:[
-            { text: '1 - Installation', link: '/deployment/kubernetes/1-installation' },
-            { text: '2 - Access', link: '/deployment/kubernetes/2-access' },
-            { text: '3 - Upgrade', link: '/deployment/kubernetes/how-to-upgrade' },
+            { text: '1 - Installation', link: '/docs/deployment/kubernetes/1-installation' },
+            { text: '2 - Access', link: '/docs/deployment/kubernetes/2-access' },
+            { text: '3 - Upgrade', link: '/docs/deployment/kubernetes/how-to-upgrade' },
         ] },
-        { text: 'Docker', link: '/deployment/docker-compose' },
-        { text: 'Production Best Pracices', link: '/deployment/production-best-practices' }
+        { text: 'Docker', link: '/docs/deployment/docker-compose' },
+        { text: 'Production Best Pracices', link: '/docs/deployment/production-best-practices' }
         ]
     },
     {
@@ -177,21 +272,21 @@ export function docs(){
         { text: 'Kotlin', link: 'https://github.com/memphisdev/memphis.kt' },
         { text: '.NET', link: 'https://github.com/memphisdev/memphis.net' },
         { text: 'Java', link: 'https://github.com/memphisdev/memphis.java' },
-        { text: 'NATS Jetstream', link: '/client-libraries/nats-jetstream' },
-        { text: 'Rust', link: '/client-libraries/rust' },
-        { text: 'Scala', link: '/client-libraries/scala' },
+        { text: 'NATS Jetstream', link: '/docs/client-libraries/nats-jetstream' },
+        { text: 'Rust', link: '/docs/client-libraries/rust' },
+        { text: 'Scala', link: '/docs/client-libraries/scala' },
         ]
     },
     {
         text: 'Dashboard (GUI)',
         items: [
-        { text: 'General', link: '/dashboard-gui/general' },
-        { text: 'Signup', link: '/dashboard-gui/signup' },
-        { text: 'Login', link: '/dashboard-gui/login' },
-        { text: 'Overview', link: '/dashboard-gui/overview' },
-        { text: 'Stations', link: '/dashboard-gui/stations' },
-        { text: 'Users', link: '/dashboard-gui/users' },
-        { text: 'Profile', link: '/dashboard-gui/profile' },
+        { text: 'General', link: '/docs/dashboard-gui/general' },
+        { text: 'Signup', link: '/docs/dashboard-gui/signup' },
+        { text: 'Login', link: '/docs/dashboard-gui/login' },
+        { text: 'Overview', link: '/docs/dashboard-gui/overview' },
+        { text: 'Stations', link: '/docs/dashboard-gui/stations' },
+        { text: 'Users', link: '/docs/dashboard-gui/users' },
+        { text: 'Profile', link: '/docs/dashboard-gui/profile' },
         ]
     },
     {
@@ -199,58 +294,58 @@ export function docs(){
         items: [
         { text: 'Monitoring', 
             collapsed: true,
-            link: '/integrations/monitoring/index',
+            link: '/docs/integrations/monitoring/index',
             items:[
-            { text: 'Elasticsearch Observability', link: '/integrations/monitoring/elasticsearch-observability' },
-            { text: 'Datadog', link: '/integrations/monitoring/datadog' },
-            { text: 'Grafana', link: '/integrations/monitoring/grafana' },
+            { text: 'Elasticsearch Observability', link: '/docs/integrations/monitoring/elasticsearch-observability' },
+            { text: 'Datadog', link: '/docs/integrations/monitoring/datadog' },
+            { text: 'Grafana', link: '/docs/integrations/monitoring/grafana' },
         ] },
         { text: 'Notifications', 
             collapsed: true,
-            link: '/integrations/notifications/index',
+            link: '/docs/integrations/notifications/index',
             items:[
-            { text: 'Slack', link: '/integrations/notifications/slack' },
+            { text: 'Slack', link: '/docs/integrations/notifications/slack' },
         ] },
         { text: 'Storage', 
             collapsed: true,
-            link: '/integrations/storage/index',
+            link: '/docs/integrations/storage/index',
             items:[
-            { text: 'Amazon S3', link: '/integrations/storage/amazon-s3' },
+            { text: 'Amazon S3', link: '/docs/integrations/storage/amazon-s3' },
         ] },
         { text: 'Other platforms', 
             collapsed: true,
-            link: '/integrations/other-platforms/index',
+            link: '/docs/integrations/other-platforms/index',
             items:[
             { text: 'PostHog', link: 'https://github.com/PostHog/posthog-memphisdev-app' },
-            { text: 'Argo', link: '/integrations/other-platforms/argo-and-memphis' },
+            { text: 'Argo', link: '/docs/integrations/other-platforms/argo-and-memphis' },
         ] },
         ]
     },
     {
         text: '🗒 Release Notes',
         items: [
-        { text: 'KB', link: '/release-notes/kb' },
+        { text: 'KB', link: '/docs/release-notes/kb' },
         { text: 'Releases', 
             collapsed: true,
-            link: '/release-notes/releases/index',
+            link: '/docs/release-notes/releases/index',
             items:[
-            { text: 'v1.0.3-latest', link: '/release-notes/releases/v1.0.3-latest' },
-            { text: 'v1.0.2-stable', link: '/release-notes/releases/v1.0.2-stable' },
-            { text: 'v1.0.1', link: '/release-notes/releases/v1.0.1' },
-            { text: 'v1.0.0 - GA', link: '/release-notes/releases/v1.0.0-lts' },
-            { text: 'v0.4.5 - beta', link: '/release-notes/releases/latest-v0.4.5-beta' },
-            { text: 'v0.4.4 - beta', link: '/release-notes/releases/v0.4.4-beta' },
-            { text: 'v0.4.3 - beta', link: '/release-notes/releases/v0.4.3-beta' },
-            { text: 'v0.4.2 - beta', link: '/release-notes/releases/v0.4.2-beta' },
-            { text: 'v0.4.1- beta', link: '/release-notes/releases/v0.4.1-beta' },
-            { text: 'v0.4.0 - beta', link: '/release-notes/releases/v0.4.0-beta' },
-            { text: 'v0.3.6 - beta', link: '/release-notes/releases/v0.3.6-beta' },
-            { text: 'v0.3.5 - beta', link: '/release-notes/releases/v0.3.5-beta' },
-            { text: 'v0.3.0 - beta', link: '/release-notes/releases/v0.3.0-beta' },
-            { text: 'v0.2.2 - beta', link: '/release-notes/releases/v0.2.2-beta' },
-            { text: 'v0.2.1 - beta', link: '/release-notes/releases/v0.2.1-beta' },
-            { text: 'v0.2.0- beta', link: '/release-notes/releases/v0.2.0-beta' },
-            { text: 'v0.1.0 - beta', link: '/release-notes/releases/v0.1.0-beta' },
+            { text: 'v1.0.3-latest', link: '/docs/release-notes/releases/v1.0.3-latest' },
+            { text: 'v1.0.2-stable', link: '/docs/release-notes/releases/v1.0.2-stable' },
+            { text: 'v1.0.1', link: '/docs/release-notes/releases/v1.0.1' },
+            { text: 'v1.0.0 - GA', link: '/docs/release-notes/releases/v1.0.0-lts' },
+            { text: 'v0.4.5 - beta', link: '/docs/release-notes/releases/latest-v0.4.5-beta' },
+            { text: 'v0.4.4 - beta', link: '/docs/release-notes/releases/v0.4.4-beta' },
+            { text: 'v0.4.3 - beta', link: '/docs/release-notes/releases/v0.4.3-beta' },
+            { text: 'v0.4.2 - beta', link: '/docs/release-notes/releases/v0.4.2-beta' },
+            { text: 'v0.4.1- beta', link: '/docs/release-notes/releases/v0.4.1-beta' },
+            { text: 'v0.4.0 - beta', link: '/docs/release-notes/releases/v0.4.0-beta' },
+            { text: 'v0.3.6 - beta', link: '/docs/release-notes/releases/v0.3.6-beta' },
+            { text: 'v0.3.5 - beta', link: '/docs/release-notes/releases/v0.3.5-beta' },
+            { text: 'v0.3.0 - beta', link: '/docs/release-notes/releases/v0.3.0-beta' },
+            { text: 'v0.2.2 - beta', link: '/docs/release-notes/releases/v0.2.2-beta' },
+            { text: 'v0.2.1 - beta', link: '/docs/release-notes/releases/v0.2.1-beta' },
+            { text: 'v0.2.0- beta', link: '/docs/release-notes/releases/v0.2.0-beta' },
+            { text: 'v0.1.0 - beta', link: '/docs/release-notes/releases/v0.1.0-beta' },
         ] },
         ]
     },

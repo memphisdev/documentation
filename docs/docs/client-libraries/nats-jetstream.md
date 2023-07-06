@@ -73,5 +73,5 @@ Stream argo_event_source was created
 
 ## Instructions for specific integrations
 
-<BigLink url="/integrations/other-platforms/argo-and-memphis" title="Argo"/>
+<BigLink url="/docs/integrations/other-platforms/argo-and-memphis" title="Argo"/>
 

@@ -67,7 +67,7 @@ http://localhost:9000
 === SDK
 For more detailed information, head to the SDKs section below.
 
-<BigLink url="/client-libraries/nats-jetstream" title="Client Libraries" />
+<BigLink url="/docs/client-libraries/nats-jetstream" title="Client Libraries" />
 <br>
 
 

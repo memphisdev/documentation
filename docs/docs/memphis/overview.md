@@ -6,7 +6,7 @@ title: Overview
 
 # Overview
 
-## What is Memphis{dev}?
+## What is Memphis.dev?
 
 **Memphis** is a next-generation alternative to traditional message brokers.
 

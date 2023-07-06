@@ -7,7 +7,7 @@ title: Kubernetes
 <Subtitle></Subtitle>
 
 ::: tip
-If you prefer using **Terraform**, head <ContainerLink url="/deployment/Terraform/">here</ContainerLink>
+If you prefer using **Terraform**, head <ContainerLink url="/docs/deployment/cloud-deployment/">here</ContainerLink>
 :::
 <!-- TODO: Make landing pages... -->
 

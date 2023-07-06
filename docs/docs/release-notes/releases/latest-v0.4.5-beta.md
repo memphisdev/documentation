@@ -9,7 +9,7 @@ title: v0.4.5 - beta
 
 Upgrade procedure for production users (Kubernetes deployments)
 
-<BigLink url="/deployment/kubernetes/how-to-upgrade" title="3 - Upgrade"/>
+<BigLink url="/docs/deployment/kubernetes/how-to-upgrade" title="3 - Upgrade"/>
 
 ::: tip
 Please make sure your **SDKs** are **updated** to the latest version to enjoy new features

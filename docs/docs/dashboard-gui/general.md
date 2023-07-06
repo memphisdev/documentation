@@ -5,7 +5,7 @@ description: General information about the Memphis UI with K8S or Docker in dev
 # General
 
 ::: tip
-You can access the UI just after the installation of Memphis via K8S / Docker on your dev environment <ContainerLink url="/deployment/kubernetes/1-installation">here</ContainerLink>.
+You can access the UI just after the installation of Memphis via K8S / Docker on your dev environment <ContainerLink url="/docs/deployment/kubernetes/1-installation">here</ContainerLink>.
 :::
 <!-- TODO: make landing pages -->
 
@@ -87,7 +87,7 @@ More on publishing k8s services <ContainerLink url="https://kubernetes.io/docs/c
 ### **Docker**
 
 ::: info
-For the full docker installation tutorial, please head <ContainerLink url="/deployment/docker-compose">here</ContainerLink>.
+For the full docker installation tutorial, please head <ContainerLink url="/docs/deployment/docker-compose">here</ContainerLink>.
 :::
 
 The default port of the UI is 9000:
