@@ -64,7 +64,7 @@ In node.js, we can simply produce an object. Behind the scenes, the object will 
 
 **Example schema:**
 
-```protobuf
+```proto
 syntax = "proto3";
 message Test {
             string field1 = 1;
@@ -113,7 +113,7 @@ Memphis abstracts the need for external serialization functions and embeds it wi
 
 **Example schema:**
 
-```protobuf
+```proto
 syntax = "proto3";
 message Test {
             string field1 = 1;
@@ -213,7 +213,7 @@ Memphis abstracts the need for external serialization functions and embeds them 
 
 **Example schema:**
 
-```protobuf
+```proto
 syntax = "proto3";
 message Test {
             string field1 = 1;
@@ -263,7 +263,7 @@ Memphis abstracts the need for external serialization functions and embeds them 
 
 **Example schema:**
 
-```protobuf
+```proto
 syntax = "proto3";
 message Test {
             string field1 = 1;
@@ -317,7 +317,7 @@ In HTTP, we can simply produce an object. Behind the scenes, the object will be 
 
 **Example schema:**
 
-```protobuf
+```proto
 syntax = "proto3";
 message Test {
             string field1 = 1;

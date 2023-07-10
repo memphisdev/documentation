@@ -14,7 +14,7 @@ title: DigitalOcean
 
 [DigitalOcean](https://cloud.digitalocean.com/) offers easy-to-use and configure cloud services like servers, kubernetes, object storage, serverless functions, a marketplace of applications, and much more.
 
-[Memphis](/memphis/overview) chose DigitalOcean Kubernetes Marketplace to offer both DO and Memphis users a \
+Memphis.dev chose DigitalOcean Kubernetes Marketplace to offer both DO and Memphis users a \
 1-click installation of memphis cluster in a production kubernetes environment.
 
 ### Prerequisites
@@ -49,7 +49,7 @@ Follow the below instructions to communicate with the newly created cluster
 
 We need to create two different load balancers, one for <mark style="color:blue;">**data**</mark> (the broker itself) and one for the <mark style="color:green;">**UI**</mark>.
 
-### Step 4: Expose Memphis for <mark style="color:blue;">data</mark> using a load balancer
+### Step 4: Expose Memphis for data using a load balancer
 
 Run the following YAML
 
@@ -103,7 +103,7 @@ spec:
 
 The above will create a digitalocean load balancer with a assets ip.
 
-### Step 5: Expose Memphis <mark style="color:green;">UI</mark> using a load balancer
+### Step 5: Expose Memphis UI using a load balancer
 
 Run the following YAML
 
