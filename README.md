@@ -1,5 +1,1 @@
-Blank readme for repo creation. 
-
-Gitbook to vitepress transition project
-
-
+This project is under development, current documentation can be found here --> https://github.com/memphisdev/gitbook-backup
