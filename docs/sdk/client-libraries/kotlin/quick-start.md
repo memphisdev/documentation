@@ -25,7 +25,7 @@ dependencies {
 import dev.memphis.sdk.Memphis
 ```
 
-### Connecting to Memphis 
+## Connecting to Memphis 
 To connect using Username and Password 
 ```kotlin
  val memphis = Memphis.connect("<memphis-host>", "<application type username>", Memphis.Password("<user-password>"))
@@ -49,14 +49,14 @@ val memphis = Memphis.connect("<memphis-host>", "<application type username>", M
 
 Once connected, all features offered by Memphis are available.<br>
 
-### Disconnecting from Memphis
+## Disconnecting from Memphis
 To disconnect from Memphis, call Close() on the Memphis connection object.<br>
 
 ```kotlin
 memphis.close()
 ```
 
-### Creating a Station
+## Creating a Station
 Stations can be created from Conn<br>
 Passing optional parameters<br>
 _If a station already exists nothing happens, the new configuration will not be applied_<br>
@@ -76,7 +76,7 @@ val station = memphis.createStation("<station-name>") {
 }
 ```
 
-### Retention Types
+## Retention Types
 Memphis currently supports the following types of retention:<br>
 
 ```kotlin
@@ -97,7 +97,7 @@ RetentionType.BYTES
 
 The above means that after maximum number of saved bytes (set in retention value)<br>has been reached, the oldest messages will be deleted.
 
-### Retention Values
+## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above,<br> where the values vary according to the type of retention chosen.
 
@@ -107,7 +107,7 @@ All retention values are of type `int` but with different representations as fol
 
 After these limits are reached oldest messages will be deleted.
 
-### Storage Types
+## Storage Types
 Memphis currently supports the following types of messages storage:<br>
 
 ```kotlin
@@ -122,14 +122,14 @@ StorageType.MEMORY
 
 The above means that messages persist on the main memory.<br>
 
-### Destroying a Station
+## Destroying a Station
 Destroying a station will remove all its resources (including producers and consumers).<br>
 
 ```kotlin
 station.Destroy()
 ```
 
-### Attaching a Schema to an Existing Station
+## Attaching a Schema to an Existing Station
 
 ```kotlin
 memphis.attachSchema("<schema-name>", "<station-name>")
@@ -139,7 +139,7 @@ memphis.attachSchema("<schema-name>", "<station-name>")
 station.attachSchema("<schema-name>")
 ```
 
-### Detaching a Schema from Station
+## Detaching a Schema from Station
 
 ```kotlin
 memphis.detachSchema("<station-name>")
@@ -148,13 +148,13 @@ memphis.detachSchema("<station-name>")
 station.detachSchema()
 ```
 
-### Produce and Consume Messages
+## Produce and Consume Messages
 The most common client operations are producing messages and consuming messages.<br><br>
 Messages are published to a station and consumed from it<br>by creating a consumer and consuming the resulting flow.<br>Consumers are pull-based and consume all the messages in a station<br> unless you are using a consumers group,<br>in which case messages are spread across all members in this group.<br><br>
 Memphis messages are payload agnostic. Payloads are `ByteArray`.<br><br>
 In order to stop receiving messages, you have to call ```consumer.stopConsuming()```.<br>The consumer will terminate regardless of whether there are messages in flight for the client.
 
-### Creating a Producer
+## Creating a Producer
 
 ```kotlin
 val producer = memphis.producer("<station-name>", "<producer-name>") {
@@ -162,7 +162,7 @@ val producer = memphis.producer("<station-name>", "<producer-name>") {
 }
 ```
 
-### Producing a message
+## Producing a message
 
 ```kotlin
 producer.produce("<message in ByteArray or (schema validated station - protobuf) or ByteArray(schema validated station - json schema) or ByteArray (schema validated station - graphql schema)>") {
@@ -171,7 +171,7 @@ producer.produce("<message in ByteArray or (schema validated station - protobuf)
 }
 ```
 
-### Add headers
+## Add headers
 
 ```kotlin
 producer.produce("<message in ByteArray or (schema validated station - protobuf) or ByteArray(schema validated station - json schema) or ByteArray (schema validated station - graphql schema)>") {
@@ -179,14 +179,14 @@ producer.produce("<message in ByteArray or (schema validated station - protobuf)
 }
 ```
 
-### Async produce
+## Async produce
 Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
 
 ```kotlin
 producer.produceAsync("<message in ByteArray or (schema validated station - protobuf) or ByteArray(schema validated station - json schema) or ByteArray (schema validated station - graphql schema)>")
 ```
 
-### Message ID
+## Message ID
 Stations are idempotent by default for 2 minutes (can be configured), Idempotency achieved by adding a message id
 
 ```kotlin
@@ -195,13 +195,13 @@ producer.produce("<message in ByteArray or (schema validated station - protobuf)
 }
 ```
 
-### Destroying a Producer
+## Destroying a Producer
 
 ```kotlin
 producer.destroy()
 ```
 
-### Creating a Consumer
+## Creating a Consumer
 
 ```kotlin
 val consumer = memphis.consumer("<station-name>", "<consumer-name>") {
@@ -215,7 +215,7 @@ val consumer = memphis.consumer("<station-name>", "<consumer-name>") {
 }
 ```
 
-### Processing Messages
+## Processing Messages
 To consume messages you just need to collect the messages from the flow.
 
 ```kotlin
@@ -248,19 +248,19 @@ consumer.subscribeDls().collect {
 }
 ```
 
-### Acknowledging a Message
+## Acknowledging a Message
 Acknowledging a message indicates to the Memphis server to not <br>re-send the same message again to the same consumer or consumers group.
 
 ```kotlin
 message.ack()
 ```
 
-### Get headers
+## Get headers
 Get headers per message
 ```kotlin
 val headers = msg.headers
 ```
-### Destroying a Consumer
+## Destroying a Consumer
 
 ```kotlin
 consumer.destroy()

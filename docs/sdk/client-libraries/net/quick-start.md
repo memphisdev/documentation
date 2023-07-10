@@ -22,7 +22,7 @@ Update-Package Memphis.Client
 using Memphis.Client;
 ```
 
-### Connecting to Memphis
+## Connecting to Memphis
 
 First, we need to create or use default `ClientOptions` and then connect to Memphis by using `MemphisClientFactory.CreateClient(ClientOptions opst)`.
 
@@ -64,14 +64,14 @@ catch (Exception ex)
 
 Once client created, the entire functionalities offered by Memphis are available.
 
-### Disconnecting from Memphis
+## Disconnecting from Memphis
 
 To disconnect from Memphis, call `Dispose()` on the `MemphisClient`.
 
 ```c#
 await memphisClient.Dispose()
 ```
-### Creating a Station
+## Creating a Station
 
 ```c#
 try
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-### Retention types
+## Retention types
 
 Memphis currently supports the following types of retention:
 
@@ -123,7 +123,7 @@ RetentionTypes.BYTES
 ```
 The above means that after maximum number of saved bytes (set in retention value) has been reached, the oldest messages will be deleted.
 
-### Retention Values
+## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above,<br> where the values vary according to the type of retention chosen.
 
@@ -134,7 +134,7 @@ All retention values are of type `int` but with different representations as fol
 After these limits are reached oldest messages will be deleted.
 
 
-### Storage Types
+## Storage Types
 Memphis currently supports the following types of messages storage:
 
 ```c#
@@ -147,39 +147,39 @@ StorageTypes.MEMORY
 ```
 The above means that messages persist on the main memory.
 
-### Destroying a Station
+## Destroying a Station
 
 Destroying a station will remove all its resources (including producers and consumers).
 ```c#
 station.DestroyAsync()
 ```
 
-### Creating a new Schema
+## Creating a new Schema
 
 ```c#
 await client.CreateSchema("<schema-name>", "<schema-type>", "<schema-file-path>")
 ```
 
-### Enforcing a Schema on an Existing Station
+## Enforcing a Schema on an Existing Station
 
 ```c#
 await client.EnforceSchema(stationName: "<station-name>", schemaName: "<schema-name>");
 ```
 
-### Deprecated - Attaching Schema
+## Deprecated - Attaching Schema
 
 The `AttachSchema` method is depricated, use `EnforceSchema` instead.
 ```c#
 await client.AttachSchema(stationName: "<station-name>", schemaName: "<schema-name>");
 ```
 
-### Detaching a Schema from Station
+## Detaching a Schema from Station
 ```c#
 await client.DetachSchema(stationName: station.Name);
 ```
 
 
-### Produce and Consume messages
+## Produce and Consume messages
 
 The most common client operations are `produce` to send messages and `consume` to
 receive messages.
@@ -192,7 +192,7 @@ Memphis messages are payload agnostic. Payloads are `byte[]`.
 In order to stop getting messages, you have to call `consumer.Dispose()`. Destroy will terminate regardless
 of whether there are messages in flight for the client.
 
-### Creating a Producer
+## Creating a Producer
 
 ```c#
 try
@@ -219,7 +219,7 @@ catch (Exception ex)
 }
 ```
 
-### Producing a message
+## Producing a message
 
 ```c#
 var commonHeaders = new NameValueCollection();
@@ -231,7 +231,7 @@ await producer.ProduceAsync(
 );
 ```
 
-### Message ID
+## Message ID
 
 Stations are idempotent by default for 2 minutes (can be configured), Idempotence achieved by adding a message id
 
@@ -243,13 +243,13 @@ await producer.ProduceAsync(
 );
 ```
 
-### Destroying a Producer
+## Destroying a Producer
 
 ```c#
 await producer.DestroyAsync()
 ```
 
-### Creating a Consumer
+## Creating a Consumer
 
 ```c#
 try
@@ -277,7 +277,7 @@ catch (Exception ex)
 }
 ```
 
-### Creating message handler for consuming a message
+## Creating message handler for consuming a message
 
 To configure message handler, use the `MessageReceived` event:
 
@@ -310,7 +310,7 @@ consumer.MessageReceived += (sender, args) =>
 };
 ```
 
-### Consuming a message
+## Consuming a message
 
 The consumer will try to fetch messages every _PullIntervalMs_ (that was given in Consumer's creation) and call the defined message handler.
 
@@ -318,7 +318,7 @@ The consumer will try to fetch messages every _PullIntervalMs_ (that was given i
  await consumer.ConsumeAsync();
 ```
 
-### Fetch a single batch of messages
+## Fetch a single batch of messages
 
 ```c#
 client.FetchMessages(new FetchMessageOptions
@@ -336,7 +336,7 @@ client.FetchMessages(new FetchMessageOptions
 });
 ```
 
-### Fetch a single batch of messages after creating a consumer
+## Fetch a single batch of messages after creating a consumer
 
 `prefetch = true` will prefetch next batch of messages and save it in memory for future Fetch() request \
 Note: Use a higher MaxAckTime as the messages will sit in a local cache for some time before processing
@@ -348,7 +348,7 @@ var messages = consumer.Fetch(
 );
 ```
 
-### Acknowledging a Message
+## Acknowledging a Message
 
 Acknowledging a message indicates to the Memphis server to not re-send the same message again to the same consumer or consumers group.
 
@@ -356,7 +356,7 @@ Acknowledging a message indicates to the Memphis server to not re-send the same 
 msg.Ack();
 ```
 
-### Delay the message after a given duration
+## Delay the message after a given duration
 
 Delay the message and tell Memphis server to re-send the same message again to the same consumer group.\
 The message will be redelivered only in case `Consumer.MaxMsgDeliveries` is not reached yet.
@@ -365,7 +365,7 @@ The message will be redelivered only in case `Consumer.MaxMsgDeliveries` is not 
 msg.Delay(<delayMilliSeconds>);
 ```
 
-### Get headers
+## Get headers
 
 Get headers per message
 
@@ -373,13 +373,13 @@ Get headers per message
 msg.GetHeaders()
 ```
 
-### Destroying a Consumer
+## Destroying a Consumer
 
 ```c#
 await consumer.DestroyAsync();
 ```
 
-### Check if broker is connected
+## Check if broker is connected
 
 ```c#
 memphisClient.IsConnected();

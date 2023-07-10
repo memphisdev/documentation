@@ -488,7 +488,7 @@ type Query {
 
 **Code:**
 
-```aspnet:line-numbers
+```c#:line-numbers
 using System.Collections.Specialized;
 using Memphis.Client;
 using Memphis.Client.Producer;
@@ -787,7 +787,7 @@ type Query {
 
 **Code:**
 
-```aspnet:line-numbers
+```c#:line-numbers
 using Memphis.Client.Consumer;
 using Memphis.Client;
 using ProtoBuf;

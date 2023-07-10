@@ -16,7 +16,7 @@ from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
 ```
 
-### Connecting to Memphis
+## Connecting to Memphis
 
 First, we need to create Memphis `object` and then connect with Memphis by using `memphis.connect`.
 
@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
 Once connected, the entire functionalities offered by Memphis are available.
 
-### Disconnecting from Memphis
+## Disconnecting from Memphis
 
 To disconnect from Memphis, call `close()` on the memphis object.
 
@@ -60,7 +60,7 @@ To disconnect from Memphis, call `close()` on the memphis object.
 await memphis.close()
 ```
 
-### Creating a Station
+## Creating a Station
 **Unexist stations will be created automatically through the SDK on the first producer/consumer connection with default values.**<br><br>
 _If a station already exists nothing happens, the new configuration will not be applied_
 
@@ -79,7 +79,7 @@ station = memphis.station(
 )
 ```
 
-### Retention types
+## Retention types
 
 Memphis currently supports the following types of retention:
 
@@ -102,7 +102,7 @@ memphis.types.Retention.BYTES
 Means that after max amount of saved bytes (set in retention value), the oldest messages will be deleted
 
 
-### Retention Values
+## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above, where the values vary according to the type of retention chosen.
 
@@ -112,7 +112,7 @@ All retention values are of type `int` but with different representations as fol
 
 After these limits are reached oldest messages will be deleted.
 
-### Storage types
+## Storage types
 
 Memphis currently supports the following types of messages storage:
 
@@ -128,7 +128,7 @@ memphis.types.Storage.MEMORY
 
 Means that messages persist on the main memory
 
-### Destroying a Station
+## Destroying a Station
 
 Destroying a station will remove all its resources (producers/consumers)
 
@@ -136,32 +136,32 @@ Destroying a station will remove all its resources (producers/consumers)
 station.destroy()
 ```
 
-### Creating a New Schema 
+## Creating a New Schema 
 
 ```python
 await memphis.create_schema("<schema-name>", "<schema-type>", "<schema-file-path>")
 ```
 
-### Enforcing a Schema on an Existing Station
+## Enforcing a Schema on an Existing Station
 
 ```python
 await memphis.enforce_schema("<schema-name>", "<station-name>")
 ```
 
-### Deprecated  - Attaching a Schema, use enforce_schema instead
+## Deprecated  - Attaching a Schema, use enforce_schema instead
 
 ```python
 await memphis.attach_schema("<schema-name>", "<station-name>")
 ```
 
-### Detaching a Schema from Station
+## Detaching a Schema from Station
 
 ```python
 await memphis.detach_schema("<station-name>")
 ```
 
 
-### Produce and Consume messages
+## Produce and Consume messages
 
 The most common client operations are `produce` to send messages and `consume` to
 receive messages.
@@ -174,13 +174,13 @@ Memphis messages are payload agnostic. Payloads are `bytearray`.
 In order to stop getting messages, you have to call `consumer.destroy()`. Destroy will terminate regardless
 of whether there are messages in flight for the client.
 
-### Creating a Producer
+## Creating a Producer
 
 ```python
 producer = await memphis.producer(station_name="<station-name>", producer_name="<producer-name>", generate_random_suffix=False)
 ```
 
-### Producing a message
+## Producing a message
 Without creating a producer.
 In cases where extra performance is needed the recommended way is to create a producer first
 and produce messages by using the produce function of it
@@ -203,7 +203,7 @@ await producer.produce(
   ack_wait_sec=15) # defaults to 15
 ```
 
-### Add headers
+## Add headers
 
 ```python
 headers= Headers()
@@ -213,7 +213,7 @@ await producer.produce(
   headers=headers) # default to {}
 ```
 
-### Async produce
+## Async produce
 Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
 
 ```python
@@ -222,7 +222,7 @@ await producer.produce(
   headers={}, async_produce=True)
 ```
 
-### Message ID
+## Message ID
 Stations are idempotent by default for 2 minutes (can be configured), Idempotency achieved by adding a message id
 
 ```python
@@ -233,13 +233,13 @@ await producer.produce(
   msg_id="123")
 ```
 
-### Destroying a Producer
+## Destroying a Producer
 
 ```python
 producer.destroy()
 ```
 
-### Creating a Consumer
+## Creating a Consumer
 
 ```python
 consumer = await memphis.consumer(
@@ -257,14 +257,14 @@ consumer = await memphis.consumer(
 )
 ```
 
-### Setting a context for message handler function
+## Setting a context for message handler function
 
 ```python
 context = {"key": "value"}
 consumer.set_context(context)
 ```
 
-### Processing messages
+## Processing messages
 
 Once all the messages in the station were consumed the msg_handler will receive error: `Memphis: TimeoutError`.
 
@@ -278,7 +278,7 @@ async def msg_handler(msgs, error, context):
 consumer.consume(msg_handler)
 ```
 
-### Fetch a single batch of messages
+## Fetch a single batch of messages
 ```python
 msgs = await memphis.fetch_messages(
   station_name="<station-name>",
@@ -294,13 +294,13 @@ msgs = await memphis.fetch_messages(
 )
 ```
 
-### Fetch a single batch of messages after creating a consumer
+## Fetch a single batch of messages after creating a consumer
 ```python
 msgs = await consumer.fetch(batch_size=10) # defaults to 10
 ```
 
 
-### Acknowledge a message
+## Acknowledge a message
 
 Acknowledge a message indicates the Memphis server to not re-send the same message again to the same consumer / consumers group
 
@@ -308,7 +308,7 @@ Acknowledge a message indicates the Memphis server to not re-send the same messa
 await message.ack()
 ```
 
-### Delay the message after a given duration
+## Delay the message after a given duration
 
 Delay the message and tell Memphis server to re-send the same message again to the same consumer group. The message will be redelivered only in case `consumer.max_msg_deliveries` is not reached yet.
 
@@ -316,28 +316,28 @@ Delay the message and tell Memphis server to re-send the same message again to t
 await message.delay(delay_in_seconds)
 ```
 
-### Get headers 
+## Get headers 
 Get headers per message
 
 ```python
 headers = message.get_headers()
 ```
 
-### Get message sequence number
+## Get message sequence number
 Get message sequence number
 
 ```python
 sequence_number = msg.get_sequence_number()
 ```
 
-### Destroying a Consumer
+## Destroying a Consumer
 
 ```python
 consumer.destroy()
 ```
 
 
-### Check connection status
+## Check connection status
 
 ```python
 memphis.is_connected()

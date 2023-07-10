@@ -91,7 +91,7 @@ export function sdk() {
         },
         {
           text: 'Usage',
-          link: '/sdk/docs/components/usage',
+          link: '/sdk/docs/usage',
         }
       ]
     },
@@ -100,100 +100,100 @@ export function sdk() {
       items: [
         {
           text: 'REST (Webhook)',
-          link: '/',
+          link: '/sdk/client-libraries/rest/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/rest/overview' },
-            { text: 'Quick Start', link: '/sdk/rest/quick-start' },
-            { text: 'API Reference', link: '/sdk/rest/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/rest/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/rest/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/rest/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis-rest-gateway' }
           ]
         },
         {
           text: 'Node.js / TypeScript / NestJS',
-          link: '/',
+          link: '/sdk/client-libraries/node/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/node/overview' },
-            { text: 'Quick Start', link: '/sdk/node/quick-start' },
-            { text: 'API Reference', link: '/sdk/node/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/node/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/node/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/node/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis.js' }
           ]
         },
         {
           text: 'Go',
-          link: '/',
+          link: '/sdk/client-libraries/go/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/go/overview' },
-            { text: 'Quick Start', link: '/sdk/go/quick-start' },
-            { text: 'API Reference', link: '/sdk/go/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/go/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/go/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/go/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis.go' }
           ]
         },
         {
           text: 'Python',
-          link: '/',
+          link: '/sdk/client-libraries/python/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/python/overview' },
-            { text: 'Quick Start', link: '/sdk/python/quick-start' },
-            { text: 'API Reference', link: '/sdk/python/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/python/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/python/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/python/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis.py' }
           ]
         },
         {
           text: 'Kotlin',
-          link: '/',
+          link: '/sdk/client-libraries/kotlin/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/kotlin/overview' },
-            { text: 'Quick Start', link: '/sdk/kotlin/quick-start' },
-            { text: 'API Reference', link: '/sdk/kotlin/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/kotlin/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/kotlin/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/kotlin/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis.kt' }
           ]
         },
         {
           text: '.NET',
-          link: '/',
+          link: '/sdk/client-libraries/net/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/net/overview' },
-            { text: 'Quick Start', link: '/sdk/net/quick-start' },
-            { text: 'API Reference', link: '/sdk/net/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/net/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/net/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/net/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis.net' }
           ]
         },
         {
           text: 'Java',
-          link: '/',
+          link: '/sdk/client-libraries/java/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/java/overview' },
-            { text: 'Quick Start', link: '/sdk/java/quick-start' },
-            { text: 'API Reference', link: '/sdk/java/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/java/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/java/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/java/api-reference' },
             { text: 'GitHub', link: 'https://github.com/memphisdev/memphis.java' }
           ]
         },
         {
           text: 'Rust',
-          link: '/',
+          link: '/sdk/client-libraries/rust/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/rust/overview' },
-            { text: 'Quick Start', link: '/sdk/rust/quick-start' },
-            { text: 'API Reference', link: '/sdk/rust/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/rust/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/rust/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/rust/api-reference' },
             { text: 'GitHub', link: '' }
           ]
         },
         {
           text: 'Scala',
-          link: '/',
+          link: '/sdk/client-libraries/scala/index',
           collapsed: true,
           items: [
-            { text: 'Overview', link: '/sdk/scala/overview' },
-            { text: 'Quick Start', link: '/sdk/scala/quick-start' },
-            { text: 'API Reference', link: '/sdk/scala/api-reference' },
+            { text: 'Overview', link: '/sdk/client-libraries/scala/overview' },
+            { text: 'Quick Start', link: '/sdk/client-libraries/scala/quick-start' },
+            { text: 'API Reference', link: '/sdk/client-libraries/scala/api-reference' },
             { text: 'GitHub', link: '' }
           ]
         }

@@ -30,7 +30,7 @@ import { Module } from '@nestjs/common';
 import { Memphis, MemphisModule, MemphisService } from 'memphis-dev';
 ```
 
-### Connecting to Memphis
+## Connecting to Memphis
 
 First, we need to connect with Memphis by using `memphis.connect`.
 
@@ -86,7 +86,7 @@ class ConsumerModule {
 
 Once connected, the entire functionalities offered by Memphis are available.
 
-### Disconnecting from Memphis
+## Disconnecting from Memphis
 
 To disconnect from Memphis, call `close()` on the memphis object.
 
@@ -94,7 +94,7 @@ To disconnect from Memphis, call `close()` on the memphis object.
 memphisConnection.close();
 ```
 
-### Creating a Station
+## Creating a Station
 **Unexist stations will be created automatically through the SDK on the first producer/consumer connection with default values.**<br><br>
 _If a station already exists nothing happens, the new configuration will not be applied_
 
@@ -142,7 +142,7 @@ class stationModule {
 }
 ```
 
-### Retention types
+## Retention types
 
 Memphis currently supports the following types of retention:
 
@@ -165,7 +165,7 @@ memphis.retentionTypes.BYTES;
 Means that after max amount of saved bytes (set in retention value), the oldest messages will be deleted
 
 
-### Retention Values
+## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above, where the values vary according to the type of retention chosen.
 
@@ -175,7 +175,7 @@ All retention values are of type `int` but with different representations as fol
 
 After these limits are reached oldest messages will be deleted.
 
-### Storage types
+## Storage types
 
 Memphis currently supports the following types of messages storage:
 
@@ -191,7 +191,7 @@ memphis.storageTypes.MEMORY;
 
 Means that messages persist on the main memory
 
-### Destroying a Station
+## Destroying a Station
 
 Destroying a station will remove all its resources (producers/consumers)
 
@@ -199,31 +199,31 @@ Destroying a station will remove all its resources (producers/consumers)
 await station.destroy();
 ```
 
-### Creating a new schema 
+## Creating a new schema 
 
 ```js
 await memphisConnection.createSchema({schemaName: "<schema-name>", schemaType: "<schema-type>", schemaFilePath: "<schema-file-path>" });
 ```
 
-### Enforcing a schema on an existing Station
+## Enforcing a schema on an existing Station
 
 ```js
 await memphisConnection.enforceSchema({ name: '<schema-name>', stationName: '<station-name>' });
 ```
 
-### Deprecated - Use enforceSchema instead
+## Deprecated - Use enforceSchema instead
 
 ```js
 await memphisConnection.attachSchema({ name: '<schema-name>', stationName: '<station-name>' });
 ```
 
-### Detaching a schema from Station
+## Detaching a schema from Station
 
 ```js
 await memphisConnection.detachSchema({ stationName: '<station-name>' });
 ```
 
-### Produce and Consume messages
+## Produce and Consume messages
 
 The most common client operations are `produce` to send messages and `consume` to
 receive messages.
@@ -236,7 +236,7 @@ Memphis messages are payload agnostic. Payloads are `Uint8Arrays`.
 In order to stop getting messages, you have to call `consumer.destroy()`. Destroy will terminate regardless
 of whether there are messages in flight for the client.
 
-### Creating a Producer
+## Creating a Producer
 
 ```js
 const producer = await memphisConnection.producer({
@@ -267,7 +267,7 @@ class ProducerModule {
 }
 ```
 
-### Producing a message
+## Producing a message
 
 Without creating a producer.
 In cases where extra performance is needed the recommended way is to create a producer first
@@ -295,7 +295,7 @@ await producer.produce({
 });
 ```
 
-### Add Header
+## Add Header
 
 ```js
 const headers = memphis.headers();
@@ -316,7 +316,7 @@ await producer.produce({
 });
 ```
 
-### Async produce
+## Async produce
 
 Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
 
@@ -328,7 +328,7 @@ await producer.produce({
 });
 ```
 
-### Message ID
+## Message ID
 
 Stations are idempotent by default for 2 minutes (can be configured), Idempotency achieved by adding a message id
 
@@ -340,13 +340,13 @@ await producer.produce({
 });
 ```
 
-### Destroying a Producer
+## Destroying a Producer
 
 ```js
 await producer.destroy();
 ```
 
-### Creating a Consumer
+## Creating a Consumer
 
 ```js
 const consumer = await memphisConnection.consumer({
@@ -364,13 +364,13 @@ const consumer = await memphisConnection.consumer({
 });
 ```
 
-### Passing context to message handlers
+## Passing context to message handlers
 
 ```js
 consumer.setContext({ key: 'value' });
 ```
 
-### Processing messages
+## Processing messages
 
 ```js
 consumer.on('message', (message, context) => {
@@ -380,7 +380,7 @@ consumer.on('message', (message, context) => {
 });
 ```
 
-### Fetch a single batch of messages
+## Fetch a single batch of messages
 
 ```js
 const msgs = await memphis.fetchMessages({
@@ -397,7 +397,7 @@ const msgs = await memphis.fetchMessages({
 });
 ```
 
-### Fetch a single batch of messages after creating a consumer
+## Fetch a single batch of messages after creating a consumer
 
 ```js
 const msgs = await consumer.fetch({
@@ -445,7 +445,7 @@ export class Controller {
 }
 ```
 
-### Acknowledge a message
+## Acknowledge a message
 
 Acknowledge a message indicates the Memphis server to not re-send the same message again to the same consumer / consumers group
 
@@ -453,7 +453,7 @@ Acknowledge a message indicates the Memphis server to not re-send the same messa
 message.ack();
 ```
 
-### Delay and resend the message after a given duration
+## Delay and resend the message after a given duration
 
 Delay the message and tell Memphis server to re-send the same message again to the same consumer group. The message will be redelivered only in case `Consumer.maxMsgDeliveries` is not reached yet.
 
@@ -461,7 +461,7 @@ Delay the message and tell Memphis server to re-send the same message again to t
 message.delay(delayInMilliseconds);
 ```
 
-### Get message payload
+## Get message payload
 
 As Uint8Array
 
@@ -475,7 +475,7 @@ As Json
 msg = message.getDataAsJson();
 ```
 
-### Get headers
+## Get headers
 
 Get headers per message
 
@@ -483,7 +483,7 @@ Get headers per message
 headers = message.getHeaders();
 ```
 
-### Get message sequence number
+## Get message sequence number
 
 Get message sequence number
 
@@ -491,7 +491,7 @@ Get message sequence number
 sequenceNumber = message.getSequenceNumber();
 ```
 
-### Catching async errors
+## Catching async errors
 
 ```js
 consumer.on('error', (error) => {
@@ -499,13 +499,13 @@ consumer.on('error', (error) => {
 });
 ```
 
-### Destroying a Consumer
+## Destroying a Consumer
 
 ```js
 await consumer.destroy();
 ```
 
-### Check if broker is connected
+## Check if broker is connected
 
 ```js
 memphisConnection.isConnected();

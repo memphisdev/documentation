@@ -16,7 +16,7 @@ go get github.com/memphisdev/memphis.go
 import "github.com/memphisdev/memphis.go"
 ```
 
-### Connecting to Memphis
+## Connecting to Memphis
 ```go
 c, err := memphis.Connect("<memphis-host>", 
 	"<application type username>", 
@@ -45,14 +45,14 @@ c, err := memphis.Connect("<memphis-host>",
 
 Once connected, all features offered by Memphis are available.<br>
 
-### Disconnecting from Memphis
+## Disconnecting from Memphis
 To disconnect from Memphis, call Close() on the Memphis connection object.<br>
 
 ```go
 c.Close();
 ```
 
-### Creating a Station
+## Creating a Station
 **Unexist stations will be created automatically through the SDK on the first producer/consumer connection with default values.**<br><br>
 Stations can be created from Conn<br>
 Passing optional parameters using functions<br>
@@ -74,7 +74,7 @@ s1, err = c.CreateStation("<station-name>",
 )
 ```
 
-### Retention Types
+## Retention Types
 Memphis currently supports the following types of retention:<br>
 
 ```go
@@ -95,7 +95,7 @@ memphis.Bytes
 
 The above means that after maximum number of saved bytes (set in retention value)<br>has been reached, the oldest messages will be deleted.
 
-### Retention Values
+## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above,<br> where the values vary according to the type of retention chosen.
 
@@ -105,7 +105,7 @@ All retention values are of type `int` but with different representations as fol
 
 After these limits are reached oldest messages will be deleted.
 
-### Storage Types
+## Storage Types
 Memphis currently supports the following types of messages storage:<br>
 
 ```go
@@ -120,32 +120,32 @@ memphis.Memory
 
 The above means that messages persist on the main memory.<br>
 
-### Destroying a Station
+## Destroying a Station
 Destroying a station will remove all its resources (including producers and consumers).<br>
 
 ```go
 err := s.Destroy();
 ```
 
-### Creating a new Schema
+## Creating a new Schema
 
 ```go
 err := conn.CreateSchema("<schema-name>", "<schema-type>", "<schema-file-path>")
 ```
 
-### Enforcing a Schema on an Existing Station
+## Enforcing a Schema on an Existing Station
 
 ```go
 err := conn.EnforceSchema("<schema-name>", "<station-name>")
 ```
 
-### Deprecated - Attaching Schema
+## Deprecated - Attaching Schema
 use EnforceSchema instead
 ```go
 err := conn.AttachSchema("<schema-name>", "<station-name>")
 ```
 
-### Detaching a Schema from Station
+## Detaching a Schema from Station
 
 ```go
 err := conn.DetachSchema("<station-name>")
@@ -157,7 +157,7 @@ Messages are published to a station and consumed from it<br>by creating a consum
 Memphis messages are payload agnostic. Payloads are byte slices, i.e []byte.<br><br>
 In order to stop receiving messages, you have to call ```consumer.StopConsume()```.<br>The consumer will terminate regardless of whether there are messages in flight for the client.
 
-### Creating a Producer
+## Creating a Producer
 
 ```go
 // from a Conn
@@ -171,7 +171,7 @@ p0, err := c.CreateProducer(
 p1, err := s.CreateProducer("<producer-name>")
 ```
 
-### Producing a message
+## Producing a message
 Without creating a producer (receiver function of the connection struct).
 In cases where extra performance is needed the recommended way is to create a producer first
 and produce messages by using the produce receiver function of it
@@ -184,7 +184,7 @@ Creating a producer first (receiver function of the producer struct).
 p.Produce("<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema)>", memphis.AckWaitSec(15)) // defaults to 15 seconds
 ```
 
-### Add headers
+## Add headers
 
 ```go
 hdrs := memphis.Headers{}
@@ -197,7 +197,7 @@ p.Produce(
 )
 ```
 
-### Async produce
+## Async produce
 Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
 
 ```go
@@ -208,7 +208,7 @@ p.Produce(
 )
 ```
 
-### Message ID
+## Message ID
 Stations are idempotent by default for 2 minutes (can be configured), Idempotency achieved by adding a message id
 
 ```go
@@ -219,13 +219,13 @@ p.Produce(
 )
 ```
 
-### Destroying a Producer
+## Destroying a Producer
 
 ```go
 p.Destroy();
 ```
 
-### Creating a Consumer
+## Creating a Consumer
 
 ```go
 // creation from a Station
@@ -246,7 +246,7 @@ consumer0, err = s.CreateConsumer("<consumer-name>",
 consumer1, err = c.CreateConsumer("<station-name>", "<consumer-name>", ...) 
 ```
 
-### Passing a context to a message handler
+## Passing a context to a message handler
 
 ```go
 ctx := context.Background()
@@ -254,7 +254,7 @@ ctx = context.WithValue(ctx, "key", "value")
 consumer.SetContext(ctx)
 ```
 
-### Processing Messages
+## Processing Messages
 First, create a callback function that receives a slice of pointers to ```memphis.Msg``` and an error.<br><br>
 Then, pass this callback into ```consumer.Consume``` function.<br><br>
 The consumer will try to fetch messages every ```pullInterval``` (that was given in Consumer's creation) and call the defined message handler.
@@ -271,7 +271,7 @@ func handler(msgs []*memphis.Msg, err error, ctx context.Context) {
 consumer.Consume(handler)
 ```
 
-### Fetch a single batch of messages
+## Fetch a single batch of messages
 ```go
 msgs, err := conn.FetchMessages("<station-name>", "<consumer-name>",
   memphis.FetchBatchSize(<int>) // defaults to 10
@@ -285,45 +285,45 @@ msgs, err := conn.FetchMessages("<station-name>", "<consumer-name>",
   memphis.FetchLastMessages(<int64>)// consume the last N messages, defaults to -1 (all messages in the station))
 ```
 
-### Fetch a single batch of messages after creating a consumer
+## Fetch a single batch of messages after creating a consumer
 `prefetch = true` will prefetch next batch of messages and save it in memory for future Fetch() request<br>
 Note: Use a higher MaxAckTime as the messages will sit in a local cache for some time before processing
 ```go
 msgs, err := consumer.Fetch(<batch-size> int, <prefetch> bool)
 ```
 
-### Acknowledging a Message
+## Acknowledging a Message
 Acknowledging a message indicates to the Memphis server to not <br>re-send the same message again to the same consumer or consumers group.
 
 ```shell
 message.Ack();
 ```
 
-### Delay the message after a given duration
+## Delay the message after a given duration
 Delay the message and tell Memphis server to re-send the same message again to the same consumer group. <br>The message will be redelivered only in case `Consumer.MaxMsgDeliveries` is not reached yet.
 
 ```go
 message.Delay(<time.Duration>);
 ```
 
-### Get headers 
+## Get headers 
 Get headers per message
 ```go
 headers := msg.GetHeaders()
 ```
 
-### Get message sequence number
+## Get message sequence number
 Get message sequence number
 ```go
 sequenceNumber, err := msg.GetSequenceNumber()
 ```
-### Destroying a Consumer
+## Destroying a Consumer
 
 ```go
 consumer.Destroy();
 ```
 
-### Check if broker is connected
+## Check if broker is connected
 
 ```go
 conn.IsConnected()

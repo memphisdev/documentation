@@ -15,7 +15,7 @@ $ gradle install memphis-dev
 import com.memphis.Memphis;
 ```
 
-### Connecting to Memphis
+## Connecting to Memphis
 
 First, we need to create Memphis `object` and then connect with Memphis by using `Memphis.connect`.
 
@@ -39,7 +39,7 @@ MemphisConnection memphisConnection = Memphis.connect(opts);
 
 Once connected, the entire functionalities offered by Memphis are available.
 
-### Disconnecting from Memphis
+## Disconnecting from Memphis
 
 To disconnect from Memphis, call `close()` on the memphis object.
 
@@ -47,7 +47,7 @@ To disconnect from Memphis, call `close()` on the memphis object.
 memphisConnection.close();
 ```
 
-### Creating a Station
+## Creating a Station
 
 _If a station already exists nothing happens, the new configuration will not be applied_
 
@@ -66,7 +66,7 @@ Station station = memphisConnection.createStation(
 ).get();
 ```
 
-### Retention types
+## Retention types
 
 Memphis currently supports the following types of retention:
 
@@ -89,7 +89,7 @@ RetentionTypes.BYTES
 Means that after max amount of saved bytes (set in retention value), the oldest messages will be deleted
 
 
-### Retention Values
+## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above, where the values vary according to the type of retention chosen.
 
@@ -99,7 +99,7 @@ All retention values are of type `Integer` but with different representations as
 
 After these limits are reached oldest messages will be deleted.
 
-### Storage types
+## Storage types
 
 Memphis currently supports the following types of messages storage:
 
@@ -115,7 +115,7 @@ StorageTypes.MEMORY
 
 Means that messages persist on the main memory
 
-### Destroying a Station
+## Destroying a Station
 
 Destroying a station will remove all its resources (producers/consumers)
 
@@ -123,7 +123,7 @@ Destroying a station will remove all its resources (producers/consumers)
 station.destroy().get()
 ```
 
-### Attaching a Schema to an Existing Station
+## Attaching a Schema to an Existing Station
 
 ```java
 memphisConnection.attachSchema("<schema-name>", "<station-name>").get();
@@ -131,14 +131,14 @@ memphisConnection.attachSchema("<schema-name>", "<station-name>").get();
 
 ```
 
-### Detaching a Schema from Station
+## Detaching a Schema from Station
 
 ```java
 memphisConnection.detachSchema("<station-name>").get();
 ```
 
 
-### Produce and Consume messages
+## Produce and Consume messages
 
 The most common client operations are `produce` to send messages and `consume` to
 receive messages.
@@ -151,13 +151,13 @@ Memphis messages are payload agnostic. Payloads are `byte[]`.
 In order to stop getting messages, you have to call `consumer.destroy()`. Destroy will terminate regardless
 of whether there are messages in flight for the client.
 
-### Creating a Producer
+## Creating a Producer
 
 ```java
 MemphisProdcuer producer = memphisConnection.createProducer("<station-name>", "<producer-name>");
 ```
 
-### Producing a message
+## Producing a message
 Without creating a producer.
 In cases where extra performance is needed the recommended way is to create a producer first
 and produce messages by using the produce function of it
@@ -181,13 +181,13 @@ producer.produce(
   );
 ```
 
-### Destroying a Producer
+## Destroying a Producer
 
 ```java
 producer.destroy();
 ```
 
-### Creating a Consumer
+## Creating a Consumer
 
 ```java
 Consumer consumer = memphisConnection.createConsumer(
@@ -205,7 +205,7 @@ Consumer consumer = memphisConnection.createConsumer(
 );
 ```
 
-### Setting a context for message handler function
+## Setting a context for message handler function
 
 ```java
 Map<String, Object> context = new HashMap<>();
@@ -213,7 +213,7 @@ context.put("key", "value");
 consumer.setContext(context);
 ```
 
-### Processing messages
+## Processing messages
 
 Once all the messages in the station were consumed the msg_handler will receive error: `Memphis: TimeoutError`.
 
@@ -231,18 +231,18 @@ public void msgHandler(List<Message> msgs, Exception error, Object context) {
 consumer.consume(this::msgHandler);
 ```
 
-### Fetch a single batch of messages
+## Fetch a single batch of messages
 ```java
 messagesFuture = memphisConnection.fetchMessages("<station-name>", "<consumer-name>", "<group-name>", 10, 5000, 30000, 10, false, 1, -1).get();
 ```
 
-### Fetch a single batch of messages after creating a consumer
+## Fetch a single batch of messages after creating a consumer
 ```java
 List<Message> msgs = consumer.fetch(10); // fetches 10 messages from the station
 ```
 
 
-### Acknowledge a message
+## Acknowledge a message
 
 Acknowledge a message indicates the Memphis server to not re-send the same message again to the same consumer / consumers group
 
@@ -250,28 +250,28 @@ Acknowledge a message indicates the Memphis server to not re-send the same messa
 message.ack();
 ```
 
-### Get headers 
+## Get headers 
 Get headers per message
 
 ```java
 message.getHeaders();
 ```
 
-### Get message sequence number
+## Get message sequence number
 Get message sequence number
 
 ```java
 msg.getSequenceNumber();
 ```
 
-### Destroying a Consumer
+## Destroying a Consumer
 
 ```java
 consumer.destroy().get();
 ```
 
 
-### Check connection status
+## Check connection status
 
 ```java
 memphisConnection.isConnected();
