@@ -65,7 +65,7 @@ await producer.produce({
 * `producerName`: In a station resolution, each connected producer must have a unique identity
 
 ::: info
-For more information about how to connect a producer to Memphis, please head <ContainerLink url="/docs/client-libraries/nats-jetstream">here</ContainerLink>.
+For more information about how to connect a producer to Memphis, please head [here](/docs/client-libraries/nats-jetstream).
 :::
 
 ## Scale considerations

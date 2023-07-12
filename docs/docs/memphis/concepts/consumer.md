@@ -77,7 +77,7 @@ consumer.on('message', (message) => {
 ::: info
 For more information about how to create and connect a consumer to Memphis,&#x20;
 
-please head <ContainerLink url="/docs/client-libraries/nats-jetstream">here</ContainerLink>
+please head [here](/docs/client-libraries/nats-jetstream).
 :::
 
 ### Sequence (Offsets)

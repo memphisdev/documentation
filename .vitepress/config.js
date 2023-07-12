@@ -9,16 +9,6 @@ export default defineConfig({
   base: '/documentation/',
   ignoreDeadLinks: true,
   lastUpdated: true,
-  build: {
-    rollupOptions: {
-      external: [
-        '/components/ContainerLink.vue',
-        '/components/BigLink.vue',
-        '/components/Embed.vue',
-        '/components/HeaderImage.vue'
-      ]
-    }
-  },
   head: [
     ['link', { rel: 'icon', href: '/documentation/favicon.ico' }],
     [
@@ -82,7 +72,6 @@ export function sdk() {
           collapsed: true,
           items: [
             { text: 'BigLink', link: '/sdk/docs/components/biglink' },
-            { text: 'ContainerLink', link: '/sdk/docs/components/containerlink' },
             { text: 'Embed', link: '/sdk/docs/components/embed' },
             { text: 'HeaderImage', link: '/sdk/docs/components/headerimage' },
             { text: 'Index', link: '/sdk/docs/components/index-component' },

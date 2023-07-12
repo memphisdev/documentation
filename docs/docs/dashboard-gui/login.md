@@ -21,5 +21,5 @@ description: Memphis.Dev Rusk SDK github issue
 ```
 
 ::: tip
-Additional new users can be added through the <ContainerLink url='./users'>Users page</ContainerLink>.
+Additional new users can be added through the [Users page](./users).
 :::

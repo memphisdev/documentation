@@ -5,7 +5,7 @@ description: How to startup and use the dev server for writing documentation
 # Usage
 ## Requirements
 ::: tip 
-To edit documentation, <ContainerLink url="https://nodejs.org/en">Node.js</ContainerLink> must be installed with version 16 or higher. 
+To edit documentation, [Node.js](https://nodejs.org/en) must be installed with version 16 or higher. 
 :::
 
 To be written when we have decided on a workflow (with branches and PR's)
@@ -30,7 +30,7 @@ And then open the link that appears in the terminal in a browser. Note that a te
     ---
     ```
     ::: info
-    There is more frontmatter required when using index components, check out <ContainerLink url="/sdk/docs/components/index-component">that page</ContainerLink> for more info
+    There is more frontmatter required when using index components, check out [that page](/sdk/docs/components/index-component) for more info
     :::
 3. Write your docuemntation (note that any images added must not contain spaces)
     - Images can be added by adding them to the assets folder and referencing them like a normal markdown image: `![](/assets/image_name.png)`. Note the global path from assets.
@@ -43,7 +43,6 @@ And then open the link that appears in the terminal in a browser. Note that a te
         collapsed: true,
         items: [
             { text: 'BigLink', link: '/sdk/docs/components/biglink' },
-            { text: 'ContainerLink', link: '/sdk/docs/components/containerlink' },
             { text: 'Embed', link: '/sdk/docs/components/embed' },
             { text: 'HeaderImage', link: '/sdk/docs/components/headerimage' },
             { text: 'Index', link: '/sdk/docs/components/index-component' },

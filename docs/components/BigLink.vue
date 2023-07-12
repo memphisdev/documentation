@@ -2,7 +2,11 @@
   <div ref="playDiv" class="pager container">
         <a class="pager-link" :href="url">
             <span class="title">{{ title }}&nbsp;&nbsp;</span>
-            <svg width="3mm" height="3mm" version="1.1" viewBox="0 0 3.9616 3.9616" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-36.123 -92.115)"><path class="path" d="m36.331 95.869-0.17676-0.17676 3.0784-3.0787h-1.7683v-0.49778h2.6199v2.6199h-0.49778v-1.7683l-3.0787 3.0784z"/></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6.5 5.4999L10.6 1.3999" stroke="#6557FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11.0001 3.4V1H8.6001" stroke="#6557FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.5 1H4.5C2 1 1 2 1 4.5V7.5C1 10 2 11 4.5 11H7.5C10 11 11 10 11 7.5V6.5" stroke="#6557FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </a>
     </div>
 </template>
@@ -18,6 +22,11 @@ const url = ref(props.url)
 <style scoped>
 .pager-link{
     display: flex;
+}
+
+svg{
+    margin-top: 0.3rem;
+    margin-left: 0.2rem;
 }
 
 .container{

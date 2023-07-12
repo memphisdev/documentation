@@ -28,15 +28,25 @@
 }
 
 div[class="item"] > h2{
-    color: var(--vp-c-brand) !important;
+    color: --vp-c-text-1 !important;
+    font-weight: bold !important;
 }
 
 .is-active > div > a > .text{
-  color: var(--vp-c-alt) !important;
+  color: var(--vp-c-brand) !important;
+  font-weight: bold !important;
 }
 
 .level-1 :hover{
- color: var(--vp-c-brand-dark) !important;
+ color: var(--vp-c-brand) !important;
+}
+
+.edit-link-button{
+  color: var(--vp-c-text-2) !important;
+}
+
+.edit-link-button:hover{
+  color: var(--vp-c-brand) !important;
 }
 
 iframe{
@@ -53,15 +63,9 @@ figcaption > p {
   margin-top: 0px !important;
 }
 
-
-
-
-
-
-
-
-
-
+.custom-block > p > a{
+  color: var(--vp-c-brand) !important;
+}
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
@@ -81,8 +85,14 @@ figcaption > p {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #949494;
+  border-radius: 46px;
+  opacity: 0.20000000298023224;
+  background: #7C7C7D;
+  width: 5px;
   height: 20px;
+  flex-shrink: 0;
 }
+
+
 
 

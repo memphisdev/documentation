@@ -150,7 +150,7 @@ kubectl apply -f memphis_sensor.yaml
 
 As Memphis works with streams, wrapping the subject will enable Memphis to control the subject. To complete that step, [NATS cli](https://github.com/nats-io/natscli) is needed.
 
-```markup
+```bash
 nats stream add  -s <MEMPHIS_BROKER_URL>:6666 --user=<MEMPHIS_APPLICATION_USER>::<MEMPHIS_CONNECTION_TOKEN> 
 ? Stream Name argo_workflows
 ? Subjects argo_workflows
@@ -169,7 +169,3 @@ nats stream add  -s <MEMPHIS_BROKER_URL>:6666 --user=<MEMPHIS_APPLICATION_USER>:
 ? Allow purging subjects or the entire stream Yes
 Stream argo_workflows was created
 ```
-
-[^1]: 
-
-[^2]: A secret that will be created in step 2
