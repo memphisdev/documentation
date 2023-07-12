@@ -67,6 +67,10 @@ figcaption > p {
   color: var(--vp-c-brand) !important;
 }
 
+.curtain::before{
+  all: initial !important;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
