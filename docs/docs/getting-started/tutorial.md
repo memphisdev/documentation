@@ -2,7 +2,24 @@
 description: Links to various tutorials
 title: Tutorials
 ---
-# Tutorials
+<style>
+    h1{ 
+        position: relative;
+    }
+    .counter{
+        position: absolute;
+        display: inline-grid;
+        place-content: center;
+        font-size: 15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 40px;
+        background-color: #313136;
+        top: .5rem;
+    }
+</style>
+
+# Tutorials &nbsp; <span class="counter">7</span>
 
 <Embed url="https://memphis.dev/blog/connect-memphis-as-an-argo-event-source/"/>
 

@@ -11,7 +11,8 @@
 }
 
 :root {
-  --vp-c-brand: #6557FF ;
+  --vp-c-brand: #6557ff ;
+  --vp-c-brand-rgb: 101, 87, 255;
   --vp-c-brand-light: #6557FF ;
   --vp-c-brand-dark: #61DFC6  ;
   --vp-c-alt: #FFC633;
