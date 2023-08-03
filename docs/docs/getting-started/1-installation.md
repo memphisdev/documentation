@@ -56,7 +56,7 @@ More information can be found in the [Memphis Docker deployment](/deployment/doc
 
 ## Walkthrough
 
-<iframe src="https://app.storylane.io/share/upo0paxdvynz" allow="fullscreen" style="border: none;"></iframe>
+<iframe class="storylane" src="https://app.storylane.io/share/upo0paxdvynz" allow="fullscreen" style="border: none;"></iframe>
 
 ## High-level diagram
 

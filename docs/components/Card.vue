@@ -13,25 +13,32 @@ instantly</h3>
 </script>
 
 <style scoped>  
-    .card{
+    .card{  
+        background-color: #f6f6f7;
         border-radius: 8px;
-        background-color: #303034;
         width: 369px;
         height: 320px;
+    }
+
+    :root.dark .card {
+        background-color: #303034;
     }
 
     .card-text {
         padding-top: 28px;
         padding-left: 1rem;
         padding-right: 1rem;
-        background-color: #252529;
+        background-color: #f6f6f7;
         height: 50%;    
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
     }
 
+    :root.dark .card-text{
+        background-color: #252529;
+    }
+
     .card-text > h3{
-        color: #FFFFFF;
         font-size: 20px;
         font-weight: 600;
     }

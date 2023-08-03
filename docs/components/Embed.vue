@@ -4,7 +4,7 @@
           <div class="image-wrapper">
             <img class="img" :src="icon"/>
           </div>
-          <div>
+          <div class="text">
             <h3 class="pageTitle">{{ title }}</h3>
             <p class="pageDomain">{{ domain }}</p>
           </div>
@@ -27,30 +27,28 @@ const props = defineProps(['url'])
 const link = ref(props.url)
 
 onMounted( async () =>{    
-  // const response = await fetch('/meta_data.json');
-  // if (!response.ok) {
-  //   console.log("Error loading meta_data.json from /meta_data.json");
-  // }else{
-    // const data = await response.json();
-    const my_data = config[props.url];
+  const my_data = config[props.url];
 
-    title.value = my_data.title;
-    domain.value = my_data.site_name;
-    icon.value = my_data.favicon;
-  // }
-  
+  title.value = my_data.title;
+  domain.value = my_data.site_name;
+  icon.value = my_data.favicon;
 }) 
 </script>
 
 <style scoped>
 
 .playDiv{
-  background: #313136;
+  background: #f6f6f7;
+  border-color: #f6f6f7;
   border-radius: 6px;
   height: 77px;
-  width: 715px;
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+:root.dark .playDiv{
+  background: #313136;
 }
 
 .icon{
@@ -69,19 +67,26 @@ onMounted( async () =>{
   text-decoration: none !important;
 }
 
+.text{
+  position: relative;
+}
 .pageTitle{
-  max-width: 595px;
-  margin-bottom: 3px;
-  margin-top: 0px;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; 
   overflow: hidden;
-  text-overflow: ellipsis;
+  margin-top: 0px;
+  padding-right: 20px;
+  word-break: break-all;
 }
 
 .pageDomain{
+  position: absolute;
   margin-top: 0px;
   margin-bottom: 5px;
-  font-size: 17px;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  bottom: -8px;
 }
 
 .img{
@@ -94,6 +99,8 @@ onMounted( async () =>{
   display: grid;
   place-content: center;
   width: 45px;
+  min-width: 45px;
+  min-height: 45px;
   height: 45px;
   border-radius: 6px;
   margin-right: 20px;
@@ -108,7 +115,7 @@ onMounted( async () =>{
 }
 
 .pager-link {
-  border: 1.5px solid #313136;
+  border: 1.5px solid #f6f6f7;
   border-radius: 8px;
   padding: 11px 16px 13px;
   width: 100%;
@@ -116,6 +123,9 @@ onMounted( async () =>{
   transition: border-color 0.2s;
 }
 
+:root.dark .pager-link {
+  border: 1.5px solid #313136;
+}
 .pager-link:hover {
   border-color: var(--vp-c-brand);
 }

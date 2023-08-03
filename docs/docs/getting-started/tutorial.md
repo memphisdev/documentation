@@ -14,8 +14,12 @@ title: Tutorials
         width: 30px;
         height: 30px;
         border-radius: 40px;
-        background-color: #313136;
+        background-color: #f6f6f7;
         top: .5rem;
+    }
+
+    :root.dark .counter{    
+        background-color: #313136;
     }
 </style>
 

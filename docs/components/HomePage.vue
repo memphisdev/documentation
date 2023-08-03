@@ -22,18 +22,6 @@
                 <Card></Card>
                 <Card></Card>
                 <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
             </div>
         </div>
     </div>
@@ -126,7 +114,6 @@
     .hero-container > div{
         cursor: pointer;
         color: var(--vp-c-brand);
-        width: 134px;
         height: 36px;
         padding: 6px 16px 6px 16px;
         border-radius: 32px;

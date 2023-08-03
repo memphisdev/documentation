@@ -1,8 +1,21 @@
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import { fileURLToPath, URL } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPDocFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/MemphisFooter.vue', import.meta.url)
+          )
+        }
+      ]
+    }
+  },
   title: "Memphis",
   description: "Memphis Documentation",
   srcDir: 'docs',
