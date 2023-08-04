@@ -9,12 +9,14 @@ import Embed from '../../docs/components/Embed.vue'
 import Index from '../../docs/components/Index.vue'
 import Subtitle from '../../docs/components/Subtitle.vue'
 import Circle from '../../docs/components/Circle.vue'
+import SidebarSearch from '../components/SidebarSearch.vue'
 
 export default {
   ...DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'doc-before': () => h(HeaderImage)
+      'doc-before': () => h(HeaderImage),
+      'sidebar-nav-before': () => h(SidebarSearch),
     })
   },
   enhanceApp({ app }) {

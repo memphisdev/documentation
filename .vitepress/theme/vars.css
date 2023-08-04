@@ -30,6 +30,7 @@
   --vp-c-alt-light: #FFC633;
   --vp-c-muted: #FFC633;
   --vp-c-subtitle: rgba(162,169,185,1.00);
+  --m-light-highlight: #f2f2f3;
 
   --vp-custom-block-tip-border: var(--vp-c-brand-dark);
   --vp-custom-block-tip-text: var(--vp-c-brand-dark);
@@ -57,13 +58,36 @@ h2{
   width: 100%;
 }
 
+#app > div > header > div.has-sidebar > div > div.content > div.content-body > div.VPNavBarSearch.search {
+  visibility: hidden;
+}
+
 #local-search{
   width: 100%;
-  margin-right: 3px;
+}
+
+@media (min-width: 768px) {
+  #app > div > header > div > div > div.content > div.content-body > div.VPNavBarSearch.search #local-search{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
+}
+
+@media (min-width: 1281px) {
+  #app > div > header > div > div > div.content > div.content-body > div.VPNavBarSearch.search > #local-search{
+    margin-left: 37%;
+    margin-right: auto;
+    width: 385px;
+  }
 }
 
 :root.dark th{
   background-color: #434347 !important;
+}
+
+th {
+  background-color: var(--m-light-highlight) !important;
 }
 
 table{
@@ -73,8 +97,6 @@ table{
 .VPNavBarSearch {
   padding-left: 6px;
 }
-
-
 
 .VPNavBarMenuLink{
   height: 30px !important;
@@ -88,13 +110,20 @@ table{
 }
 
 .VPNavBarMenuLink:hover:not(.active){
-  background-color: #f6f6f7 !important;
+  background-color: var(--m-light-highlight) !important;
   color: var(--vp-c-text-1) !important;
 }
 
 .VPNavBarMenuLink.active{
   background-color: rgba(101, 87, 255, 0.15) !important;
+}
 
+:root.dark .DocSearch-Button {
+  background-color: #121213 !important;
+}
+
+.DocSearch-Button {
+  background-color: var(--m-light-highlight) !important;
 }
 
 .VPNavBarMenuLink.active:hover{
@@ -102,13 +131,29 @@ table{
   color: var(--vp-c-brand) !important;
 }
 
+.VPSidebarItem > div > h2 {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+:root.dark .VPSidebarItem.level-0.is-link > .item:hover,
+:root.dark .VPSidebarItem.level-1.is-link > .item:hover,
+:root.dark .VPSidebarItem.level-2.is-link > .item:hover,
+:root.dark .VPSidebarItem.level-3.is-link > .item:hover,
+:root.dark .VPSidebarItem.level-4.is-link > .item:hover,
+:root.dark .VPSidebarItem.level-5.is-link > .item:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--vp-c-text-1) !important;
+  border-radius: 6px;
+}
+
 .VPSidebarItem.level-0.is-link > .item:hover,
 .VPSidebarItem.level-1.is-link > .item:hover,
 .VPSidebarItem.level-2.is-link > .item:hover,
 .VPSidebarItem.level-3.is-link > .item:hover,
 .VPSidebarItem.level-4.is-link > .item:hover,
-.VPSidebarItem.level-5.is-link > .item:hover   {
-  background-color: rgba(255, 255, 255, 0.05) !important;
+.VPSidebarItem.level-5.is-link > .item:hover {
+  background-color: #ececee !important;
   color: var(--vp-c-text-1) !important;
   border-radius: 6px;
 }

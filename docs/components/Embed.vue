@@ -38,8 +38,8 @@ onMounted( async () =>{
 <style scoped>
 
 .playDiv{
-  background: #f6f6f7;
-  border-color: #f6f6f7;
+  background: var(--m-light-highlight);
+  border-color: var(--m-light-highlight);
   border-radius: 6px;
   height: 77px;
   width: 100%;
@@ -115,7 +115,7 @@ onMounted( async () =>{
 }
 
 .pager-link {
-  border: 1.5px solid #f6f6f7;
+  border: 1.5px solid var(--m-light-highlight);
   border-radius: 8px;
   padding: 11px 16px 13px;
   width: 100%;

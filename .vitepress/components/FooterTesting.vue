@@ -1,6 +1,6 @@
 <template>
     <h3>
-       MY NEW FOOTER HAHAHQA
+       MY NEW FOOTER
     </h3>
 </template>
 

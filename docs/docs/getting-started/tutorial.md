@@ -14,7 +14,7 @@ title: Tutorials
         width: 30px;
         height: 30px;
         border-radius: 40px;
-        background-color: #f6f6f7;
+        background-color: var(--m-light-highlight);
         top: .5rem;
     }
 
