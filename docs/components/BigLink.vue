@@ -18,7 +18,7 @@
             </div>
             <div class="text">
               <h3 class="pageTitle">{{ title }}</h3>
-              <p class="pageDomain"></p>
+              <p class="pageDomain">{{ preview }}</p>
             </div>
             <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="icon-stroke" d="M8.6665 7.33337L14.1332 1.8667" stroke="#6B6B74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,10 +30,27 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const props = defineProps(['url', 'title'])
-const title = ref(props.title)
-const url = ref(props.url)
+import { ref, onMounted } from 'vue';
+const props = defineProps(['url', 'title']);
+const title = ref(props.title);
+const preview = ref('');
+const url = ref(props.url);
+const filepath = `https://memphisdev.github.io/${props.url}.html`;
+
+console.log(filepath);
+
+onMounted( async () =>{
+  const file = await fetch (filepath);
+  const text = await file.text();
+  // dom parse text
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, "text/html");
+  const main = doc.querySelector('.vp-doc').firstChild;
+  const first_paragraph = main.querySelector('p');
+  if (first_paragraph !== null) {
+    preview.value = first_paragraph.textContent;
+  }
+})
 </script>
 
 <style scoped>
@@ -69,6 +86,7 @@ const url = ref(props.url)
 
 .text{
   position: relative;
+  width: 100%;
 }
 .pageTitle{
   display: -webkit-box;
@@ -87,6 +105,12 @@ const url = ref(props.url)
   font-size: 14px;
   color: var(--vp-c-text-2);
   bottom: -8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+  word-break: break-all;
+  width: 95%;
 }
 
 .img{
