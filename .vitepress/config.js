@@ -65,9 +65,8 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/memphisdev/documentation/edit/master/:path'
+      pattern: 'https://github.com/memphisdev/documentation/edit/gh-pages/docs/:path'
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
