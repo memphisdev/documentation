@@ -375,7 +375,16 @@ export function docs() {
     },
     {
       text: '🔌 Integrations Center',
+      link: '/docs/integrations/index',
       items: [
+        {
+          text: 'Change Data Capture (CDC)',
+          collapsed: true,
+          link: '/docs/integrations/change-data-capture-cdc/index',
+          items: [
+            { text: 'Dabezium', link: '/docs/integrations/change-data-capture-cdc/debezium' },
+          ]
+        },
         {
           text: 'Monitoring',
           collapsed: true,
@@ -395,11 +404,19 @@ export function docs() {
           ]
         },
         {
-          text: 'Storage',
+          text: 'Storage tiering',
           collapsed: true,
           link: '/docs/integrations/storage/index',
           items: [
-            { text: 'Amazon S3', link: '/docs/integrations/storage/amazon-s3' },
+            { text: 'S3-Compatible Object Storage', link: '/docs/integrations/storage/amazon-s3' },
+          ]
+        },
+        {
+          text: 'Source Code',
+          collapsed: true,
+          link: '/docs/integrations/source-code/index',
+          items: [
+            { text: 'Amazon S3', link: '/docs/integrations/source-code/github' },
           ]
         },
         {
@@ -407,7 +424,6 @@ export function docs() {
           collapsed: true,
           link: '/docs/integrations/other-platforms/index',
           items: [
-            { text: 'PostHog', link: 'https://github.com/PostHog/posthog-memphisdev-app' },
             { text: 'Argo', link: '/docs/integrations/other-platforms/argo-and-memphis' },
           ]
         },

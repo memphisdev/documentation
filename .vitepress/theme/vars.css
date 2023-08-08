@@ -136,6 +136,11 @@ table{
   padding-top: 0px !important;
 }
 
+.VPSidebarItem > div > a > h2 {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
 :root.dark .VPSidebarItem.level-0.is-link > .item:hover,
 :root.dark .VPSidebarItem.level-1.is-link > .item:hover,
 :root.dark .VPSidebarItem.level-2.is-link > .item:hover,
@@ -252,6 +257,45 @@ figcaption > p {
 
 .custom-block > p > a{
   color: var(--vp-c-brand) !important;
+}
+
+.custom-block.tip > p {
+  color: rgba(10, 144, 91, 1);
+}
+
+.custom-block.tip {
+  border-color: rgba(10, 144, 91, 1);
+  background-color: rgba(10, 144, 91, 0.1);
+}
+
+.custom-block.warning > p {
+  color: rgba(222, 110, 42, 1);
+}
+
+.custom-block.warning {
+  border-color: rgba(222, 110, 42, 1);
+  background-color: rgba(222, 110, 42, 0.1);
+}
+
+.custom-block.danger > p {
+  color: rgba(255, 59, 48, 1);
+}
+
+.custom-block.danger {
+  border-color: rgba(255, 59, 48, 1);
+  background-color: rgba(255, 59, 48, 0.1);
+}
+
+/* details > summary {
+  list-style-image: url(/assets/list-triangle.svg);
+} */
+
+details > summary::marker {
+  content: url(/assets/list-triangle-closed.svg);
+}
+
+details[open] > summary::marker {
+  content: url(/assets/list-triangle-open.svg);
 }
 
 .curtain::before{
