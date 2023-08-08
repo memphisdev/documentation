@@ -47,7 +47,7 @@ Follow the below instructions to communicate with the newly created cluster
 
 <figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.24.png" alt=""><figcaption></figcaption></figure>
 
-We need to create two different load balancers, one for <mark style="color:blue;">**data**</mark> (the broker itself) and one for the <mark style="color:green;">**UI**</mark>.
+We need to create two different load balancers, one for <span style="color:blue;">**data**</span> (the broker itself) and one for the <span style="color:green;">**UI**</span>.
 
 ### Step 4: Expose Memphis for data using a load balancer
 

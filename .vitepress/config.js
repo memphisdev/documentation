@@ -208,19 +208,24 @@ export function docs() {
     {
       text: '👉 Getting Started',
       items: [
-        { text: 'Step 1 - Installation', link: '/docs/getting-started/1-installation' },
-        { text: 'Step 2 - Hello World', link: '/docs/getting-started/2-hello-world' },
+        { text: 'Introduction', link: '/docs/getting-started/introduction' },
+        { text: 'Quickstart', link: '/docs/getting-started/2-hello-world' },
         { text: 'Tutorials', link: '/docs/getting-started/tutorial' },
-        { text: 'Use Cases', link: '/docs/getting-started/3-use-cases' },
-        { text: 'Public Case Studies', link: '/docs/getting-started/public-case-studies' },
+        { text: 'How others use Memphis', link: '/docs/getting-started/public-case-studies' },
         { text: 'How to Contribute?', link: '/docs/getting-started/how-to-contribute' },
-        { text: 'Roadmap', link: 'https://github.com/orgs/memphisdev/projects/2' }
+        { text: 'Roadmap', link: 'https://memphis.dev/roadmap' }
       ]
     },
     {
-      text: '⭐ Memphis',
+      text: '☁ Memphis Cloud',
       items: [
-        { text: 'Overview', link: '/docs/memphis/overview' },
+        { text: 'Getting Started', link: '/docs/memphis-cloud/getting-started' },
+        { text: 'Pricing', link: 'https://memphis.dev/pricing' }
+      ]
+    },
+    {
+      text: '⭐ Memphis Broker',
+      items: [
         { text: 'Architecture', link: '/docs/memphis/architecture' },
         {
           text: 'Key Concepts',
@@ -262,7 +267,7 @@ export function docs() {
                     { text: 'Protobuf', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/protobuf' },
                     { text: 'JSON Schema', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/json-schema' },
                     { text: 'GraphQL', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/graphql' },
-                    { text: 'AVRO', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/avro' },
+                    { text: 'Avro', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/avro' },
                   ]
                 },
               ]
@@ -272,7 +277,6 @@ export function docs() {
           ]
         },
         { text: 'Memphis Configuration', link: '/docs/memphis/memphis-configuration' },
-        { text: 'Benchmark', link: '/docs/memphis/benchmark' },
         {
           text: 'Comparisons',
           collapsed: true,
@@ -283,16 +287,38 @@ export function docs() {
             { text: 'AWS SQS vs Memphis', link: '/docs/memphis/comparisons/aws-sqs-vs-memphis' },
             { text: 'Apache Kafka vs Memphis', link: '/docs/memphis/comparisons/apache-kafka-vs-memphis' },
             { text: 'Apache Pulsar vs Memphis', link: '/docs/memphis/comparisons/apache-pulsar-vs-memphis' },
-            { text: 'ZeroMQ vs Memphis', link: '/docs/memphis/comparisons/zeromq-vs-memphis' }
+            { text: 'ZeroMQ vs Memphis', link: '/docs/memphis/comparisons/zeromq-vs-memphis' },
+            { text: 'Apache NiFi vs Memphis', link: '/docs/memphis/comparisons/apache-nifi-vs-memphis' }
           ]
         },
-        { text: 'Privacy', link: '/docs/memphis/privacy' }
+        { text: 'Privacy', link: 'https://memphis.dev/privacy-policy/' }
       ]
     },
     {
-      text: '☁ Memphis Cloud',
+      text: '⭐ Memphhis Schemaverse',
       items: [
-        { text: 'Private Beta', link: 'https://memphis.dev/cloud/' }
+        { text: 'Overvew', link: '/docs/memphis/schemaverse-schema-management/schemaverse-schema-management' },
+        {
+          text: 'Getting Started',
+          collapsed: false,
+          link: '/docs/memphis/schemaverse-schema-management/getting-started/index',
+          items: [
+            { text: 'Management', link: '/docs/memphis/schemaverse-schema-management/getting-started/management' },
+            {
+              text: 'Produce/Consume',
+              collapsed: true,
+              link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/index',
+              items: [
+                { text: 'Protobuf', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/protobuf' },
+                { text: 'JSON Schema', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/json-schema' },
+                { text: 'GraphQL', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/graphql' },
+                { text: 'Avro', link: '/docs/memphis/schemaverse-schema-management/getting-started/formats/avro' },
+              ]
+            },
+          ]
+        },
+        { text: 'Comparison', link: '/docs/memphis/schemaverse-schema-management/comparison' },
+        { text: 'KB', link: '/docs/memphis/schemaverse-schema-management/kb' },
       ]
     },
     {
@@ -330,28 +356,25 @@ export function docs() {
         { text: 'Node.js / TypeScript / NestJS', link: 'https://github.com/memphisdev/memphis.js' },
         { text: 'Go', link: 'https://github.com/memphisdev/memphis.go' },
         { text: 'Python', link: 'https://github.com/memphisdev/memphis.py' },
-        { text: 'Kotlin', link: 'https://github.com/memphisdev/memphis.kt' },
+        { text: 'Kotlin (Community)', link: 'https://github.com/memphisdev/memphis.kt' },
         { text: '.NET', link: 'https://github.com/memphisdev/memphis.net' },
         { text: 'Java', link: 'https://github.com/memphisdev/memphis.java' },
+        { text: 'Rust (Community)', link: 'https://github.com/turulix/memphis-rust-community' },
         { text: 'NATS Jetstream', link: '/docs/client-libraries/nats-jetstream' },
-        { text: 'Rust', link: '/docs/client-libraries/rust' },
         { text: 'Scala', link: '/docs/client-libraries/scala' },
       ]
     },
     {
-      text: 'Dashboard (GUI)',
+      text: 'Web Console (GUI)',
       items: [
-        { text: 'General', link: '/docs/dashboard-gui/general' },
-        { text: 'Signup', link: '/docs/dashboard-gui/signup' },
-        { text: 'Login', link: '/docs/dashboard-gui/login' },
-        { text: 'Overview', link: '/docs/dashboard-gui/overview' },
-        { text: 'Stations', link: '/docs/dashboard-gui/stations' },
-        { text: 'Users', link: '/docs/dashboard-gui/users' },
-        { text: 'Profile', link: '/docs/dashboard-gui/profile' },
+        { text: 'Dashboard', link: '/docs/web-console-gui/overview' },
+        { text: 'Stations', link: '/docs/web-console-gui/stations' },
+        { text: 'Users', link: '/docs/web-console-gui/users' },
+        { text: 'Schemaverse', link: 'https://docs.memphis.dev/memphis/memphis/schemaverse-schema-management' }
       ]
     },
     {
-      text: '🔌 Platform Integrations',
+      text: '🔌 Integrations Center',
       items: [
         {
           text: 'Monitoring',

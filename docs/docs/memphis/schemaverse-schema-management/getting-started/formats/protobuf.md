@@ -122,7 +122,7 @@ message Test {
 }
 ```
 
-**Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
+**Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
 ```go
 package main
@@ -164,7 +164,7 @@ func main() {
 
 ```
 
-**Producing a message **<mark style="color:purple;">**with**</mark>** a local .proto file:**
+**Producing a message **<span style="color:purple;">**with**</span>** a local .proto file:**
 
 ```go
 package main
@@ -222,7 +222,7 @@ message Test {
 }
 ```
 
-**Producing a message **<mark style="color:purple;">**with**</mark>** a local .proto file:**
+**Producing a message **<span style="color:purple;">**with**</span>** a local .proto file:**
 
 ```python
 import asyncio
@@ -272,7 +272,7 @@ message Test {
 }
 ```
 
-**Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
+**Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
 ```typescript
 import memphis from 'memphis-dev';
@@ -326,7 +326,7 @@ message Test {
 }
 ```
 
-**Producing a message **<mark style="color:purple;">**without**</mark>** a local .proto file:**
+**Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
 ```javascript:line-numbers
 var axios = require('axios');

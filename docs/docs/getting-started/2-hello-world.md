@@ -1,17 +1,58 @@
 ---
-cover: /LinkedIn_personal_(3).png
-title: Hello World Project
-description: Creation of a station, producer and consumer
+description: Create your first station, producer, and consumer in your preferred language.
+cover: ../.gitbook/assets/Banner- Memphis.dev streaming .jpg
+title: Quick Start
 ---
 
-# Step 2 - Hello World
+# Quick start
 
-Create your first station, producer, and consumer in your preferred language as shown in the tabs below:
+## Which Memphis deployment are you using?
 
-::: tabs
+:::: tabs
+=== Cloud
+**Step 1:** Sign up for Memphis Cloud [here](https://cloud.memphis.dev).
+
+**Step 2:** [Hello world](../memphis-cloud/getting-started.md#hello-world)
+=== Open Source
+### **For Kubernetes**
+
+Stable -
+
+
+```bash:line-numbers
+helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && 
+helm install memphis memphis/memphis --create-namespace --namespace memphis --wait
+```
+Latest -
+
+```bash{2}
+helm repo add memphis https://k8s.memphis.dev/charts/ --force-update  
+helm install --set memphis.image="memphisos/memphis:1.1.1" memphis memphis/memphis --create-namespace --namespace memphis --wait
+```
+
+More information can be found in the [Memphis k8s deployment](../deployment/kubernetes/) documentation.
+
+### **Docker compose (Syntax for v2)**
+
+Stable -&#x20;
+
+```bash
+curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && docker compose -f docker-compose.yml -p memphis up
+```
+
+Latest -
+
+```bash
+curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
+```
+
+More information can be found in the [Memphis Docker deployment](../deployment/docker-compose.md) documentation.
+::::
+
+## 2. Hello world
+
+:::: tabs
 === Node.js
-Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
-
 **Step 1:** Create an empty dir for the Node.js project
 
 ```bash
@@ -74,7 +115,7 @@ node producer.js
 
 **Step 6:** Create a new .js file called `consumer.js`
 
-```javascript:line-numbers 
+```javascript:line-numbers
 const { memphis } = require("memphis-dev");
 
 (async function () {
@@ -113,9 +154,8 @@ const { memphis } = require("memphis-dev");
 ```bash
 node consumer.js
 ```
-=== TypeScript
-Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
 
+=== Typescript
 **Step 1:** Create an empty dir for the TypeScript project
 
 ```bash
@@ -137,7 +177,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .ts file called `producer.ts`
 
-```typescript:line-numbers 
+```typescript:line-numbers
 import { memphis, Memphis } from "memphis-dev";
 
 (async function () {
@@ -178,7 +218,7 @@ node producer.ts
 
 **Step 6:** Create a new .ts file called `consumer.ts`
 
-```typescript:line-numbers 
+```typescript:line-numbers
 import { memphis, Memphis } from "memphis-dev";
 
 (async function () {
@@ -220,94 +260,6 @@ import { memphis, Memphis } from "memphis-dev";
 node consumer.ts
 ```
 
-=== NestJS
-Please make sure you have Node.js [installed](https://nodejs.org/en/download/).
-
-**Step 1:** Create an empty dir for the NestJS project
-
-```bash
-mkdir memphis-demo && \
-cd memphis-demo
-```
-
-**Step 2:** Create a new Node project (If needed)
-
-```bash
-npm init -y
-```
-
-**Step 3:** Install memphis Node.js SDK
-
-```bash
-npm install memphis-dev
-```
-
-**Step 4:** Create a new .ts file called `producer.module.ts`
-
-```typescript:line-numbers 
-import { Module } from "@nestjs/common";
-import { Memphis, MemphisModule, MemphisService } from "memphis-dev";
-
-@Module({
-  imports: [MemphisModule.register()],
-})
-export class ProducerModule {
-  constructor(private memphis: MemphisService) {}
-
-  startProducer() {
-    (async function () {
-      let memphisConnection: Memphis;
-
-      try {
-        memphisConnection = await memphis.connect({
-          host: "MEMPHIS_BROKER_HOSTNAME",
-          username: "APPLICATION_TYPE_USERNAME",
-          password: "PASSWORD",
-        });
-
-        const producer = await memphisConnection.producer({
-          stationName: "STATION_NAME",
-          producerName: "PRODUCER_NAME",
-        });
-
-        for (let index = 0; index < 100; index++) {
-          await producer.produce({
-            message: Buffer.from(`Message #${index}: Hello world`), // you can also send JS object - {}
-          });
-          console.log("Message sent");
-        }
-
-        console.log("All messages sent");
-        memphisConnection.close();
-      } catch (ex) {
-        console.log(ex);
-        if (memphisConnection) memphisConnection.close();
-      }
-    })();
-  }
-}
-```
-
-**Step 5:** Create a new .ts file called `consumer.controller.ts`
-
-```typescript:line-numbers 
-import { Module } from '@nestjs/common';
-import { Memphis, MemphisModule, MemphisService, MemphisConsume, Message } from 'memphis-dev';
-
-@Controller("auth")
-export class ExampleController {
-    @MemphisConsume({
-        stationName: "STATION_NAME",
-        consumerName: "CONSUMER_NAME",
-        consumerGroup: "CONSUMER_GROUP_NAME",
-    }, {}) // {} for passing the consumerContext to consumer.setContext
-    async messageHandler(message: Message, context: object) {
-        console.log(message.getData().toString());
-        message.ack();
-    }
-}
-```
-
 === Go
 **Step 1:** Create an empty dir for the Go project
 
@@ -330,7 +282,7 @@ go get github.com/memphisdev/memphis.go
 
 **Step 4:** Create a new Go file called `producer.go`
 
-```go:line-numbers 
+```go:line-numbers
 package main
 
 import (
@@ -341,7 +293,7 @@ import (
 )
 
 func main() {
-    conn, err := memphis.Connect("MEMPHIS_HOSTNAME", "MEMPHIS_APPLICATION_USER", memphis.Password("PASSWORD"))
+    conn, err := memphis.Connect("MEMPHIS_HOSTNAME", "MEMPHIS_APPLICATION_USER", memphis.Password("PASSWORD"),)
     if err != nil {
         os.Exit(1)
     }
@@ -374,7 +326,7 @@ go run producer.go
 
 **Step 5:** Create a new Go file called `consumer.go`
 
-```go:line-numbers 
+```go:line-numbers
 package main
 
 import (
@@ -387,7 +339,7 @@ import (
 )
 
 func main() {
-    conn, err := memphis.Connect("MEMPHIS_HOSTNAME", "MEMPHIS_APPLICATION_USER", memphis.Password("PASSWORD"))
+    conn, err := memphis.Connect("MEMPHIS_HOSTNAME", "MEMPHIS_APPLICATION_USER", memphis.Password("PASSWORD"),)
     if err != nil {
         os.Exit(1)
     }
@@ -450,9 +402,10 @@ pip3 install --upgrade memphis-py
 
 **Step 3:** Create a new Python file called `producer.py`
 
-```python:line-numbers 
+```python:line-numbers
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
+import asyncio
 
 async def main():
     try:
@@ -483,9 +436,10 @@ python3 producer.py
 
 **Step 5:** Create a new Python file called `consumer.py`
 
-```python:line-numbers 
+```python:line-numbers
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
+import asyncio
 
 async def main():
     async def msg_handler(msgs, error, context):
@@ -525,6 +479,7 @@ if __name__ == '__main__':
 ```bash
 python3 consumer.py
 ```
+
 === Rest
 Producing messages to Memphis via REST API can be implemented using any REST-supported language like Go, Python, Java, Node.js, .NET, etc...
 
@@ -545,7 +500,7 @@ npm init -y
 
 **Step 3:** Generate a new JWT token `generate.js`
 
-```javascript:line-numbers 
+```javascript:line-numbers
 var axios = require("axios");
 var data = JSON.stringify({
   username: "APPLICATION_TYPE_USERNAME",
@@ -606,4 +561,4 @@ axios(config)
 ```
 
 **Consume** messages via REST will soon be released.
-:::
+::::
