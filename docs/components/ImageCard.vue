@@ -35,7 +35,6 @@ const type = ref(props.type)
 
 
 function click(event){
-    console.log(withBase('/docs/getting-started/2-hello-world'));
     if(type.value == 'Quick Start Cloud'){
         router.go(withBase('/docs/getting-started/2-hello-world'))
     }

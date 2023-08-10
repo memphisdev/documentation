@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div @click="click" class="card">
         <svg v-if="type == 'Architecture'" class="icon" width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle opacity="0.15" cx="23.5" cy="23.5" r="23.5" fill="#6557FF"/>
             <path d="M32 18C32 15.832 28.337 14 24 14C19.663 14 16 15.832 16 18V20C16 22.168 19.663 24 24 24C28.337 24 32 22.168 32 20V18ZM24 31C19.663 31 16 29.168 16 27V30C16 32.168 19.663 34 24 34C28.337 34 32 32.168 32 30V27C32 29.168 28.337 31 24 31Z" fill="#6557FF" fill-opacity="0.4"/>
@@ -56,9 +56,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import { withBase } from 'vitepress';
+import { withBase, useRouter } from 'vitepress';
+const router = useRouter()
 const props = defineProps(['type'])
 const type = ref(props.type)
+
 function click(event){
     if(type.value == 'Architecture'){
         router.go(withBase('/docs/memphis/architecture'))
