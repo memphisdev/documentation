@@ -1,6 +1,6 @@
 ---
 description: Create your first station, producer, and consumer in your preferred language.
-cover: ../.gitbook/assets/Banner- Memphis.dev streaming .jpg
+cover: /Banner-_Memphis.dev_streaming_.jpg
 title: Quick Start
 ---
 
