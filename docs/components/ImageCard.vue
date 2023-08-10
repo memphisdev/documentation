@@ -45,6 +45,21 @@ function click(event){
 </script>
 
 <style scoped>      
+    :root.dark .arrow-icon > g > path{
+        fill: white;
+    }
+
+    :root.dark .arrow-icon > circle {
+        stroke: #3e3e42;
+    }
+
+    .arrow-icon > g > path{
+        fill: hsla(240, 4%, 22%, 1);
+    }
+
+    .arrow-icon > circle {
+        stroke: hsla(240, 4%, 90%, 1);
+    }
 
     .card:hover{
         .arrow-icon > circle,
