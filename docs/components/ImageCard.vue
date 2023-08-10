@@ -28,7 +28,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vitepress'
+import { useRouter, withBase } from 'vitepress'
 const router = useRouter()
 const props = defineProps(['type'])
 const type = ref(props.type)
@@ -36,10 +36,10 @@ const type = ref(props.type)
 
 function click(event){
     if(type.value == 'Quick Start Cloud'){
-        router.go('/docs/getting-started/2-hello-world')
+        router.go(withBase('/docs/getting-started/2-hello-world'))
     }
     else if(type.value == 'Quick Start Open Source'){
-        router.go('/docs/memphis-cloud/getting-started')
+        router.go(withBase('/docs/memphis-cloud/getting-started'))
     }
 }
 </script>

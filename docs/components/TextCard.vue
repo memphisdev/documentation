@@ -56,17 +56,18 @@
 
 <script setup>
 import { ref } from 'vue'
+import { withBase } from 'vitepress';
 const props = defineProps(['type'])
 const type = ref(props.type)
 function click(event){
     if(type.value == 'Architecture'){
-        router.go('/docs/memphis/architecture')
+        router.go(withBase('/docs/memphis/architecture'))
     }
     else if(type.value == 'Connectivity'){
-        router.go('/docs/memphis-cloud/getting-started')
+        router.go(withBase('/docs/memphis-cloud/getting-started'))
     } 
     else if(type.value == 'Comparisons'){
-        router.go('/docs/memphis/comparisons/')
+        router.go(withBase('/docs/memphis/comparisons/'))
     }
 }
 </script>
