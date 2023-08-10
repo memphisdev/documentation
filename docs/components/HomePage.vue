@@ -8,38 +8,25 @@
         </svg>
         <h1>Memphis.dev <a href="http://localhost:5173/documentation/docs/getting-started/1-installation.html">Documentation</a></h1>
         <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil neque eos assumenda animi possimus deserunt fugit laborum amet modi autem qui, ut dolorum velit illum enim voluptate repudiandae commodi incidunt?</p>
-        <fieldset class="hero-container">
-            <div data-active="true" @click="changeActive">Data Engineering</div>
-            <div data-active="false" @click="changeActive">Comparisons</div>
-            <div data-active="false" @click="changeActive">Tutorials</div>
-            <div data-active="false" @click="changeActive">Development</div>
-            <div data-active="false" @click="changeActive">Case Studies</div>
-            <div data-active="false" @click="changeActive">Open-Source</div>
-        </fieldset>
         <div class="card-wrapper">
             <div class="card-container">
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+                <ImageCard type="Quick Start Open Source">Create your first station, producer, and consumer in your preferred language.</ImageCard>
+                <ImageCard type="Quick Start Cloud">Create your first station, producer, and consumer in your preferred language.</ImageCard>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <div class="card-container">
+                <TextCard type="Architecture">There are many variations of passages of Lorem Ipsum available extra words to show the elipse</TextCard>
+                <TextCard type="Connectivity">There are many variations of passages of Lorem Ipsum available</TextCard>
+                <TextCard type="Comparisons">There are many variations of passages of Lorem Ipsum available extra words to show the elipse</TextCard>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-    import Card from './Card.vue'
-
-    function changeActive(event){
-        const hero_container = document.querySelector(".hero-container");
-        for (let hero_child of hero_container.children) {
-            if (event.target !== hero_child){
-                hero_child.setAttribute("data-active", "false");
-            }else {
-                hero_child.setAttribute("data-active", "true");
-            }
-        }
-    }
+    import ImageCard from './ImageCard.vue'
+    import TextCard from './TextCard.vue'
 </script>
 
 <style scoped>  
@@ -66,7 +53,6 @@
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        gap: 10px;
         margin-top: 1rem;
         margin-bottom: 1rem;
         border: none;
@@ -81,46 +67,8 @@
 
     .card-wrapper{
         max-width: 1200px;
-    }
-    .hero-container{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: none;
-    }
-
-    .hero-container > div[data-active="true"]{
-        background-color: var(--vp-c-brand);
-        color: white;
-    }
-    
-    .hero-container > div[data-active="false"]:hover{
-        background-color: rgba(var(--vp-c-brand-rgb), 0.1);
-        border-color: var(--vp-c-brand);  
-        border: 1px solid var(--vp-c-brand);
-    }
-
-    .hero-container > div[data-active="false"]{
-        background-color: rgba(var(--vp-c-brand-rgb), 0.1);   
-        border: 1px solid rgba(var(--vp-c-brand-rgb), 0.1);
-
-    }
-
-    .hero-container > div{
-        cursor: pointer;
-        color: var(--vp-c-brand);
-        height: 36px;
-        padding: 6px 16px 6px 16px;
-        border-radius: 32px;
-        border: 1px solid var(--vp-c-brand);
-        -webkit-user-select: none; /* Safari */
-        -ms-user-select: none; /* IE 10 and IE 11 */
-        user-select: none; /* Standard syntax */
+        margin-left: 5%;
+        margin-right: 5%;
     }
     .subtitle{
         text-align: center;
@@ -128,5 +76,9 @@
         line-height: 27px;
         size: 18px;
         width: 700px;
+    }
+
+    p{
+        margin-bottom: 0.5rem;
     }
 </style>
