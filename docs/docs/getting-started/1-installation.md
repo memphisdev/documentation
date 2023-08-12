@@ -2,6 +2,7 @@
 cover: /LinkedIn_personal_(3).png
 title: Installation
 description: Getting started with installing Memphis.dev
+layout: doc
 ---
 # Step 1 - Installation
 

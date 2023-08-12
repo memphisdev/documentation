@@ -1,0 +1,18 @@
+{
+  "name": "pdoc_sidebar_gen",
+  "version": "1.0.0",
+  "description": "Generates a sidebar that can be added to the vitepress sidebar file in order to display the sidebar for a given library",
+  "main": "pdoc_sidebar_gen.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Peters",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "glob": "^10.3.3",
+    "jsdom": "^22.1.0",
+    "prompt-sync": "^4.2.0"
+  }
+}

@@ -1,9 +1,8 @@
-import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
+import { glob } from 'glob'
 import fs from 'fs'
 import jsdom from 'jsdom'
 import axios from 'axios'
 const { JSDOM } = jsdom;
-const auth = "am9obkBtZW1waGlzLmRldjpSRE55YzlpaDF5VmdwQ3pWWU5lbQ=="
 
 const docs_path = '../../docs/**/*.md';
 const mdfiles = await glob(docs_path, { ignore: 'assets/**' });
