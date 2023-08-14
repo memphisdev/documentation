@@ -1,0 +1,516 @@
+---
+description: Accelerate Development of Real-Time Applications with Memphis.dev Cloud
+cover: /Gitbook_(1).jpeg
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# Getting Started
+
+<Subtitle></Subtitle>
+
+Welcome to our getting started guide with Memphis.dev cloud!&#x20;
+
+In today's fast-paced and interconnected world, event streaming is the engine behind communication. Whether you are an individual, a small business, or an enterprise, harnessing the power of the Memphis.dev Cloud can bring unparalleled scalability, flexibility, and efficiency to your operations.&#x20;
+
+This section aims to provide a solid foundation to embark on your streaming journey with Memphis.dev, offering clear explanations, step-by-step instructions, and valuable insights into the key concepts, services, and best practices that will empower you to make the most of the Memphis platform.&#x20;
+
+Let's dive in and unlock the true potential of Memphis.dev together!
+
+### Create an account
+
+Head to the cloud [signup page](https://memphis.dev/cloud) to create an account.
+
+<figure><img src="/assets/Screen_Shot_2023-06-28_at_13.03.57.png" alt=""><figcaption><p>Memphis.dev cloud signup</p></figcaption></figure>
+
+### Walkthrough
+
+To get you up and running quickly, we created the following tutorial to guide you through the different key components. Feel free to _skip it_ if you feel comfortable enough.
+
+<figure><img src="/assets/Screen_Shot_2023-06-28_at_13.16.24.png" alt=""><figcaption></figcaption></figure>
+
+#### Main overview
+
+<figure><img src="/assets/Screen_Shot_2023-06-28_at_13.23.27.png" alt=""><figcaption></figcaption></figure>
+
+Upper bar -
+
+1. **Stations:** Current amount of stations.
+2. **Slow consumption stations:** Stations with a growing latency or a "lag" in one or more consumer groups.
+3. **Stored messages:** Total amount of held events.
+4. **Dead-letter messages:** Total amount of dead-letter messages across the system.
+5. **Hostname:** Broker hostname to be used when connecting to Memphis using clients.
+6. **Account ID:** Account ID to be used when connecting to Memphis using clients.
+
+### Hello world
+
+:::: tabs 
+=== Go
+
+::: tip
+Full code examples can be found in this [repo](https://github.com/memphisdev/memphis.go/tree/master/examples)
+:::
+
+**Step 1:** Create an empty dir for the Go project
+
+```bash
+mkdir memphis-demo && \
+cd memphis-demo
+```
+
+**Step 2:** Init the newly created project
+
+```
+go mod init memphis-demo
+```
+
+**Step 3:** In your project's directory, install Memphis Go SDK
+
+```
+go get github.com/memphisdev/memphis.go
+```
+
+**Step 4:** Create a new Go file called `producer.go`
+
+```go:line-numbers producer.go
+package main
+
+import (
+    "fmt"
+    "os"
+
+    "github.com/memphisdev/memphis.go"
+)
+
+func main() {
+    conn, err := memphis.Connect("BROKER_HOSTNAME", 
+	"APPLICATION_TYPE_USERNAME", 
+	memphis.Password("PASSWORD"), // depends on how Memphis deployed - default is connection token-based authentication
+        memphis.AccountId(123456789),
+        )
+    if err != nil {
+        os.Exit(1)
+    }
+    defer conn.Close()
+    p, err := conn.CreateProducer("STATION_NAME", "PRODUCER_NAME")
+
+    hdrs := memphis.Headers{}
+    hdrs.New()
+    err = hdrs.Add("key", "value")
+
+    if err != nil {
+        fmt.Errorf("Header failed: %v", err)
+        os.Exit(1)
+    }
+
+    err = p.Produce([]byte("You have a message!"), memphis.MsgHeaders(hdrs))
+
+    if err != nil {
+        fmt.Errorf("Produce failed: %v", err)
+        os.Exit(1)
+    }
+}
+```
+
+**Step 4:** Run `producer.go`
+
+```bash
+go run producer.go
+```
+
+**Step 5:** Create a new Go file called `consumer.go`
+
+```go:line-numbers 
+package main
+
+import (
+    "fmt"
+    "context"
+    "os"
+    "time"
+
+    "github.com/memphisdev/memphis.go"
+)
+
+func main() {
+    conn, err := memphis.Connect("BROKER_HOSTNAME", 
+	"APPLICATION_TYPE_USERNAME", 
+	memphis.Password("PASSWORD"), // depends on how Memphis deployed - default is connection token-based authentication
+        memphis.AccountId(123456789),
+        )
+    if err != nil {
+        os.Exit(1)
+    }
+    defer conn.Close()
+
+    consumer, err := conn.CreateConsumer("STATION_NAME", "CONSUMER_NAME", memphis.PullInterval(15*time.Second))
+
+    if err != nil {
+        fmt.Printf("Consumer creation failed: %v
+", err)
+        os.Exit(1)
+    }
+
+    handler := func(msgs []*memphis.Msg, err error, ctx context.Context) {
+        if err != nil {
+            fmt.Printf("Fetch failed: %v
+", err)
+            return
+        }
+
+        for _, msg := range msgs {
+            fmt.Println(string(msg.Data()))
+            msg.Ack()
+            headers := msg.GetHeaders()
+            fmt.Println(headers)
+        }
+    }
+
+    ctx := context.Background()
+    ctx = context.WithValue(ctx, "key", "value")
+    consumer.SetContext(ctx)
+    consumer.Consume(handler)
+
+    // The program will close the connection after 30 seconds,
+    // the message handler may be called after the connection closed
+    // so the handler may receive a timeout error
+    time.Sleep(30 * time.Second)
+}
+```
+
+**Step 6:** Run `consumer.go`
+
+```bash
+go run consumer.go
+```
+
+=== Python
+::: tip
+Full code examples can be found in this [repo](https://github.com/memphisdev/memphis.py/tree/master/examples)
+:::
+
+**Step 1:** Create an empty dir for the Python project
+
+```bash
+mkdir memphis-demo && \
+cd memphis-demo
+```
+
+**Step 2:** In your project's directory, install Memphis Python SDK
+
+```bash
+pip3 install --upgrade memphis-py
+```
+
+**Step 3:** Create a new Python file called `producer.py`
+
+```python:line-numbers producer.py
+from memphis import Memphis, Headers
+from memphis.types import Retention, Storage
+import asyncio
+
+async def main():
+    try:
+        memphis = Memphis()
+        await memphis.connect(host="MEMPHIS_HOSTNAME", username="MEMPHIS_APPLICATION_USER", password="PASSWORD", account_id=ACCOUNT_ID)
+        producer = await memphis.producer(station_name="STATION_NAME", producer_name="PRODUCER_NAME")
+        headers = Headers()
+        headers.add("key", "value")
+        for i in range(5):
+            await producer.produce(bytearray('Message #'+str(i)+': Hello world', 'utf-8'), headers=headers) # you can send the message parameter as dict as well
+
+    except (MemphisError, MemphisConnectError, MemphisHeaderError, MemphisSchemaError) as e:
+        print(e)
+
+    finally:
+        await memphis.close()
+
+if __name__ == '__main__':
+    asyncio.run(main())
+```
+
+**Step 4:** Run `producer.py`
+
+```bash
+python3 producer.py
+```
+
+**Step 5:** Create a new Python file called `consumer.py`
+
+```python:line-numbers consumer.py
+from memphis import Memphis, Headers
+from memphis.types import Retention, Storage
+import asyncio
+
+async def main():
+    async def msg_handler(msgs, error, context):
+        try:
+            for msg in msgs:
+                print("message: ", msg.get_data())
+                await msg.ack()
+                headers = msg.get_headers()
+                if error:
+                    print(error)
+        except (MemphisError, MemphisConnectError, MemphisHeaderError) as e:
+            print(e)
+            return
+
+    try:
+        memphis = Memphis()
+        await memphis.connect(host="MEMPHIS_HOSTNAME", username="MEMPHIS_APPLICATION_USER", password="PASSWORD", account_id=ACCOUNT_ID)
+
+        consumer = await memphis.consumer(station_name="STATION_NAME", consumer_name="CONSUMER_NAME", consumer_group="CONSUMER_GROUP_NAME")
+        consumer.set_context({"key": "value"})
+        consumer.consume(msg_handler)
+        # Keep your main thread alive so the consumer will keep receiving data
+        await asyncio.Event().wait()
+
+    except (MemphisError, MemphisConnectError) as e:
+        print(e)
+
+    finally:
+        await memphis.close()
+
+if __name__ == '__main__':
+    asyncio.run(main())
+```
+
+**Step 6:** Run `consumer.py`
+
+```bash
+python3 consumer.py
+```
+
+=== Node.js
+::: tip
+Full code examples can be found in this [repo](https://github.com/memphisdev/memphis.js/tree/master/examples)
+:::
+
+**Step 1:** Create an empty dir for the Node.js project
+
+```bash
+mkdir memphis-demo && \
+cd memphis-demo
+```
+
+**Step 2:** Create a new Node project (If needed)
+
+```bash
+npm init -y
+```
+
+**Step 3:** Install memphis Node.js SDK
+
+```bash
+npm install memphis-dev
+```
+
+**Step 4:** Create a new .js file called `producer.js`
+
+```javascript:line-numbers producer.js
+const { memphis } = require("memphis-dev");
+
+(async function () {
+  let memphisConnection;
+
+  try {
+    memphisConnection = await memphis.connect({
+      host: "MEMPHIS_BROKER_HOSTNAME",
+      username: "APPLICATION_TYPE_USERNAME",
+      password: "PASSWORD",
+      accountId: ACCOUNT_ID
+    });
+
+    const producer = await memphisConnection.producer({
+      stationName: "STATION_NAME",
+      producerName: "PRODUCER_NAME",
+    });
+
+    const headers = memphis.headers();
+    headers.add("KEY", "VALUE");
+    await producer.produce({
+      message: Buffer.from("Message: Hello world"), // you can also send JS object - {}
+      headers: headers,
+    });
+
+    memphisConnection.close();
+  } catch (ex) {
+    console.log(ex);
+    if (memphisConnection) memphisConnection.close();
+  }
+})();
+```
+
+**Step 5:** Run `producer.js`
+
+```bash
+node producer.js
+```
+
+**Step 6:** Create a new .js file called `consumer.js`
+
+```javascript:line-numbers consumer.js
+const { memphis } = require("memphis-dev");
+
+(async function () {
+  let memphisConnection;
+
+  try {
+    memphisConnection = await memphis.connect({
+      host: "MEMPHIS_BROKER_HOSTNAME",
+      username: "APPLICATION_TYPE_USERNAME",
+      password: "PASSWORD",
+      accountId: ACCOUNT_ID
+    });
+
+    const consumer = await memphisConnection.consumer({
+      stationName: "STATION_NAME",
+      consumerName: "CONSUMER_NAME",
+      consumerGroup: "CONSUMER_GROUP_NAME",
+    });
+
+    consumer.setContext({ key: "value" });
+    consumer.on("message", (message, context) => {
+      console.log(message.getData().toString());
+      message.ack();
+      const headers = message.getHeaders();
+    });
+
+    consumer.on("error", (error) => {});
+  } catch (ex) {
+    console.log(ex);
+    if (memphisConnection) memphisConnection.close();
+  }
+})();
+```
+
+**Step 7:** Run `consumer.js`
+
+```bash
+node consumer.js
+```
+
+=== Tyepscript
+::: tip
+Full code examples can be found in this [repo](https://github.com/memphisdev/memphis.js/tree/master/examples)
+:::
+
+**Step 1:** Create an empty dir for the TypeScript project
+
+```bash
+mkdir memphis-demo && \
+cd memphis-demo
+```
+
+**Step 2:** Create a new Node project (If needed)
+
+```bash
+npm init -y
+```
+
+**Step 3:** Install memphis Node.js SDK
+
+```bash
+npm install memphis-dev
+```
+
+**Step 4:** Create a new .ts file called `producer.ts`
+
+```typescript:line-numbers producer.ts
+import { memphis, Memphis } from "memphis-dev";
+
+(async function () {
+  let memphisConnection: Memphis;
+
+  try {
+    memphisConnection = await memphis.connect({
+      host: "MEMPHIS_BROKER_HOSTNAME",
+      username: "APPLICATION_TYPE_USERNAME",
+      password: "PASSWORD",
+      accountId: ACCOUNT_ID
+    });
+
+    const producer = await memphisConnection.producer({
+      stationName: "STATION_NAME",
+      producerName: "PRODUCER_NAME",
+    });
+
+    const headers = memphis.headers();
+    headers.add("key", "value");
+    await producer.produce({
+      message: Buffer.from("Message: Hello world"), // you can also send JS object - {}
+      headers: headers,
+    });
+
+    memphisConnection.close();
+  } catch (ex) {
+    console.log(ex);
+    if (memphisConnection) memphisConnection.close();
+  }
+})();
+```
+
+**Step 5:** Run `producer.ts`
+
+```bash
+node producer.ts
+```
+
+**Step 6:** Create a new .ts file called `consumer.ts`
+
+```typescript:line-numbers consumer.ts
+import { memphis, Memphis } from "memphis-dev";
+
+(async function () {
+  let memphisConnection: Memphis;
+
+  try {
+    memphisConnection = await memphis.connect({
+      host: "MEMPHIS_BROKER_HOSTNAME",
+      username: "APPLICATION_TYPE_USERNAME",
+      password: "PASSWORD",
+      accountId: ACCOUNT_ID
+    });
+
+    const consumer = await memphisConnection.consumer({
+      stationName: "STATION_NAME",
+      consumerName: "CONSUMER_NAME",
+      consumerGroup: "CONSUMER_GROUP_NAME",
+    });
+
+    consumer.setContext({ key: "value" });
+    consumer.on("message", (message: Message, context: object) => {
+      console.log(message.getData().toString());
+      message.ack();
+      const headers = message.getHeaders();
+    });
+
+    consumer.on("error", (error) => {
+      console.log(error);
+    });
+  } catch (ex) {
+    console.log(ex);
+    if (memphisConnection) memphisConnection.close();
+  }
+})();
+```
+
+**Step 7:** Run `consumer.ts`
+
+```bash
+node consumer.ts
+```
+::::
