@@ -172,6 +172,15 @@ table{
   color: var(--vp-c-text-2) !important;
 }
 
+.VPSidebarItem.level-0.is-link:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-1.is-link:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-2.is-link:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-3.is-link:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-4.is-link:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-5.is-link:not(.is-active) > .item > .link h2.text {
+  color: var(--vp-c-text-1) !important;
+}
+
 .VPSidebarItem.level-0.is-link.is-active > .item ,
 .VPSidebarItem.level-1.is-link.is-active > .item {
   background-color: rgba(101, 87, 255, 0.15) !important;

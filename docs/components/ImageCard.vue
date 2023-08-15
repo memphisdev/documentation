@@ -1,5 +1,5 @@
 <template>
-  <div @click="click" class="card">
+  <a class="card" :href="link" :target="link_target">
     <div class="background">
       <img
         data-type="cloud"
@@ -50,22 +50,22 @@
         </svg>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { useRouter, withBase } from "vitepress";
-const router = useRouter();
+import { withBase } from "vitepress";
 const props = defineProps(["type"]);
 const type = ref(props.type);
+const link = ref("");
+const link_target = ref("_self");
 
-function click(event) {
-  if (type.value == "Quick start: Cloud") {
-    window.location.href = "https://cloud.memphis.dev";
-  } else if (type.value == "Quick start: Open-Source") {
-    router.go(withBase("/docs/memphis-cloud/getting-started"));
-  }
+if (type.value == "Quick start: Cloud") {
+    link.value = "https://cloud.memphis.dev";
+    link_target.value = "_blank";
+} else if (type.value == "Quick start: Open-Source") {
+    link.value = withBase("/docs/memphis-cloud/getting-started");
 }
 </script>
 
@@ -80,10 +80,12 @@ function click(event) {
 
 .arrow-icon > g > path {
   fill: hsla(240, 4%, 22%, 1);
+  transition: fill 0.2s ease-in-out;
 }
 
 .arrow-icon > circle {
   stroke: hsla(240, 4%, 90%, 1);
+  transition: stroke 0.2s ease-in-out;
 }
 
 .card:hover {
@@ -131,6 +133,10 @@ img {
   flex-direction: row;
 }
 
+.arrow-container > div > p {
+  width: 95%;
+}
+
 .arrow-icon {
   position: absolute;
   bottom: 0.3rem;
@@ -166,6 +172,7 @@ img {
   font-weight: 600;
   padding-top: 20px;
   padding-bottom: 10px;
+  color: var(--vp-c-text-1);
 }
 
 .card-text > div > div {

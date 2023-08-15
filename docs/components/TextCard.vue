@@ -1,5 +1,5 @@
 <template>
-  <div @click="click" class="card">
+  <a class="card" :href="link" :target="link_target">
     <svg
       v-if="type == 'Architecture'"
       class="icon"
@@ -152,24 +152,23 @@
         </svg>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { withBase, useRouter } from "vitepress";
-const router = useRouter();
+import { withBase } from "vitepress";
 const props = defineProps(["type"]);
 const type = ref(props.type);
+const link = ref("");
+const link_target = ref("_self");
 
-function click(event) {
-  if (type.value == "Architecture") {
-    router.go(withBase("/docs/memphis/architecture"));
-  } else if (type.value == "API and SDKs") {
-    router.go(withBase("/sdk/welcome.html"));
-  } else if (type.value == "Key Concepts") {
-    router.go(withBase("/docs/memphis/concepts/"));
-  }
+if (type.value == "Architecture") {
+  link.value = withBase("/docs/memphis/architecture");
+} else if (type.value == "API and SDKs") {
+  link.value = withBase("/sdk/welcome.html");
+} else if (type.value == "Key Concepts") {
+  link.value = withBase("/docs/memphis/concepts/");
 }
 </script>
 
@@ -184,10 +183,12 @@ function click(event) {
 
 .arrow-icon > g > path {
   fill: hsla(240, 4%, 22%, 1);
+  transition: fill 0.2s ease-in-out;
 }
 
 .arrow-icon > circle {
-  stroke: hsla(240, 4%, 90%, 1);
+  stroke: hsla(240, 4%, 90%, 1);  
+  transition: stroke 0.2s ease-in-out;
 }
 .card:hover {
   .arrow-icon > circle,
@@ -197,13 +198,13 @@ function click(event) {
   .arrow-icon > g > path {
     fill: var(--vp-c-brand);
   }
-  cursor: pointer;
+  cursor: pointer;  
 }
 .card {
   background-color: #f6f6f7;
   border-radius: 8px;
   width: 369px;
-  height: 209px;
+  height: 190px;
   position: relative;
 }
 
@@ -246,8 +247,9 @@ function click(event) {
 .card-text > h3 {
   font-size: 20px;
   font-weight: 600;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--vp-c-text-1);
 }
 
 .card-text > div > div {
@@ -259,4 +261,6 @@ function click(event) {
   height: 50px;
   margin-right: 25px;
 }
+
+
 </style>

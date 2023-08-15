@@ -109,7 +109,7 @@ h1 {
 }
 
 .card-wrapper {
-  max-width: 1200px;
+  max-width: 1330px;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -123,5 +123,14 @@ h1 {
 
 p {
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1330px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>
