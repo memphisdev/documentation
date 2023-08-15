@@ -133,4 +133,13 @@ p {
     margin-right: auto;
   }
 }
+
+@media (max-width: 630px) {
+  .subtitle {
+    width: 100%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
 </style>
