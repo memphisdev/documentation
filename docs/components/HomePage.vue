@@ -34,32 +34,33 @@
         >Documentation</a
       >
     </h1>
-    <p class="subtitle">Test - Deploy</p>
+    <p class="subtitle">
+      <a href="https://memphis.dev/"> Memphis.dev</a>
+      is more than a broker. It's a new streaming stack.
+    </p>
+    <p class="subtitle">
+      Check out the links below to get started and learn more.
+    </p>
     <div class="card-wrapper">
       <div class="card-container">
-        <ImageCard type="Quick Start Open Source"
-          >Create your first station, producer, and consumer in your preferred
-          language.</ImageCard
+        <ImageCard type="Quick start: Open-Source"
+          >Small footprint, highly efficient, and can run on any cloud, on any
+          Kubernetes.</ImageCard
         >
-        <ImageCard type="Quick Start Cloud"
-          >Create your first station, producer, and consumer in your preferred
-          language.</ImageCard
+        <ImageCard type="Quick start: Cloud"
+          >The full power of Memphis.dev. High performance, fully managed,
+          99.999 uptime, supported, and with added features.</ImageCard
         >
       </div>
     </div>
     <div class="card-wrapper">
       <div class="card-container">
         <TextCard type="Architecture"
-          >There are many variations of passages of Lorem Ipsum available extra
-          words to show the elipse</TextCard
+          >Memphis core components and general architecture.</TextCard
         >
-        <TextCard type="Connectivity"
-          >There are many variations of passages of Lorem Ipsum
-          available</TextCard
-        >
-        <TextCard type="Comparisons"
-          >There are many variations of passages of Lorem Ipsum available extra
-          words to show the elipse</TextCard
+        <TextCard type="Key Concepts">The key concepts of Memphis.dev</TextCard>
+        <TextCard type="API and SDKs"
+          >Explore the different Memphis APIs and SDKs</TextCard
         >
       </div>
     </div>
