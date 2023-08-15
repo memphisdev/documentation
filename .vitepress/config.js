@@ -93,7 +93,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/rest/api-reference",
+              link: "/sdk/client-libraries/rest/api",
             },
             {
               text: "GitHub",
@@ -112,7 +112,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/node/api-reference",
+              link: "/sdk/client-libraries/node/api",
             },
             {
               text: "GitHub",
@@ -131,7 +131,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/go/api-reference",
+              link: "/sdk/client-libraries/go/api",
             },
             {
               text: "GitHub",
@@ -150,10 +150,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/python/memphis/index",
-              items: [
-              ],
-              collapsed: true,
+              link: "/sdk/client-libraries/python/api",
             },
             {
               text: "GitHub",
@@ -172,7 +169,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/kotlin/api-reference",
+              link: "/sdk/client-libraries/kotlin/api",
             },
             {
               text: "GitHub",
@@ -191,7 +188,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/net/api-reference",
+              link: "/sdk/client-libraries/net/api",
             },
             {
               text: "GitHub",
@@ -210,7 +207,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/java/api-reference",
+              link: "/sdk/client-libraries/java/api",
             },
             {
               text: "GitHub",
@@ -229,7 +226,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/rust/api-reference",
+              link: "/sdk/client-libraries/rust/api",
             },
             { text: "GitHub", link: "" },
           ],
@@ -245,7 +242,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/scala/api-reference",
+              link: "/sdk/client-libraries/scala/api",
             },
             { text: "GitHub", link: "" },
           ],
