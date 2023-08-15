@@ -126,6 +126,24 @@ img {
   width: 569px;
   height: 305px;
   position: relative;
+  transition: height 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+@media (max-width: 630px) {
+  .card {
+    width: 369px;
+    height: 250px;
+  }
+
+  .card-text{
+    width: 100%;
+    height: 100px;
+  }
+
+  .card-text > div > div{
+    -webkit-line-clamp: 3;
+  }
 }
 
 .arrow-container {
