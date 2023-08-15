@@ -126,8 +126,6 @@ img {
   width: 569px;
   height: 305px;
   position: relative;
-  transition: height 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
 }
 
 @media (max-width: 630px) {
