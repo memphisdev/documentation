@@ -64,6 +64,7 @@ export default defineConfig({
     sidebar: {
       "/docs/": docs(),
       "/sdk/": sdk(),
+      "/contribution/": contribution(),
     },
 
     editLink: {
@@ -79,27 +80,6 @@ export default defineConfig({
 export function sdk() {
   return [
     {
-      text: "Documentation How-To",
-      items: [
-        {
-          text: "Components",
-          link: "/sdk/docs/components/index",
-          collapsed: true,
-          items: [
-            { text: "BigLink", link: "/sdk/docs/components/biglink" },
-            { text: "Embed", link: "/sdk/docs/components/embed" },
-            { text: "HeaderImage", link: "/sdk/docs/components/headerimage" },
-            { text: "Index", link: "/sdk/docs/components/index-component" },
-            { text: "Subtitle", link: "/sdk/docs/components/subtitle" },
-          ],
-        },
-        {
-          text: "Usage",
-          link: "/sdk/docs/usage",
-        },
-      ],
-    },
-    {
       text: `Client Library SDK's`,
       items: [
         {
@@ -107,7 +87,6 @@ export function sdk() {
           link: "/sdk/client-libraries/rest/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/rest/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/rest/quick-start",
@@ -127,7 +106,6 @@ export function sdk() {
           link: "/sdk/client-libraries/node/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/node/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/node/quick-start",
@@ -147,7 +125,6 @@ export function sdk() {
           link: "/sdk/client-libraries/go/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/go/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/go/quick-start",
@@ -167,7 +144,6 @@ export function sdk() {
           link: "/sdk/client-libraries/python/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/python/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/python/quick-start",
@@ -176,268 +152,6 @@ export function sdk() {
               text: "API Reference",
               link: "/sdk/client-libraries/python/memphis/index",
               items: [
-                {
-                  text: "memphis.utils",
-                  link: "/sdk/client-libraries/python/memphis//utils",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "set_interval",
-                      link: "/sdk/client-libraries/python/memphis/utils#Utils.set_interval",
-                    },
-                    {
-                      text: "cancel",
-                      link: "/sdk/client-libraries/python/memphis/utils#Utils.cancel",
-                    },
-                    {
-                      text: "default_error_handler",
-                      link: "/sdk/client-libraries/python/memphis/utils#Utils.default_error_handler",
-                    },
-                    {
-                      text: "get_internal_name",
-                      link: "/sdk/client-libraries/python/memphis/utils#Utils.get_internal_name",
-                    },
-                    {
-                      text: "random_bytes",
-                      link: "/sdk/client-libraries/python/memphis/utils#Utils.random_bytes",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.types",
-                  link: "/sdk/client-libraries/python/memphis//types",
-                  collapsed: true,
-                  items: [],
-                },
-                {
-                  text: "memphis.station",
-                  link: "/sdk/client-libraries/python/memphis//station",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "Station",
-                      link: "/sdk/client-libraries/python/memphis/station#Station",
-                    },
-                    {
-                      text: "destroy",
-                      link: "/sdk/client-libraries/python/memphis/station#Station.destroy",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.producer",
-                  link: "/sdk/client-libraries/python/memphis//producer",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "Producer",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer",
-                    },
-                    {
-                      text: "validate_msg",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.validate_msg",
-                    },
-                    {
-                      text: "validate_protobuf",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.validate_protobuf",
-                    },
-                    {
-                      text: "validate_json_schema",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.validate_json_schema",
-                    },
-                    {
-                      text: "validate_graphql",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.validate_graphql",
-                    },
-                    {
-                      text: "validate_avro_schema",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.validate_avro_schema",
-                    },
-                    {
-                      text: "produce",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.produce",
-                    },
-                    {
-                      text: "destroy",
-                      link: "/sdk/client-libraries/python/memphis/producer#Producer.destroy",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.message",
-                  link: "/sdk/client-libraries/python/memphis//message",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "Message",
-                      link: "/sdk/client-libraries/python/memphis/message#Message",
-                    },
-                    {
-                      text: "ack",
-                      link: "/sdk/client-libraries/python/memphis/message#Message.ack",
-                    },
-                    {
-                      text: "get_data",
-                      link: "/sdk/client-libraries/python/memphis/message#Message.get_data",
-                    },
-                    {
-                      text: "get_headers",
-                      link: "/sdk/client-libraries/python/memphis/message#Message.get_headers",
-                    },
-                    {
-                      text: "get_sequence_number",
-                      link: "/sdk/client-libraries/python/memphis/message#Message.get_sequence_number",
-                    },
-                    {
-                      text: "delay",
-                      link: "/sdk/client-libraries/python/memphis/message#Message.delay",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.memphis",
-                  link: "/sdk/client-libraries/python/memphis//memphis",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "get_msgs_sdk_clients_updates",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.get_msgs_sdk_clients_updates",
-                    },
-                    {
-                      text: "sdk_client_updates_listener",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.sdk_client_updates_listener",
-                    },
-                    {
-                      text: "get_broker_manager_connection",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.get_broker_manager_connection",
-                    },
-                    {
-                      text: "connect",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.connect",
-                    },
-                    {
-                      text: "send_notification",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.send_notification",
-                    },
-                    {
-                      text: "station",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.station",
-                    },
-                    {
-                      text: "attach_schema",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.attach_schema",
-                    },
-                    {
-                      text: "enforce_schema",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.enforce_schema",
-                    },
-                    {
-                      text: "detach_schema",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.detach_schema",
-                    },
-                    {
-                      text: "close",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.close",
-                    },
-                    {
-                      text: "producer",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.producer",
-                    },
-                    {
-                      text: "get_msg_schema_updates",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.get_msg_schema_updates",
-                    },
-                    {
-                      text: "parse_descriptor",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.parse_descriptor",
-                    },
-                    {
-                      text: "start_listen_for_schema_updates",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.start_listen_for_schema_updates",
-                    },
-                    {
-                      text: "consumer",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.consumer",
-                    },
-                    {
-                      text: "produce",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.produce",
-                    },
-                    {
-                      text: "fetch_messages",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.fetch_messages",
-                    },
-                    {
-                      text: "create_schema",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.create_schema",
-                    },
-                    {
-                      text: "schema_name_validation",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.schema_name_validation",
-                    },
-                    {
-                      text: "is_connected",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.is_connected",
-                    },
-                    {
-                      text: "unset_cached_producer_station",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.unset_cached_producer_station",
-                    },
-                    {
-                      text: "unset_cached_consumer_station",
-                      link: "/sdk/client-libraries/python/memphis/memphis#Memphis.unset_cached_consumer_station",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.headers",
-                  link: "/sdk/client-libraries/python/memphis//headers",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "add",
-                      link: "/sdk/client-libraries/python/memphis/headers#Headers.add",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.exceptions",
-                  link: "/sdk/client-libraries/python/memphis//exceptions",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "MemphisError",
-                      link: "/sdk/client-libraries/python/memphis/exceptions#Exceptions.MemphisError",
-                    },
-                  ],
-                },
-                {
-                  text: "memphis.consumer",
-                  link: "/sdk/client-libraries/python/memphis//consumer",
-                  collapsed: true,
-                  items: [
-                    {
-                      text: "Consumer",
-                      link: "/sdk/client-libraries/python/memphis/consumer#Consumer",
-                    },
-                    {
-                      text: "set_context",
-                      link: "/sdk/client-libraries/python/memphis/consumer#Consumer.set_context",
-                    },
-                    {
-                      text: "consume",
-                      link: "/sdk/client-libraries/python/memphis/consumer#Consumer.consume",
-                    },
-                    {
-                      text: "fetch",
-                      link: "/sdk/client-libraries/python/memphis/consumer#Consumer.fetch",
-                    },
-                    {
-                      text: "destroy",
-                      link: "/sdk/client-libraries/python/memphis/consumer#Consumer.destroy",
-                    },
-                  ],
-                },
               ],
               collapsed: true,
             },
@@ -448,11 +162,10 @@ export function sdk() {
           ],
         },
         {
-          text: "Kotlin",
+          text: "Kotlin (Community)",
           link: "/sdk/client-libraries/kotlin/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/kotlin/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/kotlin/quick-start",
@@ -472,7 +185,6 @@ export function sdk() {
           link: "/sdk/client-libraries/net/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/net/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/net/quick-start",
@@ -492,7 +204,6 @@ export function sdk() {
           link: "/sdk/client-libraries/java/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/java/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/java/quick-start",
@@ -508,11 +219,10 @@ export function sdk() {
           ],
         },
         {
-          text: "Rust",
+          text: "Rust (Community)",
           link: "/sdk/client-libraries/rust/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/rust/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/rust/quick-start",
@@ -529,7 +239,6 @@ export function sdk() {
           link: "/sdk/client-libraries/scala/index",
           collapsed: true,
           items: [
-            { text: "Overview", link: "/sdk/client-libraries/scala/overview" },
             {
               text: "Quick Start",
               link: "/sdk/client-libraries/scala/quick-start",
@@ -1011,4 +720,30 @@ export function docs() {
       ],
     },
   ];
+}
+
+export function contribution() {
+  return [
+    {
+      text: "Documentation How-To",
+      items: [
+        {
+          text: "Components",
+          link: "/contribution/components/index",
+          collapsed: true,
+          items: [
+            { text: "BigLink", link: "/contribution/components/biglink" },
+            { text: "Embed", link: "/contribution/components/embed" },
+            { text: "HeaderImage", link: "/contribution/components/headerimage" },
+            { text: "Index", link: "/contribution/components/index-component" },
+            { text: "Subtitle", link: "/contribution/components/subtitle" },
+          ],
+        },
+        {
+          text: "Usage",
+          link: "/contribution/usage",
+        },
+      ],
+    }
+  ]
 }
