@@ -22,47 +22,15 @@ description: This section describes integrating protobufs with Memphis
 
 ## Getting started
 
-### Attach a schema
+### How to produce a message
 
-#### Step 1: Create a new schema
-
-::: tabs
-=== GUI
-Head to the "Schemaverse" page
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_15.22.17_(1).png" alt=""><figcaption></figcaption></figure>
-
-Create a new schema by clicking on "Create from blank"
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_15.22.25_(1).png" alt=""><figcaption></figcaption></figure>
-
-=== SDK
-Soon.
-:::
-
-#### Step 2: Attach
-
-::: tabs
-=== GUI
-Head to your station, and on the top-left corner, click on "+ Attach schema"
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_16.02.31.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_16.02.38.png" alt=""><figcaption></figcaption></figure>
-
-=== SDK
-It can be found through the different [SDKs](broken-reference) docs.
-:::
-
-### Produce a message (Serialization)
-
-::: tabs
+:::: tabs
 === Node.js
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 In node.js, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
 
-**Example schema:**
+**Example schema: (No need to compile)**
 
 ```proto
 syntax = "proto3";
@@ -76,45 +44,47 @@ message Test {
 **Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
 ```javascript:line-numbers
-const memphis = require("memphis-dev");
+const { memphis } = require("memphis-dev");
 
 (async function () {
+    let memphisConnection
+
     try {
-        await memphis.connect({
+        memphisConnection = await memphis.connect({
             host: "MEMPHIS_BROKER_URL",
             username: "APPLICATION_USER",
-            password: "PASSWORD"
+            password: "PASSWORD",
+            accountId: ACCOUNT_ID //*optional* In case you are using Memphis.dev cloud
         });
-        const producer = await memphis.producer({
+        const producer = await memphisConnection.producer({
             stationName: "STATION_NAME",
             producerName: "PRODUCER_NAME"
         });
         var payload = {
-            fname: "AwesomeString",
-            lname: "AwesomeString",
-            id: 54
+            field1: "AwesomeString",
+            field2: "AwesomeString",
+            field3: 54
         };
-        try {
-            await producer.produce({
-                message: payload
-        });
-        } catch (ex) {
-            console.log(ex.message)
-        }
+        await producer.produce({
+            message: payload
+        })
+        memphisConnection.close();
+
     } catch (ex) {
         console.log(ex);
-        memphis.close();
+        if (memphisConnection) memphisConnection.close();
     }
 })();
 ```
-
-=== go
-Memphis abstracts the need for external serialization functions and embeds it within the SDK.
-
-**Example schema:**
+=== Go
+Memphis abstracts the need for external serialization functions and embeds them within the SDK.\
+\
+**Example proto file:**
 
 ```proto
 syntax = "proto3";
+option go_package = "./";
+
 message Test {
             string field1 = 1;
             string field2 = 2;
@@ -122,9 +92,15 @@ message Test {
 }
 ```
 
+To compile the proto file, run the following command:&#x20;
+
+```bash
+protoc --go_out=. ./{proto file name}
+```
+
 **Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
-```go
+```go:line-numbers
 package main
 
 import (
@@ -134,7 +110,12 @@ import (
 )
 
 func main() {
-    conn, err := memphis.Connect("MEMPHIS_BROKER_URL", "APPLICATION_TYPE_USERNAME", memphis.Password("PASSWORD"))
+    conn, err := memphis.Connect(
+        "MEMPHIS_BROKER_URL", 
+        "APPLICATION_TYPE_USERNAME", 
+        memphis.Password("PASSWORD"),
+        memphis.AccountId(123456789), //*optional* In case you are using Memphis.dev cloud
+        )
     if err != nil {
         os.Exit(1)
     }
@@ -166,7 +147,7 @@ func main() {
 
 **Producing a message **<span style="color:purple;">**with**</span>** a local .proto file:**
 
-```go
+```go{11}
 package main
 
 import (
@@ -177,7 +158,12 @@ import (
 )
 
 func main() {
-    conn, err := memphis.Connect("MEMPHIS_BROKER_URL", "APPLICATION_TYPE_USERNAME", memphis.Password("PASSWORD"))
+    conn, err := memphis.Connect(
+        "MEMPHIS_BROKER_URL", 
+        "APPLICATION_TYPE_USERNAME", 
+        memphis.Password("PASSWORD"),
+        memphis.AccountId(123456789), //*optional* In case you are using Memphis.dev cloud
+        )
     if err != nil {
         os.Exit(1)
     }
@@ -187,7 +173,6 @@ func main() {
     hdrs := memphis.Headers{}
     hdrs.New()
     err = hdrs.Add("key", "value")
-
     if err != nil {
         fmt.Printf("Header failed: %v\n", err)
         os.Exit(1)
@@ -195,20 +180,19 @@ func main() {
     s1 := "Hello"
     s2 := "World"
     pbInstance := schemapb.Test{
-	Field1: &s1,
-	Field2: &s2,
+	Field1: s1,
+	Field2: s2,
     }
 
-    err = p.Produce(&pbInstance, memphis.MsgHeaders(hdrs))
-
+    err = p.Produce(&#x26;pbInstance, memphis.MsgHeaders(hdrs))
     if err != nil {
         fmt.Printf("Produce failed: %v\n", err)
         os.Exit(1)
     }
 }
-        
 ```
-=== python
+
+=== Python
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -222,9 +206,15 @@ message Test {
 }
 ```
 
+To compile the proto file, run the following command:&#x20;
+
+```bash
+protoc --go_out=. ./{proto file name}
+```
+
 **Producing a message **<span style="color:purple;">**with**</span>** a local .proto file:**
 
-```python
+```python:line-numbers
 import asyncio
 from memphis import Memphis, Headers, MemphisError, MemphisConnectError, MemphisSchemaError
 
@@ -232,7 +222,7 @@ import schema_pb2 as PB
 
 async def main():
     memphis = Memphis()
-    await memphis.connect(host="MEMPHIS_BROKER_URL", username="APPLICATION_TYPE_USERNAME", password="PASSWORD")
+    await memphis.connect(host="MEMPHIS_BROKER_URL", username="APPLICATION_TYPE_USERNAME", password="PASSWORD", account_id=ACCOUNT_ID)
     producer = await memphis.producer(
         station_name="STATION_NAME", producer_name="PRODUCER_NAME")
 
@@ -242,7 +232,7 @@ async def main():
     obj = PB.Test()
     obj.field1 = "Hello"
     obj.field2 = "Amazing"
-    obj.field3 = "World"
+    obj.field3 = 32
     
     try:
         await producer.produce(obj, headers=headers)
@@ -258,7 +248,7 @@ if __name__ == '__main__':
     asyncio.run(main())
 ```
 
-=== TypeScript
+=== Typescript
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -274,9 +264,8 @@ message Test {
 
 **Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
 
-```typescript
-import memphis from 'memphis-dev';
-import type { Memphis } from 'memphis-dev/types';
+```typescript:line-numbers
+import { memphis, Memphis } from 'memphis-dev';
 
 (async function () {
     let memphisConnection: Memphis;
@@ -285,7 +274,8 @@ import type { Memphis } from 'memphis-dev/types';
         memphisConnection = await memphis.connect({
             host: 'MEMPHIS_BROKER_URL',
             username: 'APPLICATION_TYPE_USERNAME',
-            password: 'PASSWORD'
+            password: 'PASSWORD',
+            accountId: ACCOUNT_ID //*optional* In case you are using Memphis.dev cloud
         });
 
         const producer = await memphisConnection.producer({
@@ -298,7 +288,7 @@ import type { Memphis } from 'memphis-dev/types';
         const msg = {
             field1: "Hello",
             field2: "Amazing",
-            field3: "World"
+            field3: 32
         }
         await producer.produce({
             message: msg,
@@ -312,8 +302,87 @@ import type { Memphis } from 'memphis-dev/types';
 })();
 ```
 
-=== HTTP (REST)
-In HTTP, we can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
+=== .NET
+Memphis abstracts the need for external serialization functions and embeds them within the SDK.
+
+**Example schema:**
+
+```proto:line-numbers
+syntax = "proto3";
+message Test {
+            string field1 = 1;
+            string field2 = 2;
+            int32 field3 = 3;
+}
+```
+
+**Producing a message **<span style="color:purple;">**without**</span>** a local .proto file:**
+
+```cs:line-numbers
+using Memphis.Client.Producer;
+using System.Collections.Specialized;
+using Memphis.Client;
+using ProtoBuf;
+
+var options = MemphisClientFactory.GetDefaultOptions();
+options.Host = "<memphis-host>";
+options.Username = "<application type username>";
+options.ConnectionToken = "<broker-token>";
+
+/**
+* In case you are using Memphis.dev cloud
+* options.AccountId = "<account-id>";
+*/
+
+try
+{
+    var client = await MemphisClientFactory.CreateClient(options);
+
+    var producer = await client.CreateProducer(new MemphisProducerOptions
+    {
+        StationName = "<memphis-station-name>",
+        ProducerName = "<memphis-prodcducer-name>",
+        GenerateUniqueSuffix = true
+    });
+
+    NameValueCollection commonHeaders = new()
+    {
+        {
+            "key-1", "value-1"
+        }
+    };
+
+    Test test = new()
+    {
+        Field1 = "Hello",
+        Field2 = "Amazing",
+        Field3 = 32
+    };
+    using var memoryStream = new MemoryStream();
+    Serializer.Serialize(memoryStream, test);
+    var message = memoryStream.ToArray();
+
+    await producer.ProduceAsync(message, commonHeaders);
+    client.Dispose();
+}
+catch (Exception exception)
+{
+    Console.WriteLine($"Error occured: {exception.Message}");
+}
+
+[ProtoContract]
+class Test
+{
+    [ProtoMember(1, Name = "field1")]
+    public required string Field1 { get; set; }
+    [ProtoMember(2, Name = "field2")]
+    public required string Field2 { get; set; }
+    [ProtoMember(3, Name = "field3")]
+    public int Field3 { get; set; }
+}
+```
+=== REST
+In REST, you can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
 
 **Example schema:**
 
@@ -354,22 +423,24 @@ axios(config)
   console.log(error);
 });
 ```
-:::
+::::
 
-### Consume a message (Deserialization)
+### How to consume a message (Deserialization)
 
-::: tabs
+:::: tabs
 === Node.js
 ```javascript:line-numbers
-const memphis = require("memphis-dev");
+const { memphis } = require("memphis-dev");
+
 var protobuf = require("protobufjs");
 
 (async function () {
     try {
         await memphis.connect({
             host: "localhost",
-            username: "root",
-            password: "memphis"
+            username: "CLIENT_TYPE_USERNAME",
+            password: "PASSWORD"
+            accountId: ACCOUNT_ID //*optional* In case you are using Memphis.dev cloud
         });
 
         const consumer = await memphis.consumer({
@@ -399,8 +470,8 @@ var protobuf = require("protobufjs");
     }
 })();
 ```
-=== go
-```go
+=== Go
+```go:line-numbers
 package main
 
 import (
@@ -420,7 +491,12 @@ type Test struct {
 }
 
 func main() {
-	conn, err := memphis.Connect("MEMPHIS_HOSTNAME", "MEMPHIS_USER", memphis.Password("PASSWORD"))
+	conn, err := memphis.Connect(
+        	"MEMPHIS_BROKER_URL", 
+	        "APPLICATION_TYPE_USERNAME", 
+	        memphis.Password("PASSWORD"),
+	        memphis.AccountId(123456789), //*optional* In case you are using Memphis.dev cloud
+        )
 	if err != nil {
 		os.Exit(1)
 	}
@@ -454,7 +530,8 @@ func main() {
 	time.Sleep(3000 * time.Second)
 }
 ```
-=== python
+
+=== Python
 ```python
 import asyncio
 from memphis import Memphis
@@ -474,7 +551,7 @@ async def main():
 
     try:
         memphis = Memphis()
-        await memphis.connect(host="MEMPHIS_HOST", username="MEMPHIS_USERNAME", password="PASSWORD")
+        await memphis.connect(host="MEMPHIS_HOST", username="MEMPHIS_USERNAME", password="PASSWORD", account_id=ACCOUNT_ID)
         consumer = await memphis.consumer(
             station_name="STATION_NAME", consumer_name="CONSUMER_NAME")
         consumer.consume(msg_handler)
@@ -488,10 +565,10 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-=== TypeScript
+
+=== Typescript
 ```typescript
-import memphis from 'memphis-dev';
-import type { Memphis } from 'memphis-dev/types';
+import { memphis, Memphis } from 'memphis-dev';
 var protobuf = require("protobufjs");
 
 (async function () {
@@ -500,7 +577,8 @@ var protobuf = require("protobufjs");
         memphisConnection = await memphis.connect({
             host: 'MEMPHIS_BROKER_URL',
             username: 'APPLICATION_TYPE_USERNAME',
-            password: 'PASSWORD'
+            password: 'PASSWORD',
+            accountId: ACCOUNT_ID //*optional* In case you are using Memphis.dev cloud
         });
 
         const consumer = await memphis.consumer({
@@ -530,4 +608,81 @@ var protobuf = require("protobufjs");
     }
 })();type
 ```
-:::
+
+=== .NET
+**Example schema:**
+
+```proto:line-numbers
+syntax = "proto3";
+message Test {
+            string field1 = 1;
+            string field2 = 2;
+            int32 field3 = 3;
+}
+```
+
+**Consumption**
+
+```cs:line-numbers
+using Memphis.Client.Consumer;
+using Memphis.Client;
+using ProtoBuf;
+
+var options = MemphisClientFactory.GetDefaultOptions();
+options.Host = "<memphis-host>";
+options.Username = "<application type username>";
+options.ConnectionToken = "<broker-token>";
+
+/**
+* In case you are using Memphis.dev cloud
+* options.AccountId = "<account-id>";
+*/
+
+try
+{
+    var client = await MemphisClientFactory.CreateClient(options);
+
+    var consumer = await client.CreateConsumer(new MemphisConsumerOptions
+    {
+        StationName = "<station-name>",
+        ConsumerName = "<consumer-name>",
+        ConsumerGroup = "<consumer-group-name>",
+    });
+
+    consumer.MessageReceived += (sender, args) =>
+    {
+        if (args.Exception is not null)
+        {
+            Console.Error.WriteLine(args.Exception);
+            return;
+        }
+
+        foreach (var msg in args.MessageList)
+        {
+            var data = msg.GetData();
+            if (data is { Length: > 0 })
+            {
+                using var stream = new MemoryStream(data);
+                var test = Serializer.Deserialize<Test>(stream);
+                Console.WriteLine($"Field1: {test.Field1}");
+                Console.WriteLine($"Field2: {test.Field2}");
+                Console.WriteLine($"Field3: {test.Field3}");
+            }
+        }
+    };
+
+    consumer.ConsumeAsync();
+
+    await Task.Delay(TimeSpan.FromMinutes(1));
+    await consumer.DestroyAsync();
+    client.Dispose();
+}
+catch (Exception exception)
+{
+    Console.WriteLine($"Error occured: {exception.Message}");
+}
+```
+
+=== REST
+Currently not supported.
+::::

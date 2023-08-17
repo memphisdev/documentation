@@ -334,55 +334,6 @@ export function docs() {
           ],
         },
         {
-          text: "Schemaverse",
-          collapsed: true,
-          link: "/docs/memphis/schemaverse-schema-management/index",
-          items: [
-            {
-              text: "⭐ Getting Started",
-              collapsed: false,
-              link: "/docs/memphis/schemaverse-schema-management/getting-started/index",
-              items: [
-                {
-                  text: "Management",
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/management",
-                },
-                {
-                  text: "Produce/Consume",
-                  collapsed: true,
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/index",
-                  items: [
-                    {
-                      text: "Protobuf",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/protobuf",
-                    },
-                    {
-                      text: "JSON Schema",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/json-schema",
-                    },
-                    {
-                      text: "GraphQL",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/graphql",
-                    },
-                    {
-                      text: "Avro",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/avro",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              text: "Comparison",
-              link: "/docs/memphis/schemaverse-schema-management/comparison",
-            },
-            {
-              text: "KB",
-              link: "/docs/memphis/schemaverse-schema-management/kb",
-            },
-          ],
-        },
-        {
           text: "Memphis Configuration",
           link: "/docs/memphis/memphis-configuration",
         },
@@ -433,7 +384,7 @@ export function docs() {
         },
         {
           text: "Getting Started",
-          collapsed: false,
+          collapsed: true,
           link: "/docs/memphis/schemaverse-schema-management/getting-started/index",
           items: [
             {
@@ -471,6 +422,23 @@ export function docs() {
         },
         { text: "KB", link: "/docs/memphis/schemaverse-schema-management/kb" },
       ],
+    },
+    {
+      text: "⭐ Memphis Functions",
+      items: [
+        {
+          text: "Overview",
+          link: "/docs/memphis-functions/overview",
+        },
+        {
+          text: "Getting Started",
+          link: "/docs/memphis-functions/getting-started",
+        },
+        {
+          text: "memphis.yaml",
+          link: "/docs/memphis-functions/memphis.yaml",
+        }
+      ]
     },
     {
       text: "📦 Deployment",
@@ -619,7 +587,7 @@ export function docs() {
           link: "/docs/integrations/source-code/index",
           items: [
             {
-              text: "Amazon S3",
+              text: "GitHub",
               link: "/docs/integrations/source-code/github",
             },
           ],
