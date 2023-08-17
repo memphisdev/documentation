@@ -23,7 +23,6 @@ title: Docker Compose
 
 Stable -&#x20;
 
-
 ```bash
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && docker compose -f docker-compose.yml -p memphis up
 ```
@@ -31,12 +30,12 @@ curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker
 Latest -
 
 ```bash
-curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml  -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
+curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
 ```
 
 Output:
 
-```
+```bash
 [+] Running 3/3
  ⠿ Container memphis-memphis-1        Creating                                                      0.2s                                                      0.2s                                                  0.2s
  ⠿ Container memphis-memphis-metadata-1          Creating                                                      0.2s
@@ -51,8 +50,7 @@ Output:
 
 ### Step 2: Access via UI / CLI / SDK
 
-
-::: tabs
+:::: tabs
 === UI
 The default port of the UI is 9000:
 
@@ -67,13 +65,13 @@ http://localhost:9000
 === SDK
 For more detailed information, head to the SDKs section below.
 
-<BigLink url="/docs/client-libraries/nats-jetstream" title="Client Libraries" />
-<br>
+[Broken link](broken-reference)
 
+####
 
 #### Memphis Node.JS SDK can be used to demonstrate the required parameters.
 
-```
+```js
 await memphis.connect({
             host: "broker.sandbox.memphis.dev",
             port: <port>, // defaults to 6666
@@ -84,9 +82,8 @@ await memphis.connect({
 
 * **host:** Usually the control plane or through the UI URL. For example "https://memphis-ui.test.com/api".
 * **username:** Usually "root". Head to the users' section via the UI or CLI to add more.
-* **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <span style="color:green;">The default value is "memphis".</span>
-:::
-
+* **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <mark style="color:green;">**The default value is "memphis".**</mark>
+::::
 
 ## How to upgrade?
 
@@ -102,8 +99,16 @@ docker rm -f $(docker ps -a | grep -i memphis | awk '{print $1}')
 docker image rm -f $(docker image ls | grep -i memphis)
 ```
 
-### Step 3: Reinstall memphis
+### Step 3: Reinstall memphis according to the version you upgrade to:
+
+Stable -&#x20;
 
 ```bash
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose.yml -o docker-compose.yml && docker compose -f docker-compose.yml -p memphis up
+```
+
+Latest -
+
+```bash
+curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
 ```

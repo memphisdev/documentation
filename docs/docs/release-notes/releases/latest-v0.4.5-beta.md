@@ -9,13 +9,13 @@ title: v0.4.5 - beta
 
 Upgrade procedure for production users (Kubernetes deployments)
 
-<BigLink url="/docs/deployment/kubernetes/how-to-upgrade" title="3 - Upgrade"/>
+<BigLink url="/docs/open-source-installation/kubernetes/how-to-upgrade" title="3 - Upgrade"/>
 
 ::: tip
 Please make sure your **SDKs** are **updated** to the latest version to enjoy new features
 :::
 
-## ![:sparkles:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/2728.png) Added features
+## :sparkles: Added features
 
 * [Tiered storage](broken-reference) - second storage class for out-of-retention messages to enable a better cost-efficient and longer message retention.
 * Station name length increased to 128 characters.
@@ -28,7 +28,7 @@ Please make sure your **SDKs** are **updated** to the latest version to enjoy ne
 * Broker performance improvements.&#x20;
 * Node.js SDK (0.5.1) Go SDK (0.2.1) Python SDK (0.3.2)
 
-## ![:pensive:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f614.png) Known issues
+## :pensive: Known issues
 
 * Authentication - Application-type users connect with Memphis (via the SDKs) using a connection token. For now, this token is constant and randomly generated per Memphis deployment.
 * While using an older SDK version, an error message appears on the station overview page saying, “Error while getting notified about a poison message: Missing mandatory message headers.”

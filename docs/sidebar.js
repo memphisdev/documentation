@@ -91,7 +91,7 @@ export const sidebar_export = [
         items:[
         { text: '1 - Installation', link: '/deployment/kubernetes/1-installation' },
         { text: '2 - Access', link: '/deployment/kubernetes/2-access' },
-        { text: '3 - Upgrade', link: '/deployment/kubernetes/how-to-upgrade' },
+        { text: '3 - Upgrade', link: '/docs/open-source-installation/kubernetes/how-to-upgrade' },
     ] },
     { text: 'Docker', link: '/deployment/docker-compose' },
     { text: 'Production Best Pracices', link: '/deployment/production-best-practices' }

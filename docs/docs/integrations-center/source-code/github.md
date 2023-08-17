@@ -1,6 +1,6 @@
 ---
 description: How to integrate GitHub with Memphis Platform
-cover: ../../.gitbook/assets/GitHub + Memphis.jpg
+cover: /GitHub_+_Memphis.jpg
 coverY: 0
 ---
 

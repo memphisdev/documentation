@@ -17,22 +17,22 @@ The UI is designed to simplify your work with Memphis and give you a graphical u
 
 *   Expose the UI in a **localhost** environment using "port-forward":
 
-    ```
+    ```bash
     $# kubectl port-forward service/memphis-cluster 9000:9000 --namespace memphis & >/dev/null
     ```
 
-    ```
+    ```bash
     http://localhost:9000
     ```
 *   Expose the UI in a **production** environment
 
     * Nodeport
 
-    ```
+    ```bash
     $# kubectl patch svc memphis-ui --type='json' -p '[{"op":"replace","path":"/spec/type","value":"NodePort"}]'
     ```
 
-    ```
+    ```bash
     $# kubectl describe svc memphis-ui | grep -i Endpoints
     Endpoints:                192.150.201.138:80
     ```
@@ -41,18 +41,18 @@ The UI is designed to simplify your work with Memphis and give you a graphical u
 
     * Load Balancer
 
-    ```
+    ```bash
     $# kubectl patch svc memphis-ui --type='json' -p '[{"op":"replace","path":"/spec/type","value":"LoadBalancer"}]'
     ```
 
-    ```
+    ```bash
     $# kubectl describe svc memphis-ui | grep -i "LoadBalancer Ingress"
     LoadBalancer Ingress:     a2d0fd26a0d7941a29d444ac4d03acd3-1181102898.eu-central-1.elb.amazonaws.com
     ```
 
     * Ingress - Please use the following file:
 
-    ```
+    ```bash
     apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:

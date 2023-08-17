@@ -10,7 +10,7 @@ cover: /NATS_+_Memphis.jpeg
 
 ## Introduction
 
-The motivation behind adding compatibility to NATS API -
+The motivation behind adding compatibility to NATS API 
 
 * To enable Memphis users to enjoy the broad reach and integrations of the NATS ecosystem.
 * To enable a lift & shift migration from NATS to Memphis.
