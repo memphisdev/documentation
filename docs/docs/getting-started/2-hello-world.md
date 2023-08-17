@@ -13,24 +13,25 @@ title: Quick Start
 **Step 1:** Sign up for Memphis Cloud [here](https://cloud.memphis.dev).
 
 **Step 2:** [Hello world](../memphis-cloud/getting-started.md#hello-world)
+
 === Open Source
 ### **For Kubernetes**
 
 Stable -
 
-
 ```bash:line-numbers
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && 
 helm install memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
+
 Latest -
 
 ```bash{2}
-helm repo add memphis https://k8s.memphis.dev/charts/ --force-update  
-helm install --set memphis.image="memphisos/memphis:1.1.1" memphis memphis/memphis --create-namespace --namespace memphis --wait
+helm repo add memphis https://k8s.memphis.dev/charts/ --force-update 
+helm install --set memphis.image="memphisos/memphis:1.2.0" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
 
-More information can be found in the [Memphis k8s deployment](../deployment/kubernetes/) documentation.
+More information can be found in the [Memphis k8s deployment](../open-source-installation/kubernetes/) documentation.
 
 ### **Docker compose (Syntax for v2)**
 
@@ -46,7 +47,7 @@ Latest -
 curl -s https://memphisdev.github.io/memphis-docker/docker-compose-latest.yml -o docker-compose-latest.yml && docker compose -f docker-compose-latest.yml -p memphis up
 ```
 
-More information can be found in the [Memphis Docker deployment](../deployment/docker-compose.md) documentation.
+More information can be found in the [Memphis Docker deployment](../open-source-installation/docker-compose.md) documentation.
 ::::
 
 ## 2. Hello world
@@ -74,7 +75,7 @@ npm install memphis-dev
 
 **Step 4:** Create a new .js file called `producer.js`
 
-```javascript:line-numbers 
+```javascript:line-numbers
 const { memphis } = require("memphis-dev");
 
 (async function () {
@@ -480,7 +481,7 @@ if __name__ == '__main__':
 python3 consumer.py
 ```
 
-=== Rest
+=== REST
 Producing messages to Memphis via REST API can be implemented using any REST-supported language like Go, Python, Java, Node.js, .NET, etc...
 
 For the following tutorial, we will use Node.js .

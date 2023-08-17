@@ -6,7 +6,7 @@ description: This section describes integrating GraphQL with Memphis
 
 [GraphQL](https://graphql.org/) is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data. GraphQL was developed internally by Facebook in 2012 before being publicly released in 2015. On 7 November 2018, the GraphQL project was moved from Facebook to the newly established GraphQL Foundation, hosted by the non-profit Linux Foundation.
 
-### Produce a message (Serialization)
+## How to Produce a message (Serialization)
 
 :::: tabs
 === Node.js
@@ -29,7 +29,7 @@ type Query {
 
 **Code (Uint8Arrays):**
 
-```javascript
+```javascript:line-numbers
 const memphis = require("memphis-dev");
 
 (async function () {
@@ -61,8 +61,7 @@ const memphis = require("memphis-dev");
 
 **Code (string):**
 
-
-```javascript:line-numbers
+```js:line-numbers{1}
 const memphis = require("memphis-dev");
 (async function () {
     try {
@@ -142,6 +141,7 @@ type Query {
             lastName:String
          }
 ```
+
 **Code (string):**
 
 ```go:line-numbers
@@ -240,7 +240,7 @@ type Query {
 
 **Code (bytearray):**
 
-```python
+```python:line-numbers
 import asyncio
 import json
 from memphis import Memphis, Headers, MemphisError, MemphisConnectError, MemphisSchemaError
@@ -272,7 +272,7 @@ if __name__ == '__main__':
 
 **Code (string):**
 
-```python
+```python:line-numbers
 import asyncio
 import json
 from memphis import Memphis, Headers, MemphisError, MemphisConnectError, MemphisSchemaError
@@ -304,7 +304,7 @@ if __name__ == '__main__':
 
 **Code (graphql.language.ast.DocumentNode):**
 
-```python
+```python:line-numbers
 import asyncio
 import json
 from memphis import Memphis, Headers, MemphisError, MemphisConnectError, MemphisSchemaError
@@ -356,7 +356,7 @@ type Query {
 
 **Code (Uint8Arrays):**
 
-```javascript
+```ts:line-numbers
 import memphis from 'memphis-dev';
 import type { Memphis } from 'memphis-dev/types';
 
@@ -394,7 +394,7 @@ import type { Memphis } from 'memphis-dev/types';
 
 **Code (string):**
 
-```javascript
+```ts:line-numbers
 import memphis from 'memphis-dev';
 import type { Memphis } from 'memphis-dev/types';
 
@@ -431,7 +431,7 @@ import type { Memphis } from 'memphis-dev/types';
 
 **Code (DocumentNode):**
 
-```javascript
+```ts:line-numbers
 import memphis from 'memphis-dev';
 import type { Memphis } from 'memphis-dev/types';
 import {parse} from 'graphql'
@@ -488,7 +488,7 @@ type Query {
 
 **Code:**
 
-```c#:line-numbers
+```cs:line-numbers
 using System.Collections.Specialized;
 using Memphis.Client;
 using Memphis.Client.Producer;
@@ -533,7 +533,7 @@ catch (Exception exception)
 ```
 ::::
 
-### Consume a message (Deserialization)
+## Consume a message (Deserialization)
 
 :::: tabs
 === Node.js
@@ -556,7 +556,7 @@ type Query {
 
 **Code:**
 
-```javascript
+```javascript:line-numbers
 const memphis = require('memphis-dev');
 const graphql = require('graphql');
 
@@ -681,7 +681,7 @@ type Query {
 
 **Code:**
 
-```python
+```python:line-numbers
 import asyncio
 from memphis import Memphis, MemphisError, MemphisConnectError, MemphisHeaderError
 from graphql import parse
@@ -723,7 +723,7 @@ if __name__ == '__main__':
 ```
 
 === Typescript
-```typescript:line-numbers
+```ts:line-numbers
 import memphis from 'memphis-dev';
 import {Memphis, Message} from 'memphis-dev/types';
 import {parse} from 'graphql'
@@ -766,7 +766,6 @@ import {parse} from 'graphql'
     }
 })();
 ```
-
 === .NET
 In coming versions, Memphis will abstract the need for external deserialization functions and embeds them within the SDK.
 
@@ -787,7 +786,7 @@ type Query {
 
 **Code:**
 
-```c#:line-numbers
+```cs:line-numbers
 using Memphis.Client.Consumer;
 using Memphis.Client;
 using ProtoBuf;

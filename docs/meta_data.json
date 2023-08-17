@@ -11,7 +11,7 @@
   },
   "https://dev.to/obumnwabude/how-to-build-a-real-time-app-with-nestjs-and-memphis-broker-27fm": {
     "title": "How to build a real-time app with NestJS and Memphis broker",
-    "favicon": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png",
+    "favicon": "https://res.cloudinary.com/practicaldev/image/fetch/s--b551aYX---/c_limit,f_png,fl_progressive,q_80,w_192/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8j7kvp660rqzt99zui8e.png",
     "site_name": "DEV Community"
   },
   "https://memphis.dev/blog/how-to-integrate-posthog-with-memphis-dev/": {
@@ -29,8 +29,18 @@
     "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
     "site_name": "Memphis.dev"
   },
+  "https://memphis.dev/blog/task-scheduling-with-a-message-broker/": {
+    "title": "Task scheduling with a message broker",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
   "https://memphis.dev/blog/part-3-transforming-mongodb-cdc-event-messages/": {
     "title": "Memphis.dev - Part 3: Transforming MongoDB CDC Event Messages",
+    "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
+    "site_name": "Memphis.dev"
+  },
+  "https://memphis.dev/blog/part-4-validating-cdc-messages-with-schemaverse/": {
+    "title": "Memphis.dev - Part 4: Validating CDC Messages with Schemaverse",
     "favicon": "https://memphis.dev/wp-content/uploads/2022/04/cropped-android-chrome-512x512-1-192x192.png",
     "site_name": "Memphis.dev"
   },
@@ -46,11 +56,6 @@
   },
   "https://github.com/memphisdev/memphis-broker/issues/290": {
     "title": "Scala SDK · Issue #290 · memphisdev/memphis",
-    "favicon": "https://github.githubassets.com/favicons/favicon.svg",
-    "site_name": "GitHub"
-  },
-  "https://github.com/memphisdev/memphis-broker/issues/291": {
-    "title": "Rust SDK · Issue #291 · memphisdev/memphis",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg",
     "site_name": "GitHub"
   }
