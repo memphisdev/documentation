@@ -5,7 +5,7 @@ description: This section describes integrating JSON Schema with Memphis
 # JSON Schema
 
 [JSON Schema](https://json-schema.org/) is a vocabulary that allows you to annotate and validate JSON documents.\
-It provides clear human- and machine-readable documentation and offers data validation which is useful for Automated testing — ensuring the quality of client-submitted data.
+It provides clear human- and machine-readable documentation and offers data validation which is useful for Automated testing—ensuring the quality of client-submitted data.
 
 ### Supported Features
 
@@ -15,43 +15,9 @@ It provides clear human- and machine-readable documentation and offers data vali
 * Import packages (soon)
 * Import types (soon)
 
-## Getting started
+### How to Produce and Consume a message
 
-### Attach a schema
-
-#### Step 1: Create a new schema
-
-::: tabs
-=== GUI
-Head to the "Schemaverse" page
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_15.22.17_(1).png" alt=""><figcaption></figcaption></figure>
-
-Create a new schema by clicking on "Create from blank"
-
-<figure><img src="/assets/Screen_Shot_2023-01-08_at_23.21.55.png" alt=""><figcaption></figcaption></figure>
-
-=== SDK
-Soon.
-:::
-
-#### Step 2: Attach
-
-::: tabs
-=== GUI
-Head to your station, and on the top-left corner, click on "+ Attach schema"
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_16.02.31.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="/assets/Screen_Shot_2022-11-10_at_16.02.38.png" alt=""><figcaption></figcaption></figure>
-
-=== SDK
-It can be found through the different [SDKs](broken-reference) docs.
-:::
-
-### Produce a message (Serialization)
-
-::: tabs
+:::: tabs
 === Node.js
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
@@ -85,7 +51,8 @@ const memphis = require("memphis-dev");
         await memphis.connect({
             host: "MEMPHIS_BROKER_URL",
             username: "APPLICATION_USER",
-            password: "PASSWORD"
+            password: "PASSWORD",
+            // accountId: ACCOUNT_ID //*optional* In case you are using Memphis.dev cloud
         });
         const producer = await memphis.producer({
             stationName: "STATION_NAME",
@@ -108,7 +75,7 @@ const memphis = require("memphis-dev");
     }
 })();
 ```
-=== go
+=== Go
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -131,7 +98,7 @@ Memphis abstracts the need for external serialization functions and embeds them 
 
 **Code:**
 
-```go
+```go:line-numbers
 package main
 
 import (
@@ -141,7 +108,12 @@ import (
 )
 
 func main() {
-    conn, err := memphis.Connect("MEMPHIS_BROKER_URL", "APPLICATION_TYPE_USERNAME", memphis.Password("PASSWORD"))
+    conn, err := memphis.Connect(
+        "MEMPHIS_BROKER_URL", 
+        "APPLICATION_TYPE_USERNAME", 
+        memphis.Password("PASSWORD"),
+        // memphis.AccountId(123456789), //*optional* In case you are using Memphis.dev cloud
+    )
     if err != nil {
         os.Exit(1)
     }
@@ -170,7 +142,7 @@ func main() {
 
 ```
 
-=== python
+=== Python
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -193,22 +165,21 @@ Memphis abstracts the need for external serialization functions and embeds them 
 
 **Code:**
 
-```python
+```python:line-numbers
 import asyncio
 import json
 from memphis import Memphis, Headers, MemphisError, MemphisConnectError, MemphisSchemaError
 
 async def main():
     memphis = Memphis()
-    await memphis.connect(host="MEMPHIS_HOST", username="MEMPHIS_USERNAME", password="PASSWORD")
+    await memphis.connect(host="MEMPHIS_HOST", username="MEMPHIS_USERNAME", password="PASSWORD", account_id=ACCOUNT_ID)
     producer = await memphis.producer(
         station_name="STATION_NAME", producer_name="PRODUCER_NAME")
 
     headers = Headers()
     headers.add("key", "value")
 
-    msg = '{ "fname":"John", "lname":"Mayer"}'
-    msg = json.loads(msg)
+    msg = { "fname":"John", "lname":"Mayer"}
 
     try:
         await producer.produce(msg, headers=headers)
@@ -223,7 +194,8 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 ```
-=== TypeScript
+
+=== Typescript
 Memphis abstracts the need for external serialization functions and embeds them within the SDK.
 
 **Example schema:**
@@ -246,7 +218,7 @@ Memphis abstracts the need for external serialization functions and embeds them 
 
 **Code:**
 
-```typescript
+```ts:line-numbers
 import memphis from 'memphis-dev';
 import type { Memphis } from 'memphis-dev/types';
 
@@ -257,7 +229,8 @@ import type { Memphis } from 'memphis-dev/types';
         memphisConnection = await memphis.connect({
             host: 'MEMPHIS_BROKER_URL',
             username: 'APPLICATION_TYPE_USERNAME',
-            password: 'PASSWORD'
+            password: 'PASSWORD',
+            // accountId: ACCOUNT_ID //*optional* In case you are using Memphis.dev cloud
         });
 
         const producer = await memphisConnection.producer({
@@ -282,4 +255,137 @@ import type { Memphis } from 'memphis-dev/types';
     }
 })();
 ```
-:::
+
+=== .NET
+Memphis abstracts the need for external serialization functions and embeds them within the SDK.
+
+**Example schema:**
+
+```json
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "contact_details",
+	"type": "object",
+	"properties": {
+		"fname": {
+			"type": "string"
+		},
+		"lname": {
+			"type": "string"
+		}
+	}
+}
+```
+
+**Code:**
+
+```cs:line-numbers
+using System.Collections.Specialized;
+using Memphis.Client;
+using Memphis.Client.Producer;
+using Newtonsoft.Json;
+using System.Text;
+
+var options = MemphisClientFactory.GetDefaultOptions();
+options.Host = "<memphis-host>";
+options.Username = "<application type username>";
+options.ConnectionToken = "<broker-token>";
+/**
+* In case you are using Memphis.dev cloud
+* options.AccountId = "<account-id>";
+*/
+
+try
+{
+    var client = await MemphisClientFactory.CreateClient(options);
+
+    var producer = await client.CreateProducer(new MemphisProducerOptions
+    {
+        StationName = "<memphis-station-name>",
+        ProducerName = "<memphis-producer-name>",
+        GenerateUniqueSuffix = true
+    });
+
+    NameValueCollection commonHeaders = new()
+    {
+        {
+            "key-1", "value-1"
+        }
+    };
+
+    ContactDetail contactDetail = new()
+    {
+        FirstName = "Bob",
+        LastName = "Marley"
+    };
+
+    string message = JsonConvert.SerializeObject(contactDetail);
+
+    await producer.ProduceAsync(Encoding.UTF8.GetBytes(message), commonHeaders);
+    client.Dispose();
+}
+catch (Exception exception)
+{
+    Console.WriteLine($"Error occured: {exception.Message}");
+}
+
+
+
+public class ContactDetail
+{
+    [JsonProperty("fname")]
+    public required string FirstName { get; set; }
+    [JsonProperty("lname")]
+    public required string LastName { get; set; }
+}
+```
+
+=== REST
+With REST, you can simply produce an object. Behind the scenes, the object will be serialized based on the attached schema and data format - protobuf.
+
+**Example schema:**
+
+```json
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "contact_details",
+	"type": "object",
+	"properties": {
+		"fname": {
+			"type": "string"
+		},
+		"lname": {
+			"type": "string"
+		}
+	}
+}
+```
+
+**Producing a message:**
+
+```javascript:line-numbers
+var axios = require('axios');
+var data = JSON.stringify({
+  "fname": "foo",
+  "lname": "bar",
+});
+
+var config = {
+  method: 'post',
+  url: 'https://BROKER_RESTGW_URL/stations/hps/produce/single',
+  headers: { 
+    'Authorization': 'Bearer <jwt>', 
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+```
+::::
