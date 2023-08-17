@@ -54,5 +54,5 @@ Each station can be managed and use the second storage tier independently.
 ### Step 1:
 
 ::: tip
-To understand the architecture behind storage tiering, please head [here](../../memphis/concepts/storage-and-redundancy.md).
+To understand the architecture behind storage tiering, please head [here](../../memphis/concepts/storage-and-redundancy).
 :::

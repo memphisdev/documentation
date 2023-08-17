@@ -114,6 +114,6 @@ Memphis brokers should run on different nodes to ensure data consistency and zer
 
 This is achieved by the combination of published messages being persisted to the station as well as the consumer tracking delivery and acknowledgment of each message as clients receive and process them.
 
-* [Exactly once (Idempotence)](concepts/idempotency.md)
+* [Exactly once (Idempotence)](./concepts/idempotency)
 
 Searched terms: connectivity, cluster, ordering, mirror, mirroring, deployment, protocols, requirements, delivery guarantee
