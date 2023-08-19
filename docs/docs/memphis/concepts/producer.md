@@ -3,6 +3,7 @@ description: This section describes Memphis producer API
 cover: /Memphis_concepts_(2).jpeg
 title: Producer API
 ---
+
 # Producer API
 
 <Subtitle></Subtitle>
@@ -13,9 +14,9 @@ A producer is the source application/service that pushes data or messages to the
 
 As the user configures a client connection to Memphis, it comprises several objects
 
-* Connection - An open socket between the client to Memphis. Only required once as the client/application gets initialized for the first time.
-* Producer - A producer entity must be declared to write data/messages into Memphis.
-* (And/Or) Consumer - A consumer entity must be declared to read data/messages from Memphis.
+- Connection - An open socket between the client to Memphis. Only required once as the client/application gets initialized for the first time.
+- Producer - A producer entity must be declared to write data/messages into Memphis.
+- (And/Or) Consumer - A consumer entity must be declared to read data/messages from Memphis.
 
 <figure><img src="/assets/Producer.jpeg" alt=""><figcaption></figcaption></figure>
 
@@ -45,24 +46,24 @@ await producer.produce({
 
 **Connection**
 
-* `a host`: Memphis URL
-* `port`: Memphis port
-* `username`: Can be root or any other application-type user
-* `password`: Each application-type user comprises both a username and a password
-* `connectionToken`: \*Valid only in case connection-token-based authentication was chosen\*\
+- `a host`: Memphis URL
+- `port`: Memphis port
+- `username`: Can be root or any other application-type user
+- `password`: Each application-type user comprises both a username and a password
+- `connectionToken`: \*Valid only in case connection-token-based authentication was chosen\*\
   The token received when the user created. Will change in the future to more robust credentials and authentication system
-* `reconnect`: The connection entity will try to reconnect to Memphis in case of a disconnection
-* `maxReconnect`: Amount of time the client will try to reconnect before backing off
-* `reconnectIntervalMs`: Time window between one retry to another
-* `timeoutMs`: Ability to kill a dead connection after explicit time
-* `keyFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<key-client.pem>'
-* `certFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<cert-client.pem>'
-* `caFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<rootCA.pem>'
+- `reconnect`: The connection entity will try to reconnect to Memphis in case of a disconnection
+- `maxReconnect`: Amount of time the client will try to reconnect before backing off
+- `reconnectIntervalMs`: Time window between one retry to another
+- `timeoutMs`: Ability to kill a dead connection after explicit time
+- `keyFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<key-client.pem>'
+- `certFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<cert-client.pem>'
+- `caFile`: In case [encrypted client-Memphis](../../deployment/kubernetes/) communication is used. '\<rootCA.pem>'
 
 **Producer**
 
-* `stationName`: The name of the station to be connected&#x20;
-* `producerName`: In a station resolution, each connected producer must have a unique identity
+- `stationName`: The name of the station to be connected&#x20;
+- `producerName`: In a station resolution, each connected producer must have a unique identity
 
 ::: info
 For more information about how to connect a producer to Memphis, please head [here](/docs/client-libraries/nats-jetstream).
@@ -75,11 +76,10 @@ By adding more producers, the throughput will be increased accordingly due to th
 
 ## Supported Protocols
 
-* [TCP-based SDKs](broken-reference)
-* [HTTP](https://github.com/memphisdev/memphis-http-proxy)
-* [WebSockets](https://github.com/orgs/memphisdev/projects/2/views/1?pane=issue\&itemId=14008452) <Circle>Soon</Circle>
-* gRPC <Circle>Soon</Circle>
-* MQTT <Circle>Soon</Circle>
-* AMQP <Circle>Soon</Circle>
-* Kafka <Circle>Soon</Circle>
-
+- [TCP-based SDKs](/docs/client-libraries/nats-jetstream)
+- [HTTP](https://github.com/memphisdev/memphis-http-proxy)
+- [WebSockets](https://github.com/orgs/memphisdev/projects/2/views/1?pane=issue&itemId=14008452) <Circle>Soon</Circle>
+- gRPC <Circle>Soon</Circle>
+- MQTT <Circle>Soon</Circle>
+- AMQP <Circle>Soon</Circle>
+- Kafka <Circle>Soon</Circle>
