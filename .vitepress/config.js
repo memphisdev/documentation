@@ -437,8 +437,8 @@ export function docs() {
         {
           text: "memphis.yaml",
           link: "/docs/memphis-functions/memphis.yaml",
-        }
-      ]
+        },
+      ],
     },
     {
       text: "📦 Open-Source Installation",
@@ -485,7 +485,10 @@ export function docs() {
             },
           ],
         },
-        { text: "Docker", link: "/docs/open-source-installation/docker-compose" },
+        {
+          text: "Docker",
+          link: "/docs/open-source-installation/docker-compose",
+        },
         {
           text: "Production Best Pracices",
           link: "/docs/open-source-installation/production-best-practices",
@@ -558,8 +561,14 @@ export function docs() {
               text: "Elasticsearch Observability",
               link: "/docs/platform-integrations/monitoring/elasticsearch-observability",
             },
-            { text: "Datadog", link: "/docs/platform-integrations/monitoring/datadog" },
-            { text: "Grafana", link: "/docs/platform-integrations/monitoring/grafana" },
+            {
+              text: "Datadog",
+              link: "/docs/platform-integrations/monitoring/datadog",
+            },
+            {
+              text: "Grafana",
+              link: "/docs/platform-integrations/monitoring/grafana",
+            },
           ],
         },
         {
@@ -567,7 +576,10 @@ export function docs() {
           collapsed: true,
           link: "/docs/platform-integrations/notifications/index",
           items: [
-            { text: "Slack", link: "/docs/platform-integrations/notifications/slack" },
+            {
+              text: "Slack",
+              link: "/docs/platform-integrations/notifications/slack",
+            },
           ],
         },
         {
@@ -707,7 +719,10 @@ export function contribution() {
           items: [
             { text: "BigLink", link: "/contribution/components/biglink" },
             { text: "Embed", link: "/contribution/components/embed" },
-            { text: "HeaderImage", link: "/contribution/components/headerimage" },
+            {
+              text: "HeaderImage",
+              link: "/contribution/components/headerimage",
+            },
             { text: "Index", link: "/contribution/components/index-component" },
             { text: "Subtitle", link: "/contribution/components/subtitle" },
           ],
@@ -717,6 +732,6 @@ export function contribution() {
           link: "/contribution/usage",
         },
       ],
-    }
-  ]
+    },
+  ];
 }

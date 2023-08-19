@@ -44,9 +44,9 @@ Output:
 
 #### Deployed Containers
 
-* **memphis-1:** The broker itself which acts as the data storage layer. That is the component that stores and controls the ingested messages and their entire lifecycle management.
-* **memphis-metadata-1:** Responsible for storing the platform metadata only, such as general information, monitoring, GUI state, and pointers to dead-letter messages. The metadata store uses Postgres.
-* **memphis-rest-gateway-1:** Responsible for exposing Memphis management and data ingestion through REST requests.
+- **memphis-1:** The broker itself which acts as the data storage layer. That is the component that stores and controls the ingested messages and their entire lifecycle management.
+- **memphis-metadata-1:** Responsible for storing the platform metadata only, such as general information, monitoring, GUI state, and pointers to dead-letter messages. The metadata store uses Postgres.
+- **memphis-rest-gateway-1:** Responsible for exposing Memphis management and data ingestion through REST requests.
 
 ### Step 2: Access via UI / CLI / SDK
 
@@ -62,11 +62,6 @@ http://localhost:9000
 
 **Default Password**: memphis
 
-=== SDK
-For more detailed information, head to the SDKs section below.
-
-[Broken link](broken-reference)
-
 ####
 
 #### Memphis Node.JS SDK can be used to demonstrate the required parameters.
@@ -80,10 +75,10 @@ await memphis.connect({
 });
 ```
 
-* **host:** Usually the control plane or through the UI URL. For example "https://memphis-ui.test.com/api".
-* **username:** Usually "root". Head to the users' section via the UI or CLI to add more.
-* **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <mark style="color:green;">**The default value is "memphis".**</mark>
-::::
+- **host:** Usually the control plane or through the UI URL. For example "https://memphis-ui.test.com/api".
+- **username:** Usually "root". Head to the users' section via the UI or CLI to add more.
+- **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <mark style="color:green;">**The default value is "memphis".**</mark>
+  ::::
 
 ## How to upgrade?
 
