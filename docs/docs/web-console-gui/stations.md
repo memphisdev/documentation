@@ -25,9 +25,9 @@ A modal will appear with customization options.
 
 <figure><img src="/assets/Screenshot_2022-12-11_at_15.14.03.png" alt=""><figcaption></figcaption></figure>
 
-* **Retention** - The default value is seven days. You can choose a custom retention value by time, message size, and message amount.
-* [**Storage type**](broken-reference) - Choose whether to store your messages in a file or memory.
-* [**Replicas**](../memphis/architecture.md#replicas) - Choose how many replicas to create behind your station.
+- **Retention** - The default value is seven days. You can choose a custom retention value by time, message size, and message amount.
+- **Storage type** - Choose whether to store your messages in a file or memory.
+- [**Replicas**](../memphis/architecture.md#replicas) - Choose how many replicas to create behind your station.
 
 ### Station overview
 
@@ -49,14 +49,14 @@ Press the SDK button to display the station's connection details.
 
 </div>
 
-* **Language** - The user can change the SDK details per their desired language (for now, Memphis supports Node.js).
-* **Installation** - Before the user can use the SDK, they must install Memphis.
-* **Code Example -** The example demonstrates how to connect Memphis and create a factory, station, consumer, and producer.
+- **Language** - The user can change the SDK details per their desired language (for now, Memphis supports Node.js).
+- **Installation** - Before the user can use the SDK, they must install Memphis.
+- **Code Example -** The example demonstrates how to connect Memphis and create a factory, station, consumer, and producer.
 
 ### Producers & Consumers
 
 <figure><img src="/assets/Screenshot_2022-12-11_at_15.05.57.png" alt=""><figcaption></figcaption></figure>
 
-* In this section, Memphis provides data-level observability of the messages within a station
-* The right and left panels show lists of producers and consumers.
-* The center panel represents the last 100 messages that are currently stored in the station.
+- In this section, Memphis provides data-level observability of the messages within a station
+- The right and left panels show lists of producers and consumers.
+- The center panel represents the last 100 messages that are currently stored in the station.
