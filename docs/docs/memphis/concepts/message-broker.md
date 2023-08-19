@@ -34,18 +34,18 @@ A publish-subscribe system (also known as Pub-Sub) allows you to automatically r
 
 ### Memphis' most popular use cases&#x20;
 
-* Real-time streaming pipelines
-* Async task management
-* Data ingestion
-* Async communication between services on k8s
-* Queuing
-* Multiple destinations to a single message
+- Real-time streaming pipelines
+- Async task management
+- Data ingestion
+- Async communication between services on k8s
+- Queuing
+- Multiple destinations to a single message
 
 ## Supported Protocols
 
-* [TCP-based SDKs](broken-reference)
-* [HTTP](https://github.com/memphisdev/memphis-http-proxy)
-* WebSockets \* Soon \*
-* gRPC \* Soon \*
-* WASM \* Soon \*
-* MQTT \* Soon \*
+- [TCP-based SDKs](/docs/client-libraries/nats-jetstream)
+- [HTTP](https://github.com/memphisdev/memphis-http-proxy)
+- WebSockets \* Soon \*
+- gRPC \* Soon \*
+- WASM \* Soon \*
+- MQTT \* Soon \*
