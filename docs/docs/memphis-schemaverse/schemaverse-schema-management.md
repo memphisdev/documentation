@@ -10,8 +10,8 @@ title: Scheme Management
 
 In a federated data platform, in which responsibilities are distributed between stakeholders, teams, and sources, it’s harder to control and establish a single standard. This is where the data contracts concept comes into play. Why do data contracts matter? Because they:
 
-* Provide insights into who owns what data products
-* Support setting standards and managing your data pipelines with confidence
+- Provide insights into who owns what data products
+- Support setting standards and managing your data pipelines with confidence
 
 They also provide crucial information on what data is being consumed, by whom, and for what purpose. Bottom line: data contracts are essential for robust data management!
 
@@ -27,10 +27,10 @@ By defining a well-struct schema and enforcing it over your different data produ
 
 ## Meet Schemaverse!
 
-* No code.
-* No client reboots.
-* Runtime updates.
-* Transparent serialization.
+- No code.
+- No client reboots.
+- Runtime updates.
+- Transparent serialization.
 
 <figure><img src="/assets/Schema_Management_Overview_(2).jpg" alt=""><figcaption><p>Overview</p></figcaption></figure>
 
@@ -46,34 +46,34 @@ Memphis' low-code approach removes the serialization part as it is embedded with
 
 Also includes -
 
-* Great UI and programmatic approach Embed within the broker
-* Zero-trust enforcement
-* Versioning
-* Out-of-the-box monitoring
-* Import & Export schemas
-* Low/no-code validation and serialization
-* No configuration needed
-* Native support in Python, Go, Node.js
+- Great UI and programmatic approach Embed within the broker
+- Zero-trust enforcement
+- Versioning
+- Out-of-the-box monitoring
+- Import & Export schemas
+- Low/no-code validation and serialization
+- No configuration needed
+- Native support in Python, Go, Node.js
 
 ### Key features
 
-* Runtime-level rendering of existing producers and consumers
-* Unaligned messages will be dropped immediately as the schema gets attached
-* Schemas can be modified without rebooting producers
-* Producer-level validation - to reduce resources needed from the broker
-* Supported SDKs: Go, Python, Node.js (Nest / Typescript)
+- Runtime-level rendering of existing producers and consumers
+- Unaligned messages will be dropped immediately as the schema gets attached
+- Schemas can be modified without rebooting producers
+- Producer-level validation - to reduce resources needed from the broker
+- Supported SDKs: Go, Python, Node.js (Nest / Typescript)
 
 ### Supported formats
 
 A quick overview of the most popular formats supported by Schemaverse.
 
-* Protobuf.\
+- Protobuf.\
   The modern. Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler.
-* Avro.\
+- Avro.\
   The popular. Apache Avro™ is the leading serialization format for record data and the first choice for streaming data pipelines. It offers excellent schema evolution.
-* JSON\
+- JSON\
   The simplest. JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
-* GraphQL\
+- GraphQL\
   GQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
 
 ### The process
@@ -82,7 +82,7 @@ A quick overview of the most popular formats supported by Schemaverse.
 
 The very first step would be to create a schema, based on the required data model, and apply it over a station.
 
-When creating a schema, the creator must choose a data format that will also determine the data format of the ingested messages and several more characteristics. Each format has its own advantages, as described [here](broken-reference).
+When creating a schema, the creator must choose a data format that will also determine the data format of the ingested messages and several more characteristics. Each format has its own advantages, as described [here](/memphis-schemaverse/formats/produce-consume).
 
 #### 2. Validation
 
@@ -104,8 +104,8 @@ That process establishes the message's initial validation before it reaches the 
 
 ## Getting Started
 
-For code producer/consumer code examples, choose a [data format](broken-reference).
+For code producer/consumer code examples, choose a [data format](/docs/memphis-schemaverse/getting-started/formats/).
 
 ## To consider
 
-* Schema attachment can be disruptive because it will update producers (live) to drop messages that are not aligned with the attached schema.
+- Schema attachment can be disruptive because it will update producers (live) to drop messages that are not aligned with the attached schema.
