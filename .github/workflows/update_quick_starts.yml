@@ -1,8 +1,10 @@
 name: Update Quickstart Pages
 on:
+  workflow_dispatch:
   push:
     branches:
       - quickstart_scripts
+  
 
 jobs:
   update:
