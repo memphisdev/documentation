@@ -1,11 +1,11 @@
 {
-  "name": "github_api_test",
+  "name": "update_quickstarts",
   "version": "1.0.0",
   "description": "Scrapes readme's hopefully",
-  "main": "github_api_test.js",
+  "main": "update_quickstarts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node github_api_test.js"
+    "run": "node update_quickstarts.js"
   },
   "author": "Memphis",
   "license": "ISC",
