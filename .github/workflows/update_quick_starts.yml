@@ -2,7 +2,7 @@ name: Update Quickstart Pages
 on:
   push:
     branches:
-      - github_api_test
+      - quickstart_scripts
 
 jobs:
   update:
