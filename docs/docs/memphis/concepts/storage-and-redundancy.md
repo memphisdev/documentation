@@ -10,7 +10,7 @@ title: Storage and Redundancy
 
 ## Introduction
 
-Data redundancy in the field of streaming can be a bit misleading. As written on the [station](./station) page, in message brokers, data is not preserved for an infinite time but for a defined period based on certain conditions like ingested time, size, and the number of messages within a station.
+Data redundancy in the field of streaming can be a bit misleading. As written on the [station](station.md) page, in message brokers, data is not preserved for an infinite time but for a defined period based on certain conditions like ingested time, size, and the number of messages within a station.
 
 When data resides in the broker, it will be redundant and removed only when crossing the defined retention policy.
 
@@ -42,7 +42,7 @@ The first type of storage each message will initially be stored at.
 
 The options are Memory or Disk. Each with its strengths and weaknesses.
 
-* **Memory.**\
+* **Memory**\
   For faster performance.\
   Due to its nature as a volatile type of storage, the risk of losing data in case of failure is higher because it resides in the broker's memory, and in the case of a station without configured replicas, data can be lost.
 
@@ -50,31 +50,23 @@ The options are Memory or Disk. Each with its strengths and weaknesses.
 
 <figure><img src="/assets/mem_ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
 
-* **Disk.**\
+* **Disk**\
   For higher availability.\
   Disk storage might be slower than memory, but it offers greater availability and resiliency to broker failures.
 
 <figure><img src="/assets/disk.jpeg" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/disk_ack.jpeg" alt=""><figcaption>Ack process</figcaption></figure>
+<figure><img src="/assets/disk_ack.jpeg" alt=""><figcaption><p>Ack process</p></figcaption></figure>
 
 ### Tier 2 (Remote storage) \* Optional \*
 
 The common pattern of message brokers is to delete messages after passing the defined retention policy, like time/size/number of messages.\
 Memphis offers a 2nd storage tier for longer, possibly infinite retention for stored messages.\
 Each message that expels from the station will automatically migrate to the 2nd storage tier.\
-Possible integrations [here](../../integrations/storage/).
+Possible integrations [here](../../platform-integrations/storage/).
 
-#### Behind the scenes
+#### "Behind the scenes"
 
 <figure><img src="/assets/storage_tier_arch_(1).jpeg" alt=""><figcaption></figcaption></figure>
 
-#### A growing list of options:
-
-* [**S3 (Object storage)**](../../integrations/storage/amazon-s3)\
-  Built to store and retrieve any amount of data from anywhere using S3 protocol.\
-  Object storage offers different storage classes with different costs and performance requirements.\
-  Popular S3-based storage providers are: AWS S3, MinIO, IBM Cloud Object Storage, and more.
-* **MinIO \*soon\***
-* **Azure blob storage \*soon\***
-* **GCP cloud storage \*soon\***
+Offloading iteration cycles can be configured through the Web Console via the environment configuration.

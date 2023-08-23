@@ -93,7 +93,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/rest/api-reference",
+              link: "/sdk/client-libraries/rest/api",
             },
             {
               text: "GitHub",
@@ -112,7 +112,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/node/api-reference",
+              link: "/sdk/client-libraries/node/api",
             },
             {
               text: "GitHub",
@@ -131,7 +131,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/go/api-reference",
+              link: "/sdk/client-libraries/go/api",
             },
             {
               text: "GitHub",
@@ -150,10 +150,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/python/memphis/index",
-              items: [
-              ],
-              collapsed: true,
+              link: "/sdk/client-libraries/python/api",
             },
             {
               text: "GitHub",
@@ -172,7 +169,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/kotlin/api-reference",
+              link: "/sdk/client-libraries/kotlin/api",
             },
             {
               text: "GitHub",
@@ -191,7 +188,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/net/api-reference",
+              link: "/sdk/client-libraries/net/api",
             },
             {
               text: "GitHub",
@@ -210,7 +207,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/java/api-reference",
+              link: "/sdk/client-libraries/java/api",
             },
             {
               text: "GitHub",
@@ -229,7 +226,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/rust/api-reference",
+              link: "/sdk/client-libraries/rust/api",
             },
             { text: "GitHub", link: "" },
           ],
@@ -245,7 +242,7 @@ export function sdk() {
             },
             {
               text: "API Reference",
-              link: "/sdk/client-libraries/scala/api-reference",
+              link: "/sdk/client-libraries/scala/api",
             },
             { text: "GitHub", link: "" },
           ],
@@ -337,55 +334,6 @@ export function docs() {
           ],
         },
         {
-          text: "Schemaverse",
-          collapsed: true,
-          link: "/docs/memphis/schemaverse-schema-management/index",
-          items: [
-            {
-              text: "⭐ Getting Started",
-              collapsed: false,
-              link: "/docs/memphis/schemaverse-schema-management/getting-started/index",
-              items: [
-                {
-                  text: "Management",
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/management",
-                },
-                {
-                  text: "Produce/Consume",
-                  collapsed: true,
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/index",
-                  items: [
-                    {
-                      text: "Protobuf",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/protobuf",
-                    },
-                    {
-                      text: "JSON Schema",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/json-schema",
-                    },
-                    {
-                      text: "GraphQL",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/graphql",
-                    },
-                    {
-                      text: "Avro",
-                      link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/avro",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              text: "Comparison",
-              link: "/docs/memphis/schemaverse-schema-management/comparison",
-            },
-            {
-              text: "KB",
-              link: "/docs/memphis/schemaverse-schema-management/kb",
-            },
-          ],
-        },
-        {
           text: "Memphis Configuration",
           link: "/docs/memphis/memphis-configuration",
         },
@@ -428,41 +376,41 @@ export function docs() {
       ],
     },
     {
-      text: "⭐ Memphhis Schemaverse",
+      text: "⭐ Memphis Schemaverse",
       items: [
         {
           text: "Overvew",
-          link: "/docs/memphis/schemaverse-schema-management/schemaverse-schema-management",
+          link: "/docs/memphis-schemaverse/schemaverse-schema-management",
         },
         {
           text: "Getting Started",
-          collapsed: false,
-          link: "/docs/memphis/schemaverse-schema-management/getting-started/index",
+          collapsed: true,
+          link: "/docs/memphis-schemaverse/getting-started/index",
           items: [
             {
               text: "Management",
-              link: "/docs/memphis/schemaverse-schema-management/getting-started/management",
+              link: "/docs/memphis-schemaverse/getting-started/management",
             },
             {
               text: "Produce/Consume",
               collapsed: true,
-              link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/index",
+              link: "/docs/memphis-schemaverse/getting-started/formats/index",
               items: [
                 {
                   text: "Protobuf",
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/protobuf",
+                  link: "/docs/memphis-schemaverse/getting-started/formats/protobuf",
                 },
                 {
                   text: "JSON Schema",
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/json-schema",
+                  link: "/docs/memphis-schemaverse/getting-started/formats/json-schema",
                 },
                 {
                   text: "GraphQL",
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/graphql",
+                  link: "/docs/memphis-schemaverse/getting-started/formats/graphql",
                 },
                 {
                   text: "Avro",
-                  link: "/docs/memphis/schemaverse-schema-management/getting-started/formats/avro",
+                  link: "/docs/memphis-schemaverse/getting-started/formats/avro",
                 },
               ],
             },
@@ -470,60 +418,80 @@ export function docs() {
         },
         {
           text: "Comparison",
-          link: "/docs/memphis/schemaverse-schema-management/comparison",
+          link: "/docs/memphis-schemaverse/comparison",
         },
-        { text: "KB", link: "/docs/memphis/schemaverse-schema-management/kb" },
+        { text: "KB", link: "/docs/memphis-schemaverse/kb" },
       ],
     },
     {
-      text: "📦 Deployment",
+      text: "⭐ Memphis Functions",
+      items: [
+        {
+          text: "Overview",
+          link: "/docs/memphis-functions/overview",
+        },
+        {
+          text: "Getting Started",
+          link: "/docs/memphis-functions/getting-started",
+        },
+        {
+          text: "memphis.yaml",
+          link: "/docs/memphis-functions/memphis.yaml",
+        },
+      ],
+    },
+    {
+      text: "📦 Open-Source Installation",
       items: [
         {
           text: "Terraform",
           collapsed: true,
-          link: "/docs/deployment/cloud-deployment/index",
+          link: "/docs/open-source-installation/cloud-deployment/index",
           items: [
             {
               text: "Deploy on AWS",
-              link: "/docs/deployment/cloud-deployment/deploy-on-aws",
+              link: "/docs/open-source-installation/cloud-deployment/deploy-on-aws",
             },
             {
               text: "Deploy on GCP",
-              link: "/docs/deployment/cloud-deployment/deploy-on-gcp",
+              link: "/docs/open-source-installation/cloud-deployment/deploy-on-gcp",
             },
             {
               text: "Deploy on DigitalOcean",
-              link: "/docs/deployment/cloud-deployment/deploy-on-digitalocean",
+              link: "/docs/open-source-installation/cloud-deployment/deploy-on-digitalocean",
             },
             {
               text: "Deploy on Azure",
-              link: "/docs/deployment/cloud-deployment/deploy-on-azure",
+              link: "/docs/open-source-installation/cloud-deployment/deploy-on-azure",
             },
           ],
         },
         {
           text: "Kubernetes",
           collapsed: true,
-          link: "/docs/deployment/kubernetes/index",
+          link: "/docs/open-source-installation/kubernetes/index",
           items: [
             {
               text: "1 - Installation",
-              link: "/docs/deployment/kubernetes/1-installation",
+              link: "/docs/open-source-installation/kubernetes/1-installation",
             },
             {
               text: "2 - Access",
-              link: "/docs/deployment/kubernetes/2-access",
+              link: "/docs/open-source-installation/kubernetes/2-access",
             },
             {
               text: "3 - Upgrade",
-              link: "/docs/deployment/kubernetes/how-to-upgrade",
+              link: "/docs/docs/open-source-installation/kubernetes/how-to-upgrade",
             },
           ],
         },
-        { text: "Docker", link: "/docs/deployment/docker-compose" },
+        {
+          text: "Docker",
+          link: "/docs/open-source-installation/docker-compose",
+        },
         {
           text: "Production Best Pracices",
-          link: "/docs/deployment/production-best-practices",
+          link: "/docs/open-source-installation/production-best-practices",
         },
       ],
     },
@@ -558,7 +526,7 @@ export function docs() {
       ],
     },
     {
-      text: "Web Console (GUI)",
+      text: "🖥 Web Console (GUI)",
       items: [
         { text: "Dashboard", link: "/docs/web-console-gui/overview" },
         { text: "Stations", link: "/docs/web-console-gui/stations" },
@@ -571,70 +539,79 @@ export function docs() {
     },
     {
       text: "🔌 Integrations Center",
-      link: "/docs/integrations/index",
+      link: "/docs/integrations-center/index",
       items: [
         {
           text: "Change Data Capture (CDC)",
           collapsed: true,
-          link: "/docs/integrations/change-data-capture-cdc/index",
+          link: " /docs/integrations-center/change-data-capture-cdc/index",
           items: [
             {
               text: "Dabezium",
-              link: "/docs/integrations/change-data-capture-cdc/debezium",
+              link: " /docs/integrations-center/change-data-capture-cdc/debezium",
             },
           ],
         },
         {
           text: "Monitoring",
           collapsed: true,
-          link: "/docs/integrations/monitoring/index",
+          link: "/docs/grations/monitoring/index",
           items: [
             {
               text: "Elasticsearch Observability",
-              link: "/docs/integrations/monitoring/elasticsearch-observability",
+              link: "/docs/platform-integrations/monitoring/elasticsearch-observability",
             },
-            { text: "Datadog", link: "/docs/integrations/monitoring/datadog" },
-            { text: "Grafana", link: "/docs/integrations/monitoring/grafana" },
+            {
+              text: "Datadog",
+              link: "/docs/platform-integrations/monitoring/datadog",
+            },
+            {
+              text: "Grafana",
+              link: "/docs/platform-integrations/monitoring/grafana",
+            },
           ],
         },
         {
           text: "Notifications",
           collapsed: true,
-          link: "/docs/integrations/notifications/index",
+          link: "/docs/platform-integrations/notifications/index",
           items: [
-            { text: "Slack", link: "/docs/integrations/notifications/slack" },
+            {
+              text: "Slack",
+              link: "/docs/platform-integrations/notifications/slack",
+            },
           ],
         },
         {
           text: "Storage tiering",
           collapsed: true,
-          link: "/docs/integrations/storage/index",
+          link: "/docs/platform-integrations/storage/index",
           items: [
             {
               text: "S3-Compatible Object Storage",
-              link: "/docs/integrations/storage/amazon-s3",
+              link: "/docs/platform-integrations/storage/amazon-s3",
             },
           ],
         },
         {
           text: "Source Code",
           collapsed: true,
-          link: "/docs/integrations/source-code/index",
+          link: " /docs/integrations-center/source-code/index",
           items: [
             {
-              text: "Amazon S3",
-              link: "/docs/integrations/source-code/github",
+              text: "GitHub",
+              link: " /docs/integrations-center/source-code/github",
             },
           ],
         },
         {
           text: "Other platforms",
           collapsed: true,
-          link: "/docs/integrations/other-platforms/index",
+          link: "/docs/platform-integrations/other-platforms/index",
           items: [
             {
               text: "Argo",
-              link: "/docs/integrations/other-platforms/argo-and-memphis",
+              link: "/docs/platform-integrations/other-platforms/argo-and-memphis",
             },
           ],
         },
@@ -650,12 +627,20 @@ export function docs() {
           link: "/docs/release-notes/releases/index",
           items: [
             {
-              text: "v1.1.0-latest",
-              link: "/docs/release-notes/releases/v1.1.0-latest",
+              text: "v1.2.0-latest",
+              link: "/docs/release-notes/releases/v1.2.0-latest",
             },
             {
-              text: "v1.0.3-stable",
-              link: "/docs/release-notes/releases/v1.0.3-stable",
+              text: "v1.1.1-stable",
+              link: "/docs/release-notes/releases/v1.1.1-stable",
+            },
+            {
+              text: "v1.1.0",
+              link: "/docs/release-notes/releases/v1.1.0",
+            },
+            {
+              text: "v1.0.3",
+              link: "/docs/release-notes/releases/v1.0.3",
             },
             { text: "v1.0.2", link: "/docs/release-notes/releases/v1.0.2" },
             { text: "v1.0.1", link: "/docs/release-notes/releases/v1.0.1" },
@@ -734,7 +719,10 @@ export function contribution() {
           items: [
             { text: "BigLink", link: "/contribution/components/biglink" },
             { text: "Embed", link: "/contribution/components/embed" },
-            { text: "HeaderImage", link: "/contribution/components/headerimage" },
+            {
+              text: "HeaderImage",
+              link: "/contribution/components/headerimage",
+            },
             { text: "Index", link: "/contribution/components/index-component" },
             { text: "Subtitle", link: "/contribution/components/subtitle" },
           ],
@@ -744,6 +732,6 @@ export function contribution() {
           link: "/contribution/usage",
         },
       ],
-    }
-  ]
+    },
+  ];
 }

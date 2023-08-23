@@ -128,6 +128,22 @@ img {
   position: relative;
 }
 
+@media (max-width: 630px) {
+  .card {
+    width: 369px;
+    height: 250px;
+  }
+
+  .card-text{
+    width: 100%;
+    height: 100px;
+  }
+
+  .card-text > div > div{
+    -webkit-line-clamp: 3;
+  }
+}
+
 .arrow-container {
   display: flex;
   flex-direction: row;

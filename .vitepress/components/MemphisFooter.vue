@@ -159,13 +159,7 @@ const showFooter = computed(() => {
   padding-top: 24px;
   display: grid;
   grid-row-gap: 8px;
-}
-
-@media (min-width: 640px) {
-  .prev-next {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 16px;
-  }
+  grid-template-columns: repeat(2, 1fr);
 }
 .pager{
   display: flex;
@@ -175,8 +169,6 @@ const showFooter = computed(() => {
 .pager-link {
   display: block;
   border-radius: 8px;
-  padding-left: 12px;
-  padding-right: 12px;
   padding-top: 4px;
   width: 100%;
   height: 100%;
@@ -190,8 +182,12 @@ const showFooter = computed(() => {
 .pager-link.next {
   margin-left: auto;
   text-align: right;
+  padding-right: 12px;
 }
 
+.pager-link.prev {
+  padding-left: 12px;
+}
 .desc {
   display: block;
   line-height: 20px;
