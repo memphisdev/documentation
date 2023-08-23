@@ -1,7 +1,46 @@
----
-title: Python Quickstart
-description: A quickstart on how to use the Python client library
----
+TEST ACTION
+
+<div align="center">
+  
+  ![Banner- Memphis dev streaming  (2)](https://github.com/memphisdev/memphis.py/assets/107035359/6787500c-d806-4f22-96aa-a182d4c24dfa)
+  
+</div>
+
+<div align="center">
+
+  <h4>
+
+**[Memphis](https://memphis.dev)** is an intelligent, frictionless message broker.<br>Made to enable developers to build real-time and streaming apps fast.
+
+  </h4>
+  
+  <a href="https://landscape.cncf.io/?selected=memphis"><img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/white/cncf-member-silver-white.svg#gh-dark-mode-only"></a>
+  
+</div>
+
+<div align="center">
+  
+  <img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/color/cncf-member-silver-color.svg#gh-light-mode-only">
+  
+</div>
+ 
+ <p align="center">
+  <a href="https://memphis.dev/pricing/">Cloud</a> - <a href="https://memphis.dev/docs/">Docs</a> - <a href="https://twitter.com/Memphis_Dev">Twitter</a> - <a href="https://www.youtube.com/channel/UCVdMDLCSxXOqtgrBaRUHKKg">YouTube</a>
+</p>
+
+<p align="center">
+<a href="https://discord.gg/WZpysvAeTf"><img src="https://img.shields.io/discord/963333392844328961?color=6557ff&label=discord" alt="Discord"></a>
+<a href="https://github.com/memphisdev/memphis/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/memphisdev/memphis?color=6557ff"></a> 
+  <img src="https://img.shields.io/npm/dw/memphis-dev?color=ffc633&label=installations">
+<a href="https://github.com/memphisdev/memphis/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code%20of%20Conduct-v1.0-ff69b4.svg?color=ffc633" alt="Code Of Conduct"></a> 
+<a href="https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/memphisdev/memphis?color=61dfc6"></a>
+<img src="https://img.shields.io/github/last-commit/memphisdev/memphis?color=61dfc6&label=last%20commit">
+</p>
+
+Memphis.dev is more than a broker. It's a new streaming stack.<br><br>
+It accelerates the development of real-time applications that require<br>
+high throughput, low latency, small footprint, and multiple protocols,<br>with minimum platform operations, and all the observability you can think of.<br><br>
+Highly resilient, distributed architecture, cloud-native, and run on any Kubernetes,<br>on any cloud without zookeeper, bookeeper, or JVM.
 
 ## Installation
 
@@ -14,6 +53,7 @@ $ pip3 install memphis-py
 ```python
 from memphis import Memphis, Headers
 from memphis.types import Retention, Storage
+import asyncio
 ```
 
 ## Connecting to Memphis
@@ -68,7 +108,7 @@ _If a station already exists nothing happens, the new configuration will not be 
 station = memphis.station(
   name="<station-name>",
   schema_name="<schema-name>",
-  retention_type=Retention.MAX_MESSAGE_AGE_SECONDS, # MAX_MESSAGE_AGE_SECONDS/MESSAGES/BYTES. Defaults to MAX_MESSAGE_AGE_SECONDS
+  retention_type=Retention.MAX_MESSAGE_AGE_SECONDS, # MAX_MESSAGE_AGE_SECONDS/MESSAGES/BYTES/ACK_BASED(cloud only). Defaults to MAX_MESSAGE_AGE_SECONDS
   retention_value=604800, # defaults to 604800
   storage_type=Storage.DISK, # Storage.DISK/Storage.MEMORY. Defaults to DISK
   replicas=1, # defaults to 1
@@ -76,6 +116,7 @@ station = memphis.station(
   send_poison_msg_to_dls=True, # defaults to true
   send_schema_failed_msg_to_dls=True, # defaults to true
   tiered_storage_enabled=False # defaults to false
+  partitions_number=1 # default to 1 
 )
 ```
 
@@ -101,6 +142,12 @@ memphis.types.Retention.BYTES
 
 Means that after max amount of saved bytes (set in retention value), the oldest messages will be deleted
 
+```python
+memphis.types.Retention.ACK_BASED # for cloud users only
+```
+
+Means that after a message is getting acked by all interested consumer groups it will be deleted from the Station.
+
 
 ## Retention Values
 
@@ -108,7 +155,7 @@ The `retention values` are directly related to the `retention types` mentioned a
 
 All retention values are of type `int` but with different representations as follows:
 
-`memphis.types.Retention.MAX_MESSAGE_AGE_SECONDS` is represented **in seconds**, `memphis.types.Retention.MESSAGES` in a **number of messages** and finally `memphis.types.Retention.BYTES` in a **number of bytes**.
+`memphis.types.Retention.MAX_MESSAGE_AGE_SECONDS` is represented **in seconds**, `memphis.types.Retention.MESSAGES` in a **number of messages**, `memphis.types.Retention.BYTES` in a **number of bytes** and finally and finally `memphis.ACK_BASED` is not using the retentionValue param at all.
 
 After these limits are reached oldest messages will be deleted.
 
@@ -128,6 +175,11 @@ memphis.types.Storage.MEMORY
 
 Means that messages persist on the main memory
 
+## Station partitions
+
+Memphis station is created with 1 patition by default
+You can change the patitions number as you wish in order to scale your stations
+
 ## Destroying a Station
 
 Destroying a station will remove all its resources (producers/consumers)
@@ -141,6 +193,7 @@ station.destroy()
 ```python
 await memphis.create_schema("<schema-name>", "<schema-type>", "<schema-file-path>")
 ```
+Current available schema types - Protobuf / JSON schema / GraphQL schema / Avro
 
 ## Enforcing a Schema on an Existing Station
 
@@ -174,6 +227,8 @@ Memphis messages are payload agnostic. Payloads are `bytearray`.
 In order to stop getting messages, you have to call `consumer.destroy()`. Destroy will terminate regardless
 of whether there are messages in flight for the client.
 
+If a station is created with more than one partition, produce and consume bill be perform in a Round Robin fasion
+
 ## Creating a Producer
 
 ```python
@@ -186,11 +241,11 @@ In cases where extra performance is needed the recommended way is to create a pr
 and produce messages by using the produce function of it
 ```python
 await memphis.produce(station_name='test_station_py', producer_name='prod_py',
-  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema) 
+  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema) or bytearray/dict (schema validated station - avro schema)
   generate_random_suffix=False, #defaults to false
   ack_wait_sec=15, # defaults to 15
   headers=headers, # default to {}
-  async_produce=False, #defaults to false
+  nonblocking=False, #defaults to false
   msg_id="123"
 )
 ```
@@ -199,7 +254,7 @@ await memphis.produce(station_name='test_station_py', producer_name='prod_py',
 With creating a producer
 ```python
 await producer.produce(
-  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema)
+  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema) or or bytearray/dict (schema validated station - avro schema)
   ack_wait_sec=15) # defaults to 15
 ```
 
@@ -209,18 +264,30 @@ await producer.produce(
 headers= Headers()
 headers.add("key", "value")
 await producer.produce(
-  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema)
+  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema) or or bytearray/dict (schema validated station - avro schema)
   headers=headers) # default to {}
 ```
 
-## Async produce
-Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
+## Non-blocking Produce
+For better performance, the client won't block requests while waiting for an acknowledgment.
 
 ```python
 await producer.produce(
   message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema)
-  headers={}, async_produce=True)
+  headers={}, nonblocking=True)
 ```
+
+## Non-blocking Produce with Task Limits
+For better performance, the client won't block requests while waiting for an acknowledgment.
+If you are producing a large number of messages and see timeout errors, then you may need to
+limit the number of concurrent tasks like so:
+
+```python
+await producer.produce(
+  message='bytearray/protobuf class/dict/string/graphql.language.ast.DocumentNode', # bytearray / protobuf class (schema validated station - protobuf) or bytearray/dict (schema validated station - json schema) or string/bytearray/graphql.language.ast.DocumentNode (schema validated station - graphql schema)
+  headers={}, nonblocking=True, limit_concurrent_tasks=500)
+```
+
 
 ## Message ID
 Stations are idempotent by default for 2 minutes (can be configured), Idempotency achieved by adding a message id
