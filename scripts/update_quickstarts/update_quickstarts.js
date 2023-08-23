@@ -37,7 +37,6 @@ description: A quickstart on how to use the Python client library
 await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
     owner: 'memphisdev',
     repo: 'documentation',
-    branch: 'github_api_test',
     path: 'docs/sdk/client-libraries/python/quick-start.md',
     message: 'Updating Python SDK Quick-Start from python github action',
     committer: {
