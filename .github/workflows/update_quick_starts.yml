@@ -20,7 +20,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       run: |
-        ls
         cd ./scripts/update_quickstarts
         ls
         npm ci
