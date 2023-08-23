@@ -23,4 +23,4 @@ jobs:
         cd ./scripts/update_quickstarts
         ls
         npm ci
-        node update_quickstart.js
+        node update_quickstarts.js
