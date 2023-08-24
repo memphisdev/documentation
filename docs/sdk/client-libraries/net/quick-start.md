@@ -1,7 +1,7 @@
 ---
   title: Net Quickstart
   description: A quickstart on how to use the Net client library
-  ---
+---
 <div align="center">  
   
   ![Banner- Memphis dev streaming  (1)](https://github.com/memphisdev/memphis.net/assets/107035359/3ac8b249-bc52-4e02-ad79-7001810f9b04)
