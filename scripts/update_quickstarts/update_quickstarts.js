@@ -6,46 +6,80 @@ const octokit = new Octokit({
     auth: git_token
   })
 
-let req = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-    owner: 'memphisdev',
-    repo: 'memphis.py',
-    path: 'README.md',
-    headers: {
-      'X-GitHub-Api-Version': '2022-11-28'
-    }
-})
 
-let quick_start = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-    owner: 'memphisdev',
-    repo: 'documentation',
-    branch: 'github_api_test',
-    path: 'docs/sdk/client-libraries/python/quick-start.md',
-    headers: {
-      'X-GitHub-Api-Version': '2022-11-28'
-    }
-})
+const repos = [
+  {
+    repo_name: 'memphis.js',
+    doc_path: 'docs/sdk/client-libraries/node/quick-start.md',
+    language_name: 'JavaScript'
+  },
+  {
+    repo_name: 'memphis.py',
+    doc_path: 'docs/sdk/client-libraries/python/quick-start.md',
+    language_name: 'Python'
+  },
+  {
+    repo_name: 'memphis.net',
+    doc_path: 'docs/sdk/client-libraries/net/quick-start.md',
+    language_name: 'Net'
+  },
+  {
+    repo_name: 'memphis.java',
+    doc_path: 'docs/sdk/client-libraries/java/quick-start.md',
+    language_name: 'Java'
+  },
+  {
+    repo_name: 'memphis.go',
+    doc_path: 'docs/sdk/client-libraries/go/quick-start.md',
+    language_name: 'Go'
+  },
+]
 
-const quick_start_sha = quick_start.data.sha;
+for (let repo of repos){
+  update_file(repo.repo_name, repo.doc_path, repo.language_name)
+}
 
-const readme_content = atob(req.data.content)
-const readme_h3_to_h2 = readme_content.replace(/###/g, '##')
-const commit_string = `---
-title: Python Quickstart
-description: A quickstart on how to use the Python client library
----`+ '\n' + readme_h3_to_h2 
+async function update_file(repo_name, doc_path, language_name){
+  let req = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+      owner: 'memphisdev',
+      repo: repo_name,
+      path: 'README.md',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+  })
 
-await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
-    owner: 'memphisdev',
-    repo: 'documentation',
-    path: 'docs/sdk/client-libraries/python/quick-start.md',
-    message: 'Updating Python SDK Quick-Start from python github action',
-    committer: {
-      name: 'Automated Workflow',
-      email: 'john@memphis.dev'
-    },
-    content: btoa(commit_string),
-    headers: {
-      'X-GitHub-Api-Version': '2022-11-28'
-    },
-    sha: quick_start_sha
-})
+  let quick_start = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+      owner: 'memphisdev',
+      repo: 'documentation',
+      path: doc_path,
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+  })
+
+  const quick_start_sha = quick_start.data.sha;
+  const readme_content = atob(req.data.content)
+  const readme_h3_to_h2 = readme_content.replace(/###/g, '##')
+  const commit_string = `---
+  title: ${language_name} Quickstart
+  description: A quickstart on how to use the ${language_name} client library
+  ---`+ '\n' + readme_h3_to_h2 
+
+  await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+      owner: 'memphisdev',
+      repo: 'documentation',
+      path: doc_path,
+      message: 'Updating ${language_name} SDK Quick-Start',
+      committer: {
+        name: 'Automated Workflow',
+        email: 'john@memphis.dev'
+      },
+      content: btoa(commit_string),
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      },
+      sha: quick_start_sha
+  })
+}
+
