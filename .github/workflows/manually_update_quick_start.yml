@@ -1,4 +1,4 @@
-name: Automatically Update Quickstart Pages
+name: Manually Update Quickstart Pages
 on: workflow_dispatch
 jobs:
   update:
