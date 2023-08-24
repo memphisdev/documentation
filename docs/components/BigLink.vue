@@ -31,10 +31,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { withBase } from 'vitepress';
 const props = defineProps(['url', 'title']);
 const title = ref(props.title);
 const preview = ref('');
-const url = ref(props.url);
+const url = ref(withBase(props.url));
 const filepath = `https://memphisdev.github.io/${props.url}.html`;
 
 console.log(filepath);
