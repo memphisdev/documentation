@@ -1,7 +1,7 @@
 ---
-title: Python Quickstart
-description: A quickstart on how to use the Python client library
----
+  title: Python Quickstart
+  description: A quickstart on how to use the Python client library
+  ---
 <div align="center">
   
   ![Banner- Memphis dev streaming  (2)](https://github.com/memphisdev/memphis.py/assets/107035359/6787500c-d806-4f22-96aa-a182d4c24dfa)
