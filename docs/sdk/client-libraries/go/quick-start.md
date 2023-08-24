@@ -1,7 +1,7 @@
 ---
   title: Go Quickstart
   description: A quickstart on how to use the Go client library
-  ---
+---
 <div align="center">
   
   ![Banner- Memphis dev streaming  (2)](https://github.com/memphisdev/memphis.go/assets/107035359/8d671d72-8478-41d3-afe6-3658104340ff)

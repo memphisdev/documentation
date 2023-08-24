@@ -84,7 +84,7 @@ async function update_file(repo_name, doc_path, language_name){
   const commit_string = `---
   title: ${language_name} Quickstart
   description: A quickstart on how to use the ${language_name} client library
-  ---`+ '\n' + readme_h3_to_h2 
+---`+ '\n' + readme_h3_to_h2 
 
   console.log(`Updating ${language_name} Quickstart`);
   await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
