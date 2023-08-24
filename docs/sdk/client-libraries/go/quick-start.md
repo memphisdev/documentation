@@ -1,7 +1,49 @@
 ---
-title: Go Quickstart
-description: A quickstart on how to use the Go client library
----
+  title: Go Quickstart
+  description: A quickstart on how to use the Go client library
+  ---
+<div align="center">
+  
+  ![Banner- Memphis dev streaming  (2)](https://github.com/memphisdev/memphis.go/assets/107035359/8d671d72-8478-41d3-afe6-3658104340ff)
+
+  
+</div>
+
+<div align="center">
+
+  <h4>
+
+**[Memphis](https://memphis.dev)** is an intelligent, frictionless message broker.<br>Made to enable developers to build real-time and streaming apps fast.
+
+  </h4>
+  
+  <a href="https://landscape.cncf.io/?selected=memphis"><img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/white/cncf-member-silver-white.svg#gh-dark-mode-only"></a>
+  
+</div>
+
+<div align="center">
+  
+  <img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/color/cncf-member-silver-color.svg#gh-light-mode-only">
+  
+</div>
+ 
+ <p align="center">
+  <a href="https://memphis.dev/pricing">Cloud</a> - <a href="https://memphis.dev/docs/">Docs</a> - <a href="https://twitter.com/Memphis_Dev">Twitter</a> - <a href="https://www.youtube.com/channel/UCVdMDLCSxXOqtgrBaRUHKKg">YouTube</a>
+</p>
+
+<p align="center">
+<a href="https://discord.gg/WZpysvAeTf"><img src="https://img.shields.io/discord/963333392844328961?color=6557ff&label=discord" alt="Discord"></a>
+<a href="https://github.com/memphisdev/memphis/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/memphisdev/memphis?color=6557ff"></a> 
+  <img src="https://img.shields.io/npm/dw/memphis-dev?color=ffc633&label=installations">
+<a href="https://github.com/memphisdev/memphis/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code%20of%20Conduct-v1.0-ff69b4.svg?color=ffc633" alt="Code Of Conduct"></a> 
+<a href="https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/memphisdev/memphis?color=61dfc6"></a>
+<img src="https://img.shields.io/github/last-commit/memphisdev/memphis?color=61dfc6&label=last%20commit">
+</p>
+
+Memphis.dev is more than a broker. It's a new streaming stack.<br><br>
+It accelerates the development of real-time applications that require<br>
+high throughput, low latency, small footprint, and multiple protocols,<br>with minimum platform operations, and all the observability you can think of.<br><br>
+Highly resilient, distributed architecture, cloud-native, and run on any Kubernetes,<br>on any cloud without zookeeper, bookeeper, or JVM.
 
 # Installation
 After installing and running memphis broker,<br>
@@ -62,7 +104,7 @@ _If a station already exists nothing happens, the new configuration will not be 
 s0, err = c.CreateStation("<station-name>")
 
 s1, err = c.CreateStation("<station-name>", 
- memphis.RetentionTypeOpt(<Messages/MaxMessageAgeSeconds/Bytes>),
+ memphis.RetentionTypeOpt(<Messages/MaxMessageAgeSeconds/Bytes/AckBased>), // AckBased - cloud only
  memphis.RetentionVal(<int>), 
  memphis.StorageTypeOpt(<Memory/Disk>), 
  memphis.Replicas(<int>), 
@@ -71,6 +113,7 @@ s1, err = c.CreateStation("<station-name>",
  memphis.SendPoisonMsgToDls(<bool>), // defaults to true
  memphis.SendSchemaFailedMsgToDls(<bool>), // defaults to true
  memphis.TieredStorageEnabled(<bool>) // defaults to false
+ memphis.PartitionsNumber(<int>) // default is 1 partition
 )
 ```
 
@@ -95,13 +138,19 @@ memphis.Bytes
 
 The above means that after maximum number of saved bytes (set in retention value)<br>has been reached, the oldest messages will be deleted.
 
+```go
+memphis.AckBased // for cloud users only
+```
+
+The above means that after a message is getting acked by all interested consumer groups it will be deleted from the Station.
+
 ## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above,<br> where the values vary according to the type of retention chosen.
 
 All retention values are of type `int` but with different representations as follows:
 
-`memphis.MaxMessageAgeSeconds` is represented **in seconds**, `memphis.Messages` in a **number of messages** <br> and finally `memphis.Bytes` in a **number of bytes**.
+`memphis.MaxMessageAgeSeconds` is represented **in seconds**, `memphis.Messages` in a **number of messages** <br> `memphis.Bytes` in a **number of bytes**, and finally `memphis.AckBased` is not using the retentionValue param at all. 
 
 After these limits are reached oldest messages will be deleted.
 
@@ -151,7 +200,7 @@ err := conn.AttachSchema("<schema-name>", "<station-name>")
 err := conn.DetachSchema("<station-name>")
 ```
 
-### Produce and Consume Messages
+## Produce and Consume Messages
 The most common client operations are producing messages and consuming messages.<br><br>
 Messages are published to a station and consumed from it<br>by creating a consumer and calling its Consume function with a message handler callback function.<br>Consumers are pull-based and consume all the messages in a station<br> unless you are using a consumers group,<br>in which case messages are spread across all members in this group.<br><br>
 Memphis messages are payload agnostic. Payloads are byte slices, i.e []byte.<br><br>
@@ -181,8 +230,30 @@ c.Produce("station_name_c_produce", "producer_name_a", []byte("Hey There!"), []m
 
 Creating a producer first (receiver function of the producer struct).
 ```go
-p.Produce("<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema)>", memphis.AckWaitSec(15)) // defaults to 15 seconds
+p.Produce("<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema) or []byte or map[string]interface{} or struct with avro tags(schema validated station - avro schema)>", memphis.AckWaitSec(15)) // defaults to 15 seconds
 ```
+Note: 
+When producing a message using avro format([]byte or map[string]interface{}), int types are converted to float64. Type conversion of `Golang float64` equals `Avro double`. So when creating an avro schema, it can't have int types. use double instead.
+E.g.
+```
+myData :=  map[string]interface{}{
+"username": "John",
+"age": 30
+}
+```
+```
+{
+	"type": "record",
+	"namespace": "com.example",
+	"name": "test_schema",
+	"fields": [
+		{ "name": "username", "type": "string" },
+		{ "name": "age", "type": "double" }
+	]
+}
+```
+Note:
+When producing to a station with more than one partition, the producer will produce messages in a Round Robin fashion between the different partitions.
 
 ## Add headers
 
@@ -191,18 +262,18 @@ hdrs := memphis.Headers{}
 hdrs.New()
 err := hdrs.Add("key", "value")
 p.Produce(
-	"<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema)>",
+	"<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema) or []byte or map[string]interface{} or struct with avro tags(schema validated station - avro schema)>",
     memphis.AckWaitSec(15),
 	memphis.MsgHeaders(hdrs) // defaults to empty
 )
 ```
 
 ## Async produce
-Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
+For better performance. The client won't block requests while waiting for an acknowledgment.
 
 ```go
 p.Produce(
-	"<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema)>",
+	"<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema) or []byte or map[string]interface{} or struct with avro tags(schema validated station - avro schema)>",
     memphis.AckWaitSec(15),
 	memphis.AsyncProduce()
 )
@@ -213,7 +284,7 @@ Stations are idempotent by default for 2 minutes (can be configured), Idempotenc
 
 ```go
 p.Produce(
-	"<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema)>",
+	"<message in []byte or map[string]interface{}/[]byte or protoreflect.ProtoMessage or map[string]interface{}(schema validated station - protobuf)/struct with json tags or map[string]interface{} or interface{}(schema validated station - json schema) or []byte/string (schema validated station - graphql schema) or []byte or map[string]interface{} or struct with avro tags(schema validated station - avro schema)>",
     memphis.AckWaitSec(15),
 	memphis.MsgId("343")
 )
@@ -245,6 +316,8 @@ consumer0, err = s.CreateConsumer("<consumer-name>",
 // creation from a Conn
 consumer1, err = c.CreateConsumer("<station-name>", "<consumer-name>", ...) 
 ```
+Note:
+When consuming from a station with more than one partition, the consumer will consume messages in Round Robin fashion from the different partitions.
 
 ## Passing a context to a message handler
 
