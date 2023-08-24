@@ -35,22 +35,25 @@ const repos = [
   },
 ]
 
+let did_error = false;
+const failed_languages = [];
 for (let repo of repos){
-  await update_file(repo.repo_name, repo.doc_path, repo.language_name)
+  try {
+    await update_file(repo.repo_name, repo.doc_path, repo.language_name)
+  } catch (error) {
+    console.log();(error);
+    did_error = true;
+    failed_languages.push(repo.language_name)
+  }
+}
+
+if (did_error){
+  throw new Error(`Failed to update one or more languages. \n Failed Languages: ${failed_languages.join(', ')}`)
 }
 
 async function update_file(repo_name, doc_path, language_name){
   console.log(`Updating ${language_name} Quickstart`);
   console.log(`Repo: ${repo_name}`);
-  let req = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-      owner: 'memphisdev',
-      repo: repo_name,
-      path: 'README.md',
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
-  })
-
   console.log(`Getting ${language_name} Quickstart SHA`);
   let quick_start = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner: 'memphisdev',
