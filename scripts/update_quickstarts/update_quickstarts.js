@@ -54,6 +54,17 @@ if (did_error){
 async function update_file(repo_name, doc_path, language_name){
   console.log(`Updating ${language_name} Quickstart`);
   console.log(`Repo: ${repo_name}`);
+
+  console.log(`Getting ${language_name} README`);
+  let req = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+    owner: 'memphisdev',
+    repo: repo_name,
+    path: 'README.md',
+    headers: {
+      'X-GitHub-Api-Version': '2022-11-28'
+    }
+})
+
   console.log(`Getting ${language_name} Quickstart SHA`);
   let quick_start = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner: 'memphisdev',
