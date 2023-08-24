@@ -4,5 +4,5 @@ next:
     link: '/sdk/client-libraries/go/overview'
     text: 'Overview'
 ---
-Coming Soon
+<index/>
 

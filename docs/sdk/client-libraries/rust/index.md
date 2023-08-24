@@ -4,4 +4,4 @@ next:
     link: '/sdk/client-libraries/Rust/overview'
     text: 'Overview'
 ---
-Coming Soon
+<index/>
