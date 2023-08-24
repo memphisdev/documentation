@@ -1,7 +1,7 @@
 ---
   title: Java Quickstart
   description: A quickstart on how to use the Java client library
-  ---
+---
 <div align="center">
 
   ![Memphis light logo](https://github.com/memphisdev/memphis-broker/blob/master/logo-white.png?raw=true#gh-dark-mode-only)
