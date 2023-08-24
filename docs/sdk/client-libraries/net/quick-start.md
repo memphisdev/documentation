@@ -1,8 +1,48 @@
 ---
-title: .Net Quickstart
-description: A quickstart on how to use the .NET client library
----
+  title: Net Quickstart
+  description: A quickstart on how to use the Net client library
+  ---
+<div align="center">  
+  
+  ![Banner- Memphis dev streaming  (1)](https://github.com/memphisdev/memphis.net/assets/107035359/3ac8b249-bc52-4e02-ad79-7001810f9b04)
 
+</div>
+
+<div align="center">
+
+  <h4>
+
+**[Memphis](https://memphis.dev)** is an intelligent, frictionless message broker.<br>Made to enable developers to build real-time and streaming apps fast.
+
+  </h4>
+  
+  <a href="https://landscape.cncf.io/?selected=memphis"><img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/white/cncf-member-silver-white.svg#gh-dark-mode-only"></a>
+  
+</div>
+
+<div align="center">
+  
+  <img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/color/cncf-member-silver-color.svg#gh-light-mode-only">
+  
+</div>
+ 
+ <p align="center">
+  <a href="https://memphis.dev/pricing/">Cloud</a> - <a href="https://memphis.dev/docs/">Docs</a> - <a href="https://twitter.com/Memphis_Dev">Twitter</a> - <a href="https://www.youtube.com/channel/UCVdMDLCSxXOqtgrBaRUHKKg">YouTube</a>
+</p>
+
+<p align="center">
+<a href="https://discord.gg/WZpysvAeTf"><img src="https://img.shields.io/discord/963333392844328961?color=6557ff&label=discord" alt="Discord"></a>
+<a href="https://github.com/memphisdev/memphis/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/memphisdev/memphis?color=6557ff"></a> 
+  <img src="https://img.shields.io/npm/dw/memphis-dev?color=ffc633&label=installations">
+<a href="https://github.com/memphisdev/memphis/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code%20of%20Conduct-v1.0-ff69b4.svg?color=ffc633" alt="Code Of Conduct"></a> 
+<a href="https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/memphisdev/memphis?color=61dfc6"></a>
+<img src="https://img.shields.io/github/last-commit/memphisdev/memphis?color=61dfc6&label=last%20commit">
+</p>
+
+Memphis.dev is more than a broker. It's a new streaming stack.<br><br>
+It accelerates the development of real-time applications that require<br>
+high throughput, low latency, small footprint, and multiple protocols,<br>with minimum platform operations, and all the observability you can think of.<br><br>
+Highly resilient, distributed architecture, cloud-native, and run on any Kubernetes,<br>on any cloud without zookeeper, bookeeper, or JVM.
 
 ## Installation
 
@@ -24,15 +64,16 @@ using Memphis.Client;
 
 ## Connecting to Memphis
 
-First, we need to create or use default `ClientOptions` and then connect to Memphis by using `MemphisClientFactory.CreateClient(ClientOptions opst)`.
+First, we need to create or use default `ClientOptions` and then connect to Memphis by using `MemphisClientFactory.CreateClient(ClientOptions opts)`.
 
 ```c#
 try
 {
     var options = MemphisClientFactory.GetDefaultOptions();
     options.Host = "<broker-address>";
-    options.Username = "<application-type-username>";
+    options.Username = "<username>";
     options.ConnectionToken = "<broker-token>"; // you will get it on broker creation
+    options.AccountId = <account-id>; // You can find it on the profile page in the Memphis UI. This field should be set only on the cloud version of Memphis, otherwise it will be ignored
     var memphisClient = await MemphisClientFactory.CreateClient(options);
     ...
 }
@@ -50,8 +91,9 @@ try
 {
     var options = MemphisClientFactory.GetDefaultOptions();
     options.Host = "<broker-address>";
-    options.Username = "<application-type-username>";
-    options.Password = "<application-type-password>"; // you will get it on application type user creation
+    options.Username = "<username>";
+    options.Password = "<password>"; // you will get it on client type user creation
+    options.AccountId = <account-id>; // You can find it on the profile page in the Memphis UI. This field should be set only on the cloud version of Memphis, otherwise it will be ignored
     var memphisClient = await MemphisClientFactory.CreateClient(options);
     ...
 }
@@ -79,8 +121,9 @@ try
     // First: creating Memphis client
     var options = MemphisClientFactory.GetDefaultOptions();
     options.Host = "<memphis-host>";
-    options.Username = "<application type username>";
-    options.Password = "<application-type-password>";
+    options.Username = "<username>";
+    options.Password = "<password>";
+    options.AccountId = <account-id>; // You can find it on the profile page in the Memphis UI. This field should be set only on the cloud version of Memphis, otherwise it will be ignored
     var client = await MemphisClientFactory.CreateClient(options);
     
     // Second: creaing Memphis station
@@ -95,6 +138,7 @@ try
             IdempotencyWindowMs = 0,
             SendPoisonMessageToDls = true,
             SendSchemaFailedMessageToDls = true,
+            PartitionsNumber = 3 // defaults to 1
         });
 }
 catch (Exception ex)
@@ -123,13 +167,19 @@ RetentionTypes.BYTES
 ```
 The above means that after maximum number of saved bytes (set in retention value) has been reached, the oldest messages will be deleted.
 
+```c#
+RetentionTypes.ACK_BASED
+```
+The above means that after a message is getting acked by all interested consumer groups it will be deleted from the Station. This retention type is for cloud users only.
+
+
 ## Retention Values
 
 The `retention values` are directly related to the `retention types` mentioned above,<br> where the values vary according to the type of retention chosen.
 
 All retention values are of type `int` but with different representations as follows:
 
-`RetentionTypes.MAX_MESSAGE_AGE_SECONDS` is represented **in seconds**, `RetentionTypes.MESSAGES` in a **number of messages** <br> and finally `RetentionTypes.BYTES` in a **number of bytes**.
+`RetentionTypes.MAX_MESSAGE_AGE_SECONDS` is represented **in seconds**, `RetentionTypes.MESSAGES` in a **number of messages**, `RetentionTypes.BYTES` in a **number of bytes**, and finally `RetentionTypes.ACK_BASED` is not using the retention value. 
 
 After these limits are reached oldest messages will be deleted.
 
@@ -145,7 +195,7 @@ The above means that messages persist on disk.
 ```c#
 StorageTypes.MEMORY
 ```
-The above means that messages persist on the main memory.
+The above means that messages persist in the main memory.
 
 ## Destroying a Station
 
@@ -185,7 +235,7 @@ The most common client operations are `produce` to send messages and `consume` t
 receive messages.
 
 Messages are published to a station and consumed from it by creating a consumer.
-Consumers are pull based and consume all the messages in a station unless you are using a consumers group, in this case messages are spread across all members in this group.
+Consumers are pull-based and consume all the messages in a station unless you are using a consumers group, in this case, messages are spread across all members in this group.
 
 Memphis messages are payload agnostic. Payloads are `byte[]`.
 
@@ -200,8 +250,8 @@ try
    // First: creating Memphis client
     var options = MemphisClientFactory.GetDefaultOptions();
     options.Host = "<memphis-host>";
-    options.Username = "<application type username>";
-    options.Password = "<application-type-password>";
+    options.Username = "<username>";
+    options.Password = "<password>";
     var client = await MemphisClientFactory.CreateClient(options);
 
     // Second: creating the Memphis producer 
@@ -231,6 +281,10 @@ await producer.ProduceAsync(
 );
 ```
 
+
+Note:
+When producing to a station with more than one partition, the producer will produce messages in a Round Robin fashion between the different partitions.
+
 ## Message ID
 
 Stations are idempotent by default for 2 minutes (can be configured), Idempotence achieved by adding a message id
@@ -257,8 +311,8 @@ try
     // First: creating Memphis client
     var options = MemphisClientFactory.GetDefaultOptions();
     options.Host = "<memphis-host>";
-    options.Username = "<application type username>";
-    options.Password = "<application-type-password>";
+    options.Username = "<username>";
+    options.Password = "<password>";
     var client = await MemphisClientFactory.CreateClient(options);
     
     // Second: creaing Memphis consumer
@@ -276,6 +330,9 @@ catch (Exception ex)
     Console.Error.WriteLine(ex);
 }
 ```
+
+Note:
+When consuming from a station with more than one partition, the consumer will consume messages in Round Robin fashion from the different partitions.
 
 ## Creating message handler for consuming a message
 
