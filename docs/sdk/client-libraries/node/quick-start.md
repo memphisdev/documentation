@@ -1,7 +1,49 @@
 ---
-title: Node Quickstart
-description: A quickstart on how to use the Node client library
----
+  title: JavaScript Quickstart
+  description: A quickstart on how to use the JavaScript client library
+  ---
+<div align="center">
+  
+  ![Banner- Memphis dev streaming ](https://github.com/memphisdev/memphis.js/assets/70286779/e9899cdd-c78a-41d5-afb5-e5e053a540f0)
+
+  
+</div>
+
+<div align="center">
+
+  <h4>
+
+**[Memphis](https://memphis.dev)** is an intelligent, frictionless message broker.<br>Made to enable developers to build real-time and streaming apps fast.
+
+  </h4>
+  
+  <a href="https://landscape.cncf.io/?selected=memphis"><img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/white/cncf-member-silver-white.svg#gh-dark-mode-only"></a>
+  
+</div>
+
+<div align="center">
+  
+  <img width="200" alt="CNCF Silver Member" src="https://github.com/cncf/artwork/raw/master/other/cncf-member/silver/color/cncf-member-silver-color.svg#gh-light-mode-only">
+  
+</div>
+ 
+ <p align="center">
+  <a href="https://memphis.dev/docs/">Docs</a> - <a href="https://twitter.com/Memphis_Dev">Twitter</a> - <a href="https://www.youtube.com/channel/UCVdMDLCSxXOqtgrBaRUHKKg">YouTube</a>
+</p>
+
+<p align="center">
+<a href="https://discord.gg/WZpysvAeTf"><img src="https://img.shields.io/discord/963333392844328961?color=6557ff&label=discord" alt="Discord"></a>
+<a href="https://github.com/memphisdev/memphis/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/memphisdev/memphis?color=6557ff"></a> 
+  <img src="https://img.shields.io/npm/dw/memphis-dev?color=ffc633&label=installations">
+<a href="https://github.com/memphisdev/memphis/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code%20of%20Conduct-v1.0-ff69b4.svg?color=ffc633" alt="Code Of Conduct"></a> 
+<a href="https://docs.memphis.dev/memphis/release-notes/releases/v0.4.2-beta"><img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/memphisdev/memphis?color=61dfc6"></a>
+<img src="https://img.shields.io/github/last-commit/memphisdev/memphis?color=61dfc6&label=last%20commit">
+</p>
+
+Memphis.dev is more than a broker. It's a new streaming stack.<br><br>
+It accelerates the development of real-time applications that require<br>
+high throughput, low latency, small footprint, and multiple protocols,<br>with minimum platform operations, and all the observability you can think of.<br><br>
+Highly resilient, distributed architecture, cloud-native, and run on any Kubernetes,<br>on any cloud without zookeeper, bookeeper, or JVM.
 
 ## Installation
 
@@ -109,7 +151,8 @@ const station = await memphis.station({
     idempotencyWindowMs: 0, // defaults to 120000
     sendPoisonMsgToDls: true, // defaults to true
     sendSchemaFailedMsgToDls: true, // defaults to true
-    tieredStorageEnabled: false // defaults to false
+    tieredStorageEnabled: false, // defaults to false
+    partitionsNumber: 1 // defaults to 1
 });
 ```
 
@@ -164,6 +207,12 @@ memphis.retentionTypes.BYTES;
 
 Means that after max amount of saved bytes (set in retention value), the oldest messages will be deleted
 
+```js
+memphis.retentionTypes.ACK_BASED; // for cloud users only
+```
+
+Means that after a message is getting acked by all interested consumer groups it will be deleted from the Station.
+
 
 ## Retention Values
 
@@ -171,7 +220,7 @@ The `retention values` are directly related to the `retention types` mentioned a
 
 All retention values are of type `int` but with different representations as follows:
 
-`memphis.retentionTypes.MAX_MESSAGE_AGE_SECONDS` is represented **in seconds**, `memphis.retentionTypes.MESSAGES` in a **number of messages** and finally `memphis.retentionTypes.BYTES` in a **number of bytes**.
+`memphis.retentionTypes.MAX_MESSAGE_AGE_SECONDS` is represented **in seconds**, `memphis.retentionTypes.MESSAGES` in a **number of messages**, `memphis.retentionTypes.BYTES` in a **number of bytes** and finally `memphis.retentionTypes.ACK_BASED` is not using the retentionValue param at all.
 
 After these limits are reached oldest messages will be deleted.
 
@@ -270,7 +319,7 @@ class ProducerModule {
 ## Producing a message
 
 Without creating a producer.
-In cases where extra performance is needed the recommended way is to create a producer first
+In cases where extra performance is needed, the recommended way is to create a producer first
 and produce messages by using the produce function of it
 
 ```js
@@ -278,7 +327,7 @@ await memphisConnection.produce({
         stationName: '<station-name>',
         producerName: '<producer-name>',
         genUniqueSuffix: false, // defaults to false
-        message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema)
+        message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema) or Uint8Arrays/object (schema validated station - avro schema)
         ackWaitSec: 15, // defaults to 15
         asyncProduce: true // defaults to false
         headers: headers, // defults to empty
@@ -290,12 +339,15 @@ Creating a producer first
 
 ```js
 await producer.produce({
-    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema)
+    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema) or Uint8Arrays/object (schema validated station - avro schema)
     ackWaitSec: 15 // defaults to 15
 });
 ```
 
-## Add Header
+Note:
+When producing to a station with more than one partition, the producer will produce messages in a Round Robin fashion between the different partitions.
+
+## Add Headers
 
 ```js
 const headers = memphis.headers();
@@ -311,18 +363,18 @@ or
 ```js
 const headers = { key: 'value' };
 await producer.produce({
-    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema)
+    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema) or Uint8Arrays/object (schema validated station - avro schema)
     headers: headers
 });
 ```
 
 ## Async produce
 
-Meaning your application won't wait for broker acknowledgement - use only in case you are tolerant for data loss
+For better performance. The client won't block requests while waiting for an acknowledgment.
 
 ```js
 await producer.produce({
-    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema)
+    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema) or Uint8Arrays/object (schema validated station - avro schema)
     ackWaitSec: 15, // defaults to 15
     asyncProduce: true // defaults to false
 });
@@ -330,11 +382,11 @@ await producer.produce({
 
 ## Message ID
 
-Stations are idempotent by default for 2 minutes (can be configured), Idempotency achieved by adding a message id
+Stations are idempotent by default for 2 minutes (can be configured). Idempotency is achieved by adding a message-id
 
 ```js
 await producer.produce({
-    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema)
+    message: 'Uint8Arrays/object/string/DocumentNode graphql', // Uint8Arrays/object (schema validated station - protobuf) or Uint8Arrays/object (schema validated station - json schema) or Uint8Arrays/string/DocumentNode graphql (schema validated station - graphql schema) or Uint8Arrays/object (schema validated station - avro schema)
     ackWaitSec: 15, // defaults to 15
     msgId: 'id' // defaults to null
 });
@@ -363,6 +415,9 @@ const consumer = await memphisConnection.consumer({
     lastMessages: -1 // consume the last N messages, defaults to -1 (all messages in the station)
 });
 ```
+
+Note:
+When consuming from a station with more than one partition, the consumer will consume messages in Round Robin fashion from the different partitions.
 
 ## Passing context to message handlers
 
@@ -405,7 +460,7 @@ const msgs = await consumer.fetch({
 });
 ```
 
-To set Up connection in nestjs
+To set up a connection in nestjs
 
 ```js
 import { MemphisServer } from 'memphis-dev'
@@ -447,7 +502,7 @@ export class Controller {
 
 ## Acknowledge a message
 
-Acknowledge a message indicates the Memphis server to not re-send the same message again to the same consumer / consumers group
+Acknowledge a message indicates the Memphis server to not re-send the same message again to the same consumer/consumers group
 
 ```js
 message.ack();
@@ -455,7 +510,7 @@ message.ack();
 
 ## Delay and resend the message after a given duration
 
-Delay the message and tell Memphis server to re-send the same message again to the same consumer group. The message will be redelivered only in case `Consumer.maxMsgDeliveries` is not reached yet.
+Delay the message and tell the Memphis server to re-send the same message again to the same consumer group. The message will be redelivered only in case `Consumer.maxMsgDeliveries` is not reached yet.
 
 ```js
 message.delay(delayInMilliseconds);
@@ -505,7 +560,7 @@ consumer.on('error', (error) => {
 await consumer.destroy();
 ```
 
-## Check if broker is connected
+## Check if the broker is connected
 
 ```js
 memphisConnection.isConnected();
