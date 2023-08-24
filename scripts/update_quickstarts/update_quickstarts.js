@@ -36,10 +36,12 @@ const repos = [
 ]
 
 for (let repo of repos){
-  update_file(repo.repo_name, repo.doc_path, repo.language_name)
+  await update_file(repo.repo_name, repo.doc_path, repo.language_name)
 }
 
 async function update_file(repo_name, doc_path, language_name){
+  console.log(`Updating ${language_name} Quickstart`);
+  console.log(`Repo: ${repo_name}`);
   let req = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner: 'memphisdev',
       repo: repo_name,
@@ -49,6 +51,7 @@ async function update_file(repo_name, doc_path, language_name){
       }
   })
 
+  console.log(`Getting ${language_name} Quickstart SHA`);
   let quick_start = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
       owner: 'memphisdev',
       repo: 'documentation',
@@ -59,6 +62,9 @@ async function update_file(repo_name, doc_path, language_name){
   })
 
   const quick_start_sha = quick_start.data.sha;
+
+  console.log(`Quickstart SHA: ${quick_start_sha}`);
+
   const readme_content = atob(req.data.content)
   const readme_h3_to_h2 = readme_content.replace(/###/g, '##')
   const commit_string = `---
@@ -66,11 +72,12 @@ async function update_file(repo_name, doc_path, language_name){
   description: A quickstart on how to use the ${language_name} client library
   ---`+ '\n' + readme_h3_to_h2 
 
+  console.log(`Updating ${language_name} Quickstart`);
   await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
       owner: 'memphisdev',
       repo: 'documentation',
       path: doc_path,
-      message: 'Updating ${language_name} SDK Quick-Start',
+      message: `Updating ${language_name} SDK Quick-Start`,
       committer: {
         name: 'Automated Workflow',
         email: 'john@memphis.dev'
