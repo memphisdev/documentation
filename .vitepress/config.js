@@ -258,7 +258,7 @@ export function docs() {
       text: "👉 Getting Started",
       items: [
         { text: "Introduction", link: "/docs/getting-started/introduction" },
-        { text: "Quickstart", link: "/docs/getting-started/2-hello-world" },
+        { text: "Quick start", link: "/docs/getting-started/2-hello-world" },
         { text: "Tutorials", link: "/docs/getting-started/tutorial" },
         {
           text: "How others use Memphis",

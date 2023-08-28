@@ -33,7 +33,7 @@
                 for (const child of item.items) {
                     child_pages.push({
                         text: child.text,
-                        link: withBase(child.link)
+                        link: child.link
                     })
                 }
                 page_title.value = item.text
