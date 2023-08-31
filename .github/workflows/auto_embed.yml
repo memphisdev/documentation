@@ -1,0 +1,28 @@
+name: Auto-Update Embed Metadata JSON
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with: 
+        sparse-checkout: 
+            scripts
+            docs
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'latest'
+    - name: Run Embed Changing script
+      env:
+        REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+      run: |
+        cd ./scripts/auto_rich_embeds
+        ls
+        npm ci
+        node get_metadata.js
