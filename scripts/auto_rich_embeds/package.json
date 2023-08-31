@@ -1,0 +1,17 @@
+{
+  "name": "rich_embeds",
+  "version": "1.0.0",
+  "description": "This package scrapes the docs directory for the rich embed component and generates the meta data it requires",
+  "main": "get_metadata.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Peters",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "glob": "^10.2.7",
+    "jsdom": "^22.1.0"
+  }
+}
