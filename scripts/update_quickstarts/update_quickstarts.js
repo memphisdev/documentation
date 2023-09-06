@@ -6,7 +6,6 @@ const octokit = new Octokit({
     auth: git_token
   })
 
-
 const repos = [
   {
     repo_name: 'memphis.js',

@@ -91,10 +91,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/rest/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/rest/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/rest/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis-rest-gateway",
@@ -110,10 +110,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/node/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/node/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/node/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis.js",
@@ -129,10 +129,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/go/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/go/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/go/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis.go",
@@ -148,10 +148,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/python/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/python/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/python/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis.py",
@@ -167,10 +167,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/kotlin/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/kotlin/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/kotlin/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis.kt",
@@ -186,10 +186,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/net/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/net/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/net/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis.net",
@@ -205,10 +205,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/java/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/java/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/java/api",
+            // },
             {
               text: "GitHub",
               link: "https://github.com/memphisdev/memphis.java",
@@ -224,10 +224,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/rust/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/rust/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/rust/api",
+            // },
             { text: "GitHub", link: "" },
           ],
         },
@@ -240,10 +240,10 @@ export function sdk() {
               text: "Quick Start",
               link: "/sdk/client-libraries/scala/quick-start",
             },
-            {
-              text: "API Reference",
-              link: "/sdk/client-libraries/scala/api",
-            },
+            // {
+            //   text: "API Reference",
+            //   link: "/sdk/client-libraries/scala/api",
+            // },
             { text: "GitHub", link: "" },
           ],
         },
