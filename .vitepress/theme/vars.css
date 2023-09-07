@@ -19,6 +19,7 @@
   position: absolute;
   top: 7px;
   right: 0px;
+  margin-right: 5px;
 }
 
 :root {
@@ -141,48 +142,56 @@ table{
   padding-top: 0px !important;
 }
 
-:root.dark .VPSidebarItem.level-0.is-link > .item:hover,
-:root.dark .VPSidebarItem.level-1.is-link > .item:hover,
-:root.dark .VPSidebarItem.level-2.is-link > .item:hover,
-:root.dark .VPSidebarItem.level-3.is-link > .item:hover,
-:root.dark .VPSidebarItem.level-4.is-link > .item:hover,
-:root.dark .VPSidebarItem.level-5.is-link > .item:hover {
+.VPSidebarItem:hover > .caret {
+  color: #61DFC6;
+}
+
+.caret{
+  transition: color 0s !important;
+}
+
+:root.dark .VPSidebarItem.level-0 > .item:hover,
+:root.dark .VPSidebarItem.level-1 > .item:hover,
+:root.dark .VPSidebarItem.level-2 > .item:hover,
+:root.dark .VPSidebarItem.level-3 > .item:hover,
+:root.dark .VPSidebarItem.level-4 > .item:hover,
+:root.dark .VPSidebarItem.level-5 > .item:hover {
   background-color: rgba(255, 255, 255, 0.05) !important;
   color: var(--vp-c-text-1) !important;
   border-radius: 6px;
 }
 
-.VPSidebarItem.level-0.is-link > .item:hover,
-.VPSidebarItem.level-1.is-link > .item:hover,
-.VPSidebarItem.level-2.is-link > .item:hover,
-.VPSidebarItem.level-3.is-link > .item:hover,
-.VPSidebarItem.level-4.is-link > .item:hover,
-.VPSidebarItem.level-5.is-link > .item:hover {
+.VPSidebarItem.level-0 > .item:hover,
+.VPSidebarItem.level-1 > .item:hover,
+.VPSidebarItem.level-2 > .item:hover,
+.VPSidebarItem.level-3 > .item:hover,
+.VPSidebarItem.level-4 > .item:hover,
+.VPSidebarItem.level-5 > .item:hover {
   background-color: #ececee !important;
   color: var(--vp-c-text-1) !important;
   border-radius: 6px;
 }
 
-.VPSidebarItem.level-0.is-link:not(.is-active) > .item > .link .text,
-.VPSidebarItem.level-1.is-link:not(.is-active) > .item > .link .text,
-.VPSidebarItem.level-2.is-link:not(.is-active) > .item > .link .text,
-.VPSidebarItem.level-3.is-link:not(.is-active) > .item > .link .text,
-.VPSidebarItem.level-4.is-link:not(.is-active) > .item > .link .text,
-.VPSidebarItem.level-5.is-link:not(.is-active) > .item > .link .text {
+.VPSidebarItem.level-0:not(.is-active) > .item > .link .text,
+.VPSidebarItem.level-1:not(.is-active) > .item > .link .text,
+.VPSidebarItem.level-2:not(.is-active) > .item > .link .text,
+.VPSidebarItem.level-3:not(.is-active) > .item > .link .text,
+.VPSidebarItem.level-4:not(.is-active) > .item > .link .text,
+.VPSidebarItem.level-5:not(.is-active) > .item > .link .text {
   color: var(--vp-c-text-2) !important;
 }
 
-.VPSidebarItem.level-0.is-link:not(.is-active) > .item > .link h2.text,
-.VPSidebarItem.level-1.is-link:not(.is-active) > .item > .link h2.text,
-.VPSidebarItem.level-2.is-link:not(.is-active) > .item > .link h2.text,
-.VPSidebarItem.level-3.is-link:not(.is-active) > .item > .link h2.text,
-.VPSidebarItem.level-4.is-link:not(.is-active) > .item > .link h2.text,
-.VPSidebarItem.level-5.is-link:not(.is-active) > .item > .link h2.text {
+.VPSidebarItem.level-0:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-1:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-2:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-3:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-4:not(.is-active) > .item > .link h2.text,
+.VPSidebarItem.level-5:not(.is-active) > .item > .link h2.text {
   color: var(--vp-c-text-1) !important;
 }
 
-.VPSidebarItem.level-0.is-link.is-active > .item ,
-.VPSidebarItem.level-1.is-link.is-active > .item {
+.VPSidebarItem.level-0.is-active > .item ,
+.VPSidebarItem.level-1.is-active > .item {
   background-color: rgba(101, 87, 255, 0.15) !important;
   color: var(--vp-c-brand) !important;
   border-radius: 6px;
@@ -192,41 +201,45 @@ table{
   margin-left: 6px !important;
 }
 
-.VPSidebarItem.level-0.is-link.is-active > .item:hover ,
-.VPSidebarItem.level-1.is-link.is-active > .item:hover {
+.VPSidebarItem > .item > h3 {
+  margin-left: 6px !important;
+}
+
+.VPSidebarItem.level-0.is-active > .item:hover ,
+.VPSidebarItem.level-1.is-active > .item:hover {
   background-color: rgba(101, 87, 255, 0.15) !important;
   color: var(--vp-c-brand) !important;
   border-radius: 6px;
 }
 
-.VPSidebarItem.level-1.is-link.has-active:has(> .items > .VPSidebarItem.level-2.is-link.is-active.has-active) > .item,
-.VPSidebarItem.level-2.is-link.has-active:has(> .items > .VPSidebarItem.level-3.is-link.is-active.has-active) > .item,
-.VPSidebarItem.level-3.is-link.has-active:has(> .items > .VPSidebarItem.level-4.is-link.is-active.has-active) > .item,
-.VPSidebarItem.level-4.is-link.has-active:has(> .items > .VPSidebarItem.level-5.is-link.is-active.has-active) > .item {
+.VPSidebarItem.level-1.has-active:has(> .items > .VPSidebarItem.level-2.is-active.has-active) > .item,
+.VPSidebarItem.level-2.has-active:has(> .items > .VPSidebarItem.level-3.is-active.has-active) > .item,
+.VPSidebarItem.level-3.has-active:has(> .items > .VPSidebarItem.level-4.is-active.has-active) > .item,
+.VPSidebarItem.level-4.has-active:has(> .items > .VPSidebarItem.level-5.is-active.has-active) > .item {
   background-color: rgba(101, 87, 255, 0.15) !important;
   border-radius: 6px;
 }
 
-.VPSidebarItem.level-1.is-link.has-active:has(> .items > .VPSidebarItem.level-2.is-link.is-active.has-active) > .item .text,
-.VPSidebarItem.level-2.is-link.has-active:has(> .items > .VPSidebarItem.level-3.is-link.is-active.has-active) > .item .text,
-.VPSidebarItem.level-3.is-link.has-active:has(> .items > .VPSidebarItem.level-4.is-link.is-active.has-active) > .item .text,
-.VPSidebarItem.level-4.is-link.has-active:has(> .items > .VPSidebarItem.level-5.is-link.is-active.has-active) > .item .text{
+.VPSidebarItem.level-1.has-active:has(> .items > .VPSidebarItem.level-2.is-active.has-active) > .item .text,
+.VPSidebarItem.level-2.has-active:has(> .items > .VPSidebarItem.level-3.is-active.has-active) > .item .text,
+.VPSidebarItem.level-3.has-active:has(> .items > .VPSidebarItem.level-4.is-active.has-active) > .item .text,
+.VPSidebarItem.level-4.has-active:has(> .items > .VPSidebarItem.level-5.is-active.has-active) > .item .text{
   color: var(--vp-c-brand) !important;
 }
 
-.VPSidebarItem.level-1.is-link.has-active:has(> .items > .VPSidebarItem.level-2.is-link.is-active.has-active) > .item .caret,
-.VPSidebarItem.level-2.is-link.has-active:has(> .items > .VPSidebarItem.level-3.is-link.is-active.has-active) > .item .caret,
-.VPSidebarItem.level-3.is-link.has-active:has(> .items > .VPSidebarItem.level-4.is-link.is-active.has-active) > .item .caret,
-.VPSidebarItem.level-4.is-link.has-active:has(> .items > .VPSidebarItem.level-5.is-link.is-active.has-active) > .item .caret{
+.VPSidebarItem.level-1.has-active:has(> .items > .VPSidebarItem.level-2.is-active.has-active) > .item .caret,
+.VPSidebarItem.level-2.has-active:has(> .items > .VPSidebarItem.level-3.is-active.has-active) > .item .caret,
+.VPSidebarItem.level-3.has-active:has(> .items > .VPSidebarItem.level-4.is-active.has-active) > .item .caret,
+.VPSidebarItem.level-4.has-active:has(> .items > .VPSidebarItem.level-5.is-active.has-active) > .item .caret{
   color: var(--vp-c-brand) !important;
 }
 
-.VPSidebarItem.level-0.is-link.is-active > .item > .link:hover,
-.VPSidebarItem.level-1.is-link.is-active > .item > .link:hover,
-.VPSidebarItem.level-2.is-link.is-active > .item > .link:hover,
-.VPSidebarItem.level-3.is-link.is-active > .item > .link:hover,
-.VPSidebarItem.level-4.is-link.is-active > .item > .link:hover,
-.VPSidebarItem.level-5.is-link.is-active > .item > .link:hover{
+.VPSidebarItem.level-0.is-active > .item > .link:hover,
+.VPSidebarItem.level-1.is-active > .item > .link:hover,
+.VPSidebarItem.level-2.is-active > .item > .link:hover,
+.VPSidebarItem.level-3.is-active > .item > .link:hover,
+.VPSidebarItem.level-4.is-active > .item > .link:hover,
+.VPSidebarItem.level-5.is-active > .item > .link:hover{
   background-color: rgba(255, 255, 255, 0.05) !important;
   color: var(--vp-c-brand) !important;
   border-radius: 6px;

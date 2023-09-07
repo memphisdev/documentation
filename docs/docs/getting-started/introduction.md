@@ -1,17 +1,12 @@
 ---
-description: What is Memphis.dev
+description: The source of Memphis.dev
 cover: /Banner-_Memphis.dev_streaming_.jpg
+title: Memphis.dev start
 ---
 
 # Introduction
 
-We are happy to announce Memphis #1 hackathon [#SaveZakar](https://memphis.dev/blog/save-zakar-hackathon/)!📣 📣 📣&#x20;
-
-<figure><img src="/assets/Hackathon_banner.png" alt=""><figcaption></figcaption></figure>
-
-For more information and to sign up, enter the [#SaveZaker hackathon](https://memphis.dev/blog/save-zakar-hackathon/).
-
-## The challenges
+## Where it all started - the challenges
 
 When your application requires a message broker or a queue,\
 Implementing one will require you to -

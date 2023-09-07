@@ -1,12 +1,10 @@
 ---
-description: Using Terraform with AWS
-title: AWS
+description: Using Terraform
 cover: /AWS_and_Memphis_(1).jpeg
+title: Using Terrafrom
 ---
 
 # Deploy on AWS
-
-<Subtitle></Subtitle>
 
 ### Introduction
 
@@ -67,14 +65,14 @@ $ aws configure
 
 Using git ssh
 
-```
+```shell
 git clone git@github.com:memphisdev/memphis-terraform.git && \
 cd memphis-terraform/AWS/EKS
 ```
 
 Using git http
 
-```
+```shell
 git clone https://github.com/memphisdev/memphis-terraform.git && \
 cd memphis-terraform/AWS/EKS
 ```
@@ -85,7 +83,7 @@ cd memphis-terraform/AWS/EKS
 make infra
 ```
 
-::: warning
+::: tip
 Instead of running three terraform commands
 :::
 
@@ -99,7 +97,7 @@ Once deployment is complete, the Application Load Balancer URL will be revealed.
 
 ### Step 3: Login to Memphis
 
-Display memphis load balancer assets IP by running the following -
+Display memphis load balancer public IP by running the following -
 
 ```
 kubectl get svc -n memphis
@@ -115,7 +113,7 @@ Destroy Memphis App -&#x20;
 make destroymemphis
 ```
 
-::: tip
+::: info
 **It might take a few minutes for the ELB to be deleted.**
 :::
 

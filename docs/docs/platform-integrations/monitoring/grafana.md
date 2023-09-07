@@ -6,8 +6,6 @@ title: Graphana
 
 # Grafana
 
-<Subtitle></Subtitle>
-
 ## Introduction
 
 As Grafana is one of the most popular tools for centralized monitoring, Memphis provides a Prometheus exporter to enable Grafana users to monitor Memphis.
@@ -44,11 +42,11 @@ honor_labels: true
 
 **If you haven't** installed Memphis with the `exporter.enabled` yet&#x20;
 
-```
+```shell
 helm install memphis memphis \
 --create-namespace --namespace memphis --wait \
 --set \
-cluster.enabled="true",\
+global.cluster.enabled="true",\
 exporter.enabled="true"
 ```
 
@@ -64,7 +62,7 @@ export ADMIN_PASSWORD=$(kubectl get secret --namespace "memphis" memphis-metadat
 
 #### Use helm upgrade to add exporter to the deployment:
 
-```
+```shell
 helm upgrade memphis memphis/memphis -n memphis --set exporter.enabled=true,metadata.postgresql.password=$PASSWORD,metadata.postgresql.repmgrPassword=$REPMGR_PASSWORD,metadata.pgpool.adminPassword=$ADMIN_PASSWORD
 ```
 

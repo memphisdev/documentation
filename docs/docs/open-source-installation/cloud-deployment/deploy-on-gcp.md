@@ -1,12 +1,10 @@
 ---
-description: Using Terraform with Google Cloud Platform
-cover: /GCP_and_Memphis.jpeg
+description: Using Terraform
+cover: /assets/GCP_and_Memphis.jpeg
 title: Google Cloud Platform
 ---
 
 # Deploy on GCP
-
-<Subtitle></Subtitle>
 
 ### Introduction
 
@@ -23,17 +21,17 @@ Terraform codifies cloud APIs into declarative configuration files.
 * gcloud SDK + CLI [installed](https://cloud.google.com/sdk/docs/quickstarts), configuration depends on station OS.
 * Authorize the SDK to access GCP using your user account credentials
 
-```
+```shell
 gcloud auth application-default login
 ```
 
 * Enable API services:
 
-```
+```shell
 gcloud config set project YOUR_PROJECT_ID
 ```
 
-```
+```shell
 gcloud services enable compute.googleapis.com container.googleapis.com
 ```
 
@@ -48,14 +46,14 @@ gcloud services enable compute.googleapis.com container.googleapis.com
 
 ### Step 0: Clone Memphis-Terraform repo
 
-```
+```shell
 git clone git@github.com:memphisdev/memphis-terraform.git && \
 cd memphis-terraform/GCP/GKE
 ```
 
 ### Step 1: Deploy GKE Cluster using Terraform
 
-::: info
+::: tip
 **In this step, you will need your `projectID`.**
 :::
 
@@ -63,7 +61,7 @@ cd memphis-terraform/GCP/GKE
 make infra
 ```
 
-::: info
+::: tip
 Memphis uses "`makefile`" instead of running three terraform commands
 :::
 
@@ -77,9 +75,9 @@ Once deployment is complete, the Memphis Load Balancer URL will be revealed.
 
 ### Step 3: Login to Memphis
 
-Display memphis load balancer assets IP by running the following -
+Display memphis load balancer public IP by running the following -
 
-```
+```shell
 kubectl get svc -n memphis
 ```
 

@@ -46,7 +46,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Docs", link: "/docs/getting-started/1-installation" },
+      { text: "Docs", link: "/docs/getting-started/introduction" },
       { text: "SDK", link: "/sdk/welcome" },
     ],
 
@@ -259,9 +259,60 @@ export function docs() {
       items: [
         { text: "Introduction", link: "/docs/getting-started/introduction" },
         { text: "Quick start", link: "/docs/getting-started/2-hello-world" },
+        {
+          text: "Quick Start by Case",
+          link: "/docs/getting-started/quick-start-by-use-case/index",
+          collapsed: true,
+          items: [
+            {
+              text: "Microservices communication",
+              link: "/docs/getting-started/quick-start-by-use-case/microservices-communication",
+            },
+            {
+              text: "Stream processing",
+              link: "/docs/getting-started/quick-start-by-use-case/stream-processing",
+            },
+            {
+              text: "Edge compute",
+              link: "/docs/getting-started/quick-start-by-use-case/edge-compute",
+            },
+            {
+              text: "NATS Replacement",
+              link: "/docs/getting-started/quick-start-by-use-case/nats-replacement",
+            },
+            {
+              text: "Message broker",
+              link: "/docs/getting-started/quick-start-by-use-case/message-broker",
+            },
+            {
+              text: "Queueing",
+              link: "/docs/getting-started/quick-start-by-use-case/queueing",
+            },
+            {
+              text: "Log collection",
+              link: "/docs/getting-started/quick-start-by-use-case/log-collection",
+            },
+            {
+              text: "Logstash replacement",
+              link: "/docs/getting-started/quick-start-by-use-case/logstash-replacement",
+            },
+            {
+              text: "Real-time data pipeline",
+              link: "/docs/getting-started/quick-start-by-use-case/real-time-data-pipeline",
+            },
+            {
+              text: "Change-data-Capture pipelines",
+              link: "/docs/getting-started/quick-start-by-use-case/change-data-capture-pipelines",
+            },
+            {
+              text: "Task scheduling",
+              link: "/docs/getting-started/quick-start-by-use-case/task-scheduling",
+            }
+          ],
+        },
         { text: "Tutorials", link: "/docs/getting-started/tutorial" },
         {
-          text: "How others use Memphis",
+          text: "Public Case Studies",
           link: "/docs/getting-started/public-case-studies",
         },
         {

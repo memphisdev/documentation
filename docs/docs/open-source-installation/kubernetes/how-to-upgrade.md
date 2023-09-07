@@ -40,9 +40,7 @@ helm repo update
 
 ### Step 4: Reinstall Memphis
 
-<details>
-
-<summary>Production</summary>
+:::details Production
 
 Production-grade Memphis with a minimum of three memphis brokers configured in cluster-mode. Add user-supplied values if necessary.
 
@@ -51,11 +49,9 @@ helm repo add memphis https://k8s.memphis.dev/charts/ --force-update &&
 helm install memphis --set global.cluster.enabled="true",connectionToken=$CT,rootPwd=$ROOT_PASSWORD memphis/memphis --create-namespace --namespace memphis --wait
 ```
 
-</details>
+:::
 
-<details>
-
-<summary>Dev</summary>
+:::details Dev
 
 Standalone installation of Memphis with a single broker. Add user-supplied values if necessary.
 
@@ -64,7 +60,7 @@ helm repo add memphis https://k8s.memphis.dev/charts/ --force-update &&
 helm install memphis --set connectionToken=$CT,rootPwd=$ROOT_PASSWORD memphis/memphis --create-namespace --namespace memphis --wait
 ```
 
-</details>
+:::
 
 ## Above v1.0.0 (Included)
 

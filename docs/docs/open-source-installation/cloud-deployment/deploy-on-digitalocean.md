@@ -1,12 +1,10 @@
 ---
 cover: /DigitalOcean_and_Memphis.jpeg
-description: Deploying on DigitalOcean
-title: DigitalOcean
+description: Deploying memphis on digital ocean
+title: Digital Ocean and Memphis
 ---
 
 # Deploy on DigitalOcean
-
-<Subtitle></Subtitle>
 
 ### Introduction
 
@@ -43,7 +41,7 @@ Follow the below instructions to communicate with the newly created cluster
 
 <figure><img src="/assets/Screen_Shot_2022-08-31_at_12.40.59.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.04_(1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.04 (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.24.png" alt=""><figcaption></figcaption></figure>
 
@@ -101,24 +99,23 @@ spec:
   type: LoadBalancer
 ```
 
-The above will create a digitalocean load balancer with a assets ip.
+The above will create a digitalocean load balancer with a public ip.
 
 ### Step 5: Expose Memphis UI using a load balancer
 
 Run the following YAML
 
-```
+```shell
  kubectl expose deployment memphis-ui --port=80 --target-port=80 \
         --name=memphis-ui --type=LoadBalancer
 ```
 
 ### Step 6: Connect your 1st app
 
-To get the assets IPs of the load balancers we created before, run
+To get the public IPs of the load balancers we created before, run
 
-```
+```shell
 kubectl get svc
 ```
 
 <figure><img src="/assets/Screen_Shot_2022-09-04_at_23.40.09.png" alt=""><figcaption></figcaption></figure>
-

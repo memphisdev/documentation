@@ -33,9 +33,7 @@ Memphis is cloud-native and cloud-agnostic to any Kubernetes on **any cloud**.
 
 ## Installation
 
-<details>
-
-<summary>Production</summary>
+:::details Production
 
 Production-ready Memphis deployment with initial three memphis brokers configured in cluster mode for high availability and higher throughput.
 
@@ -51,11 +49,9 @@ helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm ins
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install --set memphis.image="memphisos/memphis:latest",global.cluster.enabled="true" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
 
-</details>
+:::
 
-<details>
-
-<summary>Development</summary>
+:::details Development
 
 Minimal deployment of Memphis with a single broker
 
@@ -71,7 +67,7 @@ helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm ins
 helm repo add memphis https://k8s.memphis.dev/charts/ --force-update && helm install --set memphis.image="memphisos/memphis:latest" memphis memphis/memphis --create-namespace --namespace memphis --wait
 ```
 
-</details>
+:::
 
 #### \* Optional \* Helm deployment options
 

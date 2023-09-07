@@ -77,7 +77,7 @@ await memphis.connect({
 
 - **host:** Usually the control plane or through the UI URL. For example "https://memphis-ui.test.com/api".
 - **username:** Usually "root". Head to the users' section via the UI or CLI to add more.
-- **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <mark style="color:green;">**The default value is "memphis".**</mark>
+- **connectionToken:** Each app that produces and/or consumer data with Memphis uses token authentication. <span style="color:green;">**The default value is "memphis".**</span>
   ::::
 
 ## How to upgrade?
