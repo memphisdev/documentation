@@ -44,13 +44,13 @@
       </p>
       <div class="card-wrapper">
         <div class="card-container">
-          <ImageCard type="Quick start: Open-Source"
-            >Small footprint, highly efficient, and can run on any cloud, on any
-            Kubernetes.</ImageCard
-          >
           <ImageCard type="Quick start: Cloud"
             >The full power of Memphis.dev. High performance, fully managed,
             99.999 uptime, supported, and with added features.</ImageCard
+          >
+          <ImageCard type="Quick start: Open-Source"
+            >Small footprint, highly efficient, and can run on any cloud, on any
+            Kubernetes.</ImageCard
           >
         </div>
       </div>
