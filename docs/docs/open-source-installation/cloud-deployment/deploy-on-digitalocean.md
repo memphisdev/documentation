@@ -41,7 +41,7 @@ Follow the below instructions to communicate with the newly created cluster
 
 <figure><img src="/assets/Screen_Shot_2022-08-31_at_12.40.59.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.04 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.04_(1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="/assets/Screen_Shot_2022-08-31_at_12.41.24.png" alt=""><figcaption></figcaption></figure>
 
