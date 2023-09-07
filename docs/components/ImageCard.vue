@@ -62,10 +62,10 @@ const link = ref("");
 const link_target = ref("_self");
 
 if (type.value == "Quick start: Cloud") {
-    link.value = "https://cloud.memphis.dev";
+    link.value = withBase("/docs/memphis-cloud/getting-started");
     link_target.value = "_blank";
 } else if (type.value == "Quick start: Open-Source") {
-    link.value = withBase("/docs/memphis-cloud/getting-started");
+    link.value = withBase("/docs/getting-started/2-hello-world");
 }
 </script>
 
