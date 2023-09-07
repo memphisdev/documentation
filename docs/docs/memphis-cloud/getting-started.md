@@ -1,21 +1,6 @@
 ---
 description: Accelerate Development of Real-Time Applications with Memphis.dev Cloud
 cover: /Gitbook_(1).jpeg
-coverY: 0
-layout:
-  cover:
-    visible: true
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Getting Started
