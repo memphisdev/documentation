@@ -1,4 +1,4 @@
-const git_token = process.env.REPO_TOKEN
+const git_token = process.env.DOCS_ACTION_TOKEN
 
 import { Octokit } from "@octokit/rest";
 

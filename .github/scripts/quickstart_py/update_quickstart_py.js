@@ -16,18 +16,24 @@ const repos = [
 
 let did_error = false;
 const failed_languages = [];
+const error_messages = [];
 for (let repo of repos){
   try {
     await update_file(repo.repo_name, repo.doc_path, repo.language_name)
   } catch (error) {
-    console.log(error);
+    error_messages.push(error)
     did_error = true;
     failed_languages.push(repo.language_name)
   }
 }
 
 if (did_error){
-  throw new Error(`Failed to update one or more languages. \n Failed Languages: ${failed_languages.join(', ')}`)
+  let error_message = `Failed to update one or more languages. \n Failed Languages: ${failed_languages.join(', ')}`
+  console.error(error_message);
+  for (let error of error_messages){
+    console.error(error);
+  }
+  throw new Error(error_message)
 }
 
 async function update_file(repo_name, doc_path, language_name){
