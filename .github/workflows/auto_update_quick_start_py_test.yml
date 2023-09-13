@@ -1,8 +1,5 @@
 name: Auto-Update Py Quickstart Page
-on:
-  push:
-    branches:
-      - github_actions_repo_test
+on: workflow_dispatch
 jobs:
   update:
     runs-on: ubuntu-latest
