@@ -58,7 +58,12 @@ export default defineConfig({
     siteTitle: false,
 
     search: {
-      provider: "local",
+      provider: 'algolia',
+      options: {
+        appId: 'R0AYEE4KRS',
+        apiKey: 'c4518d2c73c9e5a02c6285c5c71654e7',
+        indexName: 'memphisdev'
+      }
     },
 
     sidebar: {
